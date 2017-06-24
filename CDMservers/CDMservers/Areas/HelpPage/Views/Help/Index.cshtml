@@ -1,0 +1,58 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using CDMservers.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "CDM Web API Help Page";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<style>
+    .newmethoddesc {
+        color: red;
+        padding-left: 10em;
+    }
+</style>
+<div id="body" class="help-page">
+    <section class="featured">
+        <div class="content-wrapper">
+            <h2>Introduction</h2>
+            <p style="padding-left: 3em;font-weight: bold;font-size: 2em">
+                新增服务：
+                        <p class="newmethoddesc">BusinessesQueryEx 新组合查询接口</p>
+                <p class="newmethoddesc">TabulationUpload 自助采集业务上传</p>
+            <p class="newmethoddesc">获取识别信息 AcquireIdentityInfor</p>
+            <p class="newmethoddesc">上传识别信息 IdentityInforUpload</p>
+                <p class="newmethoddesc">软件升级 SoftwareUpdate</p>
+            <p class="newmethoddesc">语音呼叫 VoiceCall</p>
+            <p class="newmethoddesc">销毁业务 DestroyTask</p>
+            <p class="newmethoddesc">身份信息上传, IdentityInforQuery</p>
+                <p class="newmethoddesc">身份证号查询电话, PhoneQueryById</p>
+            <p class="newmethoddesc">公司信息上传, CorporationInforQuery</p>
+                <p class="newmethoddesc">公司信息查询电话, PhoneQueryByCoInfor</p>
+                <p class="newmethoddesc">获取表单编号 GetTabulationOrdinal</p>
+                <p class="newmethoddesc"> 表单调取业务 TabulationQuery</p>
+            <p class="newmethoddesc">车辆信息上传 CarInfoUpload</p>
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @foreach (var group in apiGroups)
+        {
+            @Html.DisplayFor(m => group, "ApiGroup")
+        }
+    </section>
+</div>
