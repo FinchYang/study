@@ -11,7 +11,6 @@ namespace study.Controllers
 {
     public class InspectController : Controller
     {
-//private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly studyContext _db1 = new studyContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
@@ -37,15 +36,26 @@ namespace study.Controllers
             {
                 if (inputRequest == null)
                 {
-                    return new LoginAndQueryResponse { StatusCode = "100002", Description = "请求错误，请检查请求参数！" };
+                    Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
+                    return new LoginAndQueryResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyRequestError].StatusCode,
+                        Description = Global.Status[responseCode.studyRequestError].Description
+                    };
 
                 }
-                Log.Information("in loginandquery {0}",111);
+              
+                Log.Information("LoginAndQuery inputRequest={0}",JsonConvert.SerializeObject(inputRequest));
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    return new LoginAndQueryResponse { StatusCode = "100004", Description = "您不需要学习" };
+                    Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description+identity);
+                    return new LoginAndQueryResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyNotNecessary].StatusCode,
+                        Description = Global.Status[responseCode.studyNotNecessary].Description+identity
+                    };
                 }
 
                 //need update?
@@ -84,16 +94,20 @@ namespace study.Controllers
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
-                    StatusCode = "100000",
-                    Description = "ok",
+                    StatusCode = Global.Status[responseCode.studyOk].StatusCode,
+                    Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
                     AllStatus = allstatus
                 };
             }
             catch (Exception ex)
             {
-                Log.Error("LoginAndQuery,{0}",ex);
-                return new LoginAndQueryResponse { StatusCode = "100003", Description = "处理出错，请稍后再试" };
+                Log.Error("LoginAndQuery,{0}", ex);
+                return new LoginAndQueryResponse
+                {
+                    StatusCode = Global.Status[responseCode.studyProgramError].StatusCode,
+                    Description = Global.Status[responseCode.studyProgramError].Description
+                };
             }
 
         }
@@ -105,7 +119,12 @@ namespace study.Controllers
             {
                 if (inputRequest == null)
                 {
-                    return new LoginAndQueryResponse { StatusCode = "100002", Description = "请求错误，请检查请求参数！" };
+                    Log.Error("LogSignature,{0}", Global.Status[responseCode.studyRequestError].Description);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyRequestError].StatusCode,
+                        Description = Global.Status[responseCode.studyRequestError].Description
+                    };
 
                 }
                 var found = false;
@@ -121,7 +140,13 @@ namespace study.Controllers
                 }
                 if (!found)
                 {
-                    return new CommonResponse { StatusCode = "100001", Description = "error token" };
+                    Log.Error("LogSignature,{0}", Global.Status[responseCode.studyTokenError].Description);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyTokenError].StatusCode,
+                        Description = Global.Status[responseCode.studyTokenError].Description
+                    };
+
                 }
                 // var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 // if (theuser == null)
@@ -134,66 +159,69 @@ namespace study.Controllers
                 return new CommonResponse
                 {
 
-                    StatusCode = "100000",
-                    Description = "ok",
+                    StatusCode = Global.Status[responseCode.studyOk].StatusCode,
+                    Description = Global.Status[responseCode.studyOk].Description,
 
                 };
             }
             catch (Exception ex)
             {
-                return new CommonResponse { StatusCode = "100003", Description = ex.Message };
-            }
-
-        }
-        [Route("GetToken")]
-        [HttpGet]
-        public GetTokenResponse GetToken(string identity)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(identity))
+                Log.Error("LogSignature,{0}", ex);
+                return new CommonResponse
                 {
-                    return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
-                }
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
-                if (theuser == null)
-                {
-                    return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
-                }
-                var toke1n = GetToken();
-                var found = false;
-                foreach (var a in tokens)
-                {
-                    if (a.Identity == identity)
-                    {
-                        a.Token = toke1n;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
-                }
-
-                return new GetTokenResponse
-                {
-                    Token = toke1n,
-                    StatusCode = "100000",
-                    Description = "ok",
-                    DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
-                    Identity = theuser.Identity,
-                    Name = theuser.Name,
-                    //   Photo = string.IsNullOrEmpty(theuser.Photo) ? string.Empty : theuser.Photo,
+                    StatusCode = Global.Status[responseCode.studyProgramError].StatusCode,
+                    Description = Global.Status[responseCode.studyProgramError].Description
                 };
             }
-            catch (Exception ex)
-            {
-                // Log.Error("GetLearnerInfo", ex);
-                return new GetTokenResponse { StatusCode = "100003", Description = ex.Message };
-            }
 
         }
+        // [Route("GetToken")]
+        // [HttpGet]
+        // public GetTokenResponse GetToken(string identity)
+        // {
+        //     try
+        //     {
+        //         if (string.IsNullOrEmpty(identity))
+        //         {
+        //             return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
+        //         }
+        //         var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
+        //         if (theuser == null)
+        //         {
+        //             return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
+        //         }
+        //         var toke1n = GetToken();
+        //         var found = false;
+        //         foreach (var a in tokens)
+        //         {
+        //             if (a.Identity == identity)
+        //             {
+        //                 a.Token = toke1n;
+        //                 found = true;
+        //                 break;
+        //             }
+        //         }
+        //         if (!found)
+        //         {
+        //             tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
+        //         }
+        //         return new GetTokenResponse
+        //         {
+        //             Token = toke1n,
+        //             StatusCode = "100000",
+        //             Description = "ok",
+        //             DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
+        //             Identity = theuser.Identity,
+        //             Name = theuser.Name,
+        //             //   Photo = string.IsNullOrEmpty(theuser.Photo) ? string.Empty : theuser.Photo,
+        //         };
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         // Log.Error("GetLearnerInfo", ex);
+        //         return new GetTokenResponse { StatusCode = "100003", Description = ex.Message };
+        //     }
+        // }
         [Route("InspectCompleteCourses")]
         [HttpPost]
 
@@ -203,7 +231,13 @@ namespace study.Controllers
             {
                 if (inputRequest == null)
                 {
-                    return new CommonResponse { StatusCode = "100002", Description = "请求错误，请检查请求参数！" };
+                    Log.Error("InspectCompleteCourses,{0}", Global.Status[responseCode.RequestError].Description);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.RequestError].StatusCode,
+                        Description = Global.Status[responseCode.RequestError].Description
+                    };
+
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -218,12 +252,26 @@ namespace study.Controllers
                 }
                 if (!found)
                 {
-                    return new CommonResponse { StatusCode = "100001", Description = "error token" };
+                    Log.Error("InspectCompleteCourses,{0},token={1}",
+                  Global.Status[responseCode.TokenError].Description, inputRequest.Token);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+                        Description = Global.Status[responseCode.TokenError].Description
+                    };
+
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    return new GetLearnerInfoResponse { StatusCode = "100004", Description = "error identity" };
+                    Log.Error("InspectCompleteCourses,{0},identity={1}",
+                 Global.Status[responseCode.InvalidIdentiy].Description, identity);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
+                        Description = Global.Status[responseCode.InvalidIdentiy].Description
+                    };
+
                 }
                 // theuser. = DateTime.Now;
                 theuser.Studylog += inputRequest.AllRecords + inputRequest.AllStatus;
@@ -253,15 +301,21 @@ namespace study.Controllers
                 _db1.SaveChanges();
                 return new CommonResponse
                 {
-                    StatusCode = "100000",
-                    Description = "ok",
+                    StatusCode = Global.Status[responseCode.ok].StatusCode,
+                    Description = Global.Status[responseCode.ok].Description,
                 };
 
             }
             catch (Exception ex)
             {
-                //  Log.Error("CompleteCourses", ex);
-                return new CommonResponse { StatusCode = "100003", Description = ex.Message };
+                Log.Error("InspectCompleteCourses,{0},exception={1}",
+                  Global.Status[responseCode.ProgramError].Description, ex);
+                return new CommonResponse
+                {
+                    StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
+                    Description = Global.Status[responseCode.ProgramError].Description
+                };
+
             }
 
         }
@@ -274,7 +328,13 @@ namespace study.Controllers
             {
                 if (inputRequest == null)
                 {
-                    return new CommonResponse { StatusCode = "100002", Description = "请求错误，请检查请求参数！" };
+                    Log.Error("InspectPostStudyStatus,{0}", Global.Status[responseCode.RequestError].Description);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.RequestError].StatusCode,
+                        Description = Global.Status[responseCode.RequestError].Description
+                    };
+
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -289,31 +349,51 @@ namespace study.Controllers
                 }
                 if (!found)
                 {
-                    return new CommonResponse { StatusCode = "100001", Description = "error token" };
+                    Log.Error("InspectPostStudyStatus,{0},token={1}",
+                 Global.Status[responseCode.TokenError].Description, inputRequest.Token);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+                        Description = Global.Status[responseCode.TokenError].Description
+                    };
+
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    return new GetLearnerInfoResponse { StatusCode = "100004", Description = "error identity" };
+                    Log.Error("InspectPostStudyStatus,{0},identity={1}",
+                  Global.Status[responseCode.InvalidIdentiy].Description, identity);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
+                        Description = Global.Status[responseCode.InvalidIdentiy].Description
+                    };
+
                 }
 
                 if (theuser.Startdate == null)
                 {
                     theuser.Startdate = DateTime.Now;
                 }
-                //    Console.WriteLine("startdate,{0}", theuser.Startdate);
+
                 theuser.Studylog += JsonConvert.SerializeObject(inputRequest);
                 _db1.SaveChanges();
                 return new CommonResponse
                 {
-                    StatusCode = "100000",
-                    Description = "ok",
+                    StatusCode = Global.Status[responseCode.ok].StatusCode,
+                    Description = Global.Status[responseCode.ok].Description,
                 };
             }
             catch (Exception ex)
             {
-                //  Log.Error("PostStudyStatus", ex);
-                return new CommonResponse { StatusCode = "100003", Description = ex.Message };
+                Log.Error("InspectPostStudyStatus,{0},exception={1}",
+                  Global.Status[responseCode.ProgramError].Description, ex);
+                return new CommonResponse
+                {
+                    StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
+                    Description = Global.Status[responseCode.ProgramError].Description
+                };
+
             }
 
         }
@@ -326,7 +406,14 @@ namespace study.Controllers
             {
                 if (string.IsNullOrEmpty(token))
                 {
-                    return new GetLearnerInfoResponse { StatusCode = "100001", Description = "error token" };
+                    Log.Error("InspectGetLearnerInfo,{0},token={1}",
+                 Global.Status[responseCode.TokenError].Description, token);
+                    return new GetLearnerInfoResponse
+                    {
+                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+                        Description = Global.Status[responseCode.TokenError].Description
+                    };
+
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -341,28 +428,48 @@ namespace study.Controllers
                 }
                 if (!found)
                 {
-                    return new GetLearnerInfoResponse { StatusCode = "100001", Description = "error token" };
+                    Log.Error("InspectGetLearnerInfo,{0},token={1},no corresponding identity",
+                 Global.Status[responseCode.TokenError].Description, token);
+                    return new GetLearnerInfoResponse
+                    {
+                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+                        Description = Global.Status[responseCode.TokenError].Description
+                    };
+
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    return new GetLearnerInfoResponse { StatusCode = "100004", Description = "error identity" };
+                    Log.Error("InspectGetLearnerInfo,{0},identity={1}",
+                  Global.Status[responseCode.InvalidIdentiy].Description, identity);
+                    return new GetLearnerInfoResponse
+                    {
+                        StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
+                        Description = Global.Status[responseCode.InvalidIdentiy].Description
+                    };
+
                 }
                 return new GetLearnerInfoResponse
                 {
-                    StatusCode = "100000",
-                    Description = "ok",
+                    StatusCode = Global.Status[responseCode.ok].StatusCode,
+                    Description = Global.Status[responseCode.ok].Description,
                     DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
 
                     Identity = theuser.Identity,
                     Name = theuser.Name,
-                    //  Photo = new byte[1]
+                    //  Photo = new byte[1]//todo
                 };
             }
             catch (Exception ex)
             {
-                // Log.Error("GetLearnerInfo", ex);
-                return new GetLearnerInfoResponse { StatusCode = "100003", Description = ex.Message };
+                Log.Error("InspectGetLearnerInfo,{0},exception={1}",
+                  Global.Status[responseCode.ProgramError].Description, ex);
+                return new GetLearnerInfoResponse
+                {
+                    StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
+                    Description = Global.Status[responseCode.ProgramError].Description
+                };
+
             }
 
         }

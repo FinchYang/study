@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace study.Controllers
 {
-    [Route("api/[controller]")]
+  //  [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        // GET api/values
+        [Route("hello")]
         [HttpGet]
         public IEnumerable<string> Get()
         {

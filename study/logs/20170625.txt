@@ -31,3 +31,87 @@
 2017-06-25 10:56:08.648 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-06-25 10:56:08.650 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 22.9345ms
 2017-06-25 10:56:08.652 +08:00 [Information] Request finished in 28.3103ms 200 application/json; charset=utf-8
+2017-06-25 13:31:57.306 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 13:31:57.694 +08:00 [Information] Request finished in 396.0292ms 404 
+2017-06-25 13:31:57.732 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 13:31:57.746 +08:00 [Information] Request finished in 14.4437ms 404 
+2017-06-25 13:48:31.032 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 13:48:31.502 +08:00 [Information] Request finished in 492.2088ms 404 
+2017-06-25 13:48:31.532 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 13:48:31.537 +08:00 [Information] Request finished in 4.9759ms 404 
+2017-06-25 14:05:25.413 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:05:25.808 +08:00 [Information] Request finished in 408.1348ms 404 
+2017-06-25 14:05:25.845 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:05:25.849 +08:00 [Information] Request finished in 3.5224ms 404 
+2017-06-25 14:06:56.062 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:06:56.530 +08:00 [Information] Request finished in 500.4585ms 404 
+2017-06-25 14:06:56.561 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:06:56.564 +08:00 [Information] Request finished in 2.9823ms 404 
+2017-06-25 14:27:20.081 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:27:20.529 +08:00 [Information] Request finished in 466.4277ms 404 
+2017-06-25 14:27:20.562 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:27:20.566 +08:00 [Information] Request finished in 4.1256ms 404 
+2017-06-25 14:33:13.275 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:33:13.687 +08:00 [Information] Request finished in 438.8634ms 404 
+2017-06-25 14:33:13.714 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:33:13.717 +08:00 [Information] Request finished in 3.2591ms 404 
+2017-06-25 14:33:23.181 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 104
+2017-06-25 14:33:23.644 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:33:25.291 +08:00 [Error] LoginAndQuery,"您不需要学习！"
+2017-06-25 14:33:25.318 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:33:25.433 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2173.5018ms
+2017-06-25 14:33:25.439 +08:00 [Information] Request finished in 2258.4676ms 200 application/json; charset=utf-8
+2017-06-25 14:34:59.062 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:34:59.492 +08:00 [Information] Request finished in 457.2216ms 404 
+2017-06-25 14:34:59.519 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:34:59.524 +08:00 [Information] Request finished in 5.0197ms 404 
+2017-06-25 14:35:03.445 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 104
+2017-06-25 14:35:03.899 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:35:05.379 +08:00 [Error] LoginAndQuery,"您不需要学习！"
+2017-06-25 14:35:05.402 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:35:05.506 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 1984.9376ms
+2017-06-25 14:35:05.510 +08:00 [Information] Request finished in 2066.2543ms 200 application/json; charset=utf-8
+2017-06-25 14:35:15.013 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 104
+2017-06-25 14:35:15.019 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:35:15.066 +08:00 [Error] LoginAndQuery,"您不需要学习！"
+2017-06-25 14:35:15.066 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:35:15.070 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 52.4947ms
+2017-06-25 14:35:15.076 +08:00 [Information] Request finished in 63.5159ms 200 application/json; charset=utf-8
+2017-06-25 14:35:22.532 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 103
+2017-06-25 14:35:22.544 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:35:22.579 +08:00 [Error] LoginAndQuery,"您不需要学习！stat"
+2017-06-25 14:35:22.580 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:35:22.582 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 47.5634ms
+2017-06-25 14:35:22.584 +08:00 [Information] Request finished in 52.2349ms 200 application/json; charset=utf-8
+2017-06-25 14:35:32.065 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 58
+2017-06-25 14:35:32.069 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:35:32.083 +08:00 [Error] LoginAndQuery,"您不需要学习！stat"
+2017-06-25 14:35:32.083 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:35:32.086 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 17.0116ms
+2017-06-25 14:35:32.088 +08:00 [Information] Request finished in 22.8867ms 200 application/json; charset=utf-8
+2017-06-25 14:37:29.442 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:37:29.909 +08:00 [Information] Request finished in 483.3963ms 404 
+2017-06-25 14:37:29.925 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:37:29.929 +08:00 [Information] Request finished in 4.2937ms 404 
+2017-06-25 14:38:49.956 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:38:50.421 +08:00 [Information] Request finished in 496.6451ms 404 
+2017-06-25 14:38:50.447 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:38:50.453 +08:00 [Information] Request finished in 5.8814ms 404 
+2017-06-25 14:39:03.385 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 58
+2017-06-25 14:39:03.842 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:39:03.862 +08:00 [Information] LoginAndQuery inputRequest="study.LoginAndQueryRequest"
+2017-06-25 14:39:05.187 +08:00 [Error] LoginAndQuery,"您不需要学习！stat"
+2017-06-25 14:39:05.209 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:39:05.302 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 1843.1024ms
+2017-06-25 14:39:05.307 +08:00 [Information] Request finished in 1922.4177ms 200 application/json; charset=utf-8
+2017-06-25 14:41:29.273 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:41:29.728 +08:00 [Information] Request finished in 480.9377ms 404 
+2017-06-25 14:41:29.768 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 14:41:29.773 +08:00 [Information] Request finished in 4.7493ms 404 
+2017-06-25 14:41:31.747 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 58
+2017-06-25 14:41:32.209 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-25 14:41:32.277 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"stat\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-25 14:41:33.681 +08:00 [Error] LoginAndQuery,"您不需要学习！stat"
+2017-06-25 14:41:33.704 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 14:41:33.767 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 1947.0292ms
+2017-06-25 14:41:33.771 +08:00 [Information] Request finished in 2025.0836ms 200 application/json; charset=utf-8

@@ -1,5 +1,6 @@
 ﻿namespace  study
 {
+   
     public class CommonResponse
     {
         public string StatusCode { get; set; }
