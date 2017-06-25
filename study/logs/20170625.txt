@@ -115,3 +115,153 @@
 2017-06-25 14:41:33.704 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-06-25 14:41:33.767 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 1947.0292ms
 2017-06-25 14:41:33.771 +08:00 [Information] Request finished in 2025.0836ms 200 application/json; charset=utf-8
+2017-06-25 15:07:38.893 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-06-25 15:07:38.897 +08:00 [Information] Request finished in 5.9513ms 404 
+2017-06-25 15:07:39.874 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-06-25 15:07:39.877 +08:00 [Information] Request finished in 2.333ms 404 
+2017-06-25 15:07:39.897 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-06-25 15:07:39.904 +08:00 [Information] Request finished in 7.978ms 404 
+2017-06-25 15:07:52.832 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/gettoken?identity=11 application/json 
+2017-06-25 15:07:52.834 +08:00 [Information] Request finished in 2.6255ms 404 
+2017-06-25 15:07:58.390 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello application/json 
+2017-06-25 15:07:58.393 +08:00 [Information] Request finished in 3.1154ms 404 
+2017-06-25 15:08:01.354 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello application/json 
+2017-06-25 15:08:01.357 +08:00 [Information] Request finished in 2.5011ms 404 
+2017-06-25 15:08:02.409 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello application/json 
+2017-06-25 15:08:02.412 +08:00 [Information] Request finished in 2.3259ms 404 
+2017-06-25 15:09:37.372 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo application/json 
+2017-06-25 15:09:37.389 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments ([""]) - ModelState is Valid
+2017-06-25 15:09:37.395 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token=null
+2017-06-25 15:09:37.396 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:09:37.401 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 23.7805ms
+2017-06-25 15:09:37.404 +08:00 [Information] Request finished in 34.2743ms 200 application/json; charset=utf-8
+2017-06-25 15:10:01.580 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=000 application/json 
+2017-06-25 15:10:01.616 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["000"]) - ModelState is Valid
+2017-06-25 15:10:01.618 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="000",no corresponding identity
+2017-06-25 15:10:01.619 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:10:01.621 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 36.7632ms
+2017-06-25 15:10:01.623 +08:00 [Information] Request finished in 42.9033ms 200 application/json; charset=utf-8
+2017-06-25 15:13:38.680 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:13:39.051 +08:00 [Information] Request finished in 379.0239ms 404 
+2017-06-25 15:13:39.080 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:13:39.083 +08:00 [Information] Request finished in 3.3388ms 404 
+2017-06-25 15:13:43.617 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=000 application/json 
+2017-06-25 15:13:43.904 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["000"]) - ModelState is Valid
+2017-06-25 15:13:43.930 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="000",no corresponding identity
+2017-06-25 15:13:43.957 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:13:44.201 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 510.0479ms
+2017-06-25 15:13:44.207 +08:00 [Information] Request finished in 590.2972ms 200 application/json; charset=utf-8
+2017-06-25 15:23:40.658 +08:00 [Information] Basic,Dns,IPv4,IPv6,Unknown------------------------------------
+2017-06-25 15:23:42.446 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:23:42.752 +08:00 [Information] Request finished in 325.1498ms 404 
+2017-06-25 15:23:42.784 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:23:42.789 +08:00 [Information] Request finished in 4.9514ms 404 
+2017-06-25 15:35:09.113 +08:00 [Information] "Logging",null,IPv4,IPv6,Unknown------------------------------------
+2017-06-25 15:35:11.487 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:35:11.835 +08:00 [Information] Request finished in 335.8699ms 404 
+2017-06-25 15:35:11.856 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:35:11.862 +08:00 [Information] Request finished in 6.018ms 404 
+2017-06-25 15:37:48.968 +08:00 [Information] "Logging","False",IPv4,IPv6,Unknown------------------------------------
+2017-06-25 15:37:51.527 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:37:51.922 +08:00 [Information] Request finished in 416.4333ms 404 
+2017-06-25 15:37:51.944 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:37:51.948 +08:00 [Information] Request finished in 3.4825ms 404 
+2017-06-25 15:39:07.006 +08:00 [Information] "Logging","False",IPv4,IPv6,Unknown------------------------------------
+2017-06-25 15:39:08.970 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:39:09.275 +08:00 [Information] Request finished in 322.6451ms 404 
+2017-06-25 15:39:09.332 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:39:09.335 +08:00 [Information] Request finished in 3.2346ms 404 
+2017-06-25 15:39:29.993 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=000 application/json 
+2017-06-25 15:39:30.283 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["000"]) - ModelState is Valid
+2017-06-25 15:39:30.306 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="000",no corresponding identity
+2017-06-25 15:39:30.332 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:39:30.546 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 484.2201ms
+2017-06-25 15:39:30.552 +08:00 [Information] Request finished in 558.8224ms 200 application/json; charset=utf-8
+2017-06-25 15:39:35.463 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=00098988 application/json 
+2017-06-25 15:39:35.468 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["00098988"]) - ModelState is Valid
+2017-06-25 15:39:35.470 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="00098988",no corresponding identity
+2017-06-25 15:39:35.470 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:39:35.473 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 6.9173ms
+2017-06-25 15:39:35.476 +08:00 [Information] Request finished in 12.942ms 200 application/json; charset=utf-8
+2017-06-25 15:42:08.939 +08:00 [Information] "Logging","False",IPv4,IPv6,Unknown------------------------------------
+2017-06-25 15:42:12.210 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/  
+2017-06-25 15:42:12.567 +08:00 [Information] Request finished in 382.6611ms 404 
+2017-06-25 15:42:18.973 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/InspectGetLearnerInfo?token=00098988 application/json 
+2017-06-25 15:42:19.269 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["00098988"]) - ModelState is Valid
+2017-06-25 15:42:19.294 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="00098988",no corresponding identity
+2017-06-25 15:42:19.321 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 15:42:19.543 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 497.9995ms
+2017-06-25 15:42:19.551 +08:00 [Information] Request finished in 577.0148ms 200 application/json; charset=utf-8
+2017-06-25 15:42:24.372 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/favicon.ico  
+2017-06-25 15:42:24.386 +08:00 [Information] Request finished in 13.7023ms 404 
+2017-06-25 15:42:25.512 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/hello  
+2017-06-25 15:42:25.516 +08:00 [Information] Request finished in 3.5113ms 404 
+2017-06-25 15:54:05.113 +08:00 [Information] "Logging","False",null,IPv6,Unknown------------------------------------
+2017-06-25 15:54:07.549 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:54:07.885 +08:00 [Information] Request finished in 347.7039ms 404 
+2017-06-25 15:54:07.916 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:54:07.925 +08:00 [Information] Request finished in 9.0154ms 404 
+2017-06-25 15:55:00.694 +08:00 [Information] "Logging","False",null,IPv6,Unknown------------------------------------
+2017-06-25 15:55:03.052 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:55:03.554 +08:00 [Information] Request finished in 527.8893ms 404 
+2017-06-25 15:55:03.616 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 15:55:03.648 +08:00 [Information] Request finished in 32.3427ms 404 
+2017-06-25 16:00:51.170 +08:00 [Information] "Logging","False","192.168.0.101",IPv6,Unknown------------------------------------
+2017-06-25 16:00:53.244 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 16:00:53.597 +08:00 [Information] Request finished in 354.6342ms 404 
+2017-06-25 16:00:53.629 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 16:00:53.637 +08:00 [Information] Request finished in 8.5227ms 404 
+2017-06-25 16:03:50.046 +08:00 [Information] "Logging","False","192.168.0.101",IPv6,Unknown------------------------------------
+2017-06-25 16:03:51.713 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 16:03:52.193 +08:00 [Information] Request finished in 512.131ms 404 
+2017-06-25 16:03:52.276 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-25 16:03:52.287 +08:00 [Information] Request finished in 11.0934ms 404 
+2017-06-25 16:08:47.982 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/  
+2017-06-25 16:08:48.367 +08:00 [Information] Request finished in 414.2057ms 404 
+2017-06-25 16:08:54.591 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/InspectGetLearnerInfo?token=00098988 application/json 
+2017-06-25 16:08:54.879 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["00098988"]) - ModelState is Valid
+2017-06-25 16:08:54.907 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="00098988",no corresponding identity
+2017-06-25 16:08:54.936 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 16:08:55.166 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 505.749ms
+2017-06-25 16:08:55.175 +08:00 [Information] Request finished in 584.3999ms 200 application/json; charset=utf-8
+2017-06-25 16:09:03.063 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101:5000/InspectGetLearnerInfo?token=0009898ooo application/json 
+2017-06-25 16:09:03.067 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["0009898ooo"]) - ModelState is Valid
+2017-06-25 16:09:03.070 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="0009898ooo",no corresponding identity
+2017-06-25 16:09:03.070 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 16:09:03.072 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 6.429ms
+2017-06-25 16:09:03.075 +08:00 [Information] Request finished in 12.1446ms 200 application/json; charset=utf-8
+2017-06-25 16:09:36.889 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101/  
+2017-06-25 16:09:37.261 +08:00 [Information] Request finished in 397.4878ms 404 
+2017-06-25 16:09:54.306 +08:00 [Information] Request starting HTTP/1.1 GET http://192.168.0.101/InspectGetLearnerInfo?token=0009898ooo application/json 
+2017-06-25 16:09:54.595 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["0009898ooo"]) - ModelState is Valid
+2017-06-25 16:09:54.621 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="0009898ooo",no corresponding identity
+2017-06-25 16:09:54.651 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-25 16:09:54.867 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 488.8017ms
+2017-06-25 16:09:54.873 +08:00 [Information] Request finished in 566.637ms 200 application/json; charset=utf-8
+2017-06-25 16:10:41.507 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+

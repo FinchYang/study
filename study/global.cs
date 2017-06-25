@@ -5,6 +5,7 @@ namespace study
     public static class Global
     {
         private static Dictionary<responseCode, ResponseStatus> status = new Dictionary<responseCode, ResponseStatus>();
+       
         static Global()
         {
             status.Add(responseCode.studyOk, new ResponseStatus { StatusCode = "200000", Description = "ok" });
@@ -19,6 +20,9 @@ namespace study
             status.Add(responseCode.TokenError, new ResponseStatus { StatusCode = "100001", Description = "无效的 token！" });
         }
 
-        internal static Dictionary<responseCode, ResponseStatus> Status { get => status; }
+        internal static Dictionary<responseCode, ResponseStatus> Status { get => status;  }
+       
+         internal static string HostIp { get => hostip; set=>hostip=value; }
+         private static string hostip="localhost";
     }
 }

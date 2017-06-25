@@ -407,7 +407,7 @@ namespace study.Controllers
                 if (string.IsNullOrEmpty(token))
                 {
                     Log.Error("InspectGetLearnerInfo,{0},token={1}",
-                 Global.Status[responseCode.TokenError].Description, token);
+                 Global.Status[responseCode.TokenError].Description, "invalid");
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
@@ -433,7 +433,7 @@ namespace study.Controllers
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
-                        Description = Global.Status[responseCode.TokenError].Description
+                        Description = Global.Status[responseCode.TokenError].Description+token
                     };
 
                 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-//using Serilog;
+using Serilog;
 namespace study
 {
     public class Program
@@ -24,8 +24,11 @@ namespace study
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
-                .UseStartup<Startup>().UseUrls("http://localhost:5000/hello")
-                .Build();
+                .UseStartup<Startup>().UseUrls("http://192.168.10.94:5000")
+                .Build();//.Run();
+             //   var hostip="http://"+Global.HostIp+":5000/hello";
+              //  Log.Information("hostip={0}",hostip);
+               
 
             host.Run();
         }

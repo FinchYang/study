@@ -23,9 +23,13 @@ namespace study
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
-              Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile("logs\\{Date}.txt")//写到文本
-                .ReadFrom.Configuration(Configuration)
-                .CreateLogger();
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile("logs\\{Date}.txt")//写到文本
+              .ReadFrom.Configuration(Configuration)
+              .CreateLogger();
+            // Global.HostIp=Configuration.GetSection("HostIp").Value;
+            //                 var aaa=Configuration.GetSection("Logging");
+            //                 Log.Information("{0},{1},{2},{3},{4}------------------------------------",aaa.Key,aaa.GetSection("IncludeScopes").Value,
+            // Global.HostIp,System.UriHostNameType.IPv6,System.UriHostNameType.Unknown);
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -39,7 +43,8 @@ namespace study
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        { loggerFactory.AddSerilog();
+        {
+            loggerFactory.AddSerilog();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
