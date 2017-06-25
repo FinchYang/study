@@ -2,14 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Serilog;
 namespace study.Controllers
 {
     public class InspectController : Controller
     {
-
+//private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly studyContext _db1 = new studyContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
@@ -27,7 +29,7 @@ namespace study.Controllers
             }
             base.Dispose(disposing);
         }
-          [Route("LoginAndQuery")]
+        [Route("LoginAndQuery")]
         [HttpPost]
         public LoginAndQueryResponse LoginAndQuery([FromBody] LoginAndQueryRequest inputRequest)
         {
@@ -38,18 +40,22 @@ namespace study.Controllers
                     return new LoginAndQueryResponse { StatusCode = "100002", Description = "请求错误，请检查请求参数！" };
 
                 }
+                Log.Information("in loginandquery {0}",111);
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    return new LoginAndQueryResponse { StatusCode = "100004", Description = "error identity" };
+                    return new LoginAndQueryResponse { StatusCode = "100004", Description = "您不需要学习" };
                 }
+
+                //need update?
                 theuser.Name = inputRequest.Name;
-                theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();
+                theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
                 theuser.Phone = inputRequest.Phone;
                 theuser.Wechat = inputRequest.Wechat;
                 _db1.SaveChanges();
 
+                //token process
                 var toke1n = GetToken();
                 var found = false;
                 foreach (var a in tokens)
@@ -65,26 +71,29 @@ namespace study.Controllers
                 {
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
+
+                //drugrelated judge
                 var allow = theuser.Drugrelated == null ? true : false;
                 var allstatus = string.Empty;
                 if (allow)
                 {
                     allstatus = theuser.Studylog;
                 }
-                else allstatus = "drugreleated";
+                else allstatus = "您不能参加网络学习，可以参加现场学习";
+
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
                     StatusCode = "100000",
                     Description = "ok",
                     AllowedToStudy = allow,
-                    AllStatus = allstatus,
-                    //   Photo = string.IsNullOrEmpty(theuser.Photo) ? string.Empty : theuser.Photo,
+                    AllStatus = allstatus
                 };
             }
             catch (Exception ex)
             {
-                return new LoginAndQueryResponse { StatusCode = "100003", Description = ex.Message };
+                Log.Error("LoginAndQuery,{0}",ex);
+                return new LoginAndQueryResponse { StatusCode = "100003", Description = "处理出错，请稍后再试" };
             }
 
         }
@@ -119,15 +128,15 @@ namespace study.Controllers
                 // {
                 //     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 // }
-              
-//System.IO.File.WriteAllBytes(inputRequest.SignatureFile);//todo 
-              
+
+                //System.IO.File.WriteAllBytes(inputRequest.SignatureFile);//todo 
+
                 return new CommonResponse
                 {
-                   
+
                     StatusCode = "100000",
                     Description = "ok",
-                  
+
                 };
             }
             catch (Exception ex)
