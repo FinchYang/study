@@ -52,3 +52,247 @@ System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVA
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
 
+2017-06-26 12:30:57.129 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:30:57.719 +08:00 [Information] Request finished in 624.6122ms 404 
+2017-06-26 12:30:57.745 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:30:57.749 +08:00 [Information] Request finished in 3.1201ms 404 
+2017-06-26 12:30:57.775 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-06-26 12:30:57.784 +08:00 [Information] Request finished in 8.4466ms 404 
+2017-06-26 12:31:23.087 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 58
+2017-06-26 12:31:23.593 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:31:23.672 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"stat\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:31:25.248 +08:00 [Error] LoginAndQuery,"您不需要学习！stat"
+2017-06-26 12:31:25.271 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:31:25.333 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2166.7723ms
+2017-06-26 12:31:25.337 +08:00 [Information] Request finished in 2250.2902ms 200 application/json; charset=utf-8
+2017-06-26 12:31:35.058 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 73
+2017-06-26 12:31:35.063 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:31:35.066 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710 \",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:31:35.479 +08:00 [Error] LoginAndQuery,"Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Column 'name' cannot be null
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet)
+   at MySql.Data.MySqlClient.MySqlDataReader.<ReadFirstResultSetAsync>d__62.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlDataReader.<CreateAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.CommandExecutors.TextCommandExecutor.<ExecuteReaderAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.<ExecuteAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlBatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at study.Controllers.InspectController.LoginAndQuery(LoginAndQueryRequest inputRequest) in e:\study\study\Controllers\InspectController.cs:line 66"
+2017-06-26 12:31:35.479 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:31:35.483 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 420.6312ms
+2017-06-26 12:31:35.485 +08:00 [Information] Request finished in 426.3583ms 200 application/json; charset=utf-8
+2017-06-26 12:31:42.315 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 12:31:42.319 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:31:42.321 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:31:42.374 +08:00 [Error] LoginAndQuery,"Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Column 'name' cannot be null
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet)
+   at MySql.Data.MySqlClient.MySqlDataReader.<ReadFirstResultSetAsync>d__62.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlDataReader.<CreateAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.CommandExecutors.TextCommandExecutor.<ExecuteReaderAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.<ExecuteAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlBatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at study.Controllers.InspectController.LoginAndQuery(LoginAndQueryRequest inputRequest) in e:\study\study\Controllers\InspectController.cs:line 66"
+2017-06-26 12:31:42.374 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:31:42.377 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 58.6817ms
+2017-06-26 12:31:42.379 +08:00 [Information] Request finished in 63.6908ms 200 application/json; charset=utf-8
+2017-06-26 12:37:36.433 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:37:36.817 +08:00 [Information] Request finished in 393.4451ms 404 
+2017-06-26 12:37:36.848 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:37:36.852 +08:00 [Information] Request finished in 3.777ms 404 
+2017-06-26 12:37:43.492 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 12:37:43.956 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:37:44.023 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:37:45.591 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:37:45.655 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2093.2213ms
+2017-06-26 12:37:45.660 +08:00 [Information] Request finished in 2167.8733ms 200 application/json; charset=utf-8
+2017-06-26 12:42:40.710 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:42:41.075 +08:00 [Information] Request finished in 372.0288ms 404 
+2017-06-26 12:42:41.117 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:42:41.123 +08:00 [Information] Request finished in 5.887ms 404 
+2017-06-26 12:42:45.621 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 12:42:46.083 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:42:46.143 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:42:47.706 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:42:47.772 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2071.5472ms
+2017-06-26 12:42:47.778 +08:00 [Information] Request finished in 2156.7937ms 200 application/json; charset=utf-8
+2017-06-26 12:43:15.008 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-26 12:54:31.838 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:54:32.233 +08:00 [Information] Request finished in 398.1411ms 404 
+2017-06-26 12:54:32.258 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 12:54:32.264 +08:00 [Information] Request finished in 6.1621ms 404 
+2017-06-26 12:54:42.291 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 12:54:42.752 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:54:42.813 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:54:44.352 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:54:44.420 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2060.0783ms
+2017-06-26 12:54:44.427 +08:00 [Information] Request finished in 2136.4669ms 200 application/json; charset=utf-8
+2017-06-26 12:56:23.881 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=1314b9d1d4af44e983b3a77f558b4393 application/json 
+2017-06-26 12:56:23.923 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["1314b9d1d4af44e983b3a77f558b4393"]) - ModelState is Valid
+2017-06-26 12:56:24.112 +08:00 [Error] InspectGetLearnerInfo,"处理出错，请稍后再试！",exception="System.IO.FileNotFoundException: Could not find file 'e:\study\study\shenfenzheng.png'.
+File name: 'e:\study\study\shenfenzheng.png'
+   at System.IO.Win32FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.Win32FileSystem.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.InternalReadAllBytes(String path)
+   at System.IO.File.ReadAllBytes(String path)
+   at study.Controllers.InspectController.InspectGetLearnerInfo(String token) in e:\study\study\Controllers\InspectController.cs:line 412"
+2017-06-26 12:56:24.113 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:56:24.122 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 214.2063ms
+2017-06-26 12:56:24.126 +08:00 [Information] Request finished in 244.7664ms 200 application/json; charset=utf-8
+2017-06-26 12:57:15.875 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 12:57:15.901 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 12:57:15.903 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 12:57:15.915 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:57:15.939 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 39.6465ms
+2017-06-26 12:57:15.944 +08:00 [Information] Request finished in 69.7045ms 200 application/json; charset=utf-8
+2017-06-26 12:57:27.605 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=fb8489806e7144e9a6da7c69abac85fd application/json 
+2017-06-26 12:57:27.608 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["fb8489806e7144e9a6da7c69abac85fd"]) - ModelState is Valid
+2017-06-26 12:57:27.648 +08:00 [Error] InspectGetLearnerInfo,"处理出错，请稍后再试！",exception="System.IO.FileNotFoundException: Could not find file 'e:\study\study\shenfenzheng.png'.
+File name: 'e:\study\study\shenfenzheng.png'
+   at System.IO.Win32FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.Win32FileSystem.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.InternalReadAllBytes(String path)
+   at System.IO.File.ReadAllBytes(String path)
+   at study.Controllers.InspectController.InspectGetLearnerInfo(String token) in e:\study\study\Controllers\InspectController.cs:line 412"
+2017-06-26 12:57:27.649 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:57:27.651 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 42.8733ms
+2017-06-26 12:57:27.653 +08:00 [Information] Request finished in 47.8981ms 200 application/json; charset=utf-8
+2017-06-26 12:57:37.034 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=%22fb8489806e7144e9a6da7c69abac85fd%22 application/json 
+2017-06-26 12:57:37.038 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["\"fb8489806e7144e9a6da7c69abac85fd\""]) - ModelState is Valid
+2017-06-26 12:57:37.040 +08:00 [Error] InspectGetLearnerInfo,"无效的 token！",token="\"fb8489806e7144e9a6da7c69abac85fd\"",no corresponding identity
+2017-06-26 12:57:37.040 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:57:37.044 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 7.9046ms
+2017-06-26 12:57:37.047 +08:00 [Information] Request finished in 12.9551ms 200 application/json; charset=utf-8
+2017-06-26 12:58:00.895 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=fb8489806e7144e9a6da7c69abac85fd application/json 
+2017-06-26 12:58:00.898 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["fb8489806e7144e9a6da7c69abac85fd"]) - ModelState is Valid
+2017-06-26 12:58:00.941 +08:00 [Error] InspectGetLearnerInfo,"处理出错，请稍后再试！",exception="System.IO.FileNotFoundException: Could not find file 'e:\study\study\shenfenzheng.png'.
+File name: 'e:\study\study\shenfenzheng.png'
+   at System.IO.Win32FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.Win32FileSystem.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, FileStream parent)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.File.InternalReadAllBytes(String path)
+   at System.IO.File.ReadAllBytes(String path)
+   at study.Controllers.InspectController.InspectGetLearnerInfo(String token) in e:\study\study\Controllers\InspectController.cs:line 412"
+2017-06-26 12:58:00.941 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:58:00.943 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 45.6437ms
+2017-06-26 12:58:00.946 +08:00 [Information] Request finished in 50.3713ms 200 application/json; charset=utf-8
+2017-06-26 12:59:41.568 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=fb8489806e7144e9a6da7c69abac85fd application/json 
+2017-06-26 12:59:41.593 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["fb8489806e7144e9a6da7c69abac85fd"]) - ModelState is Valid
+2017-06-26 12:59:41.605 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 12:59:41.620 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 49.0287ms
+2017-06-26 12:59:41.624 +08:00 [Information] Request finished in 56.2926ms 200 application/json; charset=utf-8
+2017-06-26 13:01:12.455 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-26 13:40:24.390 +08:00 [Information] "Host","20022","e:\pic",IPv6,Unknown------------------------------------
+2017-06-26 13:40:26.362 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 13:40:26.740 +08:00 [Information] Request finished in 372.2554ms 404 
+2017-06-26 13:40:26.791 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 13:40:26.795 +08:00 [Information] Request finished in 4.3016ms 404 
+2017-06-26 13:48:51.010 +08:00 [Information] "Host","20022","e:\pic",IPv6,Unknown------------------------------------
+2017-06-26 13:48:52.784 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 13:48:53.186 +08:00 [Information] Request finished in 423.7446ms 404 
+2017-06-26 13:48:53.209 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-26 13:48:53.213 +08:00 [Information] Request finished in 3.5974ms 404 
+2017-06-26 13:49:23.816 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/loginandquery application/json 72
+2017-06-26 13:49:24.288 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-26 13:49:24.347 +08:00 [Information] LoginAndQuery inputRequest="{\"Identity\":\"370686199102070710\",\"Name\":null,\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}"
+2017-06-26 13:49:25.778 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 13:49:25.841 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 1947.6848ms
+2017-06-26 13:49:25.847 +08:00 [Information] Request finished in 2030.2308ms 200 application/json; charset=utf-8
+2017-06-26 13:49:56.514 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/InspectGetLearnerInfo?token=ea7389bae3b146aaa41182015ebb3990 application/json 
+2017-06-26 13:49:56.540 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectGetLearnerInfo (study)" with arguments (["ea7389bae3b146aaa41182015ebb3990"]) - ModelState is Valid
+2017-06-26 13:49:56.594 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-26 13:49:56.638 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectGetLearnerInfo (study)" in 120.771ms
+2017-06-26 13:49:56.640 +08:00 [Information] Request finished in 126.6398ms 200 application/json; charset=utf-8

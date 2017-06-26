@@ -19,17 +19,19 @@ namespace study
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("inspect.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
             Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile("logs\\{Date}.txt")//写到文本
               .ReadFrom.Configuration(Configuration)
               .CreateLogger();
-            // Global.HostIp=Configuration.GetSection("HostIp").Value;
-            //                 var aaa=Configuration.GetSection("Logging");
-            //                 Log.Information("{0},{1},{2},{3},{4}------------------------------------",aaa.Key,aaa.GetSection("IncludeScopes").Value,
-            // Global.HostIp,System.UriHostNameType.IPv6,System.UriHostNameType.Unknown);
+            var photo=Configuration.GetSection("photo");
+            Global.PhotoPath=photo.GetSection("path").Value;
+            var aaa=Configuration.GetSection("Host");
+            Log.Information("{0},{1},{2},{3},{4}------------------------------------",aaa.Key,aaa.GetSection("Port").Value,
+            photo.GetSection("path").Value,System.UriHostNameType.IPv6,System.UriHostNameType.Unknown);
         }
 
         public IConfigurationRoot Configuration { get; }

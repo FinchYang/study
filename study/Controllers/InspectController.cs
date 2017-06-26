@@ -1,5 +1,6 @@
 
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -44,26 +45,20 @@ namespace study.Controllers
                     };
 
                 }
-              
-                Log.Information("LoginAndQuery inputRequest={0}",JsonConvert.SerializeObject(inputRequest));
+
+                Log.Information("LoginAndQuery inputRequest={0}", JsonConvert.SerializeObject(inputRequest));
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description+identity);
+                    Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
                     return new LoginAndQueryResponse
                     {
                         StatusCode = Global.Status[responseCode.studyNotNecessary].StatusCode,
-                        Description = Global.Status[responseCode.studyNotNecessary].Description+identity
+                        Description = Global.Status[responseCode.studyNotNecessary].Description + identity
                     };
                 }
 
-                //need update?
-                theuser.Name = inputRequest.Name;
-                theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
-                theuser.Phone = inputRequest.Phone;
-                theuser.Wechat = inputRequest.Wechat;
-                _db1.SaveChanges();
 
                 //token process
                 var toke1n = GetToken();
@@ -83,11 +78,23 @@ namespace study.Controllers
                 }
 
                 //drugrelated judge
-                var allow = theuser.Drugrelated == null ? true : false;
+                var allow = theuser.Drugrelated != "1" ? true : false;
                 var allstatus = string.Empty;
                 if (allow)
                 {
                     allstatus = theuser.Studylog;
+
+                    //need update?
+                    //   theuser.Name = inputRequest.Name;
+                    //  theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
+                    //  theuser.Phone = inputRequest.Phone;
+                    // theuser.Wechat = inputRequest.Wechat;
+                    if (theuser.Startdate == null)
+                    {
+                        theuser.Startdate = DateTime.Now;
+                    }
+
+                    _db1.SaveChanges();
                 }
                 else allstatus = "您不能参加网络学习，可以参加现场学习";
 
@@ -175,7 +182,7 @@ namespace study.Controllers
             }
 
         }
-        
+
         [Route("InspectCompleteCourses")]
         [HttpPost]
 
@@ -361,7 +368,7 @@ namespace study.Controllers
                 if (string.IsNullOrEmpty(token))
                 {
                     Log.Error("InspectGetLearnerInfo,{0},token={1}, from {2}",
-                 Global.Status[responseCode.TokenError].Description, "invalid",Request.HttpContext.Connection.RemoteIpAddress);
+                 Global.Status[responseCode.TokenError].Description, "invalid", Request.HttpContext.Connection.RemoteIpAddress);
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
@@ -387,7 +394,7 @@ namespace study.Controllers
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
-                        Description = Global.Status[responseCode.TokenError].Description+token
+                        Description = Global.Status[responseCode.TokenError].Description + token
                     };
 
                 }
@@ -411,13 +418,13 @@ namespace study.Controllers
 
                     Identity = theuser.Identity,
                     Name = theuser.Name,
-                    //  Photo = new byte[1]//todo
+                      Photo = System.IO.File.ReadAllBytes( Path.Combine( Global.PhotoPath,identity+".jpg"))
                 };
             }
             catch (Exception ex)
             {
-                Log.Error("InspectGetLearnerInfo,{0},exception={1}",
-                  Global.Status[responseCode.ProgramError].Description, ex);
+                Log.Error("InspectGetLearnerInfo,{0},{2},exception={1}",
+                  Global.Status[responseCode.ProgramError].Description, ex,Global.PhotoPath);
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
