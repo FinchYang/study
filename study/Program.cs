@@ -25,9 +25,8 @@ namespace study
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>().UseUrls("http://192.168.10.94:5000")
-                .Build();//.Run();
-             //   var hostip="http://"+Global.HostIp+":5000/hello";
-              //  Log.Information("hostip={0}",hostip);
+                .Build();
+             
                
 
             host.Run();

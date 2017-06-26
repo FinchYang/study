@@ -175,53 +175,7 @@ namespace study.Controllers
             }
 
         }
-        // [Route("GetToken")]
-        // [HttpGet]
-        // public GetTokenResponse GetToken(string identity)
-        // {
-        //     try
-        //     {
-        //         if (string.IsNullOrEmpty(identity))
-        //         {
-        //             return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
-        //         }
-        //         var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
-        //         if (theuser == null)
-        //         {
-        //             return new GetTokenResponse { StatusCode = "100004", Description = "error identity" };
-        //         }
-        //         var toke1n = GetToken();
-        //         var found = false;
-        //         foreach (var a in tokens)
-        //         {
-        //             if (a.Identity == identity)
-        //             {
-        //                 a.Token = toke1n;
-        //                 found = true;
-        //                 break;
-        //             }
-        //         }
-        //         if (!found)
-        //         {
-        //             tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
-        //         }
-        //         return new GetTokenResponse
-        //         {
-        //             Token = toke1n,
-        //             StatusCode = "100000",
-        //             Description = "ok",
-        //             DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
-        //             Identity = theuser.Identity,
-        //             Name = theuser.Name,
-        //             //   Photo = string.IsNullOrEmpty(theuser.Photo) ? string.Empty : theuser.Photo,
-        //         };
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         // Log.Error("GetLearnerInfo", ex);
-        //         return new GetTokenResponse { StatusCode = "100003", Description = ex.Message };
-        //     }
-        // }
+        
         [Route("InspectCompleteCourses")]
         [HttpPost]
 
@@ -406,8 +360,8 @@ namespace study.Controllers
             {
                 if (string.IsNullOrEmpty(token))
                 {
-                    Log.Error("InspectGetLearnerInfo,{0},token={1}",
-                 Global.Status[responseCode.TokenError].Description, "invalid");
+                    Log.Error("InspectGetLearnerInfo,{0},token={1}, from {2}",
+                 Global.Status[responseCode.TokenError].Description, "invalid",Request.HttpContext.Connection.RemoteIpAddress);
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
