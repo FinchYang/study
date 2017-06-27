@@ -106,6 +106,7 @@ namespace study.Controllers
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
+                    Completed=theuser.Completed=="1"?true:false,
                     AllStatus = allstatus
                 };
             }
