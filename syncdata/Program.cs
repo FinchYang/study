@@ -7,16 +7,19 @@ namespace syncdata
 {
     class Program
     {
-        static string ftpPath = ".";
+        static string importPath = ".";
+        static string exportPath = ".";
         static void Main(string[] args)
         {
             Console.WriteLine("haha");
             var t1 = new Thread(new ThreadStart(filetodbthread));
+            t1.Name="import data";
             t1.Start();
             var t2 = new Thread(new ThreadStart(dbtofilethread));
+            t2.Name="export data";
             t2.Start();
             Console.ReadLine();
-        
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private static void filetodbthread()
@@ -25,9 +28,9 @@ namespace syncdata
             {
                 var hour = DateTime.Now.Hour;
                 if (hour > 22 && hour <= 23)
-                {
+                { Console.WriteLine("import data started,{0}",DateTime.Now);
                     FileToDb();
-                    Console.WriteLine("??");
+                    Console.WriteLine("import data ok,{0}",DateTime.Now);
                 }
                 System.Threading.Thread.Sleep(1000 * 60 * 60);
             }
@@ -37,10 +40,10 @@ namespace syncdata
             while (true)
             {
                 var hour = DateTime.Now.Hour;
-                if (hour > 22 && hour <= 23)
-                {
+             //   if (hour > 22 && hour <= 23)
+                {Console.WriteLine("export data started,{0}",DateTime.Now);
                     DbToFileForExtranetToIntranet();
-                    Console.WriteLine("??");
+                   Console.WriteLine("export data ok,{0}",DateTime.Now);
                 }
                 System.Threading.Thread.Sleep(1000 * 60 * 60);
             }
@@ -50,9 +53,14 @@ namespace syncdata
             using (var db = new studyContext())
             {
                 var now = DateTime.Now;
-                var yesterday = now.AddDays(-1);
-                var theuser = db.History.Where(async => async.Timestamp.CompareTo(now) <= 0 && async.Timestamp.CompareTo(yesterday) > 0);
-                var fname = ftpPath + "/extranetToIntranet.dat";
+                var yesterday = now.AddDays(-4);
+                var theuser = db.History.Where(async => async.Finishdate.CompareTo(now) <= 0 && 
+                async.Finishdate.CompareTo(yesterday) > 0);
+                var fpath=Path.Combine( exportPath ,DateTime.Today.ToString("yyyyMMdd"));
+                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                var fname =Path.Combine(fpath, "extranetToIntranet.dat");
+                
+              //  if(!File.Exists(fname)) File.Create(fname);
                 foreach (var re in theuser)
                 {
                     File.AppendAllText(fname, JsonConvert.SerializeObject(re));
@@ -63,7 +71,8 @@ namespace syncdata
         {
             using (var db = new studyContext())
             {
-                DirectoryInfo a = new DirectoryInfo(".");
+                 var fpath =Path.Combine( exportPath ,DateTime.Today.ToString("yyyyMMdd"));
+                DirectoryInfo a = new DirectoryInfo(fpath);
                 foreach (var b in a.GetFiles())
                 {//b.Attributes.HasFlag()
                     if (b.Name == "users.dat")
@@ -88,7 +97,7 @@ namespace syncdata
                             }
                             else
                             {
-                                // theuser.
+                                Console.WriteLine("user {0} has already existed.",identity);
                             }
                             db.SaveChanges();
                         }
@@ -97,5 +106,4 @@ namespace syncdata
             }
         }
     }
-
 }

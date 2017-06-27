@@ -139,3 +139,8 @@ System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVA
 2017-06-27 09:10:33.512 +08:00 [Information] Request finished in 436.1124ms 404 
 2017-06-27 09:10:33.548 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
 2017-06-27 09:10:33.554 +08:00 [Information] Request finished in 6.6105ms 404 
+2017-06-27 09:20:10.615 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-27 09:20:12.484 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-27 09:20:12.918 +08:00 [Information] Request finished in 461.8686ms 404 
+2017-06-27 09:20:12.944 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-27 09:20:12.948 +08:00 [Information] Request finished in 3.4316ms 404 
