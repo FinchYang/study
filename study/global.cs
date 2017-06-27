@@ -25,5 +25,7 @@ namespace study
          internal static string HostIp { get => hostip; set=>hostip=value; }
          private static string hostip="localhost";
          public static string PhotoPath=string.Empty;
+          public static string LogPhotoPath=string.Empty;
+           public static string SignaturePath=string.Empty;
     }
 }

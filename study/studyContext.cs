@@ -110,6 +110,10 @@ namespace study
                     .HasColumnName("completed")
                     .HasColumnType("varchar(1)");
 
+                entity.Property(e => e.Completelog)
+                    .HasColumnName("completelog")
+                    .HasColumnType("varchar(500)");
+
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
                     .HasColumnType("varchar(1)");
@@ -141,6 +145,10 @@ namespace study
                     .IsRequired()
                     .HasColumnName("phone")
                     .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Signed)
+                    .HasColumnName("signed")
+                    .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Startdate)
                     .HasColumnName("startdate")

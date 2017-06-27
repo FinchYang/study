@@ -35,6 +35,8 @@ namespace study.Controllers
         {
             try
             {
+                Log.Information("LoginAndQuery,input={0},from {1}",
+                    JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
                 if (inputRequest == null)
                 {
                     Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -46,7 +48,7 @@ namespace study.Controllers
 
                 }
 
-                Log.Information("LoginAndQuery inputRequest={0}", JsonConvert.SerializeObject(inputRequest));
+                //  Log.Information("LoginAndQuery inputRequest={0}", JsonConvert.SerializeObject(inputRequest));
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -124,6 +126,8 @@ namespace study.Controllers
         {
             try
             {
+                Log.Information("LogSignature,input={0},from {1}",
+                     JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
                 if (inputRequest == null)
                 {
                     Log.Error("LogSignature,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -155,88 +159,14 @@ namespace study.Controllers
                     };
 
                 }
-                // var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
-                // if (theuser == null)
-                // {
-                //     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
-                // }
-
-                //System.IO.File.WriteAllBytes(inputRequest.SignatureFile);//todo 
-
-                return new CommonResponse
-                {
-
-                    StatusCode = Global.Status[responseCode.studyOk].StatusCode,
-                    Description = Global.Status[responseCode.studyOk].Description,
-
-                };
-            }
-            catch (Exception ex)
-            {
-                Log.Error("LogSignature,{0}", ex);
-                return new CommonResponse
-                {
-                    StatusCode = Global.Status[responseCode.studyProgramError].StatusCode,
-                    Description = Global.Status[responseCode.studyProgramError].Description
-                };
-            }
-
-        }
-
-        [Route("InspectCompleteCourses")]
-        [HttpPost]
-
-        public CommonResponse InspectCompleteCourses([FromBody] CompleteCoursesRequest inputRequest)
-        {
-            try
-            {
-                if (inputRequest == null)
-                {
-                    Log.Error("InspectCompleteCourses,{0}", Global.Status[responseCode.RequestError].Description);
-                    return new CommonResponse
-                    {
-                        StatusCode = Global.Status[responseCode.RequestError].StatusCode,
-                        Description = Global.Status[responseCode.RequestError].Description
-                    };
-
-                }
-                var found = false;
-                var identity = string.Empty;
-                foreach (var a in tokens)
-                {
-                    if (a.Token == inputRequest.Token)
-                    {
-                        identity = a.Identity;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    Log.Error("InspectCompleteCourses,{0},token={1}",
-                  Global.Status[responseCode.TokenError].Description, inputRequest.Token);
-                    return new CommonResponse
-                    {
-                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
-                        Description = Global.Status[responseCode.TokenError].Description
-                    };
-
-                }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    Log.Error("InspectCompleteCourses,{0},identity={1}",
-                 Global.Status[responseCode.InvalidIdentiy].Description, identity);
-                    return new CommonResponse
-                    {
-                        StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
-                        Description = Global.Status[responseCode.InvalidIdentiy].Description
-                    };
-
+                    return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
-                // theuser. = DateTime.Now;
-                theuser.Studylog += inputRequest.AllRecords + inputRequest.AllStatus;
 
+                var fname = Path.Combine(Global.SignaturePath, identity);
+                //     System.IO.File.WriteAllBytes(fname,inputRequest.SignatureFile);//todo 
                 _db1.History.Add(new History
                 {
                     Identity = theuser.Identity,
@@ -262,10 +192,110 @@ namespace study.Controllers
                 _db1.SaveChanges();
                 return new CommonResponse
                 {
+                    StatusCode = Global.Status[responseCode.studyOk].StatusCode,
+                    Description = Global.Status[responseCode.studyOk].Description,
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("LogSignature,{0}", ex);
+                return new CommonResponse
+                {
+                    StatusCode = Global.Status[responseCode.studyProgramError].StatusCode,
+                    Description = Global.Status[responseCode.studyProgramError].Description
+                };
+            }
+        }
+
+        [Route("InspectCompleteCourses")]
+        [HttpPost]
+
+        public CommonResponse InspectCompleteCourses([FromBody] CompleteCoursesRequest inputRequest)
+        {
+            try
+            {
+                Log.Information("InspectCompleteCourses,input={0},from {1}",
+                       JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                if (inputRequest == null)
+                {
+                    Log.Error("InspectCompleteCourses,{0}", Global.Status[responseCode.RequestError].Description);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.RequestError].StatusCode,
+                        Description = Global.Status[responseCode.RequestError].Description
+                    };
+                }
+                var found = false;
+                var identity = string.Empty;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == inputRequest.Token)
+                    {
+                        identity = a.Identity;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.Error("InspectCompleteCourses,{0},token={1}",
+                  Global.Status[responseCode.TokenError].Description, inputRequest.Token);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+                        Description = Global.Status[responseCode.TokenError].Description
+                    };
+                }
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
+                if (theuser == null)
+                {
+                    Log.Error("InspectCompleteCourses,{0},identity={1}",
+                 Global.Status[responseCode.InvalidIdentiy].Description, identity);
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
+                        Description = Global.Status[responseCode.InvalidIdentiy].Description
+                    };
+                }
+                if (theuser.Completed == "1")
+                {
+                    return new CommonResponse
+                    {
+                        StatusCode = Global.Status[responseCode.ok].StatusCode,
+                        Description = Global.Status[responseCode.ok].Description,
+                    };
+                }
+                // theuser. = DateTime.Now;
+                theuser.Completelog = inputRequest.AllRecords + inputRequest.AllStatus;
+                theuser.Completed = "1";
+                // _db1.History.Add(new History
+                // {
+                //     Identity = theuser.Identity,
+                //     Name = theuser.Name,
+                //     Phone = theuser.Phone,
+                //     Syncdate = theuser.Syncdate,
+                //     Startdate = theuser.Startdate,
+
+                //     Finishdate = DateTime.Now,
+                //     Stoplicense = theuser.Stoplicense,
+                //     Noticedate = theuser.Noticedate,
+                //     Wechat = theuser.Wechat,
+                //     Studylog = theuser.Studylog,
+
+                //     Drugrelated = theuser.Drugrelated,
+                //     // Photo = theuser.Photo,
+                //     Fullmark = theuser.Fullmark,
+                //     Inspect = theuser.Inspect,
+                //     Licensetype = theuser.Licensetype,
+                //     //  Timestamp = DateTime.Now
+                // });
+                // _db1.User.Remove(theuser);
+                _db1.SaveChanges();
+                return new CommonResponse
+                {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
                     Description = Global.Status[responseCode.ok].Description,
                 };
-
             }
             catch (Exception ex)
             {
@@ -276,9 +306,7 @@ namespace study.Controllers
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
                     Description = Global.Status[responseCode.ProgramError].Description
                 };
-
             }
-
         }
         [Route("InspectPostStudyStatus")]
         [HttpPost]
@@ -287,6 +315,8 @@ namespace study.Controllers
         {
             try
             {
+                Log.Information("InspectPostStudyStatus,input={0},from {1}",
+                       JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
                 if (inputRequest == null)
                 {
                     Log.Error("InspectPostStudyStatus,{0}", Global.Status[responseCode.RequestError].Description);
@@ -335,10 +365,14 @@ namespace study.Controllers
                 if (theuser.Startdate == null)
                 {
                     theuser.Startdate = DateTime.Now;
+                    theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 }
-
-                theuser.Studylog += JsonConvert.SerializeObject(inputRequest);
+                else
+                    theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 _db1.SaveChanges();
+
+                var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
+                System.IO.File.WriteAllBytes(filename, inputRequest.Pictures);
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
@@ -365,6 +399,8 @@ namespace study.Controllers
         {
             try
             {
+                Log.Information("InspectGetLearnerInfo,input={0},from {1}",
+                  token, Request.HttpContext.Connection.RemoteIpAddress);
                 if (string.IsNullOrEmpty(token))
                 {
                     Log.Error("InspectGetLearnerInfo,{0},token={1}, from {2}",
@@ -410,6 +446,9 @@ namespace study.Controllers
                     };
 
                 }
+                Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
+                var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
+                Log.Error("InspectGetLearnerInfo,{0},={1}", identity, filename);
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
@@ -418,13 +457,13 @@ namespace study.Controllers
 
                     Identity = theuser.Identity,
                     Name = theuser.Name,
-                      Photo = System.IO.File.ReadAllBytes( Path.Combine( Global.PhotoPath,identity+".jpg"))
+                    Photo = System.IO.File.ReadAllBytes(filename)
                 };
             }
             catch (Exception ex)
             {
                 Log.Error("InspectGetLearnerInfo,{0},{2},exception={1}",
-                  Global.Status[responseCode.ProgramError].Description, ex,Global.PhotoPath);
+                  Global.Status[responseCode.ProgramError].Description, ex, Global.PhotoPath);
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,

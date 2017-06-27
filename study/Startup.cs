@@ -29,9 +29,11 @@ namespace study
               .CreateLogger();
             var photo=Configuration.GetSection("photo");
             Global.PhotoPath=photo.GetSection("path").Value;
+            Global.LogPhotoPath=photo.GetSection("logpath").Value;
+             Global.SignaturePath=photo.GetSection("signaturepath").Value;
             var aaa=Configuration.GetSection("Host");
             Log.Information("{0},{1},{2},{3},{4}------------------------------------",aaa.Key,aaa.GetSection("Port").Value,
-            photo.GetSection("path").Value,System.UriHostNameType.IPv6,System.UriHostNameType.Unknown);
+            Global.SignaturePath,Global.LogPhotoPath, Global.PhotoPath);
         }
 
         public IConfigurationRoot Configuration { get; }

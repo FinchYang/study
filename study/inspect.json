@@ -4,6 +4,8 @@
         "Port": "20022"
     },
     "photo": {
-        "path": "e:\\pic"
+        "path": "e:\\pic",
+        "signaturepath": "e:\\picsig",
+        "logpath": "e:\\piclog"
     }
 }
