@@ -106,7 +106,7 @@ namespace study.Controllers
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
-                    Completed=theuser.Completed=="1"?true:false,
+                    Completed = theuser.Completed == "1" ? true : false,
                     AllStatus = allstatus
                 };
             }
@@ -316,7 +316,7 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("InspectPostStudyStatus,input={0},from {1}",
+                Log.Information("InspectPostStudyStatus,input 170888={0},from ip={1}",
                        JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
                 if (inputRequest == null)
                 {
@@ -371,9 +371,23 @@ namespace study.Controllers
                 else
                     theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 _db1.SaveChanges();
+                if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
+                {
+                    var fpath = Path.Combine(Global.LogPhotoPath, identity);
+                        if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
-                var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
-                System.IO.File.WriteAllBytes(filename, inputRequest.Pictures);
+                  //  var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
+                    if (inputRequest.Pictures != null)
+                    {
+                        
+                        var fname = Path.Combine(fpath, inputRequest.CourseTitle);
+                        System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
+                    }
+
+                }
+
+
+
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
