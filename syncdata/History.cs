@@ -20,6 +20,7 @@ namespace syncdata
         public string Stoplicense { get; set; }
         public string Studylog { get; set; }
         public DateTime Syncdate { get; set; }
+        public string Syncphone { get; set; }
         public string Wechat { get; set; }
     }
 }

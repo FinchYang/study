@@ -7,8 +7,8 @@ namespace syncdata
 {
     class Program
     {
-        static string importPath = ".";
-        static string exportPath = ".";
+        static string importPath = "/home/inspect/ftp/get";
+        static string exportPath = "/home/inspect/ftp/put";
         static void Main(string[] args)
         {
             Console.WriteLine("haha");
@@ -53,7 +53,9 @@ namespace syncdata
             using (var db = new studyContext())
             {
                 var now = DateTime.Now;
-                var yesterday = now.AddDays(-4);
+                var tempday = now.AddDays(-1);
+                var yesterday=DateTime.Parse(string.Format("{0}/{1}/{2}",tempday.Year,tempday.Month,tempday.Day));
+                Console.WriteLine("yesterday is {0},today is {1}",yesterday,now);
                 var theuser = db.History.Where(async => async.Finishdate.CompareTo(now) <= 0 && 
                 async.Finishdate.CompareTo(yesterday) > 0);
                 var fpath=Path.Combine( exportPath ,DateTime.Today.ToString("yyyyMMdd"));
@@ -71,29 +73,43 @@ namespace syncdata
         {
             using (var db = new studyContext())
             {
-                 var fpath =Path.Combine( exportPath ,DateTime.Today.ToString("yyyyMMdd"));
-                DirectoryInfo a = new DirectoryInfo(fpath);
-                foreach (var b in a.GetFiles())
-                {//b.Attributes.HasFlag()
-                    if (b.Name == "users.dat")
+                // var fpath =Path.Combine( importPath ,DateTime.Today.ToString("yyyyMMdd"));
+                // DirectoryInfo a = new DirectoryInfo(fpath);
+                // foreach (var b in a.GetFiles())
+                // {//b.Attributes.HasFlag()
+                //     if (b.Name == "users.dat")
+                var fname=Path.Combine(importPath,"allowToStudy.txt");
+                if(File.Exists(fname))
                     {
-                        var content = File.ReadAllLines(b.FullName);
+                        var content = File.ReadAllLines(fname);
                         foreach (var line in content)
-                        {
-                            Console.WriteLine(b.Name + line);
+                        {                           
                             var fields = line.Split(',');
                             var identity = fields[0];
-                            var name = fields[1];
-                            // var syncdate=fields[2];
+                            var phone = fields[1];
+                             var drivertype=fields[2];
+                             DrivingLicenseType enumtype;
+                             if(!Enum.TryParse(drivertype,out enumtype)){
+                                    enumtype=DrivingLicenseType.Unknown;
+                             }
+                              var drugrelated=fields[3];
+                              var pictureok=fields[4];
                             var theuser = db.User.FirstOrDefault(async => async.Identity == identity);
                             if (theuser == null)
                             {
-                                db.User.Add(new User
+                                try{db.User.Add(new User
                                 {
                                     Identity = identity,
-                                    Name = name,
+                                    Licensetype=((int)enumtype).ToString(),
+                                    Drugrelated=drugrelated,
+                                    Syncphone=phone,
+                                    Photostatus=pictureok,
+                                    // = name,
                                     Syncdate = DateTime.Now
-                                });
+                                });}
+                                catch(Exception ex){
+                                     Console.WriteLine("user {0} sync error{1}.",identity,ex.Message);
+                                }
                             }
                             else
                             {
@@ -102,7 +118,7 @@ namespace syncdata
                             db.SaveChanges();
                         }
                     }
-                }
+               // }
             }
         }
     }

@@ -15,6 +15,7 @@ namespace study
         public string Licensetype { get; set; }
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
+        public string Photostatus { get; set; }
         public string Signed { get; set; }
         public DateTime? Startdate { get; set; }
         public string Stoplicense { get; set; }

@@ -6,6 +6,7 @@ namespace syncdata
     public partial class User
     {
         public string Identity { get; set; }
+        public string Authenticationphone { get; set; }
         public string Completed { get; set; }
         public string Completelog { get; set; }
         public string Drugrelated { get; set; }
@@ -14,12 +15,13 @@ namespace syncdata
         public string Licensetype { get; set; }
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
-        public string Phone { get; set; }
+        public string Photostatus { get; set; }
         public string Signed { get; set; }
         public DateTime? Startdate { get; set; }
         public string Stoplicense { get; set; }
         public string Studylog { get; set; }
         public DateTime Syncdate { get; set; }
+        public string Syncphone { get; set; }
         public string Wechat { get; set; }
     }
 }

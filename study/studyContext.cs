@@ -60,7 +60,6 @@ namespace study
                     .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Name)
-                    .IsRequired()
                     .HasColumnName("name")
                     .HasColumnType("varchar(45)");
 
@@ -139,13 +138,16 @@ namespace study
                     .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Name)
-                    .IsRequired()
                     .HasColumnName("name")
                     .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Noticedate)
                     .HasColumnName("noticedate")
                     .HasColumnType("datetime");
+
+                entity.Property(e => e.Photostatus)
+                    .HasColumnName("photostatus")
+                    .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Signed)
                     .HasColumnName("signed")

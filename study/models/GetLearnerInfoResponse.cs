@@ -14,6 +14,7 @@ namespace study
         public string Name { get; set; }
         public string Identity { get; set; }
         public DrivingLicenseType DrivingLicenseType { get; set; }
+        public bool PhotoOk { get; set; }
         public byte[] Photo { get; set; }
     }
 }

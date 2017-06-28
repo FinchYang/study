@@ -178,11 +178,9 @@ namespace study.Controllers
                     Studylog = theuser.Studylog,
 
                     Drugrelated = theuser.Drugrelated,
-                    // Photo = theuser.Photo,
                     Fullmark = theuser.Fullmark,
                     Inspect = theuser.Inspect,
-                    Licensetype = theuser.Licensetype,
-                    //  Timestamp = DateTime.Now
+                    Licensetype = theuser.Licensetype
                 });
                 _db1.User.Remove(theuser);
                 _db1.SaveChanges();
@@ -446,9 +444,16 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.InvalidIdentiy].Description
                     };
                 }
-                Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
+                var  pic=new byte[1];
+                var photook=true;
+                try{ Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
                 var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
-                Log.Error("InspectGetLearnerInfo,{0},={1}", identity, filename);
+               pic= System.IO.File.ReadAllBytes(filename);
+                }
+               catch(Exception ex){
+                   photook=false;
+                    Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);}
+               
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
@@ -457,7 +462,8 @@ namespace study.Controllers
 
                     Identity = theuser.Identity,
                     Name = theuser.Name,
-                    Photo = System.IO.File.ReadAllBytes(filename)
+                    PhotoOk=photook,
+                    Photo = pic
                 };
             }
             catch (Exception ex)

@@ -302,3 +302,25 @@ System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVA
 2017-06-28 15:44:14.190 +08:00 [Information] Request finished in 543.273ms 404 
 2017-06-28 15:44:14.219 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
 2017-06-28 15:44:14.224 +08:00 [Information] Request finished in 4.5977ms 404 
+2017-06-28 16:22:56.599 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 16:22:59.286 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 16:22:59.758 +08:00 [Information] Request finished in 494.5719ms 404 
+2017-06-28 16:22:59.784 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 16:22:59.788 +08:00 [Information] Request finished in 4.619ms 404 
+2017-06-28 16:23:06.550 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 16:23:06.689 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 16:23:08.351 +08:00 [Information] Executing ViewResult, running view at path "/Views/Values/Index.cshtml".
+2017-06-28 16:23:08.463 +08:00 [Information] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-06-28 16:23:08.570 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 1926.7742ms
+2017-06-28 16:23:08.586 +08:00 [Information] Request finished in 2036.1778ms 200 text/html; charset=utf-8
+2017-06-28 16:27:02.969 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-06-28 16:27:03.419 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-06-28 16:27:03.513 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"DrivingLicenseType\":0,\"Phone\":null,\"Wechat\":null}",from "::1"
+2017-06-28 16:27:05.704 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-28 16:27:05.743 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2755.9125ms
+2017-06-28 16:27:05.746 +08:00 [Information] Request finished in 2778.9063ms 200 application/json; charset=utf-8
+2017-06-28 17:18:14.107 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 17:18:17.500 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 17:18:18.455 +08:00 [Information] Request finished in 1000.9813ms 404 
+2017-06-28 17:18:18.624 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 17:18:18.724 +08:00 [Information] Request finished in 100.2835ms 404 
