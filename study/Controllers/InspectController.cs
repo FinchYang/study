@@ -45,10 +45,8 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.studyRequestError].StatusCode,
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
-
                 }
 
-                //  Log.Information("LoginAndQuery inputRequest={0}", JsonConvert.SerializeObject(inputRequest));
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -60,7 +58,6 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyNotNecessary].Description + identity
                     };
                 }
-
 
                 //token process
                 var toke1n = GetToken();
@@ -85,11 +82,10 @@ namespace study.Controllers
                 if (allow)
                 {
                     allstatus = theuser.Studylog;
-
                     //need update?
-                    //   theuser.Name = inputRequest.Name;
+                    if (!string.IsNullOrEmpty(inputRequest.Name)) theuser.Name = inputRequest.Name;
                     //  theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
-                    //  theuser.Phone = inputRequest.Phone;
+                    if (!string.IsNullOrEmpty(inputRequest.Phone)) theuser.Authenticationphone = inputRequest.Phone;
                     // theuser.Wechat = inputRequest.Wechat;
                     if (theuser.Startdate == null)
                     {
@@ -119,7 +115,6 @@ namespace study.Controllers
                     Description = Global.Status[responseCode.studyProgramError].Description
                 };
             }
-
         }
         [Route("LogSignature")]
         [HttpPost]
@@ -137,7 +132,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.studyRequestError].StatusCode,
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
-
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -158,7 +152,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.studyTokenError].StatusCode,
                         Description = Global.Status[responseCode.studyTokenError].Description
                     };
-
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -167,12 +160,14 @@ namespace study.Controllers
                 }
 
                 var fname = Path.Combine(Global.SignaturePath, identity);
-                //     System.IO.File.WriteAllBytes(fname,inputRequest.SignatureFile);//todo 
+                System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile));//todo 
                 _db1.History.Add(new History
                 {
                     Identity = theuser.Identity,
+
                     Name = theuser.Name,
-                    Phone = theuser.Phone,
+                    Syncphone = theuser.Syncphone,
+                    Phone = theuser.Authenticationphone,
                     Syncdate = theuser.Syncdate,
                     Startdate = theuser.Startdate,
 
@@ -326,7 +321,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.RequestError].StatusCode,
                         Description = Global.Status[responseCode.RequestError].Description
                     };
-
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -348,7 +342,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
                         Description = Global.Status[responseCode.TokenError].Description
                     };
-
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -360,7 +353,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
                         Description = Global.Status[responseCode.InvalidIdentiy].Description
                     };
-
                 }
 
                 if (theuser.Startdate == null)
@@ -374,19 +366,17 @@ namespace study.Controllers
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
                     var fpath = Path.Combine(Global.LogPhotoPath, identity);
-                        if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                    if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
-                  //  var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
+                    //  var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
                     if (inputRequest.Pictures != null)
                     {
-                        
-                        var fname = Path.Combine(fpath, inputRequest.CourseTitle);
+                        //   var fname = Path.Combine(fpath, inputRequest.CourseTitle);
+                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString());
+                        Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }
-
                 }
-
-
 
                 return new CommonResponse
                 {
@@ -403,9 +393,7 @@ namespace study.Controllers
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
                     Description = Global.Status[responseCode.ProgramError].Description
                 };
-
             }
-
         }
         [Route("InspectGetLearnerInfo")]
         [HttpGet]
@@ -425,7 +413,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
                         Description = Global.Status[responseCode.TokenError].Description
                     };
-
                 }
                 var found = false;
                 var identity = string.Empty;
@@ -447,7 +434,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
                         Description = Global.Status[responseCode.TokenError].Description + token
                     };
-
                 }
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -459,7 +445,6 @@ namespace study.Controllers
                         StatusCode = Global.Status[responseCode.InvalidIdentiy].StatusCode,
                         Description = Global.Status[responseCode.InvalidIdentiy].Description
                     };
-
                 }
                 Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
                 var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
@@ -484,9 +469,7 @@ namespace study.Controllers
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
                     Description = Global.Status[responseCode.ProgramError].Description
                 };
-
             }
-
         }
         private string GetToken()
         {

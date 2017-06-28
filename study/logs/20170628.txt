@@ -1,0 +1,304 @@
+2017-06-28 09:01:45.678 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 09:01:46.498 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-28 09:33:00.975 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 09:33:01.878 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-28 09:33:26.984 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 09:33:27.965 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-28 14:48:14.810 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:48:16.974 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:48:17.451 +08:00 [Information] Request finished in 501.9854ms 404 
+2017-06-28 14:48:17.480 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:48:17.485 +08:00 [Information] Request finished in 4.818ms 404 
+2017-06-28 14:48:17.556 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-06-28 14:48:17.565 +08:00 [Information] Request finished in 9.139ms 404 
+2017-06-28 14:48:21.956 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values  
+2017-06-28 14:48:21.959 +08:00 [Information] Request finished in 2.9271ms 404 
+2017-06-28 14:48:21.977 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values  
+2017-06-28 14:48:21.988 +08:00 [Information] Request finished in 9.5799ms 404 
+2017-06-28 14:48:28.748 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+2017-06-28 14:48:28.752 +08:00 [Information] Request finished in 3.6167ms 404 
+2017-06-28 14:48:28.774 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+2017-06-28 14:48:28.783 +08:00 [Information] Request finished in 8.4927ms 404 
+2017-06-28 14:48:36.701 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-06-28 14:48:36.859 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Get (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:48:36.901 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-28 14:48:37.134 +08:00 [Information] Executed action "study.Controllers.ValuesController.Get (study)" in 336.4924ms
+2017-06-28 14:48:37.152 +08:00 [Information] Request finished in 451.2355ms 200 application/json; charset=utf-8
+2017-06-28 14:48:47.052 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index.html  
+2017-06-28 14:48:47.058 +08:00 [Information] Request finished in 4.5922ms 404 
+2017-06-28 14:48:47.075 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index.html  
+2017-06-28 14:48:47.088 +08:00 [Information] Request finished in 12.1877ms 404 
+2017-06-28 14:48:56.550 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:48:56.554 +08:00 [Information] Request finished in 3.9155ms 404 
+2017-06-28 14:48:56.575 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:48:56.579 +08:00 [Information] Request finished in 4.5278ms 404 
+2017-06-28 14:49:56.586 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:49:58.577 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:49:58.980 +08:00 [Information] Request finished in 415.1003ms 404 
+2017-06-28 14:49:59.008 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:49:59.012 +08:00 [Information] Request finished in 3.4857ms 404 
+2017-06-28 14:50:04.301 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values  
+2017-06-28 14:50:04.308 +08:00 [Information] Request finished in 7.0314ms 404 
+2017-06-28 14:50:04.331 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values  
+2017-06-28 14:50:04.350 +08:00 [Information] Request finished in 18.9289ms 404 
+2017-06-28 14:50:10.156 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:50:10.162 +08:00 [Information] Request finished in 5.2577ms 404 
+2017-06-28 14:50:10.180 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:50:10.189 +08:00 [Information] Request finished in 9.5408ms 404 
+2017-06-28 14:50:16.042 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index.cshtml  
+2017-06-28 14:50:16.045 +08:00 [Information] Request finished in 2.5493ms 404 
+2017-06-28 14:50:16.065 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index.cshtml  
+2017-06-28 14:50:16.070 +08:00 [Information] Request finished in 4.9016ms 404 
+2017-06-28 14:50:52.826 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:50:55.335 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:50:55.844 +08:00 [Information] Request finished in 537.9813ms 404 
+2017-06-28 14:50:55.915 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:50:55.918 +08:00 [Information] Request finished in 3.3901ms 404 
+2017-06-28 14:50:59.931 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-06-28 14:51:00.082 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Get (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:51:00.117 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-06-28 14:51:00.313 +08:00 [Information] Executed action "study.Controllers.ValuesController.Get (study)" in 286.6954ms
+2017-06-28 14:51:00.326 +08:00 [Information] Request finished in 394.5315ms 200 application/json; charset=utf-8
+2017-06-28 14:51:10.484 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/  
+2017-06-28 14:51:10.487 +08:00 [Information] Request finished in 2.6934ms 404 
+2017-06-28 14:51:10.507 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/  
+2017-06-28 14:51:10.517 +08:00 [Information] Request finished in 9.5957ms 404 
+2017-06-28 14:51:14.450 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/inde  
+2017-06-28 14:51:14.455 +08:00 [Information] Request finished in 5.3907ms 404 
+2017-06-28 14:51:14.481 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/inde  
+2017-06-28 14:51:14.487 +08:00 [Information] Request finished in 5.5984ms 404 
+2017-06-28 14:51:17.978 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:51:17.981 +08:00 [Information] Request finished in 3.533ms 404 
+2017-06-28 14:51:18.000 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/values/index  
+2017-06-28 14:51:18.008 +08:00 [Information] Request finished in 8.7695ms 404 
+2017-06-28 14:51:50.210 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:51:52.352 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:51:52.711 +08:00 [Information] Request finished in 370.0495ms 404 
+2017-06-28 14:51:52.739 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:51:52.755 +08:00 [Information] Request finished in 15.3745ms 404 
+2017-06-28 14:51:56.562 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 14:51:56.707 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:51:58.516 +08:00 [Information] Executing ViewResult, running view at path "/Views/Values/Index.cshtml".
+2017-06-28 14:51:58.652 +08:00 [Information] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-06-28 14:51:58.755 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 2108.6456ms
+2017-06-28 14:51:58.769 +08:00 [Information] Request finished in 2206.6767ms 200 text/html; charset=utf-8
+2017-06-28 14:53:35.169 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:53:37.269 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:53:37.662 +08:00 [Information] Request finished in 394.445ms 404 
+2017-06-28 14:53:37.681 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:53:37.685 +08:00 [Information] Request finished in 3.914ms 404 
+2017-06-28 14:53:41.825 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 14:53:41.962 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:53:43.631 +08:00 [Information] Executing ViewResult, running view at path "/Views/Values/Index.cshtml".
+2017-06-28 14:53:43.745 +08:00 [Information] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-06-28 14:53:43.847 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 1940.2907ms
+2017-06-28 14:53:43.862 +08:00 [Information] Request finished in 2036.5078ms 200 text/html; charset=utf-8
+2017-06-28 14:54:12.880 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:54:14.948 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:54:15.362 +08:00 [Information] Request finished in 414.4623ms 404 
+2017-06-28 14:54:15.403 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:54:15.407 +08:00 [Information] Request finished in 3.6882ms 404 
+2017-06-28 14:54:20.231 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 14:54:20.366 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:54:20.527 +08:00 [Error] The view '"Index"' was not found. Searched locations: ["/Views/Values/Index.cshtml", "/Views/Shared/Index.cshtml"]
+2017-06-28 14:54:20.551 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 244.2311ms
+2017-06-28 14:54:20.559 +08:00 [Error] Connection id ""0HL5TU9UIDCSL"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
+/Views/Values/Index.cshtml
+/Views/Shared/Index.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__30.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResultFilterAsync>d__28.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-28 14:54:20.633 +08:00 [Information] Request finished in 402.1234ms 500 
+2017-06-28 14:54:20.650 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 14:54:20.657 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:54:20.662 +08:00 [Error] The view '"Index"' was not found. Searched locations: ["/Views/Values/Index.cshtml", "/Views/Shared/Index.cshtml"]
+2017-06-28 14:54:20.669 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 12.2552ms
+2017-06-28 14:54:20.674 +08:00 [Error] Connection id ""0HL5TU9UIDCSL"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
+/Views/Values/Index.cshtml
+/Views/Shared/Index.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__30.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResultFilterAsync>d__28.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-06-28 14:54:20.699 +08:00 [Information] Request finished in 47.7975ms 500 
+2017-06-28 14:56:26.810 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 14:56:28.571 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:56:29.080 +08:00 [Information] Request finished in 526.786ms 404 
+2017-06-28 14:56:29.153 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 14:56:29.160 +08:00 [Information] Request finished in 7.3033ms 404 
+2017-06-28 14:56:38.474 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index  
+2017-06-28 14:56:38.614 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Index (study)" with arguments (null) - ModelState is Valid
+2017-06-28 14:56:40.286 +08:00 [Information] Executing ViewResult, running view at path "/Views/Values/Index.cshtml".
+2017-06-28 14:56:40.403 +08:00 [Information] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-06-28 14:56:40.503 +08:00 [Information] Executed action "study.Controllers.ValuesController.Index (study)" in 1956.5096ms
+2017-06-28 14:56:40.517 +08:00 [Information] Request finished in 2043.0229ms 200 text/html; charset=utf-8
+2017-06-28 15:14:48.546 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 15:14:49.295 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-28 15:44:09.802 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-28 15:44:13.673 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 15:44:14.190 +08:00 [Information] Request finished in 543.273ms 404 
+2017-06-28 15:44:14.219 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-28 15:44:14.224 +08:00 [Information] Request finished in 4.5977ms 404 

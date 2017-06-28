@@ -15,7 +15,11 @@ namespace study.Controllers
         {
             return new string[] { "learner", "value2" };
         }
-
+         [Route("index")]
+ public IActionResult Index()
+        {
+            return View();
+        }
 
     }
 }

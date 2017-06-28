@@ -26,8 +26,7 @@ namespace study
 
                 entity.Property(e => e.Ordinal)
                     .HasColumnName("ordinal")
-                    .HasColumnType("int(11)")
-                    .HasDefaultValueSql("1");
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Completed)
                     .HasColumnName("completed")
@@ -70,7 +69,6 @@ namespace study
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.Phone)
-                    .IsRequired()
                     .HasColumnName("phone")
                     .HasColumnType("varchar(45)");
 
@@ -90,6 +88,10 @@ namespace study
                     .HasColumnName("syncdate")
                     .HasColumnType("datetime");
 
+                entity.Property(e => e.Syncphone)
+                    .HasColumnName("syncphone")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Wechat)
                     .HasColumnName("wechat")
                     .HasColumnType("varchar(45)");
@@ -105,6 +107,10 @@ namespace study
                 entity.Property(e => e.Identity)
                     .HasColumnName("identity")
                     .HasColumnType("varchar(20)");
+
+                entity.Property(e => e.Authenticationphone)
+                    .HasColumnName("authenticationphone")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Completed)
                     .HasColumnName("completed")
@@ -141,11 +147,6 @@ namespace study
                     .HasColumnName("noticedate")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Phone)
-                    .IsRequired()
-                    .HasColumnName("phone")
-                    .HasColumnType("varchar(45)");
-
                 entity.Property(e => e.Signed)
                     .HasColumnName("signed")
                     .HasColumnType("varchar(1)");
@@ -165,6 +166,10 @@ namespace study
                 entity.Property(e => e.Syncdate)
                     .HasColumnName("syncdate")
                     .HasColumnType("datetime");
+
+                entity.Property(e => e.Syncphone)
+                    .HasColumnName("syncphone")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Wechat)
                     .HasColumnName("wechat")
