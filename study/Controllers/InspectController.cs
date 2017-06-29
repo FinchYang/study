@@ -159,7 +159,7 @@ namespace study.Controllers
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
 
-                var fname = Path.Combine(Global.SignaturePath, identity);
+                var fname = Path.Combine(Global.SignaturePath, identity+inputRequest.SignatureType);
                 System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile));//todo 
                 _db1.History.Add(new History
                 {
