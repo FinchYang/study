@@ -117,7 +117,7 @@ namespace study
 
                 entity.Property(e => e.Completelog)
                     .HasColumnName("completelog")
-                    .HasColumnType("varchar(500)");
+                    .HasColumnType("varchar(8000)");
 
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")

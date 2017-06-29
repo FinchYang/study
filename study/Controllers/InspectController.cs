@@ -260,7 +260,7 @@ namespace study.Controllers
                     };
                 }
                 // theuser. = DateTime.Now;
-                theuser.Completelog = inputRequest.AllRecords + inputRequest.AllStatus;
+                theuser.Completelog =  inputRequest.AllStatus;
                 theuser.Completed = "1";
                 // _db1.History.Add(new History
                 // {
@@ -285,6 +285,15 @@ namespace study.Controllers
                 // });
                 // _db1.User.Remove(theuser);
                 _db1.SaveChanges();
+               
+                if (inputRequest.AllRecords != null)
+                    { var fpath = Path.Combine(Global.LogPhotoPath, identity);
+                    if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                        var fname = Path.Combine(fpath, "exam_result.txt");
+                        Log.Information("filename is: {0}", fname);
+                        System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
+                    }
+                
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,

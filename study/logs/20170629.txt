@@ -232,3 +232,130 @@ System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVA
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
 
+2017-06-29 14:49:50.117 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 14:49:53.044 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 14:49:53.473 +08:00 [Information] Request finished in 459.9126ms 404 
+2017-06-29 14:49:53.509 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 14:49:53.514 +08:00 [Information] Request finished in 4.9305ms 404 
+2017-06-29 14:50:17.878 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 14:50:18.742 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-29 14:50:29.148 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 14:50:29.932 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-29 15:20:21.018 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 15:20:24.081 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 15:20:24.548 +08:00 [Information] Request finished in 472.9009ms 404 
+2017-06-29 15:20:24.582 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 15:20:24.585 +08:00 [Information] Request finished in 3.3143ms 404 
+2017-06-29 15:20:40.137 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 15:20:41.215 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+
+2017-06-29 15:52:29.461 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 15:52:33.314 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 15:52:34.053 +08:00 [Information] Request finished in 799.584ms 404 
+2017-06-29 15:52:34.103 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-29 15:52:34.141 +08:00 [Information] Request finished in 38.3ms 404 
+2017-06-29 15:53:09.076 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-29 15:53:10.178 +08:00 [Fatal] Unable to start Kestrel.
+System.AggregateException: One or more errors occurred. (Error -4090 EADDRNOTAVAIL address not available) ---> Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.KestrelEngine.CreateServer(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+---> (Inner Exception #0) Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4090 EADDRNOTAVAIL address not available
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.ThrowError(Int32 statusCode)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.Libuv.tcp_bind(UvTcpHandle handle, SockAddr& addr, Int32 flags)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvTcpHandle.Bind(ServerAddress address)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.TcpListenerPrimary.CreateListenSocket()
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Listener.<StartAsync>b__8_0(Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.ListenerPrimary.<StartAsync>d__12.MoveNext()<---
+

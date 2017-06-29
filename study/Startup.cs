@@ -11,6 +11,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 
 using Serilog;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
+
 namespace study
 {
     public class Startup
@@ -40,21 +43,23 @@ namespace study
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {// ConfigureServices
-
-
-
-            // Add framework services.
-            services.AddMvc();
+        { 
             services.AddCors(options =>
-        {
-            options.AddPolicy("AnyOrigin", builder =>
-            {
-                builder
-                    .AllowAnyOrigin()
-                    .AllowAnyMethod();
-            });
-        });
+                {
+                    options.AddPolicy("AnyOrigin", builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod().WithExposedHeaders("x-custom-header");;
+                    });
+                });
+            
+            services.AddMvc();
+           services.Configure<MvcOptions>(options =>
+    {
+        options.Filters.Add(new CorsAuthorizationFilterFactory("AnyOrigin"));
+    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,10 +68,10 @@ namespace study
             loggerFactory.AddSerilog();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+app.UseCors("AnyOrigin");
             app.UseMvc();
             // Configure
-            app.UseCors("AnyOrigin");
+            
         }
     }
 }

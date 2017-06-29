@@ -6,6 +6,6 @@ namespace study
     {
         public string Token { get; set; }
         public string AllStatus { get; set; }
-        public string AllRecords { get; set; }
+        public byte[] AllRecords { get; set; }
     }
 }

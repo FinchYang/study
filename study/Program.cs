@@ -25,7 +25,7 @@ namespace study
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
               //  .UseStartup<Startup>().UseUrls("http://localhost:5000")
-                .UseStartup<Startup>().UseUrls("http://192.168.10.94:5001")
+                .UseStartup<Startup>().UseUrls("http://192.168.10.94:5000")
                 .Build();
              
                
