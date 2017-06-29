@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace study.Controllers
 {
-  //  [Route("api/[controller]")]
+    //  [Route("api/[controller]")]
     public class ValuesController : Controller
     {
         [Route("hello")]
@@ -15,11 +15,15 @@ namespace study.Controllers
         {
             return new string[] { "learner", "value2" };
         }
-         [Route("index")]
- public IActionResult Index()
+        [Route("index")]
+        public IActionResult Index()
         {
             return View();
         }
-
+        [Route("yonghuxuzhi")]
+        public IActionResult Yonghuxuzhi()
+        {
+            return View();
+        }
     }
 }
