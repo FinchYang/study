@@ -160,8 +160,10 @@ namespace study.Controllers
                 }
 
                 var fname = Path.Combine(Global.SignaturePath, identity+inputRequest.SignatureType);
-                System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile));//todo 
-                _db1.History.Add(new History
+                var index=inputRequest.SignatureFile.IndexOf("base64,");
+                 Log.Information("LogSignature,{0}",inputRequest.SignatureFile.Substring(index+7));
+                System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index+7)));//todo 
+                if(inputRequest.SignatureType==SignatureType.EducationalRecord){ _db1.History.Add(new History
                 {
                     Identity = theuser.Identity,
 
@@ -184,6 +186,8 @@ namespace study.Controllers
                 });
                 _db1.User.Remove(theuser);
                 _db1.SaveChanges();
+                }
+               
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
@@ -260,7 +264,8 @@ namespace study.Controllers
                     };
                 }
                 // theuser. = DateTime.Now;
-                theuser.Completelog =  inputRequest.AllStatus;
+                var clog=inputRequest.AllStatus.Length<80?inputRequest.AllStatus:inputRequest.AllStatus.Substring(0,78);
+                theuser.Completelog =  clog;
                 theuser.Completed = "1";
                 // _db1.History.Add(new History
                 // {
@@ -369,7 +374,7 @@ namespace study.Controllers
                 }
                 else
                     theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
-                _db1.SaveChanges();
+               if(theuser.Studylog.Length<500) _db1.SaveChanges();
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
                     var fpath = Path.Combine(Global.LogPhotoPath, identity);
