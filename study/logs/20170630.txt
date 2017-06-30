@@ -1,0 +1,7 @@
+2017-06-30 10:18:19.182 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-06-30 10:18:21.881 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-30 10:18:22.355 +08:00 [Information] Request finished in 494.1976ms 404 
+2017-06-30 10:18:22.373 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-06-30 10:18:22.387 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-06-30 10:18:22.395 +08:00 [Information] Request finished in 22.2607ms 404 
+2017-06-30 10:18:22.399 +08:00 [Information] Request finished in 11.5478ms 404 

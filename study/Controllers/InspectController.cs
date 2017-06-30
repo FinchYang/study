@@ -46,18 +46,55 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
-
+                var allstatus = string.Empty; 
+                var allow = true;
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
-                    Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
-                    return new LoginAndQueryResponse
+                    var his = _db1.History.FirstOrDefault(async => async.Identity == identity);
+                    if (theuser == null)
                     {
-                        StatusCode = Global.Status[responseCode.studyNotNecessary].StatusCode,
-                        Description = Global.Status[responseCode.studyNotNecessary].Description + identity
-                    };
+                        Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
+                        return new LoginAndQueryResponse
+                        {
+                            StatusCode = Global.Status[responseCode.studyNotNecessary].StatusCode,
+                            Description = Global.Status[responseCode.studyNotNecessary].Description + identity
+                        };
+                    }
+                    allow = his.Drugrelated != "1" ? true : false;
+                     if (allow)
+                    {
+                        allstatus = his.Studylog;
+                       
+                    }
+                    else allstatus = "您不能参加网络学习，可以参加现场学习";
                 }
+                else
+                {
+                    //drugrelated judge
+                    allow = theuser.Drugrelated != "1" ? true : false;
+
+                    if (allow)
+                    {
+                        allstatus = theuser.Studylog;
+                        //need update?
+                        if (!string.IsNullOrEmpty(inputRequest.Name)) theuser.Name = inputRequest.Name;
+                        //  theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
+                        if (!string.IsNullOrEmpty(inputRequest.Phone)) theuser.Authenticationphone = inputRequest.Phone;
+                        // theuser.Wechat = inputRequest.Wechat;
+                        if (theuser.Startdate == null)
+                        {
+                            theuser.Startdate = DateTime.Now;
+                        }
+
+                        _db1.SaveChanges();
+                    }
+                    else allstatus = "您不能参加网络学习，可以参加现场学习";
+                }
+
+
+
 
                 //token process
                 var toke1n = GetToken();
@@ -75,27 +112,6 @@ namespace study.Controllers
                 {
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
-
-                //drugrelated judge
-                var allow = theuser.Drugrelated != "1" ? true : false;
-                var allstatus = string.Empty;
-                if (allow)
-                {
-                    allstatus = theuser.Studylog;
-                    //need update?
-                    if (!string.IsNullOrEmpty(inputRequest.Name)) theuser.Name = inputRequest.Name;
-                    //  theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
-                    if (!string.IsNullOrEmpty(inputRequest.Phone)) theuser.Authenticationphone = inputRequest.Phone;
-                    // theuser.Wechat = inputRequest.Wechat;
-                    if (theuser.Startdate == null)
-                    {
-                        theuser.Startdate = DateTime.Now;
-                    }
-
-                    _db1.SaveChanges();
-                }
-                else allstatus = "您不能参加网络学习，可以参加现场学习";
-
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
@@ -103,6 +119,8 @@ namespace study.Controllers
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
                     Completed = theuser.Completed == "1" ? true : false,
+                    Signed = theuser.Signed == "1" ? true : false,
+                    FirstSigned = theuser.Firstsigned == "1" ? true : false,
                     AllStatus = allstatus
                 };
             }
@@ -159,35 +177,53 @@ namespace study.Controllers
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
 
-                var fname = Path.Combine(Global.SignaturePath, identity+inputRequest.SignatureType);
-                var index=inputRequest.SignatureFile.IndexOf("base64,");
-                 Log.Information("LogSignature,{0}",inputRequest.SignatureFile.Substring(index+7));
-                System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index+7)));//todo 
-                if(inputRequest.SignatureType==SignatureType.EducationalRecord){ _db1.History.Add(new History
+                var fname = Path.Combine(Global.SignaturePath, identity + inputRequest.SignatureType);
+                var index = inputRequest.SignatureFile.IndexOf("base64,");
+                Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
+                System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index + 7)));
+
+                switch (inputRequest.SignatureType)
                 {
-                    Identity = theuser.Identity,
-
-                    Name = theuser.Name,
-                    Syncphone = theuser.Syncphone,
-                    Phone = theuser.Authenticationphone,
-                    Syncdate = theuser.Syncdate,
-                    Startdate = theuser.Startdate,
-
-                    Finishdate = DateTime.Now,
-                    Stoplicense = theuser.Stoplicense,
-                    Noticedate = theuser.Noticedate,
-                    Wechat = theuser.Wechat,
-                    Studylog = theuser.Studylog,
-
-                    Drugrelated = theuser.Drugrelated,
-                    Fullmark = theuser.Fullmark,
-                    Inspect = theuser.Inspect,
-                    Licensetype = theuser.Licensetype
-                });
-                _db1.User.Remove(theuser);
-                _db1.SaveChanges();
+                    case SignatureType.PhysicalCondition:
+                        theuser.Firstsigned = "1";
+                        break;
+                    case SignatureType.EducationalRecord:
+                        theuser.Signed = "1";
+                        break;
+                    default:
+                        break;
                 }
-               
+                if (inputRequest.SignatureType == SignatureType.EducationalRecord)
+                {
+                    _db1.History.Add(new History
+                    {
+                        Identity = theuser.Identity,
+
+                        Name = theuser.Name,
+                        Syncphone = theuser.Syncphone,
+                        Phone = theuser.Authenticationphone,
+                        Syncdate = theuser.Syncdate,
+                        Startdate = theuser.Startdate,
+                        Completed = theuser.Completed,
+                        Finishdate = DateTime.Now,
+                        Stoplicense = theuser.Stoplicense,
+                        Noticedate = theuser.Noticedate,
+                        Wechat = theuser.Wechat,
+                        Studylog = theuser.Studylog,
+
+                        Drugrelated = theuser.Drugrelated,
+                        Fullmark = theuser.Fullmark,
+                        Inspect = theuser.Inspect,
+                        Completelog = theuser.Completelog,
+                        Signed = theuser.Signed,
+                        Photostatus = theuser.Photostatus,
+                        Firstsigned = theuser.Firstsigned,
+                        Licensetype = theuser.Licensetype
+                    });
+                    _db1.User.Remove(theuser);
+                    _db1.SaveChanges();
+                }
+
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
@@ -264,8 +300,8 @@ namespace study.Controllers
                     };
                 }
                 // theuser. = DateTime.Now;
-                var clog=inputRequest.AllStatus.Length<80?inputRequest.AllStatus:inputRequest.AllStatus.Substring(0,78);
-                theuser.Completelog =  clog;
+                var clog = inputRequest.AllStatus.Length < 80 ? inputRequest.AllStatus : inputRequest.AllStatus.Substring(0, 78);
+                theuser.Completelog = clog;
                 theuser.Completed = "1";
                 // _db1.History.Add(new History
                 // {
@@ -290,15 +326,16 @@ namespace study.Controllers
                 // });
                 // _db1.User.Remove(theuser);
                 _db1.SaveChanges();
-               
+
                 if (inputRequest.AllRecords != null)
-                    { var fpath = Path.Combine(Global.LogPhotoPath, identity);
+                {
+                    var fpath = Path.Combine(Global.LogPhotoPath, identity);
                     if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
-                        var fname = Path.Combine(fpath, "exam_result.txt");
-                        Log.Information("filename is: {0}", fname);
-                        System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
-                    }
-                
+                    var fname = Path.Combine(fpath, "exam_result.txt");
+                    Log.Information("filename is: {0}", fname);
+                    System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
+                }
+
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
@@ -374,7 +411,7 @@ namespace study.Controllers
                 }
                 else
                     theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
-               if(theuser.Studylog.Length<500) _db1.SaveChanges();
+                if (theuser.Studylog.Length < 500) _db1.SaveChanges();
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
                     var fpath = Path.Combine(Global.LogPhotoPath, identity);
@@ -458,16 +495,20 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.InvalidIdentiy].Description
                     };
                 }
-                var  pic=new byte[1];
-                var photook=true;
-                try{ Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
-                var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
-               pic= System.IO.File.ReadAllBytes(filename);
+                var pic = new byte[1];
+                var photook = true;
+                try
+                {
+                    Log.Error("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
+                    var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
+                    pic = System.IO.File.ReadAllBytes(filename);
                 }
-               catch(Exception ex){
-                   photook=false;
-                    Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);}
-               
+                catch (Exception ex)
+                {
+                    photook = false;
+                    Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);
+                }
+
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
@@ -476,7 +517,7 @@ namespace study.Controllers
 
                     Identity = theuser.Identity,
                     Name = theuser.Name,
-                    PhotoOk=photook,
+                    PhotoOk = photook,
                     Photo = pic
                 };
             }

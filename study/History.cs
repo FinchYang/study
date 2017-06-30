@@ -7,8 +7,10 @@ namespace study
     {
         public int Ordinal { get; set; }
         public string Completed { get; set; }
+        public string Completelog { get; set; }
         public string Drugrelated { get; set; }
         public DateTime Finishdate { get; set; }
+        public string Firstsigned { get; set; }
         public string Fullmark { get; set; }
         public string Identity { get; set; }
         public string Inspect { get; set; }
@@ -16,6 +18,8 @@ namespace study
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
         public string Phone { get; set; }
+        public string Photostatus { get; set; }
+        public string Signed { get; set; }
         public DateTime? Startdate { get; set; }
         public string Stoplicense { get; set; }
         public string Studylog { get; set; }

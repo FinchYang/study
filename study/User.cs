@@ -10,6 +10,7 @@ namespace study
         public string Completed { get; set; }
         public string Completelog { get; set; }
         public string Drugrelated { get; set; }
+        public string Firstsigned { get; set; }
         public string Fullmark { get; set; }
         public string Inspect { get; set; }
         public string Licensetype { get; set; }

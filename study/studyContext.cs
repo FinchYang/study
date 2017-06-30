@@ -32,6 +32,10 @@ namespace study
                     .HasColumnName("completed")
                     .HasColumnType("varchar(1)");
 
+                entity.Property(e => e.Completelog)
+                    .HasColumnName("completelog")
+                    .HasColumnType("varchar(80)");
+
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
                     .HasColumnType("varchar(1)");
@@ -39,6 +43,10 @@ namespace study
                 entity.Property(e => e.Finishdate)
                     .HasColumnName("finishdate")
                     .HasColumnType("datetime");
+
+                entity.Property(e => e.Firstsigned)
+                    .HasColumnName("firstsigned")
+                    .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Fullmark)
                     .HasColumnName("fullmark")
@@ -70,6 +78,14 @@ namespace study
                 entity.Property(e => e.Phone)
                     .HasColumnName("phone")
                     .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Photostatus)
+                    .HasColumnName("photostatus")
+                    .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Signed)
+                    .HasColumnName("signed")
+                    .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Startdate)
                     .HasColumnName("startdate")
@@ -117,10 +133,14 @@ namespace study
 
                 entity.Property(e => e.Completelog)
                     .HasColumnName("completelog")
-                    .HasColumnType("varchar(8000)");
+                    .HasColumnType("varchar(80)");
 
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
+                    .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Firstsigned)
+                    .HasColumnName("firstsigned")
                     .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Fullmark)
@@ -163,7 +183,7 @@ namespace study
 
                 entity.Property(e => e.Studylog)
                     .HasColumnName("studylog")
-                    .HasColumnType("varchar(500)");
+                    .HasColumnType("varchar(1500)");
 
                 entity.Property(e => e.Syncdate)
                     .HasColumnName("syncdate")
