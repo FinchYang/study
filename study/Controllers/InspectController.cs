@@ -46,14 +46,18 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
-                var allstatus = string.Empty; 
+                var allstatus = string.Empty;
                 var allow = true;
+                var completed = true;
+                var signed = true;
+                var firstsigned = true;
+
                 var identity = inputRequest.Identity;
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
                     var his = _db1.History.FirstOrDefault(async => async.Identity == identity);
-                    if (theuser == null)
+                    if (his == null)
                     {
                         Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
                         return new LoginAndQueryResponse
@@ -63,10 +67,13 @@ namespace study.Controllers
                         };
                     }
                     allow = his.Drugrelated != "1" ? true : false;
-                     if (allow)
+                    completed = his.Completed == "1" ? true : false;
+                    signed = his.Signed == "1" ? true : false;
+                    firstsigned = his.Firstsigned == "1" ? true : false;
+                    if (allow)
                     {
                         allstatus = his.Studylog;
-                       
+
                     }
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
                 }
@@ -74,7 +81,9 @@ namespace study.Controllers
                 {
                     //drugrelated judge
                     allow = theuser.Drugrelated != "1" ? true : false;
-
+                    completed = theuser.Completed == "1" ? true : false;
+                    signed = theuser.Signed == "1" ? true : false;
+                    firstsigned = theuser.Firstsigned == "1" ? true : false;
                     if (allow)
                     {
                         allstatus = theuser.Studylog;
@@ -112,15 +121,16 @@ namespace study.Controllers
                 {
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
+
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
-                    Completed = theuser.Completed == "1" ? true : false,
-                    Signed = theuser.Signed == "1" ? true : false,
-                    FirstSigned = theuser.Firstsigned == "1" ? true : false,
+                    Completed = completed,
+                    Signed = signed,
+                    FirstSigned = firstsigned,
                     AllStatus = allstatus
                 };
             }
