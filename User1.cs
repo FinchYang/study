@@ -6,6 +6,7 @@ namespace study
     public partial class User
     {
         public string Identity { get; set; }
+        public string Authenticationphone { get; set; }
         public string Completed { get; set; }
         public string Completelog { get; set; }
         public string Drugrelated { get; set; }
@@ -15,7 +16,6 @@ namespace study
         public string Licensetype { get; set; }
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
-        public string Phone { get; set; }
         public string Photostatus { get; set; }
         public string Signed { get; set; }
         public DateTime? Startdate { get; set; }

@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace study
 {
-    public partial class User
+    public partial class History
     {
-        public string Identity { get; set; }
+        public int Ordinal { get; set; }
         public string Completed { get; set; }
         public string Completelog { get; set; }
         public string Drugrelated { get; set; }
+        public DateTime Finishdate { get; set; }
         public string Firstsigned { get; set; }
         public string Fullmark { get; set; }
+        public string Identity { get; set; }
         public string Inspect { get; set; }
         public string Licensetype { get; set; }
         public string Name { get; set; }

@@ -1,4 +1,3 @@
-
 CREATE TABLE `user` (
   `identity` varchar(20) NOT NULL,
   `drugrelated` varchar(1) DEFAULT NULL,

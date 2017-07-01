@@ -1,10 +1,9 @@
-
-CREATE TABLE `user` (
+CREATE TABLE `history` (
   `identity` varchar(20) NOT NULL,
   `drugrelated` varchar(1) DEFAULT NULL,
   `inspect` varchar(1) DEFAULT '1',
   `fullmark` varchar(1) DEFAULT NULL,
-  `licensetype` varchar(1) DEFAULT NULL,
+  `licensetype` varchar(1) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `noticedate` datetime DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
@@ -14,11 +13,13 @@ CREATE TABLE `user` (
   `startdate` datetime DEFAULT NULL,
   `syncdate` datetime NOT NULL,
   `wechat` varchar(45) DEFAULT NULL,
+  `ordinal` int(11) NOT NULL AUTO_INCREMENT,
+  `finishdate` datetime NOT NULL,
   `syncphone` varchar(45) DEFAULT NULL,
   `completelog` varchar(80) DEFAULT NULL,
   `signed` varchar(1) DEFAULT NULL,
   `photostatus` varchar(1) DEFAULT NULL,
   `firstsigned` varchar(1) DEFAULT NULL,
-  PRIMARY KEY (`identity`),
-  UNIQUE KEY `identity_UNIQUE` (`identity`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`ordinal`),
+  UNIQUE KEY `ordinal_UNIQUE` (`ordinal`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;

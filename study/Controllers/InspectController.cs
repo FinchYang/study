@@ -12,7 +12,7 @@ namespace study.Controllers
 {
     public class InspectController : Controller
     {
-        private readonly studyContext _db1 = new studyContext();
+        private readonly studyinContext _db1 = new studyinContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
         {
@@ -90,7 +90,7 @@ namespace study.Controllers
                         //need update?
                         if (!string.IsNullOrEmpty(inputRequest.Name)) theuser.Name = inputRequest.Name;
                         //  theuser.Licensetype = ((int)inputRequest.DrivingLicenseType).ToString();//elements?
-                        if (!string.IsNullOrEmpty(inputRequest.Phone)) theuser.Authenticationphone = inputRequest.Phone;
+                        if (!string.IsNullOrEmpty(inputRequest.Phone)) theuser.Phone = inputRequest.Phone;
                         // theuser.Wechat = inputRequest.Wechat;
                         if (theuser.Startdate == null)
                         {
@@ -211,7 +211,7 @@ namespace study.Controllers
 
                         Name = theuser.Name,
                         Syncphone = theuser.Syncphone,
-                        Phone = theuser.Authenticationphone,
+                        Phone = theuser.Phone,
                         Syncdate = theuser.Syncdate,
                         Startdate = theuser.Startdate,
                         Completed = theuser.Completed,
