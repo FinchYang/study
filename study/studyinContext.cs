@@ -36,6 +36,14 @@ namespace study
                     .HasColumnName("completelog")
                     .HasColumnType("varchar(80)");
 
+                entity.Property(e => e.Deductedmarks)
+                    .HasColumnName("deductedmarks")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Drivinglicense)
+                    .HasColumnName("drivinglicense")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
                     .HasColumnType("varchar(1)");
@@ -61,7 +69,6 @@ namespace study
                     .HasDefaultValueSql("1");
 
                 entity.Property(e => e.Licensetype)
-                    .IsRequired()
                     .HasColumnName("licensetype")
                     .HasColumnType("varchar(1)");
 
@@ -78,6 +85,10 @@ namespace study
                 entity.Property(e => e.Photostatus)
                     .HasColumnName("photostatus")
                     .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Postaladdress)
+                    .HasColumnName("postaladdress")
+                    .HasColumnType("varchar(100)");
 
                 entity.Property(e => e.Signed)
                     .HasColumnName("signed")
@@ -123,6 +134,14 @@ namespace study
                     .HasColumnName("completelog")
                     .HasColumnType("varchar(80)");
 
+                entity.Property(e => e.Deductedmarks)
+                    .HasColumnName("deductedmarks")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Drivinglicense)
+                    .HasColumnName("drivinglicense")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
                     .HasColumnType("varchar(1)");
@@ -157,6 +176,10 @@ namespace study
                 entity.Property(e => e.Photostatus)
                     .HasColumnName("photostatus")
                     .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Postaladdress)
+                    .HasColumnName("postaladdress")
+                    .HasColumnType("varchar(100)");
 
                 entity.Property(e => e.Signed)
                     .HasColumnName("signed")

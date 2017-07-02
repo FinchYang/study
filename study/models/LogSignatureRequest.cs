@@ -9,5 +9,6 @@ namespace  study
         public string SignatureFile { get; set; }
        
        public SignatureType SignatureType { get; set; }
+        public string PostalAddress { get; set; }
     }
 }
