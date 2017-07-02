@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace syncdata
 {
-    public partial class studyContext : DbContext
+    public partial class studyinContext : DbContext
     {
         public virtual DbSet<History> History { get; set; }
         public virtual DbSet<User> User { get; set; }
@@ -12,7 +12,7 @@ namespace syncdata
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            optionsBuilder.UseMySql(@"Server=192.168.10.94;User Id=study;Password=yunyi@6688A;Database=study");
+            optionsBuilder.UseMySql(@"Server=192.168.10.94;User Id=studyin;Password=yunyi@6688A;Database=studyin");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,13 +32,27 @@ namespace syncdata
                     .HasColumnName("completed")
                     .HasColumnType("varchar(1)");
 
+                entity.Property(e => e.Completelog)
+                    .HasColumnName("completelog")
+                    .HasColumnType("varchar(80)");
+
+                entity.Property(e => e.Deductedmarks)
+                    .HasColumnName("deductedmarks")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Drivinglicense)
+                    .HasColumnName("drivinglicense")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
                     .HasColumnType("varchar(1)");
 
-                entity.Property(e => e.Finishdate)
-                    .HasColumnName("finishdate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Finishdate).HasColumnName("finishdate");
+
+                entity.Property(e => e.Firstsigned)
+                    .HasColumnName("firstsigned")
+                    .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Fullmark)
                     .HasColumnName("fullmark")
@@ -47,7 +61,7 @@ namespace syncdata
                 entity.Property(e => e.Identity)
                     .IsRequired()
                     .HasColumnName("identity")
-                    .HasColumnType("varchar(20)");
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Inspect)
                     .HasColumnName("inspect")
@@ -55,7 +69,6 @@ namespace syncdata
                     .HasDefaultValueSql("1");
 
                 entity.Property(e => e.Licensetype)
-                    .IsRequired()
                     .HasColumnName("licensetype")
                     .HasColumnType("varchar(1)");
 
@@ -63,17 +76,25 @@ namespace syncdata
                     .HasColumnName("name")
                     .HasColumnType("varchar(45)");
 
-                entity.Property(e => e.Noticedate)
-                    .HasColumnName("noticedate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Noticedate).HasColumnName("noticedate");
 
                 entity.Property(e => e.Phone)
                     .HasColumnName("phone")
                     .HasColumnType("varchar(45)");
 
-                entity.Property(e => e.Startdate)
-                    .HasColumnName("startdate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Photostatus)
+                    .HasColumnName("photostatus")
+                    .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Postaladdress)
+                    .HasColumnName("postaladdress")
+                    .HasColumnType("varchar(100)");
+
+                entity.Property(e => e.Signed)
+                    .HasColumnName("signed")
+                    .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Startdate).HasColumnName("startdate");
 
                 entity.Property(e => e.Stoplicense)
                     .HasColumnName("stoplicense")
@@ -83,9 +104,7 @@ namespace syncdata
                     .HasColumnName("studylog")
                     .HasColumnType("varchar(500)");
 
-                entity.Property(e => e.Syncdate)
-                    .HasColumnName("syncdate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Syncdate).HasColumnName("syncdate");
 
                 entity.Property(e => e.Syncphone)
                     .HasColumnName("syncphone")
@@ -105,10 +124,6 @@ namespace syncdata
 
                 entity.Property(e => e.Identity)
                     .HasColumnName("identity")
-                    .HasColumnType("varchar(20)");
-
-                entity.Property(e => e.Authenticationphone)
-                    .HasColumnName("authenticationphone")
                     .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Completed)
@@ -117,10 +132,22 @@ namespace syncdata
 
                 entity.Property(e => e.Completelog)
                     .HasColumnName("completelog")
-                    .HasColumnType("varchar(500)");
+                    .HasColumnType("varchar(80)");
+
+                entity.Property(e => e.Deductedmarks)
+                    .HasColumnName("deductedmarks")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Drivinglicense)
+                    .HasColumnName("drivinglicense")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Drugrelated)
                     .HasColumnName("drugrelated")
+                    .HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Firstsigned)
+                    .HasColumnName("firstsigned")
                     .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Fullmark)
@@ -133,7 +160,6 @@ namespace syncdata
                     .HasDefaultValueSql("1");
 
                 entity.Property(e => e.Licensetype)
-                    .IsRequired()
                     .HasColumnName("licensetype")
                     .HasColumnType("varchar(1)");
 
@@ -141,21 +167,25 @@ namespace syncdata
                     .HasColumnName("name")
                     .HasColumnType("varchar(45)");
 
-                entity.Property(e => e.Noticedate)
-                    .HasColumnName("noticedate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Noticedate).HasColumnName("noticedate");
+
+                entity.Property(e => e.Phone)
+                    .HasColumnName("phone")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Photostatus)
                     .HasColumnName("photostatus")
                     .HasColumnType("varchar(1)");
 
+                entity.Property(e => e.Postaladdress)
+                    .HasColumnName("postaladdress")
+                    .HasColumnType("varchar(100)");
+
                 entity.Property(e => e.Signed)
                     .HasColumnName("signed")
                     .HasColumnType("varchar(1)");
 
-                entity.Property(e => e.Startdate)
-                    .HasColumnName("startdate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Startdate).HasColumnName("startdate");
 
                 entity.Property(e => e.Stoplicense)
                     .HasColumnName("stoplicense")
@@ -165,9 +195,7 @@ namespace syncdata
                     .HasColumnName("studylog")
                     .HasColumnType("varchar(500)");
 
-                entity.Property(e => e.Syncdate)
-                    .HasColumnName("syncdate")
-                    .HasColumnType("datetime");
+                entity.Property(e => e.Syncdate).HasColumnName("syncdate");
 
                 entity.Property(e => e.Syncphone)
                     .HasColumnName("syncphone")

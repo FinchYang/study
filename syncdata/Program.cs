@@ -6,7 +6,8 @@ using System.Threading;
 namespace syncdata
 {
     class Program
-    {
+    { private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
+     private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
         static string importPath = "/home/inspect/ftp/get";
         static string exportPath = "/home/inspect/ftp/put";
         static void Main(string[] args)
@@ -52,7 +53,7 @@ namespace syncdata
         }
         static void DbToFileForExtranetToIntranet()
         {
-            using (var db = new studyContext())
+            using (var db = new studyinContext())
             {
                 var now = DateTime.Now;
                 var tempday = now.AddDays(-1);
@@ -71,9 +72,14 @@ namespace syncdata
                 }
             }
         }
+        private static string GetCyphertext(string identity){
+           //  var original_value = token;
+   return CryptographyHelpers.Encrypt(_key, _salt, identity);
+   
+        }
         static void FileToDb()
         {
-            using (var db = new studyContext())
+            using (var db = new studyinContext())
             {
                 // var fpath =Path.Combine( importPath ,DateTime.Today.ToString("yyyyMMdd"));
                 // DirectoryInfo a = new DirectoryInfo(fpath);
@@ -104,8 +110,8 @@ namespace syncdata
                             {
                                 db.User.Add(new User
                                 {
-                                    Identity = identity,
-                                    Licensetype = ((int)enumtype).ToString(),
+                                    Identity = GetCyphertext(identity),
+                                  //  Licensetype = ((int)enumtype).ToString(),
                                     Drugrelated = drugrelated,
                                     Syncphone = phone,
                                     Photostatus = pictureok,

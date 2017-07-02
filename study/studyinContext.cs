@@ -61,7 +61,7 @@ namespace study
                 entity.Property(e => e.Identity)
                     .IsRequired()
                     .HasColumnName("identity")
-                    .HasColumnType("varchar(20)");
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Inspect)
                     .HasColumnName("inspect")
@@ -124,7 +124,7 @@ namespace study
 
                 entity.Property(e => e.Identity)
                     .HasColumnName("identity")
-                    .HasColumnType("varchar(20)");
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Completed)
                     .HasColumnName("completed")
