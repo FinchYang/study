@@ -12,8 +12,7 @@ namespace study.Controllers
 {
     public class InspectController : Controller
     {
-        private string _key = "2cff5601e52f4747bfb9e271fe45042a";
-        private string _salt = "d31beaac47b44b45b1c6066712d49ff6";
+
         private readonly studyinContext _db1 = new studyinContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
@@ -56,7 +55,7 @@ namespace study.Controllers
                 var drivinglicense = string.Empty;
                 var deductedmarks = 0;
                 var identity = inputRequest.Identity;
-                var cryptographicid = GetCyphertext(identity);
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
@@ -206,7 +205,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyTokenError].Description
                     };
                 }
-                var cryptographicid = GetCyphertext(identity);
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
@@ -320,7 +319,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
-                var cryptographicid = GetCyphertext(identity);
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -434,7 +433,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
-                var cryptographicid = GetCyphertext(identity);
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -528,7 +527,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description + token
                     };
                 }
-                var cryptographicid = GetCyphertext(identity);
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 // var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
@@ -621,18 +620,7 @@ namespace study.Controllers
                 };
             }
         }
-        private string GetIdentity(string cryptograph)
-        {
-            //  var original_value = token;
-            // var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
-            return CryptographyHelpers.Decrypt(_key, _salt, cryptograph);
-        }
-        private string GetCyphertext(string identity)
-        {
-            //  var original_value = token;
-            return CryptographyHelpers.Encrypt(_key, _salt, identity);
 
-        }
         private string GetToken()
         {
             var seed = Guid.NewGuid().ToString("N");

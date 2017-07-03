@@ -7,8 +7,7 @@ namespace syncdata
 {
     class Program
     {
-         private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
-     private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
+
         static string importPath = "/home/inspect/ftp/get";
         static string exportPath = "/home/inspect/ftp/put";
         static void Main(string[] args)
@@ -73,11 +72,7 @@ namespace syncdata
                 }
             }
         }
-        private static string GetCyphertext(string identity){
-           //  var original_value = token;
-   return CryptographyHelpers.Encrypt(_key, _salt, identity);
-   
-        }
+       
         static void FileToDb()
         {
             using (var db = new studyinContext())
@@ -111,7 +106,7 @@ namespace syncdata
                             {
                                 db.User.Add(new User
                                 {
-                                    Identity = GetCyphertext(identity),
+                                    Identity = identity,
                                   //  Licensetype = ((int)enumtype).ToString(),
                                     Drugrelated = drugrelated,
                                     Syncphone = phone,

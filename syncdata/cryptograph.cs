@@ -4,7 +4,13 @@ using System.Security.Cryptography;
 
 namespace syncdata{
 internal static class CryptographyHelpers
-{
+{         private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
+     private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
+    public static string StudyEncrypt(string identity)
+    {
+        return CryptographyHelpers.Encrypt(_key, _salt, identity);
+
+    }
     internal static string Decrypt(string password, string salt, string encrypted_value)
     {
         string decrypted;
