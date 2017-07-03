@@ -6,13 +6,14 @@ using System.Threading;
 namespace syncdata
 {
     class Program
-    { private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
+    {
+         private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
      private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
         static string importPath = "/home/inspect/ftp/get";
         static string exportPath = "/home/inspect/ftp/put";
         static void Main(string[] args)
         {
-            Console.WriteLine("haha");
+            Console.WriteLine("haha");//System.Security.Cryptography
             var t1 = new Thread(new ThreadStart(filetodbthread));
             t1.Name = "import data";
             t1.Start();

@@ -11,8 +11,9 @@ using Serilog;
 namespace study.Controllers
 {
     public class InspectController : Controller
-    {            private string _key = "2cff5601e52f4747bfb9e271fe45042a";
-     private string _salt = "d31beaac47b44b45b1c6066712d49ff6";
+    {
+        private string _key = "2cff5601e52f4747bfb9e271fe45042a";
+        private string _salt = "d31beaac47b44b45b1c6066712d49ff6";
         private readonly studyinContext _db1 = new studyinContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
@@ -52,14 +53,14 @@ namespace study.Controllers
                 var completed = true;
                 var signed = true;
                 var firstsigned = true;
-                var drivinglicense=string.Empty;
-                var deductedmarks=0;
+                var drivinglicense = string.Empty;
+                var deductedmarks = 0;
                 var identity = inputRequest.Identity;
-                var cryptographicid=GetCyphertext(identity);
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity==cryptographicid);
+                var cryptographicid = GetCyphertext(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
-                    var his = _db1.History.FirstOrDefault(async => async.Identity == identity|| async.Identity==cryptographicid);
+                    var his = _db1.History.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                     if (his == null)
                     {
                         Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
@@ -73,10 +74,10 @@ namespace study.Controllers
                     completed = his.Completed == "1" ? true : false;
                     signed = his.Signed == "1" ? true : false;
                     firstsigned = his.Firstsigned == "1" ? true : false;
-                    if(!string.IsNullOrEmpty(his.Drivinglicense)) drivinglicense=his.Drivinglicense;
-                    if(his.Deductedmarks!=null)
-                    {                       
-                        deductedmarks =(int)his?.Deductedmarks;
+                    if (!string.IsNullOrEmpty(his.Drivinglicense)) drivinglicense = his.Drivinglicense;
+                    if (his.Deductedmarks != null)
+                    {
+                        deductedmarks = (int)his?.Deductedmarks;
                     }
 
                     if (allow)
@@ -93,10 +94,10 @@ namespace study.Controllers
                     completed = theuser.Completed == "1" ? true : false;
                     signed = theuser.Signed == "1" ? true : false;
                     firstsigned = theuser.Firstsigned == "1" ? true : false;
-                     if(!string.IsNullOrEmpty(theuser.Drivinglicense)) drivinglicense=theuser.Drivinglicense;
-                    if(theuser.Deductedmarks!=null)
-                    {                       
-                        deductedmarks =(int)theuser?.Deductedmarks;
+                    if (!string.IsNullOrEmpty(theuser.Drivinglicense)) drivinglicense = theuser.Drivinglicense;
+                    if (theuser.Deductedmarks != null)
+                    {
+                        deductedmarks = (int)theuser?.Deductedmarks;
                     }
                     if (allow)
                     {
@@ -132,7 +133,7 @@ namespace study.Controllers
                 {
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
-                var pic=new byte[8];
+                var pic = new byte[8];
                 try
                 {
                     Log.Information("loginandquery,{0},={1}", Global.PhotoPath, Global.PhotoPath);
@@ -152,9 +153,9 @@ namespace study.Controllers
                     Completed = completed,
                     Signed = signed,
                     FirstSigned = firstsigned,
-                    DrivingLicense=drivinglicense,
-                    DeductedMarks=deductedmarks,
-                    Photo=pic,
+                    DrivingLicense = drivinglicense,
+                    DeductedMarks = deductedmarks,
+                    Photo = pic,
                     AllStatus = allstatus
                 };
             }
@@ -205,8 +206,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyTokenError].Description
                     };
                 }
-                 var cryptographicid=GetCyphertext(identity);
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity==cryptographicid);
+                var cryptographicid = GetCyphertext(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
@@ -214,15 +215,16 @@ namespace study.Controllers
 
                 var fname = Path.Combine(Global.SignaturePath, identity + inputRequest.SignatureType);
                 var index = inputRequest.SignatureFile.IndexOf("base64,");
-              //  Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
+                //  Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
                 System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index + 7)));
 
                 switch (inputRequest.SignatureType)
                 {
                     case SignatureType.PhysicalCondition:
                         theuser.Firstsigned = "1";
-                        if(!string.IsNullOrEmpty(inputRequest.PostalAddress)){
-                            theuser.Postaladdress=inputRequest.PostalAddress;
+                        if (!string.IsNullOrEmpty(inputRequest.PostalAddress))
+                        {
+                            theuser.Postaladdress = inputRequest.PostalAddress;
                         }
                         break;
                     case SignatureType.EducationalRecord:
@@ -236,8 +238,8 @@ namespace study.Controllers
                     _db1.History.Add(new History
                     {
                         Identity = cryptographicid,
-                        Drivinglicense=theuser.Drivinglicense,
-                        Deductedmarks=theuser.Deductedmarks,
+                        Drivinglicense = theuser.Drivinglicense,
+                        Deductedmarks = theuser.Deductedmarks,
                         Name = theuser.Name,
                         Syncphone = theuser.Syncphone,
                         Phone = theuser.Phone,
@@ -249,7 +251,7 @@ namespace study.Controllers
                         Noticedate = theuser.Noticedate,
                         Wechat = theuser.Wechat,
                         Studylog = theuser.Studylog,
-                        Postaladdress=theuser.Postaladdress,
+                        Postaladdress = theuser.Postaladdress,
                         Drugrelated = theuser.Drugrelated,
                         Fullmark = theuser.Fullmark,
                         Inspect = theuser.Inspect,
@@ -259,9 +261,9 @@ namespace study.Controllers
                         Firstsigned = theuser.Firstsigned,
                         Licensetype = theuser.Licensetype
                     });
-                    _db1.User.Remove(theuser);                  
+                    _db1.User.Remove(theuser);
                 }
-                 _db1.SaveChanges();
+                _db1.SaveChanges();
                 return new CommonResponse
                 {
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
@@ -318,9 +320,9 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
-                  var cryptographicid=GetCyphertext(identity);
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity==cryptographicid);
-              //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
+                var cryptographicid = GetCyphertext(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
                     Log.Error("InspectCompleteCourses,{0},identity={1}",
@@ -432,9 +434,9 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
-                  var cryptographicid=GetCyphertext(identity);
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity==cryptographicid);
-              //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
+                var cryptographicid = GetCyphertext(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                //  var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
                     Log.Error("InspectPostStudyStatus,{0},identity={1}",
@@ -526,9 +528,9 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description + token
                     };
                 }
-                  var cryptographicid=GetCyphertext(identity);
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity==cryptographicid);
-               // var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
+                var cryptographicid = GetCyphertext(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                // var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity);
                 if (theuser == null)
                 {
                     Log.Error("InspectGetLearnerInfo,{0},identity={1}",
@@ -576,17 +578,17 @@ namespace study.Controllers
                 };
             }
         }
-           [Route("salt")]
+        [Route("salt")]
         [HttpGet]
 
         public GetLearnerInfoResponse salt(string token)
         {
             try
             {
-                
+
                 if (string.IsNullOrEmpty(token))
                 {
-                   
+
                     return new GetLearnerInfoResponse
                     {
                         StatusCode = Global.Status[responseCode.TokenError].StatusCode,
@@ -594,38 +596,42 @@ namespace study.Controllers
                     };
                 }
                 var key = "2cff5601e52f4747bfb9e271fe45042a";
-    var salt = "d31beaac47b44b45b1c6066712d49ff6";
-    var original_value = token;
-    var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
-    var target = CryptographyHelpers.Decrypt(key, salt, encrypted_value);
-               
+                var salt = "d31beaac47b44b45b1c6066712d49ff6";
+                var original_value = token;
+                var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
+                var target = CryptographyHelpers.Decrypt(key, salt, encrypted_value);
+
 
                 return new GetLearnerInfoResponse
-                {Name=encrypted_value,Identity=  encrypted_value.Length.ToString(),
+                {
+                    Name = encrypted_value,
+                    Identity = encrypted_value.Length.ToString(),
                     StatusCode = original_value,
                     Description = target,
-                
+
                 };
             }
             catch (Exception ex)
             {
-               
+
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
-                    Description = Global.Status[responseCode.ProgramError].Description+ex.Message
+                    Description = Global.Status[responseCode.ProgramError].Description + ex.Message
                 };
             }
         }
-        private string GetIdentity(string cryptograph){
-           //  var original_value = token;
-   // var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
-    return CryptographyHelpers.Decrypt(_key, _salt, cryptograph);
+        private string GetIdentity(string cryptograph)
+        {
+            //  var original_value = token;
+            // var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
+            return CryptographyHelpers.Decrypt(_key, _salt, cryptograph);
         }
-         private string GetCyphertext(string identity){
-           //  var original_value = token;
-   return CryptographyHelpers.Encrypt(_key, _salt, identity);
-   
+        private string GetCyphertext(string identity)
+        {
+            //  var original_value = token;
+            return CryptographyHelpers.Encrypt(_key, _salt, identity);
+
         }
         private string GetToken()
         {
