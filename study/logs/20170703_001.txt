@@ -17,3 +17,8 @@ System.IO.IOException: Failed to bind to address http://localhost:5000 on the IP
    at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
    --- End of inner exception stack trace ---
    at Microsoft.AspNetCore.Server.Kestrel.KestrelServer.Start[TContext](IHttpApplication`1 application)
+2017-07-03 13:31:07.076 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-03 13:31:09.757 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-03 13:31:10.172 +08:00 [Information] Request finished in 444.7627ms 404 
+2017-07-03 13:31:10.203 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-03 13:31:10.206 +08:00 [Information] Request finished in 2.6989ms 404 

@@ -30,6 +30,101 @@ namespace study.Controllers
             }
             base.Dispose(disposing);
         }
+         [Route("SignatureQuery")]
+        [HttpPost]
+        public SignatureQueryResponse SignatureQuery([FromBody] SignatureQueryRequest inputRequest)
+        {
+            try
+            {
+                Log.Information("SignatureQuery,input={0},from {1}",
+                    JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                if (inputRequest == null)
+                {
+                    Log.Error("SignatureQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
+                    return new SignatureQueryResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyRequestError].StatusCode,
+                        Description = Global.Status[responseCode.studyRequestError].Description
+                    };
+                }
+                var allstatus = string.Empty;
+                var completed = true;
+                var signed = true;
+
+                 var found = false;
+                var identity = string.Empty;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == inputRequest.Token)
+                    {
+                        identity = a.Identity;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.Error("SignatureQuery,{0}", Global.Status[responseCode.studyTokenError].Description);
+                    return new SignatureQueryResponse
+                    {
+                        StatusCode = Global.Status[responseCode.studyTokenError].StatusCode,
+                        Description = Global.Status[responseCode.studyTokenError].Description
+                    };
+                }
+
+              
+                var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
+                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                if (theuser == null)
+                {
+                    var his = _db1.History.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                    if (his == null)
+                    {
+                        Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
+                        return new SignatureQueryResponse
+                        {
+                            StatusCode = Global.Status[responseCode.studyNotNecessary].StatusCode,
+                            Description = Global.Status[responseCode.studyNotNecessary].Description + identity
+                        };
+                    }
+                   
+                    completed = his.Completed == "1" ? true : false;
+                    signed = his.Signed == "1" ? true : false;
+                                          allstatus = his.Studylog;                   
+                }
+                else
+                {
+                  
+                    completed = theuser.Completed == "1" ? true : false;
+                    signed = theuser.Signed == "1" ? true : false;
+                   
+                        allstatus = theuser.Studylog;
+                      
+                }
+
+             
+                return new SignatureQueryResponse
+                {
+                   
+                    StatusCode = Global.Status[responseCode.studyOk].StatusCode,
+                    Description = Global.Status[responseCode.studyOk].Description,
+                  
+                    Completed = completed,
+                    Signed = signed,
+                   
+                    AllStatus = allstatus
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("LoginAndQuery,{0}", ex);
+                return new SignatureQueryResponse
+                {
+                    StatusCode = Global.Status[responseCode.studyProgramError].StatusCode,
+                    Description = Global.Status[responseCode.studyProgramError].Description
+                };
+            }
+        }
         [Route("LoginAndQuery")]
         [HttpPost]
         public LoginAndQueryResponse LoginAndQuery([FromBody] LoginAndQueryRequest inputRequest)
@@ -119,10 +214,12 @@ namespace study.Controllers
                 //token process
                 var toke1n = GetToken();
                 var found = false;
+                var lasttoken=string.Empty;
                 foreach (var a in tokens)
                 {
                     if (a.Identity == identity)
                     {
+                        lasttoken=a.Token;
                         a.Token = toke1n;
                         found = true;
                         break;
@@ -146,6 +243,7 @@ namespace study.Controllers
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
+                     LastToken = lasttoken,
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
@@ -560,7 +658,7 @@ namespace study.Controllers
                     Description = Global.Status[responseCode.ok].Description,
                     DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
 
-                    Identity = theuser.Identity,
+                 //   Identity = theuser.Identity,
                     Name = theuser.Name,
                     PhotoOk = photook,
                     Photo = pic
@@ -604,8 +702,8 @@ namespace study.Controllers
                 return new GetLearnerInfoResponse
                 {
                     Name = encrypted_value,
-                    Identity = encrypted_value.Length.ToString(),
-                    StatusCode = original_value,
+                 //   Identity = encrypted_value.Length.ToString(),
+                    StatusCode = encrypted_value.Length.ToString(),
                     Description = target,
 
                 };
