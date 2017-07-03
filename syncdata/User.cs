@@ -18,6 +18,7 @@ namespace syncdata
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
         public string Phone { get; set; }
+        public string Photofile { get; set; }
         public string Photostatus { get; set; }
         public string Postaladdress { get; set; }
         public string Signed { get; set; }

@@ -30,7 +30,7 @@ namespace study.Controllers
             }
             base.Dispose(disposing);
         }
-         [Route("SignatureQuery")]
+        [Route("SignatureQuery")]
         [HttpPost]
         public SignatureQueryResponse SignatureQuery([FromBody] SignatureQueryRequest inputRequest)
         {
@@ -51,7 +51,7 @@ namespace study.Controllers
                 var completed = true;
                 var signed = true;
 
-                 var found = false;
+                var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
                 {
@@ -72,7 +72,7 @@ namespace study.Controllers
                     };
                 }
 
-              
+
                 var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
@@ -87,31 +87,31 @@ namespace study.Controllers
                             Description = Global.Status[responseCode.studyNotNecessary].Description + identity
                         };
                     }
-                   
+
                     completed = his.Completed == "1" ? true : false;
                     signed = his.Signed == "1" ? true : false;
-                                          allstatus = his.Studylog;                   
+                    allstatus = his.Studylog;
                 }
                 else
                 {
-                  
+
                     completed = theuser.Completed == "1" ? true : false;
                     signed = theuser.Signed == "1" ? true : false;
-                   
-                        allstatus = theuser.Studylog;
-                      
+
+                    allstatus = theuser.Studylog;
+
                 }
 
-             
+
                 return new SignatureQueryResponse
                 {
-                   
+
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
-                  
+
                     Completed = completed,
                     Signed = signed,
-                   
+
                     AllStatus = allstatus
                 };
             }
@@ -150,7 +150,9 @@ namespace study.Controllers
                 var drivinglicense = string.Empty;
                 var deductedmarks = 0;
                 var identity = inputRequest.Identity;
+                   var fname = identity + ".jpg";
                 var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
+                var pic = new byte[8];
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
@@ -173,7 +175,18 @@ namespace study.Controllers
                     {
                         deductedmarks = (int)his?.Deductedmarks;
                     }
+                    try
+                    {
 
+                        if (!string.IsNullOrEmpty(his.Photofile)) fname = his.Photofile;
+
+                        var filename = Path.Combine(Global.PhotoPath, fname);
+                        pic = System.IO.File.ReadAllBytes(filename);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("loginandquery,{0},={1}", identity, ex.Message);
+                    }
                     if (allow)
                     {
                         allstatus = his.Studylog;
@@ -209,17 +222,28 @@ namespace study.Controllers
                         _db1.SaveChanges();
                     }
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(theuser.Photofile)) fname = theuser.Photofile;
+
+                        var filename = Path.Combine(Global.PhotoPath, fname);
+                        pic = System.IO.File.ReadAllBytes(filename);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("loginandquery,{0},={1}", identity, ex.Message);
+                    }
                 }
 
                 //token process
                 var toke1n = GetToken();
                 var found = false;
-                var lasttoken=string.Empty;
+                var lasttoken = string.Empty;
                 foreach (var a in tokens)
                 {
                     if (a.Identity == identity)
                     {
-                        lasttoken=a.Token;
+                        lasttoken = a.Token;
                         a.Token = toke1n;
                         found = true;
                         break;
@@ -229,21 +253,12 @@ namespace study.Controllers
                 {
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
-                var pic = new byte[8];
-                try
-                {
-                    Log.Information("loginandquery,{0},={1}", Global.PhotoPath, Global.PhotoPath);
-                    var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
-                    pic = System.IO.File.ReadAllBytes(filename);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error("loginandquery,{0},={1}", identity, ex.Message);
-                }
+
+
                 return new LoginAndQueryResponse
                 {
                     Token = toke1n,
-                     LastToken = lasttoken,
+                    LastToken = lasttoken,
                     StatusCode = Global.Status[responseCode.studyOk].StatusCode,
                     Description = Global.Status[responseCode.studyOk].Description,
                     AllowedToStudy = allow,
@@ -309,10 +324,10 @@ namespace study.Controllers
                 {
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
-                var  date=DateTime.Today;
-                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
-                var fpath=Path.Combine(Global.SignaturePath,dir);
-                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                var date = DateTime.Today;
+                var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                var fpath = Path.Combine(Global.SignaturePath, dir);
+                if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                 var fname = Path.Combine(fpath, identity + inputRequest.SignatureType);
                 var index = inputRequest.SignatureFile.IndexOf("base64,");
                 //  Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
@@ -471,13 +486,13 @@ namespace study.Controllers
 
                 if (inputRequest.AllRecords != null)
                 {
-                     var  date=DateTime.Today;
-                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
-                var fpath=Path.Combine(Global.LogPhotoPath,dir, identity);
-                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                    var date = DateTime.Today;
+                    var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                    var fpath = Path.Combine(Global.LogPhotoPath, dir, identity);
+                    if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
-                 //   var fpath = Path.Combine(Global.LogPhotoPath, identity);
-                   // if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                    //   var fpath = Path.Combine(Global.LogPhotoPath, identity);
+                    // if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                     var fname = Path.Combine(fpath, "exam_result.txt");
                     Log.Information("filename is: {0}", fname);
                     System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
@@ -563,14 +578,14 @@ namespace study.Controllers
                 if (theuser.Studylog.Length < 500) _db1.SaveChanges();
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
-                  if (inputRequest.Pictures != null)
+                    if (inputRequest.Pictures != null)
                     {
-                        var  date=DateTime.Today;
-                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
-                var fpath=Path.Combine(Global.LogPhotoPath,dir, identity);
-                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
-                       
-                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString()+".jpg");
+                        var date = DateTime.Today;
+                        var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                        var fpath = Path.Combine(Global.LogPhotoPath, dir, identity);
+                        if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+
+                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".jpg");
                         Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }
@@ -651,7 +666,9 @@ namespace study.Controllers
                 try
                 {
                     Log.Information("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
-                    var filename = Path.Combine(Global.PhotoPath, identity + ".jpg");
+                    var ff = identity + ".jpg";
+                    if (!string.IsNullOrEmpty(theuser.Photofile)) ff = theuser.Photofile;
+                    var filename = Path.Combine(Global.PhotoPath, ff);
                     pic = System.IO.File.ReadAllBytes(filename);
                 }
                 catch (Exception ex)
@@ -666,7 +683,7 @@ namespace study.Controllers
                     Description = Global.Status[responseCode.ok].Description,
                     DrivingLicenseType = string.IsNullOrEmpty(theuser.Licensetype) ? DrivingLicenseType.Unknown : (DrivingLicenseType)int.Parse(theuser.Licensetype),
 
-                 //   Identity = theuser.Identity,
+                    //   Identity = theuser.Identity,
                     Name = theuser.Name,
                     PhotoOk = photook,
                     Photo = pic
@@ -710,7 +727,7 @@ namespace study.Controllers
                 return new GetLearnerInfoResponse
                 {
                     Name = encrypted_value,
-                 //   Identity = encrypted_value.Length.ToString(),
+                    //   Identity = encrypted_value.Length.ToString(),
                     StatusCode = encrypted_value.Length.ToString(),
                     Description = target,
 

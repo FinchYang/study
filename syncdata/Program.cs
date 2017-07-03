@@ -107,6 +107,7 @@ namespace syncdata
                         var pictureok = fields[4];
                         var deductedmarks = fields[5];
                         var licensenumber = fields[6];
+                        var photofile = fields[7];
                         var ideducted = 0;
                         if (!int.TryParse(deductedmarks, out ideducted)) ideducted = 1;
                         var theuser = db.User.FirstOrDefault(async => async.Identity == identity);
@@ -123,6 +124,7 @@ namespace syncdata
                                     Photostatus = pictureok,
                                     Drivinglicense = licensenumber,
                                     Deductedmarks = ideducted,
+                                    Photofile=photofile,
                                     Syncdate = DateTime.Now
                                 });
                             }

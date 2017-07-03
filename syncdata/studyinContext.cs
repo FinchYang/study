@@ -82,6 +82,10 @@ namespace syncdata
                     .HasColumnName("phone")
                     .HasColumnType("varchar(45)");
 
+                entity.Property(e => e.Photofile)
+                    .HasColumnName("photofile")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Photostatus)
                     .HasColumnName("photostatus")
                     .HasColumnType("varchar(1)");
@@ -171,6 +175,10 @@ namespace syncdata
 
                 entity.Property(e => e.Phone)
                     .HasColumnName("phone")
+                    .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Photofile)
+                    .HasColumnName("photofile")
                     .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Photostatus)

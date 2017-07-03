@@ -15,8 +15,13 @@ UPDATE `studyin`.`user` SET
 WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
 
 UPDATE `studyin`.`user` SET
+`studylog` = 'abc,234234,234234-def,243234234,3423442'
+WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
+
+UPDATE `studyin`.`user` SET
 `drivinglicense` = '驾驶证号'
 WHERE `identity` = '370681199211250014';
+
 CREATE TABLE `history` (
   `identity` varchar(45) NOT NULL,
   `drugrelated` varchar(1) DEFAULT NULL,
@@ -42,9 +47,10 @@ CREATE TABLE `history` (
   `postaladdress` varchar(100) DEFAULT NULL,
   `drivinglicense` varchar(45) DEFAULT NULL,
   `deductedmarks` int(11) DEFAULT NULL,
+  `photofile` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ordinal`),
   UNIQUE KEY `ordinal_UNIQUE` (`ordinal`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 CREATE TABLE `user` (
   `identity` varchar(45) NOT NULL,
   `drugrelated` varchar(1) DEFAULT NULL,
@@ -68,6 +74,8 @@ CREATE TABLE `user` (
   `postaladdress` varchar(100) DEFAULT NULL,
   `drivinglicense` varchar(45) DEFAULT NULL,
   `deductedmarks` int(11) DEFAULT NULL,
+  `photofile` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`identity`),
   UNIQUE KEY `identity_UNIQUE` (`identity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
