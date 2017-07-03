@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
 using System.IO;
 using System.Security.Cryptography;
 namespace InternalEncrypt{
@@ -16,11 +15,11 @@ public static class CryptographyHelpers
     private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
     public static string StudyDecrypt(string cryptograph)
     {
-        return CryptographyHelpers.Decrypt(_key, _salt, cryptograph);
+        return Decrypt(_key, _salt, cryptograph);
     }
     public static string StudyEncrypt(string identity)
     {
-        return CryptographyHelpers.Encrypt(_key, _salt, identity);
+        return Encrypt(_key, _salt, identity);
 
     }
     public static byte[] StudyFileDecrypt(string cypherfile)
@@ -37,7 +36,7 @@ public static class CryptographyHelpers
         var targetfile = Guid.NewGuid().ToString("N");
         var aa = System.IO.File.ReadAllBytes(sourefile);
         var bs = Convert.ToBase64String(aa);
-        var enbs = InternalEncrypt.CryptographyHelpers.StudyEncrypt(bs);
+        var enbs = StudyEncrypt(bs);
 
         var fullname = targetfile;
         if (targetpath != null)
