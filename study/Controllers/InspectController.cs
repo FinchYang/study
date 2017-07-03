@@ -309,8 +309,11 @@ namespace study.Controllers
                 {
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
-
-                var fname = Path.Combine(Global.SignaturePath, identity + inputRequest.SignatureType);
+                var  date=DateTime.Today;
+                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
+                var fpath=Path.Combine(Global.SignaturePath,dir);
+                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                var fname = Path.Combine(fpath, identity + inputRequest.SignatureType);
                 var index = inputRequest.SignatureFile.IndexOf("base64,");
                 //  Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
                 System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index + 7)));
@@ -468,8 +471,13 @@ namespace study.Controllers
 
                 if (inputRequest.AllRecords != null)
                 {
-                    var fpath = Path.Combine(Global.LogPhotoPath, identity);
-                    if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                     var  date=DateTime.Today;
+                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
+                var fpath=Path.Combine(Global.LogPhotoPath,dir, identity);
+                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+
+                 //   var fpath = Path.Combine(Global.LogPhotoPath, identity);
+                   // if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                     var fname = Path.Combine(fpath, "exam_result.txt");
                     Log.Information("filename is: {0}", fname);
                     System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
@@ -555,14 +563,14 @@ namespace study.Controllers
                 if (theuser.Studylog.Length < 500) _db1.SaveChanges();
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
-                    var fpath = Path.Combine(Global.LogPhotoPath, identity);
-                    if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
-
-                    //  var filename = Path.Combine(Global.LogPhotoPath, identity, string.Format("{0}.pic", inputRequest.CourseTitle));
-                    if (inputRequest.Pictures != null)
+                  if (inputRequest.Pictures != null)
                     {
-                        //   var fname = Path.Combine(fpath, inputRequest.CourseTitle);
-                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString());
+                        var  date=DateTime.Today;
+                var dir=string.Format("{0}{1}{2}",date.Year,date.Month,date.Day);
+                var fpath=Path.Combine(Global.LogPhotoPath,dir, identity);
+                if(!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
+                       
+                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString()+".jpg");
                         Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }
