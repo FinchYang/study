@@ -584,7 +584,7 @@ namespace study.Controllers
                         var fpath = Path.Combine(Global.LogPhotoPath, dir, subfpath);
                         if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
-                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".jpg");
+                        var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".zip");
                         Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }

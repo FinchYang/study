@@ -15,9 +15,9 @@ namespace syncdata
         {
 
             Console.WriteLine("haha");//System.Security.Cryptography
-            // var t1 = new Thread(new ThreadStart(filetodbthread));
-            // t1.Name = "import data";
-            // t1.Start();
+            var t1 = new Thread(new ThreadStart(filetodbthread));
+            t1.Name = "import data";
+            t1.Start();
             var t2 = new Thread(new ThreadStart(dbtofilethread));
             t2.Name = "export data";
             t2.Start();

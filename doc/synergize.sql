@@ -19,6 +19,10 @@ UPDATE `studyin`.`user` SET
 WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
 
 UPDATE `studyin`.`user` SET
+`drugrelated` = ''
+WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
+
+UPDATE `studyin`.`user` SET
 `studylog` = ''
 WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
 
