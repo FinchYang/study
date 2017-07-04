@@ -9,29 +9,29 @@ using System.Security.Cryptography;
 namespace InternalEncrypt{
 
 
-public static class CryptographyHelpers
+public  class CryptographyHelpers
 {
     private static string _key = "2cff5601e52f4747bfb9e271fe45042a";
     private static string _salt = "d31beaac47b44b45b1c6066712d49ff6";
-    public static string StudyDecrypt(string cryptograph)
+    public  string StudyDecrypt(string cryptograph)
     {
         return Decrypt(_key, _salt, cryptograph);
     }
-    public static string StudyEncrypt(string identity)
+    public  string StudyEncrypt(string identity)
     {
         return Encrypt(_key, _salt, identity);
 
     }
-    public static byte[] StudyFileDecrypt(string cypherfile)
+    public  byte[] StudyFileDecrypt(string cypherfile)
     {
         var mm = System.IO.File.ReadAllText(cypherfile);
-        var originfile = InternalEncrypt.CryptographyHelpers.StudyDecrypt(mm);
+        var originfile = StudyDecrypt(mm);
         var bytesss = Convert.FromBase64String(originfile);
         //   System.IO.File.WriteAllBytes("newhahah.jpg", bytesss);
         return bytesss;
 
     }
-    public static string StudyFileEncrypt(string sourefile, string targetpath = null)
+    public  string StudyFileEncrypt(string sourefile, string targetpath = null)
     {
         var targetfile = Guid.NewGuid().ToString("N");
         var aa = System.IO.File.ReadAllBytes(sourefile);
@@ -47,7 +47,7 @@ public static class CryptographyHelpers
         System.IO.File.WriteAllText(fullname, enbs);
         return targetfile;
     }
-    internal static string Decrypt(string password, string salt, string encrypted_value)
+    internal  string Decrypt(string password, string salt, string encrypted_value)
     {
         string decrypted;
 
@@ -77,7 +77,7 @@ public static class CryptographyHelpers
         return decrypted;
     }
 
-    internal static string Encrypt(string password, string salt, string plain_text)
+    internal  string Encrypt(string password, string salt, string plain_text)
     {
         string encrypted;
 
@@ -107,17 +107,17 @@ public static class CryptographyHelpers
         return encrypted;
     }
 
-   private static byte[] ToByteArray(string input)
+   private  byte[] ToByteArray(string input)
 {
     return Convert.FromBase64String(input);
 }
 
-private static string ToString(byte[] input)
+private  string ToString(byte[] input)
 {
     return Convert.ToBase64String(input);
 }
 
-    private static Tuple<byte[], byte[]> GetAesKeyAndIV(string password, string salt, SymmetricAlgorithm symmetricAlgorithm)
+    private  Tuple<byte[], byte[]> GetAesKeyAndIV(string password, string salt, SymmetricAlgorithm symmetricAlgorithm)
     {
         const int bits = 8;
         var key = new byte[16];

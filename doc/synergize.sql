@@ -1,17 +1,25 @@
 INSERT INTO `studyin`.`user`
 (`identity`,
 
-`syncdate`,`studylog`,`completed`,`drivinglicense`
+`syncdate`,`studylog`,`completed`,`drivinglicense`,`drugrelated`
 )
 VALUES
 ('F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=',
 
-'2011/1/1','abc,34234234,234234-jakdflkj,323523,234234','0','akdjf45345');
+'2011/1/1','abc,34234234,234234-jakdflkj,323523,234234','0','akdjf45345','1');
 
 SELECT * FROM studyin.user;
 
 UPDATE `studyin`.`user` SET
+`firstsigned` = '0'
+WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
+
+UPDATE `studyin`.`user` SET
 `completed` = '1'
+WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
+
+UPDATE `studyin`.`user` SET
+`studylog` = ''
 WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
 
 UPDATE `studyin`.`user` SET

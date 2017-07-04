@@ -150,7 +150,7 @@ namespace study.Controllers
                 var drivinglicense = string.Empty;
                 var deductedmarks = 0;
                 var identity = inputRequest.Identity;
-                   var fname = identity + ".jpg";
+                var fname = identity + ".jpg";
                 var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var pic = new byte[8];
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
@@ -178,10 +178,17 @@ namespace study.Controllers
                     try
                     {
 
-                        if (!string.IsNullOrEmpty(his.Photofile)) fname = his.Photofile;
+                        if (!string.IsNullOrEmpty(his.Photofile))
+                        {
+                            fname = his.Photofile;
+                            pic = CryptographyHelpers.StudyFileDecrypt(Path.Combine(Global.PhotoPath, fname));
+                        }
+                        else
+                        {
+                            var filename = Path.Combine(Global.PhotoPath, fname);
+                            pic = System.IO.File.ReadAllBytes(filename);
+                        }
 
-                        var filename = Path.Combine(Global.PhotoPath, fname);
-                        pic = System.IO.File.ReadAllBytes(filename);
                     }
                     catch (Exception ex)
                     {
@@ -224,10 +231,19 @@ namespace study.Controllers
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
                     try
                     {
-                        if (!string.IsNullOrEmpty(theuser.Photofile)) fname = theuser.Photofile;
+                        if (!string.IsNullOrEmpty(theuser.Photofile))
+                        {
+                            fname = theuser.Photofile;
+                            pic = CryptographyHelpers.StudyFileDecrypt(Path.Combine(Global.PhotoPath, fname));
+                        }
+                        else
+                        {
+                            var filename = Path.Combine(Global.PhotoPath, fname);
+                            pic = System.IO.File.ReadAllBytes(filename);
+                        }
 
-                        var filename = Path.Combine(Global.PhotoPath, fname);
-                        pic = System.IO.File.ReadAllBytes(filename);
+
+
                     }
                     catch (Exception ex)
                     {
@@ -328,7 +344,9 @@ namespace study.Controllers
                 var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                 var fpath = Path.Combine(Global.SignaturePath, dir);
                 if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
-                var fname = Path.Combine(fpath, identity + inputRequest.SignatureType);
+                var subfpath = identity;
+                if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
+                var fname = Path.Combine(fpath, subfpath + inputRequest.SignatureType);
                 var index = inputRequest.SignatureFile.IndexOf("base64,");
                 //  Log.Information("LogSignature,{0}", inputRequest.SignatureFile.Substring(index + 7));
                 System.IO.File.WriteAllBytes(fname, Convert.FromBase64String(inputRequest.SignatureFile.Substring(index + 7)));
@@ -460,39 +478,18 @@ namespace study.Controllers
                 var clog = inputRequest.AllStatus.Length < 80 ? inputRequest.AllStatus : inputRequest.AllStatus.Substring(0, 78);
                 theuser.Completelog = clog;
                 theuser.Completed = "1";
-                // _db1.History.Add(new History
-                // {
-                //     Identity = theuser.Identity,
-                //     Name = theuser.Name,
-                //     Phone = theuser.Phone,
-                //     Syncdate = theuser.Syncdate,
-                //     Startdate = theuser.Startdate,
 
-                //     Finishdate = DateTime.Now,
-                //     Stoplicense = theuser.Stoplicense,
-                //     Noticedate = theuser.Noticedate,
-                //     Wechat = theuser.Wechat,
-                //     Studylog = theuser.Studylog,
-
-                //     Drugrelated = theuser.Drugrelated,
-                //     // Photo = theuser.Photo,
-                //     Fullmark = theuser.Fullmark,
-                //     Inspect = theuser.Inspect,
-                //     Licensetype = theuser.Licensetype,
-                //     //  Timestamp = DateTime.Now
-                // });
-                // _db1.User.Remove(theuser);
                 _db1.SaveChanges();
 
                 if (inputRequest.AllRecords != null)
                 {
                     var date = DateTime.Today;
                     var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
-                    var fpath = Path.Combine(Global.LogPhotoPath, dir, identity);
+                    var subfpath = identity;
+                    if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
+                    var fpath = Path.Combine(Global.LogPhotoPath, dir, subfpath);
                     if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
-                    //   var fpath = Path.Combine(Global.LogPhotoPath, identity);
-                    // if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                     var fname = Path.Combine(fpath, "exam_result.txt");
                     Log.Information("filename is: {0}", fname);
                     System.IO.File.WriteAllBytes(fname, inputRequest.AllRecords);
@@ -582,7 +579,9 @@ namespace study.Controllers
                     {
                         var date = DateTime.Today;
                         var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
-                        var fpath = Path.Combine(Global.LogPhotoPath, dir, identity);
+                        var subfpath = identity;
+                        if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
+                        var fpath = Path.Combine(Global.LogPhotoPath, dir, subfpath);
                         if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                         var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".jpg");
@@ -667,9 +666,19 @@ namespace study.Controllers
                 {
                     Log.Information("InspectGetLearnerInfo,{0},={1}", Global.PhotoPath, Global.PhotoPath);
                     var ff = identity + ".jpg";
-                    if (!string.IsNullOrEmpty(theuser.Photofile)) ff = theuser.Photofile;
-                    var filename = Path.Combine(Global.PhotoPath, ff);
-                    pic = System.IO.File.ReadAllBytes(filename);
+                    if (!string.IsNullOrEmpty(theuser.Photofile))
+                    {
+                        ff = theuser.Photofile;
+                        var filename = Path.Combine(Global.PhotoPath, ff);
+                        pic = CryptographyHelpers.StudyFileDecrypt(filename);
+                    }
+                    else
+                    {
+                        var filename = Path.Combine(Global.PhotoPath, ff);
+                        pic = System.IO.File.ReadAllBytes(filename);
+                    }
+
+
                 }
                 catch (Exception ex)
                 {
