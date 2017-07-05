@@ -1,14 +1,28 @@
 INSERT INTO `studyin`.`user`
 (`identity`,
 
-`syncdate`,`studylog`,`completed`,`drivinglicense`,`drugrelated`
+`syncdate`,`completed`,`drivinglicense`
 )
 VALUES
-('F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=',
+('37900919750819723X',
 
-'2011/1/1','abc,34234234,234234-jakdflkj,323523,234234','0','akdjf45345','1');
+'2011/1/1','0','akdjf45345');
+
+UPDATE `studyin`.`user` SET
+`completed` = '1'
+WHERE `identity` = '370686199102070710';
 
 SELECT * FROM studyin.user;
+UPDATE `studyin`.`user` SET
+`studylog` = ''
+WHERE `identity` =  '370686199102070710';
+
+UPDATE `studyin`.`user` SET
+`firstsigned` = '0'
+WHERE `identity` = '370686199102070710';
+UPDATE `studyin`.`user` SET
+`studylog` = 'abc,234234,234234-def,243234234,3423442'
+WHERE `identity` = '370686199102070710';
 
 UPDATE `studyin`.`user` SET
 `firstsigned` = '0'
@@ -87,7 +101,18 @@ CREATE TABLE `user` (
   `drivinglicense` varchar(45) DEFAULT NULL,
   `deductedmarks` int(11) DEFAULT NULL,
   `photofile` varchar(45) DEFAULT NULL,
+  `token` varchar(45) DEFAULT NULL,
+  `lasttoken` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`identity`),
   UNIQUE KEY `identity_UNIQUE` (`identity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `request` (
+  `ordinal` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(45) DEFAULT NULL,
+  `content` varchar(4500) DEFAULT NULL,
+  `method` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ordinal`),
+  UNIQUE KEY `ordinal_UNIQUE` (`ordinal`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 

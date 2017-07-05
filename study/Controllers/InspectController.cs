@@ -131,8 +131,9 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("LoginAndQuery,input={0},from {1}",
-                    JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(input,"LoginAndQuery",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+               
                 if (inputRequest == null)
                 {
                     Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -142,6 +143,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
+                 Log.Information("LoginAndQuery,input={0},from {1}",input, Request.HttpContext.Connection.RemoteIpAddress);
                 var allstatus = string.Empty;
                 var allow = true;
                 var completed = true;
@@ -153,6 +155,27 @@ namespace study.Controllers
                 var fname = identity + ".jpg";
                 var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var pic = new byte[8];
+
+                
+                //token process
+                var toke1n = GetToken();
+                var found = false;
+                var lasttoken = string.Empty;
+                foreach (var a in tokens)
+                {
+                    if (a.Identity == identity)
+                    {
+                        lasttoken = a.Token;
+                        a.Token = toke1n;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
+                }
+
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
@@ -225,7 +248,8 @@ namespace study.Controllers
                         {
                             theuser.Startdate = DateTime.Now;
                         }
-
+                        theuser.Lasttoken=lasttoken;
+                        theuser.Token=toke1n;
                         _db1.SaveChanges();
                     }
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
@@ -241,9 +265,6 @@ namespace study.Controllers
                             var filename = Path.Combine(Global.PhotoPath, fname);
                             pic = System.IO.File.ReadAllBytes(filename);
                         }
-
-
-
                     }
                     catch (Exception ex)
                     {
@@ -251,24 +272,6 @@ namespace study.Controllers
                     }
                 }
 
-                //token process
-                var toke1n = GetToken();
-                var found = false;
-                var lasttoken = string.Empty;
-                foreach (var a in tokens)
-                {
-                    if (a.Identity == identity)
-                    {
-                        lasttoken = a.Token;
-                        a.Token = toke1n;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
-                }
 
 
                 return new LoginAndQueryResponse
@@ -752,7 +755,24 @@ namespace study.Controllers
                 };
             }
         }
-
+        private void LogRequest(string content,string method=null,string ip=null){
+            var dbtext=string.Empty;
+            var dbmethod=string.Empty;
+            var dbip=string.Empty;
+            if(!string.IsNullOrEmpty(content)) {
+                 var lenth=content.Length;
+             dbtext=lenth>4499?content.Substring(0,4499):content;
+            }
+            if(!string.IsNullOrEmpty(method)) {
+             dbmethod=method.Length>44?method.Substring(0,44):method;
+            }
+              if(!string.IsNullOrEmpty(ip)) {
+             dbip=ip.Length>44?ip.Substring(0,44):ip;
+            }
+            _db1.Request.Add(new Request{
+                Content=dbtext,Ip=dbip,Method=dbmethod
+            });
+        }
         private string GetToken()
         {
             var seed = Guid.NewGuid().ToString("N");
