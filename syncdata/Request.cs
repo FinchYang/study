@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace study
+namespace syncdata
 {
     public partial class Request
     {

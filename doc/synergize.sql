@@ -4,7 +4,7 @@ INSERT INTO `studyin`.`user`
 `syncdate`,`completed`,`drivinglicense`
 )
 VALUES
-('37900919750819723X',
+('370602198502112914',
 
 '2011/1/1','0','akdjf45345');
 
@@ -19,7 +19,7 @@ WHERE `identity` =  '370686199102070710';
 
 UPDATE `studyin`.`user` SET
 `firstsigned` = '0'
-WHERE `identity` = '370686199102070710';
+WHERE `identity` = '370686199011302512';
 UPDATE `studyin`.`user` SET
 `studylog` = 'abc,234234,234234-def,243234234,3423442'
 WHERE `identity` = '370686199102070710';

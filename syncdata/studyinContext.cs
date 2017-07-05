@@ -7,6 +7,7 @@ namespace syncdata
     public partial class studyinContext : DbContext
     {
         public virtual DbSet<History> History { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -119,6 +120,32 @@ namespace syncdata
                     .HasColumnType("varchar(45)");
             });
 
+            modelBuilder.Entity<Request>(entity =>
+            {
+                entity.HasKey(e => e.Ordinal)
+                    .HasName("ordinal_UNIQUE");
+
+                entity.ToTable("request");
+
+                entity.Property(e => e.Ordinal)
+                    .HasColumnName("ordinal")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Content)
+                    .HasColumnName("content")
+                    .HasColumnType("varchar(4500)");
+
+                entity.Property(e => e.Ip)
+                    .HasColumnName("ip")
+                    .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Method)
+                    .HasColumnName("method")
+                    .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Time).HasColumnName("time");
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.Identity)
@@ -162,6 +189,10 @@ namespace syncdata
                     .HasColumnName("inspect")
                     .HasColumnType("varchar(1)")
                     .HasDefaultValueSql("1");
+
+                entity.Property(e => e.Lasttoken)
+                    .HasColumnName("lasttoken")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Licensetype)
                     .HasColumnName("licensetype")
@@ -207,6 +238,10 @@ namespace syncdata
 
                 entity.Property(e => e.Syncphone)
                     .HasColumnName("syncphone")
+                    .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Token)
+                    .HasColumnName("token")
                     .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Wechat)

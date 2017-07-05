@@ -785,8 +785,9 @@ namespace study.Controllers
              dbip=ip.Length>44?ip.Substring(0,44):ip;
             }
             _db1.Request.Add(new Request{
-                Content=dbtext,Ip=dbip,Method=dbmethod
+                Content=dbtext,Ip=dbip,Method=dbmethod,Time=DateTime.Now
             });
+            _db1.SaveChanges();
         }
         private string GetToken()
         {

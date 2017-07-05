@@ -129,8 +129,7 @@ namespace study
 
                 entity.Property(e => e.Ordinal)
                     .HasColumnName("ordinal")
-                    .HasColumnType("int(11)")
-                    .HasDefaultValueSql("1");
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Content)
                     .HasColumnName("content")
@@ -143,6 +142,8 @@ namespace study
                 entity.Property(e => e.Method)
                     .HasColumnName("method")
                     .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Time).HasColumnName("time");
             });
 
             modelBuilder.Entity<User>(entity =>
