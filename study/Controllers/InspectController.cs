@@ -36,8 +36,10 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("SignatureQuery,input={0},from {1}",
-                    JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                
+                  var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(input,"SignatureQuery",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+                
                 if (inputRequest == null)
                 {
                     Log.Error("SignatureQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -47,6 +49,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
+                Log.Information("SignatureQuery,input={0},from {1}",
+                    input, Request.HttpContext.Connection.RemoteIpAddress);
                 var allstatus = string.Empty;
                 var completed = true;
                 var signed = true;
@@ -248,8 +252,7 @@ namespace study.Controllers
                         {
                             theuser.Startdate = DateTime.Now;
                         }
-                        theuser.Lasttoken=lasttoken;
-                        theuser.Token=toke1n;
+                      if(!string.IsNullOrEmpty(theuser.Token)) lasttoken=theuser.Token;
                         _db1.SaveChanges();
                     }
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
@@ -306,8 +309,9 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("LogSignature,input={0},from {1}",
-                     JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                  var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(input,"LogSignature",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+                
                 if (inputRequest == null)
                 {
                     Log.Error("LogSignature,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -317,6 +321,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
+                Log.Information("LogSignature,input={0},from {1}",
+                     input, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -424,8 +430,9 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("InspectCompleteCourses,input={0},from {1}",
-                       JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                  var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(input,"InspectCompleteCourses",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+                
                 if (inputRequest == null)
                 {
                     Log.Error("InspectCompleteCourses,{0}", Global.Status[responseCode.RequestError].Description);
@@ -435,6 +442,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.RequestError].Description
                     };
                 }
+                Log.Information("InspectCompleteCourses,input={0},from {1}",
+                       input, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -522,8 +531,9 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("InspectPostStudyStatus,input 170888={0},from ip={1}",
-                       JsonConvert.SerializeObject(inputRequest), Request.HttpContext.Connection.RemoteIpAddress);
+                var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(input,"InspectPostStudyStatus",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+               
                 if (inputRequest == null)
                 {
                     Log.Error("InspectPostStudyStatus,{0}", Global.Status[responseCode.RequestError].Description);
@@ -533,6 +543,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.RequestError].Description
                     };
                 }
+                 Log.Information("InspectPostStudyStatus,input ={0},from ip={1}",
+                       input, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -616,9 +628,9 @@ namespace study.Controllers
         public GetLearnerInfoResponse InspectGetLearnerInfo(string token)
         {
             try
-            {
-                Log.Information("InspectGetLearnerInfo,input={0},from {1}",
-                  token, Request.HttpContext.Connection.RemoteIpAddress);
+            { //var input=JsonConvert.SerializeObject(inputRequest);
+                LogRequest(token,"InspectGetLearnerInfo",Request.HttpContext.Connection.RemoteIpAddress.ToString());
+               
                 if (string.IsNullOrEmpty(token))
                 {
                     Log.Error("InspectGetLearnerInfo,{0},token={1}, from {2}",
@@ -629,6 +641,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
+                 Log.Information("InspectGetLearnerInfo,input={0},from {1}",
+                  token, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -688,7 +702,8 @@ namespace study.Controllers
                     photook = false;
                     Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);
                 }
-
+                theuser.Token=token;
+                _db1.SaveChanges();
                 return new GetLearnerInfoResponse
                 {
                     StatusCode = Global.Status[responseCode.ok].StatusCode,
