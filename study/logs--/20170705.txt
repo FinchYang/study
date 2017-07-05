@@ -1,0 +1,112 @@
+2017-07-05 08:57:34.315 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-05 08:57:37.967 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 08:57:38.653 +08:00 [Information] Request finished in 741.513ms 404 
+2017-07-05 08:57:38.811 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 08:57:38.825 +08:00 [Information] Request finished in 13.6048ms 404 
+2017-07-05 08:57:39.017 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-05 08:57:39.021 +08:00 [Information] Request finished in 4.2827ms 404 
+2017-07-05 08:58:02.981 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 166
+2017-07-05 08:58:03.456 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 08:58:04.257 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-07-05 08:58:05.064 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 08:58:05.141 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2090.2804ms
+2017-07-05 08:58:05.146 +08:00 [Information] Request finished in 2165.5525ms 200 application/json; charset=utf-8
+2017-07-05 08:58:58.263 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 08:58:58.295 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 08:58:58.330 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 08:58:58.655 +08:00 [Error] LoginAndQuery,"Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry '1' for key 'PRIMARY'
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet)
+   at MySql.Data.MySqlClient.MySqlDataReader.<ReadFirstResultSetAsync>d__62.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlDataReader.<CreateAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.CommandExecutors.TextCommandExecutor.<ExecuteReaderAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.<ExecuteAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlBatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at study.Controllers.InspectController.LoginAndQuery(LoginAndQueryRequest inputRequest) in e:\study\study\Controllers\InspectController.cs:line 231"
+2017-07-05 08:58:58.655 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 08:58:58.655 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 365.2891ms
+2017-07-05 08:58:58.655 +08:00 [Information] Request finished in 394.7979ms 200 application/json; charset=utf-8
+2017-07-05 09:01:17.858 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 09:01:17.894 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 09:01:17.894 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 09:01:17.959 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 09:01:17.962 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 65.8142ms
+2017-07-05 09:01:17.965 +08:00 [Information] Request finished in 105.6802ms 200 application/json; charset=utf-8
+2017-07-05 09:01:32.867 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 09:01:32.870 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 09:01:32.875 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 09:01:32.918 +08:00 [Error] LoginAndQuery,"Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry '2' for key 'PRIMARY'
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet(ResultSet resultSet)
+   at MySql.Data.MySqlClient.MySqlDataReader.<ReadFirstResultSetAsync>d__62.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlDataReader.<CreateAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.CommandExecutors.TextCommandExecutor.<ExecuteReaderAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.<ExecuteAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.MySqlRelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.MySqlBatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at study.Controllers.InspectController.LoginAndQuery(LoginAndQueryRequest inputRequest) in e:\study\study\Controllers\InspectController.cs:line 231"
+2017-07-05 09:01:32.918 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 09:01:32.918 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 62.2677ms
+2017-07-05 09:01:32.934 +08:00 [Information] Request finished in 67.4212ms 200 application/json; charset=utf-8
+2017-07-05 09:02:32.331 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 09:02:32.336 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 09:02:32.339 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 09:02:32.373 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 09:02:32.373 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 47.7454ms
+2017-07-05 09:02:32.406 +08:00 [Information] Request finished in 74.3342ms 200 application/json; charset=utf-8
+2017-07-05 09:02:34.330 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 09:02:34.333 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 09:02:34.337 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 09:02:34.378 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 09:02:34.381 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 48.1338ms
+2017-07-05 09:02:34.383 +08:00 [Information] Request finished in 53.0611ms 200 application/json; charset=utf-8
+2017-07-05 09:02:35.405 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 09:02:35.405 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 09:02:35.405 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 09:02:35.452 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 09:02:35.452 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 44.3749ms
+2017-07-05 09:02:35.452 +08:00 [Information] Request finished in 48.889ms 200 application/json; charset=utf-8
+2017-07-05 10:03:56.528 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-05 10:03:58.666 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 10:03:58.995 +08:00 [Information] Request finished in 329.8088ms 404 
+2017-07-05 10:03:59.032 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 10:03:59.036 +08:00 [Information] Request finished in 2.9879ms 404 

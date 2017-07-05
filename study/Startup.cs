@@ -27,7 +27,8 @@ namespace study
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile("logs\\{Date}.txt")//写到文本
+            var logpath=System.IO.Path.Combine("logs","{Date}.txt");
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile(logpath)//写到文本
               .ReadFrom.Configuration(Configuration)
               .CreateLogger();
             var photo = Configuration.GetSection("photo");
