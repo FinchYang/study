@@ -1,0 +1,11 @@
+{
+    "Host": {
+        "IpV4": "192.168.10.94",
+        "Port": "20022"
+    },
+    "photo": {
+        "path": "/home/inspect/photo",
+        "signaturepath": "/home/inspect/signature",
+        "logpath": "/home/inspect/logphoto"
+    }
+}

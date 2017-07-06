@@ -774,15 +774,17 @@ namespace study.Controllers
             var dbtext=string.Empty;
             var dbmethod=string.Empty;
             var dbip=string.Empty;
+            var contentlenth=150;
+            var shortlength=44;
             if(!string.IsNullOrEmpty(content)) {
                  var lenth=content.Length;
-             dbtext=lenth>4499?content.Substring(0,4499):content;
+             dbtext=lenth>contentlenth?content.Substring(0,contentlenth):content;
             }
             if(!string.IsNullOrEmpty(method)) {
-             dbmethod=method.Length>44?method.Substring(0,44):method;
+             dbmethod=method.Length>shortlength?method.Substring(0,shortlength):method;
             }
               if(!string.IsNullOrEmpty(ip)) {
-             dbip=ip.Length>44?ip.Substring(0,44):ip;
+             dbip=ip.Length>shortlength?ip.Substring(0,shortlength):ip;
             }
             _db1.Request.Add(new Request{
                 Content=dbtext,Ip=dbip,Method=dbmethod,Time=DateTime.Now

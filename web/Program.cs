@@ -16,8 +16,8 @@ namespace web
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5001")
-               // .UseUrls("http://192.168.10.94:5011")
+               // .UseUrls("http://localhost:5001")
+                .UseUrls("http://192.168.10.94:5011")
                 .Build();
 
             host.Run();
