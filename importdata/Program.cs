@@ -13,6 +13,13 @@ namespace importdata
             Console.WriteLine("import stated {0}!",DateTime.Now);
              FileToDb();
               Console.WriteLine("import completed {0}!",DateTime.Now);
+
+               Console.WriteLine("sms send stated {0}!",DateTime.Now);
+                 var a = new System.Diagnostics.Process();
+            a.StartInfo.FileName = "/home/inspect/bin/sms.sh";
+            a.Start();
+            a.WaitForExit();
+             Console.WriteLine("sms send completed {0}!",DateTime.Now);
         }
          static void FileToDb()
         {
@@ -22,7 +29,7 @@ namespace importdata
                 var fname = Path.Combine(importPath, filebase);
                 if (!File.Exists(fname)) 
                 { 
-                    Console.WriteLine("file {0} does  not exist, exit.",fname);
+                    Console.WriteLine("file {0} does  not exist, exit.{1}",fname,DateTime.Now);
                     return;
                 }
                     var content = File.ReadAllLines(fname);
