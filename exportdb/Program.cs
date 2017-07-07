@@ -16,7 +16,7 @@ namespace exportdb
         }
           static void DbToFileForExtranetToIntranet()
         {
-            var date = DateTime.Today;
+            var date = DateTime.Now;
             var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
             var dbtofilefname = dir + "extranetToIntranet.dat";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
@@ -25,12 +25,14 @@ namespace exportdb
             {
                 var tempday = date.AddDays(-1);
                 var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", tempday.Year, tempday.Month, tempday.Day));
-                Console.WriteLine("yesterday is {0},today is {1}", yesterday, date);
+                
                 var theuser = db.History.Where(async => async.Finishdate.CompareTo(date) <= 0 &&
                 async.Finishdate.CompareTo(yesterday) > 0);
+                Console.WriteLine("yesterday is {0},today is {1}, {2} records need to  be archived", yesterday, date,theuser.Count());
                 foreach (var re in theuser)
                 {
-                    File.AppendAllText(fname, JsonConvert.SerializeObject(re));
+                    File.AppendAllText(fname, JsonConvert.SerializeObject(re)+"\r\n");
+                   
                 }
             }
             if (!Directory.Exists(exportPath)) Directory.CreateDirectory(exportPath);
@@ -42,6 +44,7 @@ namespace exportdb
             string.Format(" {0} {2} /home/inspect/signature/{1}/* /home/inspect/logphoto/{1}/*", zipfname, dir, fname);
             a.StartInfo.FileName = "zip";
             a.Start();
+            a.WaitForExit();
         }
     }
 }

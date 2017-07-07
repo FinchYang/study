@@ -4,7 +4,7 @@ INSERT INTO `studyin`.`user`
 `syncdate`,`completed`,`drivinglicense`
 )
 VALUES
-('210105197604285317',
+('370686199102070710',
 
 '2011/1/1','0','akdjf45345');
 
@@ -49,6 +49,7 @@ UPDATE `studyin`.`user` SET
 `drivinglicense` = '驾驶证号'
 WHERE `identity` = '370681199211250014';
 
+update `studyin`.`history` set finishdate = '2017/07/07' where  ordinal<33;
 CREATE TABLE `history` (
   `identity` varchar(45) NOT NULL,
   `drugrelated` varchar(1) DEFAULT NULL,
