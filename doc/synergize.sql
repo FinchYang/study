@@ -4,7 +4,7 @@ INSERT INTO `studyin`.`user`
 `syncdate`,`completed`,`drivinglicense`
 )
 VALUES
-('370686199102070710',
+('RjvYSXUXE0K+WSETt5OY0LoSzcofuqUumGj0IlfiZcM=',
 
 '2011/1/1','0','akdjf45345');
 

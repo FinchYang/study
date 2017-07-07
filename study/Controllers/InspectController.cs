@@ -401,6 +401,7 @@ namespace study.Controllers
                         Signed = theuser.Signed,
                         Photostatus = theuser.Photostatus,
                         Firstsigned = theuser.Firstsigned,
+                        Photofile=theuser.Photofile,
                         Licensetype = theuser.Licensetype
                     });
                     _db1.User.Remove(theuser);
