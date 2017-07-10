@@ -350,8 +350,8 @@ namespace study.Controllers
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
                 var date = DateTime.Today;
-                var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
-                var fpath = Path.Combine(Global.SignaturePath, dir);
+            //    var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                var fpath = Global.SignaturePath;//Path.Combine(Global.SignaturePath, dir);
                 if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                 var subfpath = identity;
                 if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
@@ -497,10 +497,10 @@ namespace study.Controllers
                 if (inputRequest.AllRecords != null)
                 {
                     var date = DateTime.Today;
-                    var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                   // var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                     var subfpath = identity;
                     if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
-                    var fpath = Path.Combine(Global.LogPhotoPath, dir, subfpath);
+                    var fpath = Path.Combine(Global.LogPhotoPath,  subfpath);
                     if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                     var fname = Path.Combine(fpath, "exam_result.txt");
@@ -594,10 +594,10 @@ namespace study.Controllers
                     if (inputRequest.Pictures != null)
                     {
                         var date = DateTime.Today;
-                        var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                     //   var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                         var subfpath = identity;
                         if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
-                        var fpath = Path.Combine(Global.LogPhotoPath, dir, subfpath);
+                        var fpath = Path.Combine(Global.LogPhotoPath,  subfpath);
                         if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                         var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".zip");

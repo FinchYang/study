@@ -25,24 +25,36 @@ namespace exportdb
             {
                 var tempday = date.AddDays(-1);
                 var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", tempday.Year, tempday.Month, tempday.Day));
-                
-                var theuser = db.History.Where(async => async.Finishdate.CompareTo(date) <= 0 &&
-                async.Finishdate.CompareTo(yesterday) > 0);
-                Console.WriteLine("yesterday is {0},today is {1}, {2} records need to  be archived", yesterday, date,theuser.Count());
+
+                var theuser = db.History.Where(async => async.Finishdate.CompareTo(date) <= 0 
+              //  && async.Finishdate.CompareTo(yesterday) > 0
+                );
+                Console.WriteLine("yesterday is {0},today is {1}, {2} records need to  be archived", yesterday, date, theuser.Count());
                 foreach (var re in theuser)
                 {
-                    File.AppendAllText(fname, JsonConvert.SerializeObject(re)+"\r\n");
-                   
+                    File.AppendAllText(fname, JsonConvert.SerializeObject(re) + "\r\n");
+                    NewMethod(re.Photofile);
                 }
             }
             if (!Directory.Exists(exportPath)) Directory.CreateDirectory(exportPath);
             var zipfname = Path.Combine(exportPath, dir);
 
+           var a = new System.Diagnostics.Process();
+            a.StartInfo.UseShellExecute = true;
+            a.StartInfo.Arguments =
+            string.Format(" {0} {1}/* -r", zipfname,dbtofilePath);
+            a.StartInfo.FileName = "zip";
+            a.Start();
+            a.WaitForExit();
+        }
+
+        private static void NewMethod(string filebase)
+        {
             var a = new System.Diagnostics.Process();
             a.StartInfo.UseShellExecute = true;
             a.StartInfo.Arguments =
-            string.Format(" {0} {2} /home/inspect/signature/{1}/* /home/inspect/logphoto/{1}/*", zipfname, dir, fname);
-            a.StartInfo.FileName = "zip";
+            string.Format(" -r /home/inspect/signature/{1}* /home/inspect/logphoto/{1}* {0}/", dbtofilePath, filebase);
+            a.StartInfo.FileName = "cp";
             a.Start();
             a.WaitForExit();
         }
