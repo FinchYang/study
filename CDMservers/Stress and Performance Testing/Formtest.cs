@@ -493,5 +493,20 @@ namespace Stress_and_Performance_Testing
                 richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, ex.Message));
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var temp = textBoxeachthreadvolume.Text;
+            richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, temp));
+            try
+            {
+                var aaa = DateTime.Parse(temp);
+                richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, aaa));
+            }
+            catch (Exception ex)
+            {
+                richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, ex));
+            }
+        }
     }
 }

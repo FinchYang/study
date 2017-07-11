@@ -1,0 +1,26 @@
+2017-07-10 12:59:34.030 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-10 12:59:38.226 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-10 12:59:38.902 +08:00 [Information] Request finished in 722.1971ms 404 
+2017-07-10 12:59:38.923 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-10 12:59:38.926 +08:00 [Information] Request finished in 2.4186ms 404 
+2017-07-10 12:59:38.955 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-10 12:59:38.966 +08:00 [Information] Request finished in 10.2032ms 404 
+2017-07-10 13:00:05.921 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/salt?token=1 application/json 165
+2017-07-10 13:00:05.966 +08:00 [Information] Request finished in 45.4104ms 404 
+2017-07-10 13:00:11.937 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/salt?token=1adfadf application/json 165
+2017-07-10 13:00:11.941 +08:00 [Information] Request finished in 3.9523ms 404 
+2017-07-10 13:00:32.332 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/salt?token=1adfadf application/json 
+2017-07-10 13:00:32.702 +08:00 [Information] Executing action method "study.Controllers.InspectController.salt (study)" with arguments (["1adfadf"]) - ModelState is Valid
+2017-07-10 13:00:32.826 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 13:00:33.107 +08:00 [Information] Executed action "study.Controllers.InspectController.salt (study)" in 703.7281ms
+2017-07-10 13:00:33.111 +08:00 [Information] Request finished in 779.7902ms 200 application/json; charset=utf-8
+2017-07-10 13:01:05.958 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/salt?token=%22akdfkljadf%22 application/json 
+2017-07-10 13:01:05.980 +08:00 [Information] Executing action method "study.Controllers.InspectController.salt (study)" with arguments (["\"akdfkljadf\""]) - ModelState is Valid
+2017-07-10 13:01:05.991 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 13:01:05.994 +08:00 [Information] Executed action "study.Controllers.InspectController.salt (study)" in 31.0487ms
+2017-07-10 13:01:05.996 +08:00 [Information] Request finished in 39.0836ms 200 application/json; charset=utf-8
+2017-07-10 13:01:25.115 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/salt?token=89897 application/json 
+2017-07-10 13:01:25.118 +08:00 [Information] Executing action method "study.Controllers.InspectController.salt (study)" with arguments (["89897"]) - ModelState is Valid
+2017-07-10 13:01:25.129 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 13:01:25.131 +08:00 [Information] Executed action "study.Controllers.InspectController.salt (study)" in 13.9885ms
+2017-07-10 13:01:25.134 +08:00 [Information] Request finished in 19.1441ms 200 application/json; charset=utf-8

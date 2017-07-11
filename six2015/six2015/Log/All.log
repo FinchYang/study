@@ -1,0 +1,99 @@
+2017-07-11 08:21:46,076 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - login,{0}
+System.Data.Entity.Core.ProviderIncompatibleException: An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure. ---> System.Data.Entity.Core.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, CriteriaCtx criteriaCtx, String instanceName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, CriteriaCtx criteriaCtx, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, CriteriaCtx criteriaCtx, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, CriteriaCtx criteriaCtx)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 Oracle.ManagedDataAccess.EntityFramework.EFOracleProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.<>c__DisplayClass1.<ResolveManifestToken>b__0(Tuple`3 k)
+   在 System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 six2015.Controllers.SIXUSERsController.login(loginrequest inputRequest) 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 62
+2017-07-11 10:21:32,294 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - users,{0}
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<user>d__8.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 251
+2017-07-11 10:30:33,192 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 328
+2017-07-11 10:35:32,724 [13] ERROR six2015.Controllers.SIXUSERsController [(null)] - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 329
+2017-07-11 10:36:21,200 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 329
+2017-07-11 14:46:49,006 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+2017-07-11 14:47:07,030 [9] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+2017-07-11 14:47:20,508 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+2017-07-11 14:51:15,335 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+2017-07-11 14:52:01,490 [14] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+2017-07-11 14:57:41,107 [14] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 718
+2017-07-11 14:57:50,038 [14] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 718
+2017-07-11 14:59:19,934 [15] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.FormatException: Base-64 字符数组或字符串的长度无效。
+   在 System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   在 System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.ToByteArray(String input) 位置 E:\study\InternalEncrypt\Class1.cs:行号 112
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value) 位置 E:\study\InternalEncrypt\Class1.cs:行号 64
+   在 InternalEncrypt.CryptographyHelpers.StudyDecrypt(String cryptograph) 位置 E:\study\InternalEncrypt\Class1.cs:行号 18
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 749

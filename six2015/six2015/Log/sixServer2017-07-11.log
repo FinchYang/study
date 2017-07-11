@@ -1,0 +1,166 @@
+08:21:42 INFO 8 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+08:21:46 ERROR 8 six2015.Controllers.SIXUSERsController - login,{0}
+System.Data.Entity.Core.ProviderIncompatibleException: An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure. ---> System.Data.Entity.Core.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.Network.OracleCommunication.Connect(String tnsDescriptor, Boolean doNAHandshake, String IName)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, CriteriaCtx criteriaCtx, String instanceName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, CriteriaCtx criteriaCtx, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, CriteriaCtx criteriaCtx, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, CriteriaCtx criteriaCtx)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 Oracle.ManagedDataAccess.EntityFramework.EFOracleProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.<>c__DisplayClass1.<ResolveManifestToken>b__0(Tuple`3 k)
+   在 System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 six2015.Controllers.SIXUSERsController.login(loginrequest inputRequest) 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 62
+08:29:54 INFO 8 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+08:30:55 INFO 5 six2015.Controllers.SIXUSERsController - token is fac87b3a5e12471a9ef7cb7b8dd11a70
+08:33:22 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+08:33:32 INFO 6 six2015.Controllers.SIXUSERsController - token is e5e1720b22584ae6bb6fac213aa2d6ae,0,10
+10:19:02 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+10:19:20 INFO 8 six2015.Controllers.SIXUSERsController - token is a7e29256c489468d817cf259fcf28434,0,10
+10:21:32 INFO 6 six2015.Controllers.SIXUSERsController - user token is a7e29256c489468d817cf259fcf28434,input={"username":"ycl","password":"ycl","power":1}
+10:21:32 ERROR 6 six2015.Controllers.SIXUSERsController - users,{0}
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<user>d__8.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 251
+10:27:09 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+10:27:27 INFO 6 six2015.Controllers.SIXUSERsController - user token is cb4013eeddb94608b7ae1f62043a8ec4,input={"username":"ycl","password":"ycl","power":1}
+10:27:35 INFO 7 six2015.Controllers.SIXUSERsController - token is cb4013eeddb94608b7ae1f62043a8ec4,0,10
+10:28:05 INFO 7 six2015.Controllers.SIXUSERsController - user token is cb4013eeddb94608b7ae1f62043a8ec4,input={"username":"ycl","password":"ycl","power":0}
+10:28:08 INFO 6 six2015.Controllers.SIXUSERsController - token is cb4013eeddb94608b7ae1f62043a8ec4,0,10
+10:28:26 INFO 6 six2015.Controllers.SIXUSERsController - user token is cb4013eeddb94608b7ae1f62043a8ec4,input={"username":"hahah","password":"ycl","power":0}
+10:28:30 INFO 9 six2015.Controllers.SIXUSERsController - token is cb4013eeddb94608b7ae1f62043a8ec4,0,10
+10:30:33 INFO 6 six2015.Controllers.SIXUSERsController - deleteuser token is cb4013eeddb94608b7ae1f62043a8ec4,input=hahah
+10:30:33 ERROR 6 six2015.Controllers.SIXUSERsController - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 328
+10:34:02 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+10:34:12 INFO 6 six2015.Controllers.SIXUSERsController - token is dfbb1be6c4d04eb6a8bb889db689562c,0,10
+10:34:23 INFO 5 six2015.Controllers.SIXUSERsController - user token is cb4013eeddb94608b7ae1f62043a8ec4,input={"username":"4444","password":"ycl","power":0}
+10:34:23 INFO 5 six2015.Controllers.SIXUSERsController - login,invalidtoken
+10:35:08 INFO 5 six2015.Controllers.SIXUSERsController - user token is dfbb1be6c4d04eb6a8bb889db689562c,input={"username":"4444","password":"ycl","power":0}
+10:35:13 INFO 5 six2015.Controllers.SIXUSERsController - token is dfbb1be6c4d04eb6a8bb889db689562c,0,10
+10:35:32 INFO 13 six2015.Controllers.SIXUSERsController - deleteuser token is dfbb1be6c4d04eb6a8bb889db689562c,input=hahah
+10:35:32 ERROR 13 six2015.Controllers.SIXUSERsController - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 329
+10:36:10 INFO 5 six2015.Controllers.SIXUSERsController - deleteuser token is dfbb1be6c4d04eb6a8bb889db689562c,input=haha
+10:36:10 INFO 5 six2015.Controllers.SIXUSERsController - user,nouser
+10:36:21 INFO 5 six2015.Controllers.SIXUSERsController - deleteuser token is dfbb1be6c4d04eb6a8bb889db689562c,input=4444
+10:36:21 ERROR 5 six2015.Controllers.SIXUSERsController - deleteuser,{0}
+System.InvalidOperationException: The object cannot be deleted because it was not found in the ObjectStateManager.
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity, EntitySet expectedEntitySet)
+   在 System.Data.Entity.Core.Objects.ObjectContext.DeleteObject(Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Remove(Object entity)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.<deleteuser>d__9.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 329
+10:36:24 INFO 5 six2015.Controllers.SIXUSERsController - token is dfbb1be6c4d04eb6a8bb889db689562c,0,10
+10:37:54 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+10:38:18 INFO 6 six2015.Controllers.SIXUSERsController - deleteuser token is 52803f1a999e415cbe4018473eec6e02,input=4444
+10:38:22 INFO 6 six2015.Controllers.SIXUSERsController - token is 52803f1a999e415cbe4018473eec6e02,0,10
+10:38:44 INFO 9 six2015.Controllers.SIXUSERsController - user token is 52803f1a999e415cbe4018473eec6e02,input={"username":"ycl","password":"ycl","power":1}
+10:38:47 INFO 6 six2015.Controllers.SIXUSERsController - token is 52803f1a999e415cbe4018473eec6e02,0,10
+14:37:12 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:37:16 INFO 6 six2015.Controllers.SIXUSERsController - login,nouser
+14:37:52 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:37:52 INFO 6 six2015.Controllers.SIXUSERsController - login,nouser
+14:38:13 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:38:56 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is e762d439487949c7b8f8a7a4d372581f,,startTime,  endTime,  name,  identity, illegal ,  message, print,
+14:38:56 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,invalidstarttime
+14:39:04 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is e762d439487949c7b8f8a7a4d372581f,112123123,startTime,  endTime,  name,  identity, illegal ,  message, print,
+14:39:04 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,invalidstarttime
+14:39:09 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is e762d439487949c7b8f8a7a4d372581f,11212312,startTime,  endTime,  name,  identity, illegal ,  message, print,
+14:39:09 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,invalidstarttime
+14:42:35 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is e762d439487949c7b8f8a7a4d372581f,"2017/01/02",startTime,  endTime,  name,  identity, illegal ,  message, print,
+14:42:35 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,invalidstarttime
+14:46:37 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:46:48 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,"2017/01/02",startTime,  endTime,  name,  identity, illegal ,  message, print,
+14:46:49 ERROR 5 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+14:47:07 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,"2017/01/02",startTime,  endTime,"20220202"  name,  identity, illegal ,  message, print,
+14:47:07 ERROR 9 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+14:47:20 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,"20170102",startTime,  endTime,"20220202"  name,  identity, illegal ,  message, print,
+14:47:20 ERROR 5 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+14:51:15 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,"2017-01-02",startTime,  endTime,"20220202"  name,  identity, illegal ,  message, print,
+14:51:15 ERROR 8 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+14:52:01 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,20170102,startTime,  endTime,"20220202"  name,  identity, illegal ,  message, print,
+14:52:01 ERROR 14 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 708
+14:57:41 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,2017-01-02,startTime,  endTime,"20220202"  name,  identity, illegal ,  message, print,
+14:57:41 ERROR 14 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 718
+14:57:50 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,2017-01-02,startTime,  endTime,"2022-02-02"  name,  identity, illegal ,  message, print,
+14:57:50 ERROR 14 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 718
+14:57:55 INFO 15 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,2017-01-02,startTime,  endTime,2022-02-02  name,  identity, illegal ,  message, print,
+14:59:19 INFO 15 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,2017-01-02,startTime,  endTime,2022-02-02  name,  identity, illegal ,  message, print,
+14:59:19 ERROR 15 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.FormatException: Base-64 字符数组或字符串的长度无效。
+   在 System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   在 System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.ToByteArray(String input) 位置 E:\study\InternalEncrypt\Class1.cs:行号 112
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value) 位置 E:\study\InternalEncrypt\Class1.cs:行号 64
+   在 InternalEncrypt.CryptographyHelpers.StudyDecrypt(String cryptograph) 位置 E:\study\InternalEncrypt\Class1.cs:行号 18
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 749
+15:05:55 INFO 19 six2015.Controllers.SIXUSERsController - StudyRecords,token is 671d486045a74b1d81905dde7cdeee45,2017-01-02,startTime,  endTime,2022-02-02  name,  identity, illegal ,  message, print,
+15:08:55 INFO 5 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+15:09:03 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,2017-01-02,startTime,  endTime,2022-02-02  name,  identity, illegal ,  message, print,
+15:09:08 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,20117-01-02,startTime,  endTime,2022-02-02  name,  identity, illegal ,  message, print,
+15:09:08 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,invalidstarttime
+15:09:16 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,2017-01-02,startTime,  endTime,20212-02-02  name,  identity, illegal ,  message, print,
+15:09:16 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,invalidendtime
+15:09:24 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,2017-01-02,startTime,  endTime,202102-02  name,  identity, illegal ,  message, print,
+15:09:24 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,invalidendtime
+15:09:30 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,2017-01-02,startTime,  endTime,20210202  name,  identity, illegal ,  message, print,
+15:09:30 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,invalidendtime
+15:09:38 INFO 5 six2015.Controllers.SIXUSERsController - StudyRecords,token is 927ca3862b864e5aa5370c4bb79e51c1,2017-01-02,startTime,  endTime,2021/02/02  name,  identity, illegal ,  message, print,

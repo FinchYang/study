@@ -1,0 +1,5 @@
+16:54:23 INFO 5 six2015.Controllers.SIXUSERsController - login,input={"username":"370686199102070710","password":"rec"},
+16:54:25 INFO 5 six2015.Controllers.SIXUSERsController - login,1
+16:54:35 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"rec"},
+16:54:35 INFO 7 six2015.Controllers.SIXUSERsController - login,4
+16:54:40 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},

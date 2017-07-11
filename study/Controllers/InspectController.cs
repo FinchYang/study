@@ -735,6 +735,7 @@ namespace study.Controllers
         {
             try
             {
+               var aa= Request.Headers["Content-Type"];
 
                 if (string.IsNullOrEmpty(token))
                 {
@@ -757,7 +758,7 @@ namespace study.Controllers
                     Name = encrypted_value,
                     //   Identity = encrypted_value.Length.ToString(),
                     StatusCode = encrypted_value.Length.ToString(),
-                    Description = target,
+                    Description = target+aa,
 
                 };
             }
