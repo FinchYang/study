@@ -16,6 +16,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using InternalEncrypt;
 using System.Configuration;
+using System.Data.Entity.Validation;
+using System.Web.UI.WebControls;
 
 namespace six2015.Controllers
 {
@@ -97,6 +99,31 @@ namespace six2015.Controllers
                 return new userresponse
                 {
                     status = 0,
+                };
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Log.InfoFormat("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Log.InfoFormat("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+            catch (EntityDataSourceValidationException ex)
+            {
+                Log.Error("EntityDataSourceValidationException", ex);
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
                 };
             }
             catch (Exception ex)
@@ -587,8 +614,9 @@ namespace six2015.Controllers
                 var basestr = Convert.ToBase64String(bbbytes);
                 return new picresponse
                 {
-                    status = 0,pic=basestr
-
+                    status = 0,
+                    pic = basestr
+                    //   pic = bbbytes
                 };
             }
             catch (Exception ex)
@@ -650,8 +678,8 @@ namespace six2015.Controllers
                 return new picresponse
                 {
                     status = 0,
-                    pic = basestr
-
+                  //  pic = bbbytes
+                     pic = basestr
                 };
             }
             catch (Exception ex)

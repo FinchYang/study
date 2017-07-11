@@ -50,6 +50,7 @@ namespace six2015.request
     public class picresponse
     {
         public int status { get; set; }
+     //   public byte[] pic { get; set; }
         public string pic { get; set; }
     }
     public class loginresponse
