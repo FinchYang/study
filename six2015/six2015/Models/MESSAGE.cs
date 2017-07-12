@@ -18,5 +18,8 @@ namespace six2015.Models
         [Required]
         [StringLength(2000)]
         public string CONTENT { get; set; }
+
+        [StringLength(1)]
+        public string SENT { get; set; }
     }
 }

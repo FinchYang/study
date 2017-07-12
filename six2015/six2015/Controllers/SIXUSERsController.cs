@@ -92,7 +92,7 @@ namespace six2015.Controllers
 
                 _db1.MESSAGE.Add(new MESSAGE
                 {
-                    TIME=DateTime.Now,CONTENT=inputRequest.content,HISTORYID=inputRequest.id
+                    TIME=DateTime.Now,CONTENT=inputRequest.content,HISTORYID=inputRequest.id,SENT="0"
                 });
                 _db1.SaveChanges();
 
@@ -691,6 +691,69 @@ namespace six2015.Controllers
                 };
             }
         }
+        [Route("ExamResult")]
+        [HttpGet]
+        public async Task<picresponse> ExamResult(int id)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("ExamResult,token is {0},{1},picID", token, id);
+                var username = string.Empty;
+                var power = 0;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        username = a.Identity;
+                        power = a.power;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("ExamResult,{0}", sixerrors.invalidtoken);
+                    return new picresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                //var cypher = new CryptographyHelpers();
+                //var cryptographicid = cypher.StudyEncrypt(picID);
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == id);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("ExamResult,{0}", sixerrors.invalididentity);
+                    return new picresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+
+                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.PhysicalCondition + ".png");
+                Log.InfoFormat("ExamResult,picfile={0}", fname);
+                var bbbytes = System.IO.File.ReadAllBytes(fname);
+                var basestr = Convert.ToBase64String(bbbytes);
+                return new picresponse
+                {
+                    status = 0,
+                    //  pic = bbbytes
+                    pic = basestr
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("ExamResult,{0}", ex);
+                return new picresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
 
         [Route("StudyRecords")]
         [HttpGet]
@@ -801,6 +864,82 @@ namespace six2015.Controllers
                 return new StudyRecordsresponse
                 {
                     status = 0,records=records
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("StudyRecords,{0}", ex);
+                return new StudyRecordsresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        [Route("StudyRecord")]
+        [HttpGet]
+        public async Task<StudyRecordsresponse> StudyRecord( string identity)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("StudyRecords,token is {0},{1},  identity,",
+                    token,  identity);
+
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("StudyRecords,{0}", sixerrors.invalidtoken);
+                    return new StudyRecordsresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+               
+                var cypher = new CryptographyHelpers();
+                var cryptographicid = cypher.StudyEncrypt(identity);
+               
+                var theusers = _db1.HISTORY.Where(c => c.IDCARD == cryptographicid);
+
+                var records = new List<record>();
+                foreach (var a in theusers)
+                {
+                    var recodr = new record
+                    {
+                        id = a.ID.ToString(),
+                        name = a.NAME,
+                        phone = a.PHONENUMBER,
+                        identity = cypher.StudyDecrypt(a.IDCARD),
+                        studyTime = a.TIME,
+                        illegal = a.STATUS
+                    };
+                    if (a.MESSAGED == "1")
+                    {
+                        var mess = _db1.MESSAGE.Where(aa => aa.HISTORYID == a.ID);
+                        var messages = new List<message>();
+                        foreach (var b in mess)
+                        {
+                            messages.Add(new message
+                            {
+                                dateTime = b.TIME,
+                                content = b.CONTENT
+                            });
+                        }
+                        recodr.message = messages;
+                    }
+                    records.Add(recodr);
+                }
+                return new StudyRecordsresponse
+                {
+                    status = 0,
+                    records = records
                 };
             }
             catch (Exception ex)
