@@ -17,8 +17,10 @@ namespace exportdb
           static void DbToFileForExtranetToIntranet()
         {
             var date = DateTime.Now;
-            var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
-            var dbtofilefname = dir + "extranetToIntranet.dat";
+            var dir = string.Format("{0}-{1}-{2}-{3}-{4}-{5}", date.Year, date.Month.ToString("D2"), date.Day.ToString("D2"),
+            date.Hour.ToString("D2"),date.Minute.ToString("D2"),date.Second.ToString("D2"));
+            var dbtofilefname =  string.Format("{0}-{1}-{2}", date.Year, date.Month.ToString("D2"), date.Day.ToString("D2")) 
+            + "extranetToIntranet.dat";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
             using (var db = new studyinContext())

@@ -69,6 +69,10 @@ namespace importdata
                     .HasColumnType("varchar(1)")
                     .HasDefaultValueSql("1");
 
+                entity.Property(e => e.Lasttoken)
+                    .HasColumnName("lasttoken")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Licensetype)
                     .HasColumnName("licensetype")
                     .HasColumnType("varchar(1)");
@@ -101,6 +105,10 @@ namespace importdata
 
                 entity.Property(e => e.Startdate).HasColumnName("startdate");
 
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasColumnType("varchar(45)");
+
                 entity.Property(e => e.Stoplicense)
                     .HasColumnName("stoplicense")
                     .HasColumnType("varchar(1)");
@@ -113,6 +121,10 @@ namespace importdata
 
                 entity.Property(e => e.Syncphone)
                     .HasColumnName("syncphone")
+                    .HasColumnType("varchar(45)");
+
+                entity.Property(e => e.Token)
+                    .HasColumnName("token")
                     .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Wechat)
@@ -225,6 +237,10 @@ namespace importdata
                     .HasColumnType("varchar(1)");
 
                 entity.Property(e => e.Startdate).HasColumnName("startdate");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasColumnType("varchar(45)");
 
                 entity.Property(e => e.Stoplicense)
                     .HasColumnName("stoplicense")

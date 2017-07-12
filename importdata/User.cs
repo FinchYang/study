@@ -24,6 +24,7 @@ namespace importdata
         public string Postaladdress { get; set; }
         public string Signed { get; set; }
         public DateTime? Startdate { get; set; }
+        public string Status { get; set; }
         public string Stoplicense { get; set; }
         public string Studylog { get; set; }
         public DateTime Syncdate { get; set; }

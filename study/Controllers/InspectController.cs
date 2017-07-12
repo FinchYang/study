@@ -194,10 +194,13 @@ namespace study.Controllers
                         };
                     }
                     allow = his.Drugrelated != "1" ? true : false;
+                     if(!string.IsNullOrEmpty(his.Status) && his.Status.Contains("H")){
+                        allow=false;
+                    }
                     completed = his.Completed == "1" ? true : false;
                     signed = his.Signed == "1" ? true : false;
                     firstsigned = his.Firstsigned == "1" ? true : false;
-                    if (!string.IsNullOrEmpty(his.Drivinglicense)) drivinglicense = his.Drivinglicense;
+                    if (!string.IsNullOrEmpty(his.Licensetype)) drivinglicense = his.Licensetype;
                     if (his.Deductedmarks != null)
                     {
                         deductedmarks = (int)his?.Deductedmarks;
@@ -232,10 +235,13 @@ namespace study.Controllers
                 {
                     //drugrelated judge
                     allow = theuser.Drugrelated != "1" ? true : false;
+                    if(!string.IsNullOrEmpty(theuser.Status) && theuser.Status.Contains("H")){
+                        allow=false;
+                    }
                     completed = theuser.Completed == "1" ? true : false;
                     signed = theuser.Signed == "1" ? true : false;
                     firstsigned = theuser.Firstsigned == "1" ? true : false;
-                    if (!string.IsNullOrEmpty(theuser.Drivinglicense)) drivinglicense = theuser.Drivinglicense;
+                    if (!string.IsNullOrEmpty(theuser.Licensetype)) drivinglicense = theuser.Licensetype;
                     if (theuser.Deductedmarks != null)
                     {
                         deductedmarks = (int)theuser?.Deductedmarks;
@@ -364,10 +370,10 @@ namespace study.Controllers
                 {
                     case SignatureType.PhysicalCondition:
                         theuser.Firstsigned = "1";
-                        if (!string.IsNullOrEmpty(inputRequest.PostalAddress))
-                        {
-                            theuser.Postaladdress = inputRequest.PostalAddress;
-                        }
+                        // if (!string.IsNullOrEmpty(inputRequest.PostalAddress))
+                        // {
+                        //     theuser.Postaladdress = inputRequest.PostalAddress;
+                        // }
                         break;
                     case SignatureType.EducationalRecord:
                         theuser.Signed = "1";
@@ -402,6 +408,9 @@ namespace study.Controllers
                         Photostatus = theuser.Photostatus,
                         Firstsigned = theuser.Firstsigned,
                         Photofile=theuser.Photofile,
+                        Status=theuser.Status,
+                        Token=theuser.Token,
+                        Lasttoken=theuser.Lasttoken,
                         Licensetype = theuser.Licensetype
                     });
                     _db1.User.Remove(theuser);

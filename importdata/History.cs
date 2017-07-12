@@ -16,6 +16,7 @@ namespace importdata
         public string Fullmark { get; set; }
         public string Identity { get; set; }
         public string Inspect { get; set; }
+        public string Lasttoken { get; set; }
         public string Licensetype { get; set; }
         public string Name { get; set; }
         public DateTime? Noticedate { get; set; }
@@ -25,10 +26,12 @@ namespace importdata
         public string Postaladdress { get; set; }
         public string Signed { get; set; }
         public DateTime? Startdate { get; set; }
+        public string Status { get; set; }
         public string Stoplicense { get; set; }
         public string Studylog { get; set; }
         public DateTime Syncdate { get; set; }
         public string Syncphone { get; set; }
+        public string Token { get; set; }
         public string Wechat { get; set; }
     }
 }

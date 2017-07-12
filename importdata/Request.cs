@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace importdata
 {
+   
     public partial class Request
     {
         public int Ordinal { get; set; }

@@ -14,12 +14,12 @@ namespace importdata
              FileToDb();
               Console.WriteLine("import completed {0}!",DateTime.Now);
 
-               Console.WriteLine("sms send stated {0}!",DateTime.Now);
-                 var a = new System.Diagnostics.Process();
-            a.StartInfo.FileName = "/home/inspect/bin/sms.sh";
-            a.Start();
-            a.WaitForExit();
-             Console.WriteLine("sms send completed {0}!",DateTime.Now);
+            //    Console.WriteLine("sms send stated {0}!",DateTime.Now);
+            //      var a = new System.Diagnostics.Process();
+            // a.StartInfo.FileName = "/home/inspect/bin/sms.sh";
+            // a.Start();
+            // a.WaitForExit();
+            //  Console.WriteLine("sms send completed {0}!",DateTime.Now);
         }
          static void FileToDb()
         {
@@ -38,18 +38,19 @@ namespace importdata
                         var fields = line.Split(',');
                         var identity = fields[0];
                         var phone = fields[1];
-                        var drivertype = fields[2];
-                        // DrivingLicenseType enumtype;
-                        // if (!Enum.TryParse(drivertype, out enumtype))
-                        // {
-                        //     enumtype = DrivingLicenseType.Unknown;
-                        // }
+                        var drivertype = fields[2].Substring(0,2);
+                        DrivingLicenseType enumtype;
+                        if (!Enum.TryParse(drivertype, out enumtype))
+                        {
+                            enumtype = DrivingLicenseType.Unknown;
+                        }
 
                         var drugrelated = fields[3];
                         var pictureok = fields[4];
                         var deductedmarks = fields[5];
                         var licensenumber = fields[6];
                         var photofile = fields[7];
+                         var status = fields[8];
                         var ideducted = 0;
                         if (!int.TryParse(deductedmarks, out ideducted)) ideducted = 1;
                         var theuser = db.User.FirstOrDefault(async => async.Identity == identity);
@@ -60,15 +61,18 @@ namespace importdata
                                 db.User.Add(new User
                                 {
                                     Identity = identity,
-                                 //   Licensetype = ((int)enumtype).ToString(),
+                                    Licensetype = ((int)enumtype).ToString(),
                                     Drugrelated = drugrelated,
                                     Syncphone = phone,
                                     Photostatus = pictureok,
                                     Drivinglicense = licensenumber,
                                     Deductedmarks = ideducted,
                                     Photofile=photofile,
+                                    Status=status,
                                     Syncdate = DateTime.Now
                                 });
+                                 db.SaveChanges();
+                                 Console.WriteLine("import user {0} ok {1}", identity,DateTime.Now);
                             }
                             catch (Exception ex)
                             {
@@ -79,7 +83,7 @@ namespace importdata
                         {
                             Console.WriteLine("user {0} has already existed.{1}", identity,DateTime.Now);
                         }
-                        db.SaveChanges();
+                       
                     }
                
             }
