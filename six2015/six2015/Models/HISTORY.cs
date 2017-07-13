@@ -57,5 +57,8 @@ namespace six2015.Models
 
         [StringLength(1)]
         public string MESSAGED { get; set; }
+
+        [StringLength(500)]
+        public string STUDYLOG { get; set; }
     }
 }

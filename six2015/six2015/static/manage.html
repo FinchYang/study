@@ -1,0 +1,1243 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>管理</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/print.min.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/print.min.js"></script>
+    <script src="js/base64.min.js"></script>
+
+    <script>
+        Date.prototype.Format = function (fmt) { //author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        };
+
+        $.extend(true, $.fn.dataTable.defaults, {
+            "searching": false,
+            "ordering": false,
+            "lengthChange": false
+        });
+
+        window.errorMessage = function (status) {
+            console.log("On error message status: " + status);
+
+            switch (status) {
+                case 0:
+                    console.log("No error");
+                    break;
+                case 5:
+                case 6:
+                    console.log("token已过期");
+                    alert("token已过期, 请重新登录");
+                    window.location.href = "login.html";
+                    break;
+            }
+        };
+
+        window.refreshUserTable = function () {
+            $.ajax({
+                url: "/Users?startNum=0&endNum=1000",
+                cache: false,
+                type: "GET",
+                headers: {'token': $.cookie("token")},
+                contentType: "application/json",
+                dataType: "json",
+                success: function (message) {
+                    console.log(message);
+                    if (message.status !== 0) {
+                        alert("获取用户列表失败。");
+                        errorMessage(message.status);
+                        return;
+                    }
+
+                    function obj2Arr(obj) {
+                        return [obj.username, obj.power === 1 ? "管理员用户" : "普通用户", 0];
+                    }
+
+                    var data = [];
+                    for (var i = 0; i < message.users.length; ++i) {
+                        data.push(obj2Arr(message.users[i]));
+                    }
+
+                    userListTable.clear();
+                    userListTable.rows.add(data);
+                    userListTable.draw();
+                },
+                error: function (e1, e2, e3) {
+                    console.log(e1);
+                    console.log(e2);
+                    console.log(e3);
+                    alert("网络通信失败，请联系管理员。");
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            var token = $.cookie("token");
+            if (token === "") {
+                alert("请先登录。");
+                window.location.href = "/login.html";
+                return;
+            }
+
+            window.userListTable = $('#userList').DataTable({
+                "data": [],
+                "columnDefs": [{
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button>编辑</button>"
+                }]
+            });
+
+            $('#userList tbody').on('click', 'button', function () {
+                var data = userListTable.row($(this).parents('tr')).data();
+                $("#change_username").val(data[0]);
+                if (data[1] === "管理员用户") {
+                    $("#change_power_1").attr("selected", "selected");
+                    $("#change_power_2").removeAttr("selected");
+                    $("#change_power").data("power", "管理员用户");
+                } else {
+                    $("#change_power_2").attr("selected", "selected");
+                    $("#change_power_1").removeAttr("selected");
+                    $("#change_power").data("power", "普通用户");
+                }
+                $("#dialog_change").dialog("open");
+            });
+
+
+            window.recordListTable = $('#recordList').DataTable({
+                "data": [],
+                "columnDefs": [{
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button>详细</button>"
+                }]
+            });
+
+            window.recordListTable2 = $('#recordList2').DataTable({
+                "data": [],
+                "columnDefs": [{
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button>详细</button>"
+                }]
+            });
+
+
+            function loadImage(labId, url) {
+                //加载成功之前显示转圈图片
+                $(labId).attr("style", "width: 256px;height: 256px").attr("src", "images/loading.gif");
+
+                $.ajax({
+                    url: url,
+                    cache: false,
+                    type: "GET",
+                    headers: {'token': $.cookie("token")},
+                    dataType: "json",
+                    success: function (message) {
+                        console.log(message);
+                        if (message.status !== 0) {
+                            alert("加载图片失败，请联系管理员。");
+                            errorMessage(message.status);
+                            return;
+                        }
+
+                        $(labId).attr("style", "width: 1100px;height: 1556px").attr("src", "data:image/png;base64,"+message.pic);
+                    },
+                    error: function (e1, e2, e3) {
+                        console.log(e1);
+                        console.log(e2);
+                        console.log(e3);
+                        alert("网络通信失败，请联系管理员。");
+                    }
+                });
+            }
+
+            function loadCmpImage(id) {
+                for(var i = 1; i <= 18; ++i) {
+                    $("#detail_cmp_" + i).attr("src", "images/loading.gif");
+                }
+
+                $.ajax({
+                    url: "/pictures?id=" + id,
+                    cache: false,
+                    type: "GET",
+                    headers: {'token': $.cookie("token")},
+                    dataType: "json",
+                    success: function (message) {
+                        console.log(message);
+                        if (message.status !== 0) {
+                            alert("加载图片失败，请联系管理员。");
+                            errorMessage(message.status);
+                            return;
+                        }
+
+                        for (var i = 0; i < 18; ++i) {
+                            $("#detail_cmp_" + (i+1)).attr("src", "data:image/png;base64,"+message.coursepics[i].pic);
+
+                        }
+                    },
+                    error: function (e1, e2, e3) {
+                        console.log(e1);
+                        console.log(e2);
+                        console.log(e3);
+                        alert("网络通信失败，请联系管理员。");
+                    }
+                });
+            }
+
+            function loadAnswer(id) {
+                //加载成功之前显示转圈图片
+                $("#detail_answer").text("加载中");
+
+                $.ajax({
+                    url: "/examresult?id=" + id,
+                    cache: false,
+                    type: "GET",
+                    headers: {'token': $.cookie("token")},
+                    dataType: "json",
+                    success: function (message) {
+                        if (message.status !== 0) {
+                            alert("加载答题列表失败，请联系管理员。");
+                            errorMessage(message.status);
+                            return;
+                        }
+
+                        var txt = Base64.decode(message.content).replace(/\n\n/g, "<br/>").replace(/\n/g, "<br/>");
+                        $("#detail_answer").html(txt);
+                    },
+                    error: function (e1, e2, e3) {
+                        console.log(e1);
+                        console.log(e2);
+                        console.log(e3);
+                        alert("网络通信失败，请联系管理员。");
+                    }
+                });
+            }
+
+            function loadEduLog(id) {
+                $("#detail_edulog").text("加载中");
+
+                $.ajax({
+                    url: "/courses?id=" + id,
+                    cache: false,
+                    type: "GET",
+                    headers: {'token': $.cookie("token")},
+                    dataType: "json",
+                    success: function (message) {
+                        if (message.status !== 0) {
+                            alert("加载学习记录失败，请联系管理员。");
+                            errorMessage(message.status);
+                            return;
+                        }
+
+                        function getLocalTime(nS) {
+                            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');
+                        }
+
+                        var allStatus = message.content;
+                        if(allStatus && allStatus !== "") {
+                            var data_list = "";
+                            //循环课程
+                            var strs = allStatus.split("-"); //字符分割
+                            for (var i=0;i<strs.length ;i++ )
+                            {
+                                if(strs[i] !== '') {
+                                    //document.write(strs[i]+"<br/>"); //分割后的字符输出
+                                    var substr = strs[i].split(",");
+                                    data_list += "<li>";
+                                    data_list += "<p>"+substr[0]+"</p>";
+                                    data_list += "<p><em>"+getLocalTime(substr[1])+"</em></p>";
+                                    data_list += "</li>";
+                                }
+                            }
+                            $("#detail_edulog").html(data_list);
+                        }
+                    },
+                    error: function (e1, e2, e3) {
+                        console.log(e1);
+                        console.log(e2);
+                        console.log(e3);
+                        alert("网络通信失败，请联系管理员。");
+                    }
+                });
+
+            }
+
+            $('#recordList tbody').on('click', 'button', function () {
+                var index = recordListTable.row($(this).parents('tr')).index();
+                var rec = recordListMsg.records[index];
+                $("#detail_name").val(rec.name);
+                $("#detail_phone").val(rec.phone);
+                $("#detail_identity").val(rec.identity);
+                $("#detail_date").val(rec.studyTime);
+                $("#detail_status").val(rec.illegal);
+                loadCmpImage(rec.id);
+                loadImage("#detail_decl", "/DeclarationForm?picID=" + rec.id);
+                loadImage("#detail_edu_f", "/EduRecordForm?picID=" + rec.id);
+                loadImage("#detail_edu_b", "/EduRecordFormB?picID=" + rec.id);
+                loadAnswer(rec.id);
+                loadEduLog(rec.id);
+//                $("#detail_decl").attr("src", "/DeclarationForm/" + rec.id + ".png");
+//                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
+                $("#detail_message").html("");
+                if (rec.message) {
+                    for (var i = 0; i < rec.message.length; ++i) {
+                        $("#detail_message").append("<li>" + rec.message[i].dateTime + ": " + rec.message[i].content + "</li>");
+                    }
+                }
+                $("#dialog_detail").data("id", rec.id);
+                $("#dialog_detail").dialog("open");
+            });
+
+            $('#recordList2 tbody').on('click', 'button', function () {
+                var index = recordListTable2.row($(this).parents('tr')).index();
+                var rec = recordListMsg.records[index];
+                $("#detail_name").val(rec.name);
+                $("#detail_phone").val(rec.phone);
+                $("#detail_identity").val(rec.identity);
+                $("#detail_date").val(rec.studyTime);
+                $("#detail_status").val(rec.illegal);
+                loadCmpImage(rec.id);
+                loadImage("#detail_decl", "/DeclarationForm?picID=" + rec.id);
+                loadImage("#detail_edu_f", "/EduRecordForm?picID=" + rec.id);
+                loadImage("#detail_edu_b", "/EduRecordFormB?picID=" + rec.id);
+                loadAnswer(rec.id);
+                loadEduLog(rec.id);
+//                $("#detail_decl").attr("src", "/DeclarationForm/" + rec.id + ".png");
+//                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
+                $("#detail_message").html("");
+                if (rec.message) {
+                    for (var i = 0; i < rec.message.length; ++i) {
+                        $("#detail_message").append("<li>" + rec.message[i].dateTime + ": " + rec.message[i].content + "</li>");
+                    }
+                }
+                $("#dialog_detail").data("id", rec.id);
+                $("#dialog_detail").dialog("open");
+            });
+
+
+            refreshUserTable();
+        });
+    </script>
+</head>
+<body>
+
+<header style="width: 100%;height: 60px;background:#e7e5e9">
+    <img src="images/logo.png" style="margin-top: 3px">
+</header>
+
+<div id="tabs" style="margin-left: auto;margin-right: auto;width: 100%;height: 650px;padding-left: 15px;border: none">
+    <ul style="width: 10%;margin-top: 15px;">
+        <li><a href="#tabs-1">用户管理</a></li>
+        <li><a href="#tabs-2">业务查询</a></li>
+        <li><a href="#tabs-3">业务办理</a></li>
+    </ul>
+    <div id="tabs-1" style="width:87%;border: none;padding-left: 0">
+        <!--<h2 style="color: #6e6e6e;font-size: 13px;float: left">用户管理 > ></h2>-->
+        <div style="color: #6e6e6e;font-size: 13px;float: left;margin-left: 20px">用户管理>></div>
+        <button class="add"
+                style="cursor: pointer;font-size: 14px;float: right;margin-right: 120px;color:white;background:  #3e83c9;margin-bottom: 5px">
+            添加用户
+        </button>
+
+        <div class="stripeMe sample">
+            <table id="userList" class="display" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>权限</th>
+                    <th>编辑</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="holder1" style="float: right;margin-right: 80px;"></div>
+
+    </div>
+
+
+    <div id="tabs-2" style="width:87%">
+        <div style="color: #6e6e6e;font-size: 13px;float: left;margin-left: 20px">业务查询>></div>
+        <br>
+        <div style="clear: both"></div>
+        <div style="font-size: 12px;color: #6d6e6f;padding-left: 0" id="c">
+            <table>
+                <tr>
+                    <td>
+                        开始学习时间
+                        <input type="text" id="i1" style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                    <td>
+                        结束学习时间
+                        <input type="text" id="i2" style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                    <td>
+                        <input type="checkbox" id="c3">学员姓名
+                        <input type="text" id="i3" disabled="disabled"
+                               style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                    <td>
+                        <input type="checkbox" id="c4">身份证号码
+                        <input type="text" id="i4" disabled="disabled"
+                               style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="c5" value="illegal">违法同步库中是否有违法记录
+                        <select disabled="disabled" id="i5">
+                            <option>有</option>
+                            <option>无</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="c6" value="message">是否向该用户发过短信
+                        <select disabled="disabled" id="i6">
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="c7" value="print">是否打印过该学习记录
+                        <select disabled="disabled" id="i7">
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="queryBtn" style="margin-left: 30px">查询</button>
+                        <!--<button id="c9">清空</button>-->
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <table id="recordList" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>电话号码</th>
+                <th>身份证号</th>
+                <th>完成时间</th>
+                <th>状态</th>
+                <th>详细</th>
+            </tr>
+            </thead>
+        </table>
+        <div class="holder2" style="float: right;margin-right: 80px;"></div>
+    </div>
+
+    <div id="tabs-3" style="width:87%">
+        <div style="color: #6e6e6e;font-size: 13px;float: left;margin-left: 20px">业务办理>></div>
+        <br>
+        <div style="clear: both"></div>
+        <div style="font-size: 12px;color: #6d6e6f;padding-left: 0">
+            <table>
+                <tr>
+                    <td>
+                        身份证号码
+                        <input type="text" id="query_identity" style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                    <td>
+                        <button id="queryBtn2" style="margin-left: 30px">查询</button>
+                        <!--<button id="c9">清空</button>-->
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <table id="recordList2" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>电话号码</th>
+                <th>身份证号</th>
+                <th>完成时间</th>
+                <th>状态</th>
+                <th>详细</th>
+            </tr>
+            </thead>
+        </table>
+        <div class="holder2" style="float: right;margin-right: 80px;"></div>
+    </div>
+
+</div>
+
+<div id="dialog_change" title="修改用户" style="padding-top: 30px">
+    <table>
+        <tr>
+            <td>权限设定：</td>
+            <td>
+                <select id="change_power">
+                    <option id="change_power_1">管理员用户</option>
+                    <option id="change_power_2">普通用户</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>用户名：</td>
+            <td>
+                <input id="change_username" type="text" style="width: 150px" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>密 码：</td>
+            <td>
+                <input id="change_password" type="password" style="width: 150px" placeholder="(未填写即不修改)">
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="dialog_add" title="添加用户" style="padding-top: 30px">
+    <table>
+        <tr>
+            <td>
+                权限设定：
+            </td>
+            <td>
+                <select id="add_power">
+                    <option>普通用户</option>
+                    <option>管理员用户</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                用户名：
+            </td>
+            <td>
+                <input id="add_username" type="text" style="width: 150px">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                密码：
+            </td>
+            <td>
+                <input id="add_password" type="password" style="width: 150px">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+</div>
+
+<div id="dialog_detail" title="详细" style="padding-top: 30px">
+    <table>
+        <tr>
+            <td>姓名：</td>
+            <td>
+                <input id="detail_name" type="text" style="width: 150px;margin-right:20px " readonly="readonly">
+            </td>
+            <td>身份证号：</td>
+            <td>
+                <input id="detail_identity" type="text" style="width: 150px" readonly="readonly">
+            </td>
+            <td>电话号码：</td>
+            <td>
+                <input id="detail_phone" type="text" style="width: 150px" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>完成时间：</td>
+            <td>
+                <input id="detail_date" type="text" style="width: 150px" readonly="readonly">
+            </td>
+            <td>状态：</td>
+            <td>
+                <input id="detail_status" type="text" style="width: 150px" readonly="readonly">
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>已发送的短信:</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="4">
+                <ol id="detail_message">
+                </ol>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>比对照片:</td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_1"></td>
+            <td colspan="2"><img src="" id="detail_cpm_2"></td>
+            <td colspan="2"><img src="" id="detail_cpm_3"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_4"></td>
+            <td colspan="2"><img src="" id="detail_cpm_5"></td>
+            <td colspan="2"><img src="" id="detail_cpm_6"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_7"></td>
+            <td colspan="2"><img src="" id="detail_cpm_8"></td>
+            <td colspan="2"><img src="" id="detail_cpm_9"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_10"></td>
+            <td colspan="2"><img src="" id="detail_cpm_11"></td>
+            <td colspan="2"><img src="" id="detail_cpm_12"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_13"></td>
+            <td colspan="2"><img src="" id="detail_cpm_14"></td>
+            <td colspan="2"><img src="" id="detail_cpm_15"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="" id="detail_cpm_16"></td>
+            <td colspan="2"><img src="" id="detail_cpm_17"></td>
+            <td colspan="2"><img src="" id="detail_cpm_18"></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                <img id="detail_decl" src="images/loading.gif" style="width: 1100px;height: 1556px"><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <img id="detail_edu_f" src="images/loading.gif" style="width: 1100px;height: 1556px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <img id="detail_edu_b" src="images/loading.gif" style="width: 1100px;height: 1556px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <div id="detail_edulog" style="border:3px solid #000"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <div id="detail_answer" style="border:3px solid #000"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="dialog_message" title="短信内容" style="padding-top: 30px">
+    <label for="message_content">短信内容：</label>
+    <textarea rows="5" cols="30" id="message_content">测试测试</textarea>
+</div>
+
+<!--表格-->
+<script>
+    $(function () {
+        $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+        $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+    });
+    $(document).ready(function () {
+        //jQuery ready is quicker than onload
+        $(".stripeMe tr").mouseover(function () {
+            $(this).addClass("over");
+        }).mouseout(function () {
+            $(this).removeClass("over");
+        });
+        $(".stripeMe tr:even").addClass("alt");
+    });
+</script>
+<!--添加用户-->
+<script>
+    $(function () {
+        $("#dialog_add").dialog({
+            modal: true,
+            autoOpen: false,
+            width: 350,
+            height: 320,
+            show: {
+                duration: 300
+            },
+            hide: {
+                duration: 300
+            },
+            buttons: [
+                {
+                    text: "确定",
+                    click: function () {
+
+                        var power = $("#add_power").find("option:selected").text();
+
+                        $.ajax({
+                            url: "/User",
+                            cache: false,
+                            type: "PUT",
+                            headers: {'token': $.cookie("token")},
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                username: $("#add_username").val(),
+                                password: $("#add_password").val(),
+                                power: power === "管理员用户" ? 1 : 2
+                            }),
+                            dataType: "json",
+                            success: function (message) {
+                                console.log(message);
+                                if (message.status === 0) {
+                                    alert("添加用户成功！！");
+                                    $(this).dialog("close");
+                                    refreshUserTable();
+                                }
+                                else {
+                                    alert("添加用户失败，请联系管理员。");
+                                    errorMessage(message.status);
+                                }
+                                $(this).dialog("close");
+                            },
+                            error: function (e1, e2, e3) {
+                                console.log(e1);
+                                console.log(e2);
+                                console.log(e3);
+                                alert("网络通信失败，请联系管理员。");
+                            }
+                        });
+                    }
+                },
+                {
+                    text: "取消",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+
+            ]
+        });
+
+        for (i = 0; i < $('.add').length; i++) {
+            $(".add")[i].onclick = function () {
+                $("#dialog_add").dialog("open");
+            };
+        }
+
+
+    });
+</script>
+
+
+<!--改权限-->
+<script>
+    $(function () {
+        $("#dialog_change").dialog({
+            modal: true,
+            autoOpen: false,
+            width: 360,
+            height: 270,
+            show: {
+                duration: 300
+            },
+            hide: {
+                duration: 300
+            },
+            buttons: [
+                {
+                    text: "删除用户",
+                    click: function () {
+                        $.ajax({
+                            url: "/deleteuser?username=" + $("#change_username").val(),
+                            cache: false,
+                            type: "DELETE",
+                            headers: {'token': $.cookie("token")},
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (message) {
+                                console.log(message);
+                                if (message.status === 0) {
+                                    alert("删除成功！！");
+                                }
+                                else {
+                                    alert("删除失败，请联系管理员。");
+                                    errorMessage(message.status);
+                                }
+                                $(this).dialog("close");
+                                refreshUserTable();
+                            },
+                            error: function (e1, e2, e3) {
+                                console.log(e1);
+                                console.log(e2);
+                                console.log(e3);
+                                alert("网络通信失败，请联系管理员。");
+                            }
+                        });
+                    }
+                },
+                {
+                    text: "确定",
+                    click: function () {
+                        var pwd = $("#change_password").val();
+                        var power = $("#change_power").find("option:selected").text();
+                        if ((!pwd || pwd === "") &&
+                            ($("#change_power").data("power") === power)) {
+                            $(this).dialog("close");
+                            return;
+                        }
+
+                        $.ajax({
+                            url: "/User",
+                            cache: false,
+                            type: "PUT",
+                            headers: {'token': $.cookie("token")},
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                username: $("#change_username").val(),
+                                password: $("#change_password").val(),
+                                power: power === "管理员用户" ? 1 : 2
+                            }),
+                            dataType: "json",
+                            success: function (message) {
+                                console.log(message);
+                                if (message.status === 0) {
+                                    alert("修改用户成功！！");
+                                }
+                                else {
+                                    alert("修改用户失败，请联系管理员。");
+                                    errorMessage(message.status);
+                                }
+                                $(this).dialog("close");
+                                recordListTable();
+                            },
+                            error: function (e1, e2, e3) {
+                                console.log(e1);
+                                console.log(e2);
+                                console.log(e3);
+                                alert("网络通信失败，请联系管理员。");
+                            }
+                        });
+                    }
+                },
+                {
+                    text: "取消",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+
+            ]
+        });
+
+        for (i = 0; i < $('.change_power').length; i++) {
+            $(".change_power")[i].onclick = function () {
+                $("#dialog_change").dialog("open");
+            };
+        }
+
+    });
+</script>
+
+
+<!--详细-->
+<script>
+    $(function () {
+        $("#dialog_detail").dialog({
+            modal: true,
+            autoOpen: false,
+            width: 1200,
+            height: 700,
+            show: {
+                duration: 300
+            },
+            hide: {
+                duration: 300
+            },
+            buttons: [
+                {
+                    text: "取消",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+//                {
+//                    text: "标记为已受理",
+//                    click: function () {
+//                        $.ajax({
+//                            url: "/processed",
+//                            cache: false,
+//                            type: "POST",
+//                            headers: {'token': $.cookie("token")},
+//                            contentType: "application/json",
+//                            data: JSON.stringify({
+//                                id: $(this).data("id")
+//                            }),
+//                            dataType: "json",
+//                            success: function (message) {
+//                                console.log(message);
+//                                if (message.status !== 0) {
+//                                    alert("网络通信失败，请联系管理员。");
+//                                    errorMessage(message.status);
+//                                    return;
+//                                }
+//
+//                                alert("标记成功");
+//                            },
+//                            error: function (e1, e2, e3) {
+//                                console.log(e1);
+//                                console.log(e2);
+//                                console.log(e3);
+//                                alert("网络通信失败，请联系管理员。");
+//                            }
+//                        });
+//                    }
+//                },
+                {
+                    text: "打印申报表",
+                    click: function () {
+                        printJS($("#detail_decl").attr("src"), "image");
+                    }
+                },
+                {
+                    text: "打印学习记录表",
+                    click: function () {
+                        printJS($("#detail_edu_f").attr("src"), "image");
+                    }
+                },
+                {
+                    text: "打印学习记录表",
+                    click: function () {
+                        printJS($("#detail_edu_b").attr("src"), "image");
+                    }
+                },
+                {
+                    text: "打印成绩单",
+                    click: function () {
+                        printJS("detail_answer", "html");
+                    }
+                },
+//                {
+//                    text: "标记为已打印",
+//                    click: function () {
+//                        $.ajax({
+//                            url: "/printed",
+//                            cache: false,
+//                            type: "POST",
+//                            headers: {'token': $.cookie("token")},
+//                            contentType: "application/json",
+//                            data: JSON.stringify({
+//                                id: $(this).data("id")
+//                            }),
+//                            dataType: "json",
+//                            success: function (message) {
+//                                console.log(message);
+//                                if (message.status !== 0) {
+//                                    alert("网络通信失败，请联系管理员。");
+//                                    errorMessage(message.status);
+//                                    return;
+//                                }
+//
+//                                alert("标记成功");
+//                            },
+//                            error: function (e1, e2, e3) {
+//                                console.log(e1);
+//                                console.log(e2);
+//                                console.log(e3);
+//                                alert("网络通信失败，请联系管理员。");
+//                            }
+//                        });
+//                    }
+//                },
+                {
+                    text: "发送短信",
+                    click: function () {
+                        $("#dialog_message").dialog("open");
+                    }
+                }
+
+            ]
+        });
+
+        for (var i = 0; i < $('.detail').length; i++) {
+            $(".detail")[i].onclick = function () {
+                $("#dialog_detail").dialog("open");
+            };
+        }
+
+    });
+</script>
+
+
+<!--只读-->
+<script>
+    //    $('#c1').click(function () {
+    //        if ($("#i1").attr("disabled")) {
+    //            $('#i1').removeAttr("disabled").datepicker();
+    //        } else {
+    //            $("#i1").attr("disabled", "disabled");
+    //        }
+    //    });
+    //    $('#c2').click(function () {
+    //        if ($("#i2").attr("disabled")) {
+    //            $('#i2').removeAttr("disabled").datepicker();
+    //        } else {
+    //            $("#i2").attr("disabled", "disabled");
+    //        }
+    //    });
+
+    $('#i1').datepicker();
+    $('#i2').datepicker();
+    $('#c3').click(function () {
+        if ($("#i3").attr("disabled")) {
+            $('#i3').removeAttr("disabled");
+        } else {
+            $("#i3").attr("disabled", "disabled");
+        }
+    });
+    $('#c4').click(function () {
+        if ($("#i4").attr("disabled")) {
+            $('#i4').removeAttr("disabled");
+        } else {
+            $("#i4").attr("disabled", "disabled");
+        }
+    });
+    $('#c5').click(function () {
+        if ($("#i5").attr("disabled")) {
+            $('#i5').removeAttr("disabled");
+        } else {
+            $("#i5").attr("disabled", "disabled");
+        }
+    });
+    $('#c6').click(function () {
+        if ($("#i6").attr("disabled")) {
+            $('#i6').removeAttr("disabled");
+        } else {
+            $("#i6").attr("disabled", "disabled");
+        }
+    });
+    $('#c7').click(function () {
+        if ($("#i7").attr("disabled")) {
+            $('#i7').removeAttr("disabled");
+        } else {
+            $("#i7").attr("disabled", "disabled");
+        }
+    });
+</script>
+
+<!--查询-->
+<script>
+    $(function () {
+        $("#queryBtn").click(function () {
+            var queryStr = "/StudyRecords?";
+            var startTimeVal = $("#i1").val();
+            var endTimeVal = $("#i2").val();
+            if (startTimeVal === "" || endTimeVal === "") {
+                alert("请选择要查询的时间范围");
+                return;
+            }
+
+            queryStr += "startTime=" + new Date(startTimeVal).Format("yyyy/MM/dd") + "&";
+            queryStr += "endTime=" + new Date(endTimeVal).Format("yyyy/MM/dd") + "&";
+
+            queryStr += "name=";
+            if ($("#c3").prop("checked")) {
+                queryStr += $("#i3").val();
+            }
+            queryStr += "&";
+
+            queryStr += "identity=";
+            if ($("#c4").prop("checked")) {
+                queryStr += $("#i4").val();
+            }
+            queryStr += "&";
+
+            queryStr += "illegal=";
+            if ($("#c5").prop("checked")) {
+                queryStr += ($("#i5").val() === "有" ? "1" : "0");
+            }
+            queryStr += "&";
+
+            queryStr += "message=";
+            if ($("#c6").prop("checked")) {
+                queryStr += ($("#i6").val() === "是" ? "1" : "0");
+            }
+            queryStr += "&";
+
+            queryStr += "print=";
+            if ($("#c7").prop("checked")) {
+                queryStr += ($("#i7").val() === "是" ? "1" : "0");
+            }
+            queryStr += "&";
+
+            console.log(queryStr);
+            $.ajax({
+                url: queryStr,
+                cache: false,
+                type: "GET",
+                headers: {'token': $.cookie("token")},
+                contentType: "application/json",
+                dataType: "json",
+                success: function (message) {
+                    if (message.status !== 0) {
+                        alert("获取用户列表失败。");
+                        errorMessage(message.status);
+                        return;
+                    }
+
+                    window.recordListMsg = message;
+                    function obj2Arr(obj) {
+                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+                    }
+
+                    var data = [];
+                    for (var i = 0; i < message.records.length; ++i) {
+                        data.push(obj2Arr(message.records[i]));
+                    }
+
+                    recordListTable.clear();
+                    recordListTable.rows.add(data);
+                    recordListTable.draw();
+
+                },
+                error: function (e1, e2, e3) {
+                    console.log(e1);
+                    console.log(e2);
+                    console.log(e3);
+                    alert("网络通信失败，请联系管理员。");
+                }
+            });
+        });
+
+        $("#queryBtn2").click(function () {
+            var identity = $("#query_identity").val();
+            if (identity === "") {
+                alert("晴先输入要查询的身份证号");
+                return;
+            }
+            var queryStr = "/StudyRecord?identity=" + identity;
+            $.ajax({
+                url: queryStr,
+                cache: false,
+                type: "GET",
+                headers: {'token': $.cookie("token")},
+                contentType: "application/json",
+                dataType: "json",
+                success: function (message) {
+                    if (message.status !== 0) {
+                        alert("获取记录失败。");
+                        errorMessage(message.status);
+                        return;
+                    }
+
+                    window.recordListMsg = message;
+                    function obj2Arr(obj) {
+                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+                    }
+
+                    var data = [];
+                    for (var i = 0; i < message.records.length; ++i) {
+                        data.push(obj2Arr(message.records[i]));
+                    }
+
+                    recordListTable2.clear();
+                    recordListTable2.rows.add(data);
+                    recordListTable2.draw();
+
+                },
+                error: function (e1, e2, e3) {
+                    console.log(e1);
+                    console.log(e2);
+                    console.log(e3);
+                    alert("网络通信失败，请联系管理员。");
+                }
+            });
+        });
+
+    });
+</script>
+
+<!--短信内容-->
+<script>
+    $(function () {
+        $("#dialog_message").dialog({
+            modal: true,
+            autoOpen: false,
+            width: 350,
+            height: 320,
+            show: {
+                duration: 300
+            },
+            hide: {
+                duration: 300
+            },
+            buttons: [
+                {
+                    text: "确定",
+                    click: function () {
+                        var content = $("#message_content").val();
+                        $.ajax({
+                            url: "/pushmessage",
+                            cache: false,
+                            type: "POST",
+                            headers: {'token': $.cookie("token")},
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                id: $("#dialog_detail").data("id"),
+                                content: content
+                            }),
+                            dataType: "json",
+                            success: function (message) {
+                                console.log(message);
+                                if (message.status !== 0) {
+                                    alert("网络通信失败，请联系管理员。");
+                                    errorMessage(message.status);
+                                    return;
+                                }
+
+                                alert("已将内容提交到发送服务器");
+                            },
+                            error: function (e1, e2, e3) {
+                                console.log(e1);
+                                console.log(e2);
+                                console.log(e3);
+                                alert("网络通信失败，请联系管理员。");
+                            }
+                        });
+                    }
+                },
+                {
+                    text: "取消",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+
+            ]
+        });
+
+        for (i = 0; i < $('.add').length; i++) {
+            $(".add")[i].onclick = function () {
+                $("#dialog_add").dialog("open");
+            };
+        }
+
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+2017-07-13 14:49:15.278 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-13 14:49:19.270 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-13 14:49:19.920 +08:00 [Information] Request finished in 677.0627ms 404 
+2017-07-13 14:49:19.935 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-13 14:49:19.939 +08:00 [Information] Request finished in 3.683ms 404 
+2017-07-13 14:49:19.951 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-13 14:49:19.968 +08:00 [Information] Request finished in 17.1979ms 404 
+2017-07-13 14:49:19.974 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-13 14:49:19.978 +08:00 [Information] Request finished in 4.525ms 404 
+2017-07-13 14:49:28.224 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-07-13 14:49:28.904 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-13 14:49:30.954 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199011302512\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-07-13 14:49:31.588 +08:00 [Error] loginandquery,"370686199011302512",="Could not find file 'e:\pic\22cbad1511054123b17ce76a9c18fc5e'."
+2017-07-13 14:49:31.612 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-13 14:49:31.681 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 3386.7836ms
+2017-07-13 14:49:31.686 +08:00 [Information] Request finished in 3461.8161ms 200 application/json; charset=utf-8

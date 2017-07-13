@@ -1,0 +1,293 @@
+13:49:18 INFO 5 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+13:50:08 INFO 6 six2015.Controllers.SIXUSERsController - courses,token is 4e20cfa60ee544208f42856fb4fdbb1c,1
+13:50:32 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is 4e20cfa60ee544208f42856fb4fdbb1c,1
+13:50:32 ERROR 6 six2015.Controllers.SIXUSERsController - pictures,{0}
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 916
+13:54:06 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+13:54:23 INFO 5 six2015.Controllers.SIXUSERsController - pictures,token is 17ac266b844a4f9586e147d24f85afb8,1
+13:54:23 ERROR 5 six2015.Controllers.SIXUSERsController - pictures,
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 924
+13:59:30 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+13:59:40 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is e0ee9c9eccce43c78907775a5b18c33d,1
+13:59:45 ERROR 6 six2015.Controllers.SIXUSERsController - pictures,
+System.IO.IOException: 文件“C:\Users\Administrator\AppData\Local\Temp\BCG5478.tmp”正由另一进程使用，因此该进程无法访问此文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 941
+14:05:32 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:05:42 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is 265551f2135948faa01feb11de93d772,1
+14:05:42 ERROR 6 six2015.Controllers.SIXUSERsController - pictures,
+System.IO.IOException: 无法创建“C:\Users\Administrator\AppData\Local\Temp\tmp1324.tmp”，因为同名文件或目录已存在。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   在 System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   在 System.IO.Directory.CreateDirectory(String path)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractEntry(ZipEntry entry)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractZip(Stream inputStream, String targetDirectory, Overwrite overwrite, ConfirmOverwriteDelegate confirmDelegate, String fileFilter, String directoryFilter, Boolean restoreDateTime, Boolean isStreamOwner)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractZip(String zipFileName, String targetDirectory, String fileFilter)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 930
+14:07:49 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:07:57 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is f94d2eedf11a4c5f82d7abe850de7094,1
+14:07:57 ERROR 6 six2015.Controllers.SIXUSERsController - pictures,
+System.IO.IOException: 无法创建“C:\Users\Administrator\AppData\Local\Temp\tmp2079.tmp”，因为同名文件或目录已存在。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   在 System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   在 System.IO.Directory.CreateDirectory(String path)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 929
+14:10:26 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:10:34 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is 37ef5f7fcc7b45bea6e71b1fcd56d563,1
+14:17:14 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:17:22 INFO 6 six2015.Controllers.SIXUSERsController - pictures,token is a3e3f018c5354d048bc2d169ee1ac890,1
+14:17:22 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,0001/1/1 0:02:29,0001/1/1 0:02:29,超速警示片
+14:17:22 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,0001/1/1 0:02:29,0001/1/1 0:02:29,酒驾上警示片
+14:17:22 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,0001/1/1 0:02:29,0001/1/1 0:02:29,酒驾下警示片
+14:17:23 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,0001/1/1 0:02:29,0001/1/1 0:02:29,疲劳驾驶警示片
+14:17:23 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,0001/1/1 0:02:29,0001/1/1 0:02:29,分心驾驶警示片
+14:17:23 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,0001/1/1 0:02:29,0001/1/1 0:02:29,盲区和远光灯警示片
+14:17:23 INFO 6 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,0001/1/1 0:02:29,0001/1/1 0:02:29,超员及货车典型违法行为
+14:24:16 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:24:27 INFO 5 six2015.Controllers.SIXUSERsController - pictures,token is 145ff0e0a07f4be28f003a3b3c34861f,1
+14:24:27 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,0001/1/1 0:02:29,0001/1/1 0:02:29,超速警示片,636355526679536550
+14:24:27 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,0001/1/1 0:02:29,0001/1/1 0:02:29,酒驾上警示片,636355526679946859
+14:24:28 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,0001/1/1 0:02:29,0001/1/1 0:02:29,酒驾下警示片,636355526680056933
+14:24:28 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,0001/1/1 0:02:29,0001/1/1 0:02:29,疲劳驾驶警示片,636355526680197025
+14:24:28 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,0001/1/1 0:02:29,0001/1/1 0:02:29,分心驾驶警示片,636355526680313766
+14:24:28 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,0001/1/1 0:02:29,0001/1/1 0:02:29,盲区和远光灯警示片,636355526680443716
+14:24:28 INFO 5 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,0001/1/1 0:02:29,0001/1/1 0:02:29,超员及货车典型违法行为,636355526680553790
+14:50:34 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,token is 777e9f4babef442f8d174ac991e0fd35,1
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355542448914070
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355542449474454
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355542449634575
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355542449774671
+14:50:44 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355542449914770
+14:50:45 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355542450064872
+14:50:45 INFO 8 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355542450265013
+14:56:53 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:56:56 INFO 8 six2015.Controllers.SIXUSERsController - token is d7255c01d1464c97a0c88c0bf7e2f7e3,0,1000
+14:59:56 ERROR 7 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 找不到给定的头。
+   在 System.Net.Http.Headers.HttpHeaders.GetValues(String name)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecord>d__23.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 1106
+15:00:37 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+15:00:52 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is ff51c60c1bf74509a1cdd06542cd5f7f,370602199302131613,  identity,
+15:02:50 INFO 8 six2015.Controllers.SIXUSERsController - token is d7255c01d1464c97a0c88c0bf7e2f7e3,0,1000
+15:02:50 INFO 8 six2015.Controllers.SIXUSERsController - login,invalidtoken
+15:02:54 INFO 18 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+15:02:54 INFO 17 six2015.Controllers.SIXUSERsController - token is dd877a9fe852487b9fd8c3dc057ad95c,0,1000
+15:03:16 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is dd877a9fe852487b9fd8c3dc057ad95c,370602199302131613,  identity,
+15:03:19 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:19 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:19 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:20 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:20 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:20 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:03:20 ERROR 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+15:03:20 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:03:20 ERROR 16 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+15:03:20 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:03:20 ERROR 17 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+15:03:20 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:20 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:42 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:42 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:42 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:03:42 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:03:42 ERROR 8 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+15:03:42 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:42 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:42 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:03:42 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:42 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:42 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:42 ERROR 17 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+15:03:42 ERROR 18 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+15:03:57 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:57 INFO 20 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:57 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:03:57 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:03:57 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:57 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:57 INFO 17 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:03:57 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:03:57 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:03:57 INFO 18 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:03:57 ERROR 17 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+15:03:57 ERROR 16 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+15:03:57 ERROR 18 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+15:06:30 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:06:30 INFO 15 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:06:30 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:06:30 INFO 15 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:06:30 INFO 24 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:06:30 INFO 22 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:06:30 INFO 24 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:06:30 INFO 22 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:06:30 INFO 23 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:06:30 INFO 23 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:06:30 ERROR 16 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+15:06:30 ERROR 15 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+15:06:30 ERROR 22 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+15:07:41 INFO 25 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:07:41 INFO 25 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:07:41 INFO 26 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:07:41 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:07:41 INFO 26 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:07:41 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:07:41 INFO 28 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:07:41 INFO 28 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:07:41 INFO 29 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:07:41 INFO 29 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:08:04 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:08:04 INFO 16 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:08:04 INFO 25 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:08:04 INFO 25 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:08:04 INFO 26 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:08:04 INFO 26 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:08:04 INFO 28 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:08:04 INFO 28 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:08:04 INFO 29 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:08:04 INFO 29 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:15:41 INFO 27 six2015.Controllers.SIXUSERsController - token is dd877a9fe852487b9fd8c3dc057ad95c,0,1000
+15:15:51 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is dd877a9fe852487b9fd8c3dc057ad95c,370602199302131613,  identity,
+15:15:52 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:15:52 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:15:52 INFO 16 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:15:52 INFO 35 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:15:52 INFO 16 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:15:52 INFO 35 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:15:52 INFO 34 six2015.Controllers.SIXUSERsController - courses,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:15:52 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:15:52 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:17:06 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:17:06 INFO 34 six2015.Controllers.SIXUSERsController - courses,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:17:06 INFO 38 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:17:06 INFO 30 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:17:06 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:17:06 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:17:06 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:17:06 INFO 38 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:17:06 INFO 30 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:19:27 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:27 INFO 35 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:27 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:27 INFO 35 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:19:27 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:19:27 INFO 38 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:19:27 INFO 35 six2015.Controllers.SIXUSERsController - courses,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:19:27 INFO 38 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:19:27 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:19:35 INFO 30 six2015.Controllers.SIXUSERsController - token is dd877a9fe852487b9fd8c3dc057ad95c,0,1000
+15:19:40 INFO 27 six2015.Controllers.SIXUSERsController - StudyRecords,token is dd877a9fe852487b9fd8c3dc057ad95c,370602199302131613,  identity,
+15:19:41 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:41 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:41 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+15:19:41 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+15:19:41 INFO 35 six2015.Controllers.SIXUSERsController - ExamResult,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:19:41 INFO 35 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+15:19:41 INFO 45 six2015.Controllers.SIXUSERsController - courses,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,token is dd877a9fe852487b9fd8c3dc057ad95c,1
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355559812650456
+15:19:41 INFO 27 six2015.Controllers.SIXUSERsController - DeclarationForm,token is dd877a9fe852487b9fd8c3dc057ad95c,1,picID
+15:19:41 INFO 27 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355559814481759
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355559814822000
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355559815142226
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355559815412418
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355559815622570
+15:19:41 INFO 38 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355559815862740

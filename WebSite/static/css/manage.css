@@ -1,0 +1,54 @@
+*{font-family: "微软雅黑"}
+.ui-tabs-vertical { width: 55em; }
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%;background:#3e83c9;color: white;
+    border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; color: white;}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+table.sample {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 24px;
+    font-size: 1.1em;
+}
+
+table.sample th {
+    background: #3e83c9;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 11px;
+    text-align: left;
+    border-right: 1px solid #fff;
+    line-height: 1.2;
+}
+
+table.sample td {
+    padding: 6px 11px;
+    border-bottom: 1px solid #95bce2;
+    vertical-align: top;
+}
+
+table.sample td * {
+    padding: 6px 11px;
+}
+
+table.sample tr.alt td {
+    background: #ecf6fc;
+}
+
+table.sample tr.over td {
+    background: #bcd4ec;
+}
+.holder1 a{
+    color: #7db2ff;
+    font-size: 14px;
+}
+.holder2 a{
+    color: #7db2ff;
+    font-size: 14px;
+}
+.holder1 a,.holder2 a{
+    cursor: pointer;margin-left: 10px;
+}
+

@@ -66,7 +66,7 @@
             // buttonstart
             // 
             this.buttonstart.Location = new System.Drawing.Point(661, 55);
-            this.buttonstart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonstart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonstart.Name = "buttonstart";
             this.buttonstart.Size = new System.Drawing.Size(100, 29);
             this.buttonstart.TabIndex = 0;
@@ -77,7 +77,7 @@
             // buttonstop
             // 
             this.buttonstop.Location = new System.Drawing.Point(661, 115);
-            this.buttonstop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonstop.Margin = new System.Windows.Forms.Padding(4);
             this.buttonstop.Name = "buttonstop";
             this.buttonstop.Size = new System.Drawing.Size(100, 29);
             this.buttonstop.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             this.comboBoxmethods.FormattingEnabled = true;
             this.comboBoxmethods.Location = new System.Drawing.Point(229, 58);
-            this.comboBoxmethods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxmethods.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxmethods.Name = "comboBoxmethods";
             this.comboBoxmethods.Size = new System.Drawing.Size(160, 23);
             this.comboBoxmethods.TabIndex = 2;
@@ -97,7 +97,7 @@
             // textBoxurl
             // 
             this.textBoxurl.Location = new System.Drawing.Point(229, 24);
-            this.textBoxurl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxurl.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxurl.Name = "textBoxurl";
             this.textBoxurl.Size = new System.Drawing.Size(264, 25);
             this.textBoxurl.TabIndex = 3;
@@ -106,7 +106,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(16, 392);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(868, 435);
             this.richTextBox1.TabIndex = 4;
@@ -115,11 +115,11 @@
             // textBoxeachthreadvolume
             // 
             this.textBoxeachthreadvolume.Location = new System.Drawing.Point(229, 90);
-            this.textBoxeachthreadvolume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxeachthreadvolume.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxeachthreadvolume.Name = "textBoxeachthreadvolume";
             this.textBoxeachthreadvolume.Size = new System.Drawing.Size(264, 25);
             this.textBoxeachthreadvolume.TabIndex = 5;
-            this.textBoxeachthreadvolume.Text = "10";
+            this.textBoxeachthreadvolume.Text = "1499427126,1499427203";
             // 
             // label1
             // 
@@ -144,7 +144,7 @@
             // textBoxthreadcount
             // 
             this.textBoxthreadcount.Location = new System.Drawing.Point(229, 124);
-            this.textBoxthreadcount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxthreadcount.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxthreadcount.Name = "textBoxthreadcount";
             this.textBoxthreadcount.Size = new System.Drawing.Size(264, 25);
             this.textBoxthreadcount.TabIndex = 7;
@@ -183,7 +183,7 @@
             // textBoxusername
             // 
             this.textBoxusername.Location = new System.Drawing.Point(229, 158);
-            this.textBoxusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxusername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxusername.Name = "textBoxusername";
             this.textBoxusername.Size = new System.Drawing.Size(264, 25);
             this.textBoxusername.TabIndex = 11;
@@ -202,7 +202,7 @@
             // textBoxtype
             // 
             this.textBoxtype.Location = new System.Drawing.Point(229, 191);
-            this.textBoxtype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxtype.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxtype.Name = "textBoxtype";
             this.textBoxtype.Size = new System.Drawing.Size(264, 25);
             this.textBoxtype.TabIndex = 13;
@@ -221,7 +221,7 @@
             // textBoxcountcode
             // 
             this.textBoxcountcode.Location = new System.Drawing.Point(229, 225);
-            this.textBoxcountcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxcountcode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxcountcode.Name = "textBoxcountcode";
             this.textBoxcountcode.Size = new System.Drawing.Size(264, 25);
             this.textBoxcountcode.TabIndex = 15;
@@ -230,7 +230,7 @@
             // buttonstuff
             // 
             this.buttonstuff.Location = new System.Drawing.Point(661, 155);
-            this.buttonstuff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonstuff.Margin = new System.Windows.Forms.Padding(4);
             this.buttonstuff.Name = "buttonstuff";
             this.buttonstuff.Size = new System.Drawing.Size(181, 29);
             this.buttonstuff.TabIndex = 17;
@@ -251,7 +251,7 @@
             // textBoxdatavolume
             // 
             this.textBoxdatavolume.Location = new System.Drawing.Point(229, 259);
-            this.textBoxdatavolume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxdatavolume.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxdatavolume.Name = "textBoxdatavolume";
             this.textBoxdatavolume.Size = new System.Drawing.Size(264, 25);
             this.textBoxdatavolume.TabIndex = 18;
@@ -270,7 +270,7 @@
             // textBoxordinal
             // 
             this.textBoxordinal.Location = new System.Drawing.Point(229, 292);
-            this.textBoxordinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxordinal.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxordinal.Name = "textBoxordinal";
             this.textBoxordinal.Size = new System.Drawing.Size(264, 25);
             this.textBoxordinal.TabIndex = 20;
@@ -279,7 +279,7 @@
             // buttonfiles
             // 
             this.buttonfiles.Location = new System.Drawing.Point(661, 195);
-            this.buttonfiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonfiles.Margin = new System.Windows.Forms.Padding(4);
             this.buttonfiles.Name = "buttonfiles";
             this.buttonfiles.Size = new System.Drawing.Size(181, 29);
             this.buttonfiles.TabIndex = 22;
@@ -300,7 +300,7 @@
             // textBoxsourcefile
             // 
             this.textBoxsourcefile.Location = new System.Drawing.Point(229, 326);
-            this.textBoxsourcefile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxsourcefile.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxsourcefile.Name = "textBoxsourcefile";
             this.textBoxsourcefile.Size = new System.Drawing.Size(336, 25);
             this.textBoxsourcefile.TabIndex = 23;
@@ -310,7 +310,7 @@
             // buttoncamera
             // 
             this.buttoncamera.Location = new System.Drawing.Point(52, 31);
-            this.buttoncamera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttoncamera.Margin = new System.Windows.Forms.Padding(4);
             this.buttoncamera.Name = "buttoncamera";
             this.buttoncamera.Size = new System.Drawing.Size(181, 29);
             this.buttoncamera.TabIndex = 25;
@@ -325,9 +325,9 @@
             this.groupBox1.Controls.Add(this.buttoncameraclose);
             this.groupBox1.Controls.Add(this.buttoncamera);
             this.groupBox1.Location = new System.Drawing.Point(1105, 84);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(369, 228);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
@@ -337,7 +337,7 @@
             // 
             this.comboBoxcameras.FormattingEnabled = true;
             this.comboBoxcameras.Location = new System.Drawing.Point(52, 148);
-            this.comboBoxcameras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxcameras.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxcameras.Name = "comboBoxcameras";
             this.comboBoxcameras.Size = new System.Drawing.Size(232, 23);
             this.comboBoxcameras.TabIndex = 28;
@@ -345,7 +345,7 @@
             // buttoncameracapture
             // 
             this.buttoncameracapture.Location = new System.Drawing.Point(52, 111);
-            this.buttoncameracapture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttoncameracapture.Margin = new System.Windows.Forms.Padding(4);
             this.buttoncameracapture.Name = "buttoncameracapture";
             this.buttoncameracapture.Size = new System.Drawing.Size(181, 29);
             this.buttoncameracapture.TabIndex = 27;
@@ -356,7 +356,7 @@
             // buttoncameraclose
             // 
             this.buttoncameraclose.Location = new System.Drawing.Point(52, 74);
-            this.buttoncameraclose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttoncameraclose.Margin = new System.Windows.Forms.Padding(4);
             this.buttoncameraclose.Name = "buttoncameraclose";
             this.buttoncameraclose.Size = new System.Drawing.Size(181, 29);
             this.buttoncameraclose.TabIndex = 26;
@@ -367,7 +367,7 @@
             // videoSourcePlayer
             // 
             this.videoSourcePlayer.Location = new System.Drawing.Point(911, 392);
-            this.videoSourcePlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.videoSourcePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.videoSourcePlayer.Name = "videoSourcePlayer";
             this.videoSourcePlayer.Size = new System.Drawing.Size(772, 392);
             this.videoSourcePlayer.TabIndex = 10;
@@ -418,7 +418,7 @@
             this.Controls.Add(this.buttonstop);
             this.Controls.Add(this.buttonstart);
             this.Controls.Add(this.videoSourcePlayer);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Formtest";
             this.Text = "Stress and Performance Testing";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formtest_FormClosing);

@@ -18,7 +18,8 @@ using InternalEncrypt;
 using System.Configuration;
 using System.Data.Entity.Validation;
 using System.Web.UI.WebControls;
-
+using ICSharpCode.SharpZipLib.Zip;
+using System.IO;
 namespace six2015.Controllers
 {
     public class SIXUSERsController : ApiController
@@ -28,6 +29,9 @@ namespace six2015.Controllers
         static List<Ptoken> tokens = new List<Ptoken>();
        // public static readonly string DataSource = ConfigurationManager.ConnectionStrings["signaturepath"].ConnectionString;
         public static readonly string signaturepath = ConfigurationManager.AppSettings["signaturepath"];
+        public static readonly string signaturepicspath = ConfigurationManager.AppSettings["signaturepicspath"];
+        public static readonly string examresultpath = ConfigurationManager.AppSettings["examresultpath"];
+        public static readonly string secondsuffix = ConfigurationManager.AppSettings["secondsuffix"];
         class Ptoken
         {
             public string Identity { get; set; }
@@ -565,6 +569,77 @@ namespace six2015.Controllers
         }
 
 
+        [Route("signaturepics")]
+        [HttpGet]
+        public async Task<signaturepicsresponse> signaturepics(int id)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("signaturepics,token is {0},{1},id", token, id);
+                var username = string.Empty;
+                var power = 0;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        username = a.Identity;
+                        power = a.power;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("signaturepics,{0}", sixerrors.invalidtoken);
+                    return new signaturepicsresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                //var cypher = new CryptographyHelpers();
+                //   var cryptographicid = cypher.StudyEncrypt(picID);
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == id);
+                if (theusers==null)
+                {
+                    Log.InfoFormat("signaturepics,{0}", sixerrors.invalididentity);
+                    return new signaturepicsresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+
+                var fname = System.IO.Path.Combine(signaturepicspath, theusers.FILENAME + SignatureType.EducationalRecord);
+               
+                Log.InfoFormat("signaturepics,picfile={0}", fname);
+                var bbbytes = System.IO.File.ReadAllBytes(fname);
+                var basestr = Convert.ToBase64String(bbbytes);
+
+                var fname1 = System.IO.Path.Combine(signaturepicspath, theusers.FILENAME + SignatureType.PhysicalCondition);
+                Log.InfoFormat("signaturepics,PhysicalCondition={0}", fname1);
+                var PhysicalConditionbbbytes = System.IO.File.ReadAllBytes(fname1);
+                var PhysicalConditionbasestr = Convert.ToBase64String(PhysicalConditionbbbytes);
+
+                return new signaturepicsresponse
+                {
+                    status = 0,
+                    EducationalRecord = basestr,
+                   PhysicalCondition= PhysicalConditionbasestr
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("signaturepics,{0}", ex);
+                return new signaturepicsresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+
         [Route("EduRecordForm")]
         [HttpGet]
         public async Task<picresponse> EduRecordForm(int picID)
@@ -599,7 +674,7 @@ namespace six2015.Controllers
                 //   var cryptographicid = cypher.StudyEncrypt(picID);
 
                 var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == picID);
-                if (theusers==null)
+                if (theusers == null)
                 {
                     Log.InfoFormat("EduRecordForm,{0}", sixerrors.invalididentity);
                     return new picresponse
@@ -608,7 +683,7 @@ namespace six2015.Controllers
                     };
                 }
 
-                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord+".png");
+                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord + ".png");
                 Log.InfoFormat("EduRecordForm,picfile={0}", fname);
                 var bbbytes = System.IO.File.ReadAllBytes(fname);
                 var basestr = Convert.ToBase64String(bbbytes);
@@ -622,6 +697,69 @@ namespace six2015.Controllers
             catch (Exception ex)
             {
                 Log.Error("EduRecordForm,{0}", ex);
+                return new picresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        [Route("EduRecordFormB")]
+        [HttpGet]
+        public async Task<picresponse> EduRecordFormB(int picID)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("EduRecordFormB,token is {0},{1},picID", token, picID);
+                var username = string.Empty;
+                var power = 0;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        username = a.Identity;
+                        power = a.power;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("EduRecordFormB,{0}", sixerrors.invalidtoken);
+                    return new picresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                //var cypher = new CryptographyHelpers();
+                //   var cryptographicid = cypher.StudyEncrypt(picID);
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == picID);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("EduRecordFormB,{0}", sixerrors.invalididentity);
+                    return new picresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+
+                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord+ secondsuffix  + ".png");
+                Log.InfoFormat("EduRecordFormB,picfile={0}", fname);
+                var bbbytes = System.IO.File.ReadAllBytes(fname);
+                var basestr = Convert.ToBase64String(bbbytes);
+                return new picresponse
+                {
+                    status = 0,
+                    pic = basestr
+                    //   pic = bbbytes
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("EduRecordFormB,{0}", ex);
                 return new picresponse
                 {
                     status = (int)sixerrors.processerror
@@ -693,13 +831,13 @@ namespace six2015.Controllers
         }
         [Route("ExamResult")]
         [HttpGet]
-        public async Task<picresponse> ExamResult(int id)
+        public async Task<examresponse> ExamResult(int id)
         {
             try
             {
                 var found = false;
                 var token = Request.Headers.GetValues("Token").First();
-                Log.InfoFormat("ExamResult,token is {0},{1},picID", token, id);
+                Log.InfoFormat("ExamResult,token is {0},{1}", token, id);
                 var username = string.Empty;
                 var power = 0;
                 foreach (var a in tokens)
@@ -715,46 +853,207 @@ namespace six2015.Controllers
                 if (!found)
                 {
                     Log.InfoFormat("ExamResult,{0}", sixerrors.invalidtoken);
-                    return new picresponse
+                    return new examresponse
                     {
                         status = (int)sixerrors.invalidtoken
                     };
                 }
 
-                //var cypher = new CryptographyHelpers();
-                //var cryptographicid = cypher.StudyEncrypt(picID);
-
                 var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == id);
                 if (theusers == null)
                 {
                     Log.InfoFormat("ExamResult,{0}", sixerrors.invalididentity);
-                    return new picresponse
+                    return new examresponse
                     {
                         status = (int)sixerrors.invalididentity
                     };
                 }
 
-                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.PhysicalCondition + ".png");
+                var fname = System.IO.Path.Combine(examresultpath, theusers.FILENAME , "exam_result.txt");
                 Log.InfoFormat("ExamResult,picfile={0}", fname);
                 var bbbytes = System.IO.File.ReadAllBytes(fname);
                 var basestr = Convert.ToBase64String(bbbytes);
-                return new picresponse
+                return new examresponse
                 {
                     status = 0,
                     //  pic = bbbytes
-                    pic = basestr
+                    content = basestr
                 };
             }
             catch (Exception ex)
             {
                 Log.Error("ExamResult,{0}", ex);
-                return new picresponse
+                return new examresponse
                 {
                     status = (int)sixerrors.processerror
                 };
             }
         }
+        [Route("courses")]
+        [HttpGet]
+        public async Task<examresponse> courses(int id)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("courses,token is {0},{1}", token, id);
+                var username = string.Empty;
+                var power = 0;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        username = a.Identity;
+                        power = a.power;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("courses,{0}", sixerrors.invalidtoken);
+                    return new examresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
 
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == id);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("courses,{0}", sixerrors.invalididentity);
+                    return new examresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+
+              
+                return new examresponse
+                {
+                    status = 0,
+                    content = theusers.STUDYLOG
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("courses,{0}", ex);
+                return new examresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        [Route("pictures")]
+        [HttpGet]
+        public async Task<picturesresponse> pictures(int id)
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("pictures,token is {0},{1}", token, id);
+                var username = string.Empty;
+                var power = 0;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        username = a.Identity;
+                        power = a.power;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("pictures,{0}", sixerrors.invalidtoken);
+                    return new picturesresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == id);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("pictures,{0}", sixerrors.invalididentity);
+                    return new picturesresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+                var slog = theusers.STUDYLOG;
+                var courses = slog.Split('-');
+                var coursestatus = new List<coursestatus>();
+                foreach (var course in courses)
+                {
+                    if (course.Length < 10) continue;
+                   
+                    var sss = course.Split(',');
+                    var title = sss[0];
+                    var start = getdate(sss[1]);
+                    var end = getdate(sss[2]);
+                    Log.InfoFormat("pictures,{0},{1},{2},{3},{4},{5}", sss[1],sss[2], start,end,title,DateTime.Now.Ticks);
+                    var fname = sss[1] + sss[2] + ".zip";
+                    var zipfile = System.IO.Path.Combine(examresultpath, theusers.FILENAME, fname);
+                    var temp=Path.Combine(examresultpath, theusers.FILENAME, sss[1] + sss[2]);
+                    if (!Directory.Exists(temp)) Directory.CreateDirectory(temp);
+                    var a = new FastZip();
+                    a.ExtractZip(zipfile, temp, "");
+                    var picp = new DirectoryInfo(temp);
+                    var pics=picp.GetFiles();
+                    var onestatus = new coursestatus();
+                    onestatus.title = title;
+                    onestatus.start = start;
+                    onestatus.end = end;
+                    var coursepics = new List<coursepics>();                  
+
+                    foreach (var onepic in pics)
+                    {
+                        var ts =getdate( onepic.Name);//onepic.LastWriteTime
+                        var bbbytes = System.IO.File.ReadAllBytes(onepic.FullName);
+                        var basestr = Convert.ToBase64String(bbbytes);
+                        coursepics.Add(new coursepics {
+                            timestamp = ts,
+                            pic= basestr
+                        });
+                    }
+                    onestatus.coursepics = coursepics;
+                    coursestatus.Add(onestatus);
+                }
+
+                return new picturesresponse
+                {
+                    status = 0,coursestatus= coursestatus
+
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("pictures,", ex);
+                return new picturesresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        private string getdate(string ls)
+        {
+            try
+            {
+                Int64 begtime = Convert.ToInt64(ls) * 10000000;//100毫微秒为单位,textBox1.text需要转化的int日期
+                DateTime dt_1970 = new DateTime(1970, 1, 1, 8, 0, 0);
+                long tricks_1970 = dt_1970.Ticks;//1970年1月1日刻度
+                long time_tricks = tricks_1970 + begtime;//日志日期刻度
+                DateTime dt = new DateTime(time_tricks);//转化为DateTime
+                return dt.ToString();
+            }catch(Exception ex)
+            {
+                return DateTime.Now.ToString();
+            }
+        }
         [Route("StudyRecords")]
         [HttpGet]
         public async Task<StudyRecordsresponse> StudyRecords(string startTime, string endTime , string name ,

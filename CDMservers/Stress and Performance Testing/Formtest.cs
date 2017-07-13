@@ -497,11 +497,18 @@ namespace Stress_and_Performance_Testing
         private void button1_Click(object sender, EventArgs e)
         {
             var temp = textBoxeachthreadvolume.Text;
-            richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, temp));
+            richTextBox1.AppendText(string.Format("{0} {1},--{2}", Environment.NewLine, temp,DateTime.Now.Ticks));
             try
             {
-                var aaa = DateTime.Parse(temp);
-                richTextBox1.AppendText(string.Format("{0} {1},", Environment.NewLine, aaa));
+                Int64 begtime = Convert.ToInt64(temp) * 10000000;//100毫微秒为单位,textBox1.text需要转化的int日期
+                DateTime dt_1970 = new DateTime(1970, 1, 1, 8, 0, 0);
+                long tricks_1970 = dt_1970.Ticks;//1970年1月1日刻度
+                long time_tricks = tricks_1970 + begtime;//日志日期刻度
+                DateTime dt = new DateTime(time_tricks);//转化为DateTime
+
+               // var aaa = DateTime.FromBinary(long.Parse(temp));
+              //  var aaa =new DateTime(long.Parse(temp));
+                richTextBox1.AppendText(string.Format("{0} {1},{2},{3}", Environment.NewLine, dt,DateTime.Now.ToBinary(),DateTime.Now.ToOADate()));
             }
             catch (Exception ex)
             {

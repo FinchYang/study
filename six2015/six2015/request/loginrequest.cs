@@ -47,11 +47,39 @@ namespace six2015.request
     {
         public int status { get; set; }
     }
+    public class examresponse
+    {
+        public int status { get; set; }
+        public string content { get; set; }
+    }
+    public class picturesresponse
+    {
+        public int status { get; set; }
+        public List<coursestatus> coursestatus { get; set; }
+    }
+    public class coursestatus
+    {
+        public string title { get; set; }
+        public string start { get; set; }
+        public string end { get; set; }
+        public List<coursepics> coursepics { get; set; }
+    }
+    public class coursepics
+    {      
+        public string timestamp { get; set; }
+        public string pic { get; set; }
+    }
     public class picresponse
     {
         public int status { get; set; }
      //   public byte[] pic { get; set; }
         public string pic { get; set; }
+    }
+    public class signaturepicsresponse
+    {
+        public int status { get; set; }
+        public string EducationalRecord { get; set; }
+        public string PhysicalCondition { get; set; }
     }
     public class loginresponse
     {

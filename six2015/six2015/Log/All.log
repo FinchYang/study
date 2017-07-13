@@ -97,3 +97,139 @@ System.FormatException: Base-64 字符数组或字符串的长度无效。
    在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value) 位置 E:\study\InternalEncrypt\Class1.cs:行号 64
    在 InternalEncrypt.CryptographyHelpers.StudyDecrypt(String cryptograph) 位置 E:\study\InternalEncrypt\Class1.cs:行号 18
    在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 749
+2017-07-13 13:50:32,619 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - pictures,{0}
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 916
+2017-07-13 13:54:23,465 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - pictures,
+System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 924
+2017-07-13 13:59:45,091 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - pictures,
+System.IO.IOException: 文件“C:\Users\Administrator\AppData\Local\Temp\BCG5478.tmp”正由另一进程使用，因此该进程无法访问此文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 941
+2017-07-13 14:05:42,708 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - pictures,
+System.IO.IOException: 无法创建“C:\Users\Administrator\AppData\Local\Temp\tmp1324.tmp”，因为同名文件或目录已存在。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   在 System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   在 System.IO.Directory.CreateDirectory(String path)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractEntry(ZipEntry entry)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractZip(Stream inputStream, String targetDirectory, Overwrite overwrite, ConfirmOverwriteDelegate confirmDelegate, String fileFilter, String directoryFilter, Boolean restoreDateTime, Boolean isStreamOwner)
+   在 ICSharpCode.SharpZipLib.Zip.FastZip.ExtractZip(String zipFileName, String targetDirectory, String fileFilter)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 930
+2017-07-13 14:07:57,166 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - pictures,
+System.IO.IOException: 无法创建“C:\Users\Administrator\AppData\Local\Temp\tmp2079.tmp”，因为同名文件或目录已存在。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   在 System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   在 System.IO.Directory.CreateDirectory(String path)
+   在 six2015.Controllers.SIXUSERsController.<pictures>d__20.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 929
+2017-07-13 14:59:56,830 [7] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 找不到给定的头。
+   在 System.Net.Http.Headers.HttpHeaders.GetValues(String name)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecord>d__23.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 1106
+2017-07-13 15:03:20,208 [18] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+2017-07-13 15:03:20,361 [16] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+2017-07-13 15:03:20,432 [17] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+2017-07-13 15:03:42,453 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+2017-07-13 15:03:42,561 [17] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+2017-07-13 15:03:42,561 [18] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+2017-07-13 15:03:57,176 [17] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679
+2017-07-13 15:03:57,200 [16] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+2017-07-13 15:03:57,200 [18] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.DirectoryNotFoundException: 未能找到路径“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+2017-07-13 15:06:30,345 [16] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__17.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 742
+2017-07-13 15:06:30,345 [15] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__15.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 616
+2017-07-13 15:06:30,347 [22] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”。
+文件名:“e:\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 System.IO.File.ReadAllBytes(String path)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__16.MoveNext() 位置 F:\yunyi\vs2015\six2015\six2015\Controllers\SIXUSERsController.cs:行号 679

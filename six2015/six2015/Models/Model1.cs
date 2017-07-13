@@ -8,7 +8,7 @@ namespace six2015.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model14")
+            : base("name=Model15")
         {
         }
 
@@ -81,6 +81,10 @@ namespace six2015.Models
 
             modelBuilder.Entity<HISTORY>()
                 .Property(e => e.MESSAGED)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<HISTORY>()
+                .Property(e => e.STUDYLOG)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MESSAGE>()

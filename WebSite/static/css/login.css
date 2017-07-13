@@ -1,0 +1,54 @@
+body,p,div,ul,li,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: #abcbff;
+}
+#login{
+    width: 400px;
+    height: 350px;
+    background: #FFF;
+    margin:150px auto;
+    position: relative;
+    padding-top: 50px;
+    opacity: 0.8;
+}
+#login form p{
+    text-align: center;
+}
+#user{
+    background:url(../images/user.png) rgba(0,0,0,.1) no-repeat;
+    width: 200px;
+    height: 30px;
+    border:solid #ccc 1px;
+    border-radius: 3px;
+    padding-left: 32px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#pwd{
+    background: url(../images/pwd.png) rgba(0,0,0,.1) no-repeat;
+    width: 200px;
+    height: 30px;
+    border:solid #ccc 1px;
+    border-radius: 3px;
+    padding-left: 32px;
+    margin-bottom: 30px;
+}
+#submit{
+    width: 232px;
+    height: 30px;
+    background: rgba(0,0,0,.1);
+    border:solid #ccc 1px;
+    border-radius: 3px;
+}
+#submit:hover{
+    cursor: pointer;
+    background:#D8D8D8;
+}
+#login h2{
+    width: 100%;
+    text-align: center;
+
+}
