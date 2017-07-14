@@ -6,7 +6,7 @@ using System.Web;
 namespace six2015.request
 {
     enum sixerrors { ok,nouser,invalidrequest,processerror,errorpassword,invalidtoken,unauthorized,passwordisnull,
-        invalidpower,invalididentity,invalidstarttime ,invalidendtime}
+        invalidpower,invalididentity,invalidstarttime ,invalidendtime,illegalunprocessed}
     public enum SignatureType { Unknown, PhysicalCondition, EducationalRecord }
     public class oneuser
     {
@@ -37,6 +37,13 @@ namespace six2015.request
     public class commonrequest
     {
         public int id { get; set; }
+    }
+    public class messagerequest2
+    {
+        public int id { get; set; }
+        public string message { get; set; }
+        public int processed { get; set; }
+        public int failure { get; set; }
     }
     public class messagerequest
     {

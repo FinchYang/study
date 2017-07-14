@@ -292,3 +292,82 @@ System.InvalidOperationException: 找不到给定的头。
 18:10:49 INFO 37 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355662495114909
 18:10:49 INFO 37 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355662495305044
 18:10:49 INFO 37 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355662495465153
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,token is 6e79777dcb664d19a97977636b356315,1
+18:12:04 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355663243499870
+18:12:04 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+18:12:04 INFO 37 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:12:04 INFO 37 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+18:12:04 INFO 37 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:12:04 INFO 37 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+18:12:04 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,token is 6e79777dcb664d19a97977636b356315,1
+18:12:04 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+18:12:04 INFO 28 six2015.Controllers.SIXUSERsController - courses,token is 6e79777dcb664d19a97977636b356315,1
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355663243790079
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355663243940185
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355663244160337
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355663244340460
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355663244590657
+18:12:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355663244770768
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,token is 6e79777dcb664d19a97977636b356315,1
+18:14:04 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355664448519503
+18:14:04 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:04 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+18:14:04 INFO 34 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+18:14:04 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:04 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+18:14:04 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,token is 6e79777dcb664d19a97977636b356315,1
+18:14:04 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+18:14:04 INFO 30 six2015.Controllers.SIXUSERsController - courses,token is 6e79777dcb664d19a97977636b356315,1
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355664448789682
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355664448949807
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355664449340079
+18:14:04 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355664449680320
+18:14:05 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355664450030568
+18:14:05 INFO 42 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355664450270749
+18:14:11 INFO 41 six2015.Controllers.SIXUSERsController - token is 6e79777dcb664d19a97977636b356315,0,1000
+18:14:23 INFO 41 six2015.Controllers.SIXUSERsController - StudyRecords,token is 6e79777dcb664d19a97977636b356315,2017/07/01,startTime,  endTime,2017/07/31  name,  identity, illegal ,  message, print,
+18:14:29 INFO 30 six2015.Controllers.SIXUSERsController - StudyRecords,token is 6e79777dcb664d19a97977636b356315,370602199302131613,  identity,
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,token is 6e79777dcb664d19a97977636b356315,1
+18:14:30 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355664706428663
+18:14:30 INFO 30 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355664706618805
+18:14:30 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,token is 6e79777dcb664d19a97977636b356315,1
+18:14:30 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+18:14:30 INFO 30 six2015.Controllers.SIXUSERsController - courses,token is 6e79777dcb664d19a97977636b356315,1
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - signaturepics,token is 6e79777dcb664d19a97977636b356315,1,id
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord
+18:14:30 INFO 28 six2015.Controllers.SIXUSERsController - signaturepics,PhysicalCondition=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355664706979052
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355664707319293
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355664707559463
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355664707819663
+18:14:30 INFO 34 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355664708109856
+18:15:50 INFO 41 six2015.Controllers.SIXUSERsController - token is 6e79777dcb664d19a97977636b356315,0,1000
+18:15:55 INFO 23 six2015.Controllers.SIXUSERsController - StudyRecords,token is 6e79777dcb664d19a97977636b356315,370602199302131613,  identity,
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,token is 6e79777dcb664d19a97977636b356315,1
+18:15:57 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636355665571632904
+18:15:57 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+18:15:57 INFO 41 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:15:57 INFO 23 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 6e79777dcb664d19a97977636b356315,1,picID
+18:15:57 INFO 41 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord.png
+18:15:57 INFO 23 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecordsecond.png
+18:15:57 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,token is 6e79777dcb664d19a97977636b356315,1
+18:15:57 INFO 41 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+18:15:57 INFO 33 six2015.Controllers.SIXUSERsController - courses,token is 6e79777dcb664d19a97977636b356315,1
+18:15:57 INFO 33 six2015.Controllers.SIXUSERsController - signaturepics,token is 6e79777dcb664d19a97977636b356315,1,id
+18:15:57 INFO 33 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord
+18:15:57 INFO 33 six2015.Controllers.SIXUSERsController - signaturepics,PhysicalCondition=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636355665571913094
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636355665572093230
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636355665572353414
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636355665572663633
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636355665572883813
+18:15:57 INFO 30 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636355665573003870

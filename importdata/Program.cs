@@ -71,7 +71,7 @@ namespace importdata
                                     Status=status,
                                     Syncdate = DateTime.Now
                                 });
-                                 db.SaveChanges();
+                                 db.SaveChangesAsync();
                                  Console.WriteLine("import user {0} ok {1}", identity,DateTime.Now);
                             }
                             catch (Exception ex)
@@ -81,7 +81,15 @@ namespace importdata
                         }
                         else
                         {
-                            Console.WriteLine("user {0} has already existed.{1}", identity,DateTime.Now);
+                            if(status!=theuser.Status)                           
+                            {
+                                theuser.Status=status;                               
+                            }
+                            if(drugrelated=="1")
+                            theuser.Drugrelated=drugrelated;
+
+                             db.SaveChangesAsync();
+                             Console.WriteLine("user {0} has already updated.{1}", identity,DateTime.Now);
                         }
                        
                     }

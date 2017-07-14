@@ -31,7 +31,7 @@ namespace six2015.Controllers
         public static readonly string signaturepath = ConfigurationManager.AppSettings["signaturepath"];
         public static readonly string signaturepicspath = ConfigurationManager.AppSettings["signaturepicspath"];
         public static readonly string examresultpath = ConfigurationManager.AppSettings["examresultpath"];
-        public static readonly string secondsuffix = ConfigurationManager.AppSettings["secondsuffix"];
+        public static readonly string illegalunprocessed = ConfigurationManager.AppSettings["illegalunprocessed"];
         class Ptoken
         {
             public string Identity { get; set; }
@@ -46,6 +46,102 @@ namespace six2015.Controllers
                 _db1.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [Route("pushmessage2")]
+        [HttpPost]
+        public userresponse pushmessage2([FromBody] messagerequest2 inputRequest)
+        {
+            try
+            {
+                var input = JsonConvert.SerializeObject(inputRequest);
+                if (inputRequest == null)
+                {
+                    Log.InfoFormat("pushmessage2,{0}", sixerrors.invalidrequest);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalidrequest
+                    };
+                }
+                Log.InfoFormat("pushmessage2,input={0},", input);//, Request.HttpContext.Connection.RemoteIpAddress);
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("pushmessage2,token is {0},{1},id", token, inputRequest.id);
+                var found = false;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("pushmessage2,{0}", sixerrors.invalidtoken);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == inputRequest.id);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("pushmessage2,{0}", sixerrors.invalididentity);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }
+                theusers.MESSAGED = "1";
+                theusers.PROCESSED = inputRequest.processed.ToString();
+                theusers.FAILURE = inputRequest.failure.ToString();
+                _db1.MESSAGE.Add(new MESSAGE
+                {
+                    TIME = DateTime.Now,
+                    CONTENT = inputRequest.message,
+                    HISTORYID = inputRequest.id,
+                    SENT = "0"
+                });
+                _db1.SaveChangesAsync();
+
+                return new userresponse
+                {
+                    status = 0,
+                };
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Log.InfoFormat("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Log.InfoFormat("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+            catch (EntityDataSourceValidationException ex)
+            {
+                Log.Error("EntityDataSourceValidationException", ex);
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("pushmessage", ex);
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
         }
         [Route("pushmessage")]
         [HttpPost]
@@ -184,8 +280,28 @@ namespace six2015.Controllers
                         status = (int)sixerrors.invalididentity
                     };
                 }
+                if (theusers.STATUS.Contains('H'))
+                {
+                    Log.InfoFormat("processed,{0}", sixerrors.illegalunprocessed);
+                    illegalunprocessedmsg(inputRequest);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.illegalunprocessed
+                    };
+                }
+                var current = _db1.ABSTUDY.FirstOrDefault(b => b.IDCARD == theusers.IDCARD);
+                if (current != null && current.STATUS.Contains('H'))
+                {
+                    Log.InfoFormat("processed,{0}", sixerrors.illegalunprocessed);
+                    illegalunprocessedmsg(inputRequest);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.illegalunprocessed
+                    };
+                }               
+
                 theusers.PROCESSED = "1";
-                _db1.SaveChanges();
+                _db1.SaveChangesAsync();
 
                 return new userresponse
                 {
@@ -201,6 +317,83 @@ namespace six2015.Controllers
                 };
             }
         }
+        [Route("failure")]
+        [HttpPost]
+        public userresponse failure([FromBody] commonrequest inputRequest)
+        {
+            try
+            {
+                var input = JsonConvert.SerializeObject(inputRequest);
+                if (inputRequest == null)
+                {
+                    Log.InfoFormat("failure,{0}", sixerrors.invalidrequest);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalidrequest
+                    };
+                }
+                Log.InfoFormat("failure,input={0},", input);//, Request.HttpContext.Connection.RemoteIpAddress);
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("failure,token is {0},{1},id", token, inputRequest.id);
+                var found = false;
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("failure,{0}", sixerrors.invalidtoken);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+                var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == inputRequest.id);
+                if (theusers == null)
+                {
+                    Log.InfoFormat("failure,{0}", sixerrors.invalididentity);
+                    return new userresponse
+                    {
+                        status = (int)sixerrors.invalididentity
+                    };
+                }        
+               
+
+                theusers.FAILURE = "1";
+                _db1.SaveChangesAsync();
+
+                return new userresponse
+                {
+                    status = 0,
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("failure", ex);
+                return new userresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+
+        private void illegalunprocessedmsg(commonrequest inputRequest)
+        {
+            _db1.MESSAGE.Add(new MESSAGE
+            {
+                TIME = DateTime.Now,
+                CONTENT = illegalunprocessed,
+                HISTORYID = inputRequest.id,
+                SENT = "0"
+            });
+            _db1.SaveChangesAsync();
+        }
+
         [Route("printed")]
         [HttpPost]
         public userresponse printed([FromBody] commonrequest inputRequest)
@@ -683,7 +876,7 @@ namespace six2015.Controllers
                     };
                 }
 
-                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord + ".png");
+                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord + "1.png");
                 Log.InfoFormat("EduRecordForm,picfile={0}", fname);
                 var bbbytes = System.IO.File.ReadAllBytes(fname);
                 var basestr = Convert.ToBase64String(bbbytes);
@@ -746,7 +939,7 @@ namespace six2015.Controllers
                     };
                 }
 
-                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord+ secondsuffix  + ".png");
+                var fname = System.IO.Path.Combine(signaturepath, theusers.FILENAME + SignatureType.EducationalRecord+    "2.png");
                 Log.InfoFormat("EduRecordFormB,picfile={0}", fname);
                 var bbbytes = System.IO.File.ReadAllBytes(fname);
                 var basestr = Convert.ToBase64String(bbbytes);
@@ -1012,7 +1205,7 @@ namespace six2015.Controllers
 
                     foreach (var onepic in pics)
                     {
-                        var ts =getdate( onepic.Name);//onepic.LastWriteTime
+                        var ts =getdate( onepic.Name.Substring(0,10));//onepic.LastWriteTime
                         var bbbytes = System.IO.File.ReadAllBytes(onepic.FullName);
                         var basestr = Convert.ToBase64String(bbbytes);
                         coursepics.Add(new coursepics {
@@ -1057,21 +1250,19 @@ namespace six2015.Controllers
         [Route("StudyRecords")]
         [HttpGet]
         public async Task<StudyRecordsresponse> StudyRecords(string startTime, string endTime , string name ,
-            string identity ,int? illegal ,int? message, int? print)
+            string identity ,int? illegal ,int? message, int? print, int? processed, int? failure)
         {
             try
             {
                 var found = false;
                 var token = Request.Headers.GetValues("Token").First();
-                Log.InfoFormat("StudyRecords,token is {0},{1},startTime,  endTime,{2}  name,{3}  identity,{4} illegal ,{5}  message,{6} print,{7}",
-                    token,  startTime,  endTime,  name,  identity, illegal ,  message, print);
-              
+                Log.InfoFormat("StudyRecords,token is {0},{1},startTime,  endTime,{2}  name,{3}  identity,{4} illegal ,{5}  message,{6} print,{7},processed{8}",
+                    token,  startTime,  endTime,  name,  identity, illegal ,  message, print, processed);              
 
                 foreach (var a in tokens)
                 {
                     if (a.Token == token)
-                    {
-                       
+                    {                       
                         found = true;
                         break;
                     }
@@ -1084,30 +1275,29 @@ namespace six2015.Controllers
                         status = (int)sixerrors.invalidtoken
                     };
                 }
-
+                var theusers = _db1.HISTORY.Where(b =>  b.TIME.CompareTo(DateTime.Now) <= 0);
                 var start = DateTime.Now;
-                if (!DateTime.TryParse(startTime, out start))
-               //     if (string.IsNullOrEmpty(startTime))
+                if (DateTime.TryParse(startTime, out start))
                 {
-                    Log.InfoFormat("StudyRecords,{0}", sixerrors.invalidstarttime);
-                    return new StudyRecordsresponse
-                    {
-                        status = (int)sixerrors.invalidstarttime
-                    };
+                    //Log.InfoFormat("StudyRecords,{0}", sixerrors.invalidstarttime);
+                    //return new StudyRecordsresponse
+                    //{
+                    //    status = (int)sixerrors.invalidstarttime
+                    //};
+                    theusers.Where(aa => aa.TIME.CompareTo(start) >= 0);
                 }
-                //  var start = DateTime.Parse(startTime);
+                
                 var end = DateTime.Now;
                 if (!DateTime.TryParse(endTime, out end))
                 {
-                    Log.InfoFormat("StudyRecords,{0}", sixerrors.invalidendtime);
-                    return new StudyRecordsresponse
-                    {
-                        status = (int)sixerrors.invalidendtime
-                    };
-                }
-               
-
-                var theusers = _db1.HISTORY.Where(b => b.TIME.CompareTo(start) >= 0&&b.TIME.CompareTo(end) <= 0);
+                    //Log.InfoFormat("StudyRecords,{0}", sixerrors.invalidendtime);
+                    //return new StudyRecordsresponse
+                    //{
+                    //    status = (int)sixerrors.invalidendtime
+                    //};
+                    theusers.Where(aa => aa.TIME.CompareTo(end) <= 0);
+                }               
+                             
 
                 if (!string.IsNullOrEmpty(name))
                 {
@@ -1119,19 +1309,42 @@ namespace six2015.Controllers
                 {                   
                     theusers = theusers.Where(c => c.IDCARD == cryptographicid);
                 }
-                if (illegal!=null&&illegal==1)
+                if (illegal!=null)
                 {
-                    theusers = theusers.Where(c => c.STATUS != null&& c.STATUS != string.Empty);
+                    if( illegal == 1)
+                    theusers = theusers.Where(c => c.STATUS != null&& c.STATUS.Contains('H'));
+                    else
+                        theusers = theusers.Where(c => c.STATUS == null || !c.STATUS.Contains('H'));
                 }
-                if (print != null && print == 1)
+                if (print != null )
                 {
+                    if( print == 1)
                     theusers = theusers.Where(c => c.PRINTED == "1");
+                    else
+                        theusers = theusers.Where(c => c.PRINTED != "1");
                 }
-                if (message != null && message == 1)
+                if (message != null )
                 {
+                    if( message == 1)
                     theusers = theusers.Where(c => c.MESSAGED == "1");
+                    else
+                        theusers = theusers.Where(c => c.MESSAGED != "1");
                 }
-                theusers = theusers.Take(1000);
+                if (processed != null )
+                {
+                    if( processed == 1)
+                    theusers = theusers.Where(c => c.PROCESSED == "1");
+                    else
+                        theusers = theusers.Where(c => c.PROCESSED != "1");
+                }
+                if (failure != null )
+                {
+                    if(failure == 1)
+                    theusers = theusers.Where(c => c.FAILURE == "1");
+                    else
+                        theusers = theusers.Where(c => c.FAILURE != "1");
+                }
+                theusers = theusers.Take(100);
 
                 var records = new List<record>();
                 foreach(var a in theusers)
@@ -1244,6 +1457,86 @@ namespace six2015.Controllers
             catch (Exception ex)
             {
                 Log.Error("StudyRecords,{0}", ex);
+                return new StudyRecordsresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        [Route("UnprocessedRecords")]
+        [HttpGet]
+        public async Task<StudyRecordsresponse> UnprocessedRecords()
+        {
+            try
+            {
+                var found = false;
+                var token = Request.Headers.GetValues("Token").First();
+                Log.InfoFormat("UnprocessedRecords,token is {0},",                    token);
+
+                foreach (var a in tokens)
+                {
+                    if (a.Token == token)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Log.InfoFormat("UnprocessedRecords,{0}", sixerrors.invalidtoken);
+                    return new StudyRecordsresponse
+                    {
+                        status = (int)sixerrors.invalidtoken
+                    };
+                }
+
+
+                var cypher = new CryptographyHelpers();
+                var theusers = _db1.HISTORY.Where(c => c.PROCESSED!="1").Take(100);
+
+                var records = new List<record>();
+                foreach (var a in theusers)
+                {
+                    if (a.FAILURE == "1")
+                    {
+                        var study= _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
+                        if (study == null) continue;
+                        if (study.STATUS.Contains('H')) continue;
+                    }
+                    var recodr = new record
+                    {
+                        id = a.ID.ToString(),
+                        name = a.NAME,
+                        phone = a.PHONENUMBER,
+                        identity = cypher.StudyDecrypt(a.IDCARD),
+                        studyTime = a.TIME,
+                        illegal = a.STATUS
+                    };
+                    if (a.MESSAGED == "1")
+                    {
+                        var mess = _db1.MESSAGE.Where(aa => aa.HISTORYID == a.ID);
+                        var messages = new List<message>();
+                        foreach (var b in mess)
+                        {
+                            messages.Add(new message
+                            {
+                                dateTime = b.TIME,
+                                content = b.CONTENT
+                            });
+                        }
+                        recodr.message = messages;
+                    }
+                    records.Add(recodr);
+                }
+                return new StudyRecordsresponse
+                {
+                    status = 0,
+                    records = records
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("UnprocessedRecords,", ex);
                 return new StudyRecordsresponse
                 {
                     status = (int)sixerrors.processerror

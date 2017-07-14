@@ -10,3 +10,348 @@ System.InvalidOperationException: 找不到给定的头。
 System.InvalidOperationException: 找不到给定的头。
    在 System.Net.Http.Headers.HttpHeaders.GetValues(String name)
    在 six2015.Controllers.SIXUSERsController.<user>d__14.MoveNext()
+2017-07-14 07:49:47,721 [16] ERROR six2015.Controllers.SIXUSERsController [(null)] - pushmessage
+System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> System.Data.Entity.Core.UpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-00001: 违反唯一约束条件 (WYXX.MESSAGE_PK)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   在 OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 six2015.Controllers.SIXUSERsController.pushmessage(messagerequest inputRequest)
+2017-07-14 07:50:05,563 [16] ERROR six2015.Controllers.SIXUSERsController [(null)] - pushmessage
+System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> System.Data.Entity.Core.UpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-00001: 违反唯一约束条件 (WYXX.MESSAGE_PK)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   在 OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 six2015.Controllers.SIXUSERsController.pushmessage(messagerequest inputRequest)
+2017-07-14 07:54:45,469 [11] ERROR six2015.Controllers.SIXUSERsController [(null)] - pushmessage
+System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> System.Data.Entity.Core.UpdateException: 更新条目时出错。有关详细信息，请参阅内部异常。 ---> Oracle.ManagedDataAccess.Client.OracleException: ORA-00001: 违反唯一约束条件 (WYXX.MESSAGE_PK)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   在 OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 six2015.Controllers.SIXUSERsController.pushmessage(messagerequest inputRequest)
+2017-07-14 15:36:22,590 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,658 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,698 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,737 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,777 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,816 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,855 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,897 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,938 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:22,977 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,015 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,054 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,092 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,131 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,172 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,213 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,257 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,300 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,339 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,378 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,416 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,457 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,498 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,538 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,580 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,625 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,689 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,735 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,792 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,837 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,884 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,925 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:23,969 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,011 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,048 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,086 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,125 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,174 [34] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,216 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,281 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:24,322 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:36:26,001 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 15:38:00,860 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.ArgumentNullException: 值不能为 null。
+参数名: s
+   在 System.Convert.FromBase64String(String s)
+   在 InternalEncrypt.CryptographyHelpers.Decrypt(String password, String salt, String encrypted_value)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__27.MoveNext()
+2017-07-14 16:25:21,111 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:25:34,715 [25] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:25:46,533 [5] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:25:57,994 [23] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:26:09,523 [31] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:26:26,710 [21] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:26:41,858 [31] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:26:53,857 [25] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:27:06,075 [25] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:27:30,976 [30] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 16:27:31,812 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()

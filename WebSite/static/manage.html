@@ -262,7 +262,8 @@
                             return;
                         }
 
-                        var txt = Base64.decode(message.content).replace(/\n\n/g, "<br/>").replace(/\n/g, "<br/>");
+                        var txt = "<h3 style='text-align: center; width: 100%'>答题结果</h3>>" +
+                            Base64.decode(message.content).replace(/\n\n/g, "<br/>").replace(/\n/g, "<br/>");
                         $("#detail_answer").html(txt);
                     },
                     error: function (e1, e2, e3) {
@@ -340,13 +341,15 @@
 //                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
                 $("#detail_message").html("");
                 var d =new Date(rec.studyTime);
-                $("#message_content").val(
+                $("#message_content").data("success",
                     rec.name + "（身份证明号码：" +
                     rec.identity + "，发证机关鲁F）于"+
                     d.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
                     "交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。" +
                     "请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。" +
                     "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为   年  月  日 至  年  月  日。");
+                $("#message_content").data("failure","您有违法未处理，请尽快处理，完成网络审验教育业务。");
+
                 if (rec.message) {
                     for (var i = 0; i < rec.message.length; ++i) {
                         $("#detail_message").append("<li>" + rec.message[i].dateTime + ": " + rec.message[i].content + "</li>");
@@ -375,13 +378,14 @@
 //                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
                 $("#detail_message").html("");
                 var d =new Date(rec.studyTime);
-                $("#message_content").val(
+                $("#message_content").data("success",
                     rec.name + "（身份证明号码：" +
                     rec.identity + "，发证机关鲁F）于"+
                     d.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
                     "交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。" +
                     "请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。" +
                     "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为   年  月  日 至  年  月  日。");
+                $("#message_content").data("failure","您有违法未处理，请尽快处理，完成网络审验教育业务。");
                 if (rec.message) {
                     for (var i = 0; i < rec.message.length; ++i) {
                         $("#detail_message").append("<li>" + rec.message[i].dateTime + ": " + rec.message[i].content + "</li>");
@@ -393,6 +397,47 @@
 
 
             refreshUserTable();
+
+
+            setInterval(function () {
+                $.ajax({
+                    url: "/UnprocessedRecords",
+                    //cache: false,
+                    type: "GET",
+                    headers: {'token': $.cookie("token")},
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (message) {
+                        if (message.status !== 0) {
+                            alert("获取记录失败。");
+                            errorMessage(message.status);
+                            return;
+                        }
+
+                        window.recordListMsg = message;
+                        function obj2Arr(obj) {
+                            return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+                        }
+
+                        var data = [];
+                        for (var i = 0; i < message.records.length; ++i) {
+                            data.push(obj2Arr(message.records[i]));
+                        }
+
+                        recordListTable2.clear();
+                        recordListTable2.rows.add(data);
+                        recordListTable2.draw();
+
+                    },
+                    error: function (e1, e2, e3) {
+                        console.log(e1);
+                        console.log(e2);
+                        console.log(e3);
+                        alert("网络通信失败，请联系管理员。");
+                    }
+                });
+            }, 10000);
+
         });
     </script>
 </head>
@@ -440,11 +485,16 @@
             <table>
                 <tr>
                     <td>
-                        开始学习时间
+                        <input type="checkbox" id="c4">身份证号码
+                        <input type="text" id="i4" disabled="disabled"
+                               style="height: 15px;width: 150px;font-size: 10px">
+                    </td>
+                    <td>
+                        <input type="checkbox" id="c1">开始时间
                         <input type="text" id="i1" style="height: 15px;width: 150px;font-size: 10px">
                     </td>
                     <td>
-                        结束学习时间
+                        <input type="checkbox" id="c2">结束时间
                         <input type="text" id="i2" style="height: 15px;width: 150px;font-size: 10px">
                     </td>
                     <td>
@@ -452,15 +502,10 @@
                         <input type="text" id="i3" disabled="disabled"
                                style="height: 15px;width: 150px;font-size: 10px">
                     </td>
-                    <td>
-                        <input type="checkbox" id="c4">身份证号码
-                        <input type="text" id="i4" disabled="disabled"
-                               style="height: 15px;width: 150px;font-size: 10px">
-                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" id="c5" value="illegal">违法同步库中是否有违法记录
+                        <input type="checkbox" id="c5" value="illegal">是否已受理
                         <select disabled="disabled" id="i5">
                             <option>有</option>
                             <option>无</option>
@@ -474,7 +519,7 @@
                         </select>
                     </td>
                     <td>
-                        <input type="checkbox" id="c7" value="print">是否打印过该学习记录
+                        <input type="checkbox" id="c7" value="print">是否办理失败
                         <select disabled="disabled" id="i7">
                             <option>是</option>
                             <option>否</option>
@@ -507,21 +552,6 @@
         <div style="color: #6e6e6e;font-size: 13px;float: left;margin-left: 20px">业务办理>></div>
         <br>
         <div style="clear: both"></div>
-        <div style="font-size: 12px;color: #6d6e6f;padding-left: 0">
-            <table>
-                <tr>
-                    <td>
-                        身份证号码
-                        <input type="text" id="query_identity" style="height: 15px;width: 150px;font-size: 10px">
-                    </td>
-                    <td>
-                        <button id="queryBtn2" style="margin-left: 30px">查询</button>
-                        <!--<button id="c9">清空</button>-->
-                    </td>
-                </tr>
-            </table>
-
-        </div>
         <table id="recordList2" class="display" cellspacing="0" width="100%">
             <thead>
             <tr>
@@ -804,11 +834,9 @@
             </td>
         </tr>
         <tr>
-            <td>审验教育记录</td>
-        </tr>
-        <tr>
             <td colspan="6">
                 <div style="border:3px solid #000">
+                    <h3>审验教育项目：</h3>
                     <ul id="detail_edulog">
 
                     </ul>
@@ -1091,13 +1119,13 @@
                     }
                 },
                 {
-                    text: "打印学习记录表",
+                    text: "打印学习记录表（正）",
                     click: function () {
                         printJS($("#detail_edu_f").attr("src"), "image");
                     }
                 },
                 {
-                    text: "打印学习记录表",
+                    text: "打印学习记录表（反）",
                     click: function () {
                         printJS($("#detail_edu_b").attr("src"), "image");
                     }
@@ -1141,9 +1169,17 @@
 //                    }
 //                },
                 {
-                    text: "发送短信",
+                    text: "发送办理成功短信",
                     click: function () {
-                        $("#dialog_message").dialog("open");
+                        $("#message_content").val($("#message_content").data("success"));
+                        $("#dialog_message").data("status", "success").dialog("open");
+                    }
+                },
+                {
+                    text: "发送办理失败短信",
+                    click: function () {
+                        $("#message_content").val($("#message_content").data("failure"));
+                        $("#dialog_message").data("status", "failure").dialog("open");
                     }
                 }
 
@@ -1162,23 +1198,23 @@
 
 <!--只读-->
 <script>
-    //    $('#c1').click(function () {
-    //        if ($("#i1").attr("disabled")) {
-    //            $('#i1').removeAttr("disabled").datepicker();
-    //        } else {
-    //            $("#i1").attr("disabled", "disabled");
-    //        }
-    //    });
-    //    $('#c2').click(function () {
-    //        if ($("#i2").attr("disabled")) {
-    //            $('#i2').removeAttr("disabled").datepicker();
-    //        } else {
-    //            $("#i2").attr("disabled", "disabled");
-    //        }
-    //    });
+        $('#c1').click(function () {
+            if ($("#i1").attr("disabled")) {
+                $('#i1').removeAttr("disabled").datepicker();
+            } else {
+                $("#i1").attr("disabled", "disabled");
+            }
+        });
+        $('#c2').click(function () {
+            if ($("#i2").attr("disabled")) {
+                $('#i2').removeAttr("disabled").datepicker();
+            } else {
+                $("#i2").attr("disabled", "disabled");
+            }
+        });
 
-    $('#i1').datepicker();
-    $('#i2').datepicker();
+//    $('#i1').datepicker();
+//    $('#i2').datepicker();
     $('#c3').click(function () {
         if ($("#i3").attr("disabled")) {
             $('#i3').removeAttr("disabled");
@@ -1220,16 +1256,28 @@
 <script>
     $(function () {
         $("#queryBtn").click(function () {
-            var queryStr = "/StudyRecords?";
-            var startTimeVal = $("#i1").val();
-            var endTimeVal = $("#i2").val();
-            if (startTimeVal === "" || endTimeVal === "") {
-                alert("请选择要查询的时间范围");
-                return;
-            }
+            var queryStr = "/StudyRecords?illegal=&print=&";
+//            var startTimeVal = $("#i1").val();
+//            var endTimeVal = $("#i2").val();
+//            if (startTimeVal === "" || endTimeVal === "") {
+//                alert("请选择要查询的时间范围");
+//                return;
+//            }
 
-            queryStr += "startTime=" + new Date(startTimeVal).Format("yyyy/MM/dd") + "&";
-            queryStr += "endTime=" + new Date(endTimeVal).Format("yyyy/MM/dd") + "&";
+//            queryStr += "startTime=" + new Date(startTimeVal).Format("yyyy/MM/dd") + "&";
+//            queryStr += "endTime=" + new Date(endTimeVal).Format("yyyy/MM/dd") + "&";
+
+            queryStr += "startTime=";
+            if ($("#c1").prop("checked")) {
+                queryStr += new Date($("#i1").val()).Format("yyyy/MM/dd");
+            }
+            queryStr += "&";
+
+            queryStr += "endTime=";
+            if ($("#c2").prop("checked")) {
+                queryStr += new Date($("#i2").val()).Format("yyyy/MM/dd");
+            }
+            queryStr += "&";
 
             queryStr += "name=";
             if ($("#c3").prop("checked")) {
@@ -1243,7 +1291,7 @@
             }
             queryStr += "&";
 
-            queryStr += "illegal=";
+            queryStr += "processed=";
             if ($("#c5").prop("checked")) {
                 queryStr += ($("#i5").val() === "有" ? "1" : "0");
             }
@@ -1255,7 +1303,7 @@
             }
             queryStr += "&";
 
-            queryStr += "print=";
+            queryStr += "failure=";
             if ($("#c7").prop("checked")) {
                 queryStr += ($("#i7").val() === "是" ? "1" : "0");
             }
@@ -1300,50 +1348,50 @@
             });
         });
 
-        $("#queryBtn2").click(function () {
-            var identity = $("#query_identity").val();
-            if (identity === "") {
-                alert("晴先输入要查询的身份证号");
-                return;
-            }
-            var queryStr = "/StudyRecord?identity=" + identity;
-            $.ajax({
-                url: queryStr,
-                cache: false,
-                type: "GET",
-                headers: {'token': $.cookie("token")},
-                contentType: "application/json",
-                dataType: "json",
-                success: function (message) {
-                    if (message.status !== 0) {
-                        alert("获取记录失败。");
-                        errorMessage(message.status);
-                        return;
-                    }
-
-                    window.recordListMsg = message;
-                    function obj2Arr(obj) {
-                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
-                    }
-
-                    var data = [];
-                    for (var i = 0; i < message.records.length; ++i) {
-                        data.push(obj2Arr(message.records[i]));
-                    }
-
-                    recordListTable2.clear();
-                    recordListTable2.rows.add(data);
-                    recordListTable2.draw();
-
-                },
-                error: function (e1, e2, e3) {
-                    console.log(e1);
-                    console.log(e2);
-                    console.log(e3);
-                    alert("网络通信失败，请联系管理员。");
-                }
-            });
-        });
+//        $("#queryBtn2").click(function () {
+//            var identity = $("#query_identity").val();
+//            if (identity === "") {
+//                alert("请先输入要查询的身份证号");
+//                return;
+//            }
+//            var queryStr = "/StudyRecord?identity=" + identity;
+//            $.ajax({
+//                url: queryStr,
+//                cache: false,
+//                type: "GET",
+//                headers: {'token': $.cookie("token")},
+//                contentType: "application/json",
+//                dataType: "json",
+//                success: function (message) {
+//                    if (message.status !== 0) {
+//                        alert("获取记录失败。");
+//                        errorMessage(message.status);
+//                        return;
+//                    }
+//
+//                    window.recordListMsg = message;
+//                    function obj2Arr(obj) {
+//                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+//                    }
+//
+//                    var data = [];
+//                    for (var i = 0; i < message.records.length; ++i) {
+//                        data.push(obj2Arr(message.records[i]));
+//                    }
+//
+//                    recordListTable2.clear();
+//                    recordListTable2.rows.add(data);
+//                    recordListTable2.draw();
+//
+//                },
+//                error: function (e1, e2, e3) {
+//                    console.log(e1);
+//                    console.log(e2);
+//                    console.log(e3);
+//                    alert("网络通信失败，请联系管理员。");
+//                }
+//            });
+//        });
 
     });
 </script>
@@ -1368,14 +1416,16 @@
                     click: function () {
                         var content = $("#message_content").val();
                         $.ajax({
-                            url: "/pushmessage",
+                            url: "/pushmessage2",
                             cache: false,
                             type: "POST",
                             headers: {'token': $.cookie("token")},
                             contentType: "application/json",
                             data: JSON.stringify({
                                 id: $("#dialog_detail").data("id"),
-                                content: content
+                                message: content,
+                                processed: 1,
+                                failure: $("#dialog_message").data("status") === "success"?0:1
                             }),
                             dataType: "json",
                             success: function (message) {
@@ -1385,6 +1435,7 @@
                                     errorMessage(message.status);
                                     return;
                                 }
+
 
                                 alert("已将内容提交到发送服务器");
                             },
