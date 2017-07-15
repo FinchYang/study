@@ -355,3 +355,51 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
 2017-07-14 16:27:31,812 [32] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
 System.NullReferenceException: 未将对象引用设置到对象的实例。
    在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:40:21,946 [7] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+2017-07-14 17:40:28,308 [7] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+2017-07-14 17:40:30,519 [11] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:40:40,009 [11] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+2017-07-14 17:40:43,182 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:40:54,649 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+2017-07-14 17:40:58,159 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:41:05,228 [11] ERROR six2015.Controllers.SIXUSERsController [(null)] - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+2017-07-14 17:41:12,168 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:41:24,943 [11] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:41:39,165 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+2017-07-14 17:43:14,048 [15] ERROR six2015.Controllers.SIXUSERsController [(null)] - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()

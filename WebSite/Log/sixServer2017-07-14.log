@@ -1519,3 +1519,123 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
 16:58:23 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e634e4d6abf040b5aa2edcfa07b32d76,
 16:58:33 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e634e4d6abf040b5aa2edcfa07b32d76,
 16:58:43 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e634e4d6abf040b5aa2edcfa07b32d76,
+16:59:01 INFO 27 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e634e4d6abf040b5aa2edcfa07b32d76,
+16:59:01 INFO 27 six2015.Controllers.SIXUSERsController - UnprocessedRecords,invalidtoken
+16:59:05 INFO 9 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e634e4d6abf040b5aa2edcfa07b32d76,
+16:59:05 INFO 9 six2015.Controllers.SIXUSERsController - UnprocessedRecords,invalidtoken
+17:40:15 INFO 6 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+17:40:17 INFO 8 six2015.Controllers.SIXUSERsController - token is 22219686b5ba4451a81108d23946af90,0,1000
+17:40:21 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:40:21 ERROR 7 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+17:40:28 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:40:28 ERROR 7 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+17:40:30 INFO 11 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:40:30 ERROR 11 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:40:39 INFO 11 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:40:40 ERROR 11 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+17:40:43 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:40:43 ERROR 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:40:46 INFO 11 six2015.Controllers.SIXUSERsController - token is 22219686b5ba4451a81108d23946af90,0,1000
+17:40:54 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:40:54 ERROR 6 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+17:40:58 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:40:58 ERROR 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:41:05 INFO 11 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:41:05 ERROR 11 six2015.Controllers.SIXUSERsController - StudyRecords,{0}
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<StudyRecords>d__27.MoveNext()
+17:41:12 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:41:12 ERROR 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:41:24 INFO 11 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:41:24 ERROR 11 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:41:39 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:41:39 ERROR 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:43:14 INFO 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:43:14 ERROR 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,
+System.InvalidOperationException: 可为空的对象必须具有一个值。
+   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 six2015.Controllers.SIXUSERsController.<UnprocessedRecords>d__29.MoveNext()
+17:43:34 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:43:36 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+17:43:43 INFO 15 six2015.Controllers.SIXUSERsController - StudyRecords,token is 22219686b5ba4451a81108d23946af90,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+17:43:44 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:43:44 INFO 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 61c7fe1e67f64492a21d052568094368,
+17:43:49 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 22219686b5ba4451a81108d23946af90,1,picID
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,token is 22219686b5ba4451a81108d23946af90,1
+17:43:49 INFO 7 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 22219686b5ba4451a81108d23946af90,1,picID
+17:43:49 INFO 6 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 22219686b5ba4451a81108d23946af90,1,picID
+17:43:49 INFO 8 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636356510293859497
+17:43:49 INFO 8 six2015.Controllers.SIXUSERsController - courses,token is 22219686b5ba4451a81108d23946af90,1
+17:43:49 INFO 8 six2015.Controllers.SIXUSERsController - ExamResult,token is 22219686b5ba4451a81108d23946af90,1
+17:43:49 INFO 8 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+17:43:49 INFO 7 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord1.png
+17:43:49 INFO 7 six2015.Controllers.SIXUSERsController - signaturepics,token is 22219686b5ba4451a81108d23946af90,1,id
+17:43:49 INFO 7 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord
+17:43:49 INFO 7 six2015.Controllers.SIXUSERsController - signaturepics,PhysicalCondition=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition
+17:43:49 INFO 6 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord2.png
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636356510295250655
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636356510295440793
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636356510295570877
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636356510295716014
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636356510295831129
+17:43:49 INFO 15 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636356510296100364
+17:43:54 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:04 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:14 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:24 INFO 13 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:34 INFO 13 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:44 INFO 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:44:54 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:04 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:14 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:24 INFO 10 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:34 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:44 INFO 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:45:54 INFO 15 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:04 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:14 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:24 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:34 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:44 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:46:54 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:04 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:14 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:24 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:34 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:44 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:47:54 INFO 10 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:48:04 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:48:14 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,
+17:48:24 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 22219686b5ba4451a81108d23946af90,

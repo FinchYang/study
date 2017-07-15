@@ -36,6 +36,64 @@
             "ordering": false,
             "lengthChange": false
         });
+        
+        window.getZTString = function (zt) {
+            var upzt = zt.toUpperCase();
+            var ret = "";
+            for(var i = 0; i < upzt.length; ++i) {
+                switch (upzt[i]) {
+                    case 'A':
+                        ret += "正常 ";
+                        break;
+                    case 'B':
+                        ret += "转出 ";
+                        break;
+                    case 'C':
+                        ret += "被盗抢 ";
+                        break;
+                    case 'D':
+                        ret += "停驶 ";
+                        break;
+                    case 'E':
+                        ret += "注销 ";
+                        break;
+                    case 'G':
+                        ret += "违法未处理 ";
+                        break;
+                    case 'H':
+                        ret += "海关监管 ";
+                        break;
+                    case 'I':
+                        ret += "事故未处理 ";
+                        break;
+                    case 'J':
+                        ret += "嫌疑车 ";
+                        break;
+                    case 'K':
+                        ret += "查封 ";
+                        break;
+                    case 'L':
+                        ret += "暂扣 ";
+                        break;
+                    case 'M':
+                        ret += "强制注销 ";
+                        break;
+                    case 'N':
+                        ret += "事故逃逸 ";
+                        break;
+                    case 'O':
+                        ret += "锁定 ";
+                        break;
+                    case 'F':
+                        ret += "退车 ";
+                        break;
+                    default:
+                        ret += "未知 ";
+                }
+            }
+
+            return ret;
+        };
 
         window.errorMessage = function (status) {
             console.log("On error message status: " + status);
@@ -329,7 +387,7 @@
                 $("#detail_phone").val(rec.phone);
                 $("#detail_identity").val(rec.identity);
                 $("#detail_date").val(rec.studyTime);
-                $("#detail_status").val(rec.illegal);
+                $("#detail_status").val(getZTString(rec.illegal));
                 loadCmpImage(rec.id);
                 loadImage("#detail_decl", "/DeclarationForm?picID=" + rec.id);
                 loadImage("#detail_edu_f", "/EduRecordForm?picID=" + rec.id);
@@ -340,14 +398,21 @@
 //                $("#detail_decl").attr("src", "/DeclarationForm/" + rec.id + ".png");
 //                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
                 $("#detail_message").html("");
-                var d =new Date(rec.studyTime);
+                var studyTime = new Date(rec.studyTime);
+                var t1 = new Date(rec.syyxqz);
+                t1.setFullYear(t1.getFullYear() + 1);
+                var t2 = new Date(rec.syyxqz);
+                t2.setFullYear(t2.getFullYear() + 1);
+                t2.setDate(t2.getDate() - 30);
+
                 $("#message_content").data("success",
                     rec.name + "（身份证明号码：" +
                     rec.identity + "，发证机关鲁F）于"+
-                    d.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
+                    studyTime.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
                     "交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。" +
                     "请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。" +
-                    "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为   年  月  日 至  年  月  日。");
+                    "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为" +
+                    t2.Format("yyyy年MM月dd日") + "至" + t1.Format("yyyy年MM月dd日"));
                 $("#message_content").data("failure","您有违法未处理，请尽快处理，完成网络审验教育业务。");
 
                 if (rec.message) {
@@ -366,7 +431,7 @@
                 $("#detail_phone").val(rec.phone);
                 $("#detail_identity").val(rec.identity);
                 $("#detail_date").val(rec.studyTime);
-                $("#detail_status").val(rec.illegal);
+                $("#detail_status").val(getZTString(rec.illegal));
                 loadCmpImage(rec.id);
                 loadImage("#detail_decl", "/DeclarationForm?picID=" + rec.id);
                 loadImage("#detail_edu_f", "/EduRecordForm?picID=" + rec.id);
@@ -377,14 +442,21 @@
 //                $("#detail_decl").attr("src", "/DeclarationForm/" + rec.id + ".png");
 //                $("#detail_edu").attr("src", "/EduRecordForm" + rec.id + ".png");
                 $("#detail_message").html("");
-                var d =new Date(rec.studyTime);
+                var studyTime = new Date(rec.studyTime);
+                var t1 = new Date(rec.syyxqz);
+                t1.setFullYear(t1.getFullYear() + 1);
+                var t2 = new Date(rec.syyxqz);
+                t2.setFullYear(t2.getFullYear() + 1);
+                t2.setDate(t2.getDate() - 30);
+
                 $("#message_content").data("success",
                     rec.name + "（身份证明号码：" +
                     rec.identity + "，发证机关鲁F）于"+
-                    d.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
+                    studyTime.Format("yyyy年MM月dd日") + "，已参加了道路交通安全法律法规、" +
                     "交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。" +
                     "请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。" +
-                    "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为   年  月  日 至  年  月  日。");
+                    "但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为" +
+                    t2.Format("yyyy年MM月dd日") + "至" + t1.Format("yyyy年MM月dd日"));
                 $("#message_content").data("failure","您有违法未处理，请尽快处理，完成网络审验教育业务。");
                 if (rec.message) {
                     for (var i = 0; i < rec.message.length; ++i) {
@@ -416,7 +488,7 @@
 
                         window.recordListMsg = message;
                         function obj2Arr(obj) {
-                            return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+                            return [obj.name, obj.phone, obj.identity, obj.studyTime, getZTString(obj.illegal), (!obj.message || obj.message === 0) ? 0 : obj.message.length];
                         }
 
                         var data = [];
@@ -1326,7 +1398,7 @@
 
                     window.recordListMsg = message;
                     function obj2Arr(obj) {
-                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+                        return [obj.name, obj.phone, obj.identity, obj.studyTime, getZTString(obj.illegal), (!obj.message || obj.message === 0) ? 0 : obj.message.length];
                     }
 
                     var data = [];
@@ -1371,7 +1443,7 @@
 //
 //                    window.recordListMsg = message;
 //                    function obj2Arr(obj) {
-//                        return [obj.name, obj.phone, obj.identity, obj.studyTime, obj.illegal, (!obj.message || obj.message === 0) ? 0 : obj.message.length];
+//                        return [obj.name, obj.phone, obj.identity, obj.studyTime, getZTString(obj.illegal), (!obj.message || obj.message === 0) ? 0 : obj.message.length];
 //                    }
 //
 //                    var data = [];

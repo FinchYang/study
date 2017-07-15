@@ -1,21 +1,30 @@
 INSERT INTO `studyin`.`user`
 (`identity`,
 
-`syncdate`,`completed`,`drivinglicense`
+`syncdate`,`completed`,`licensetype`
 )
 VALUES
-('RjvYSXUXE0K+WSETt5OY0LoSzcofuqUumGj0IlfiZcM=',
+('370686199102070710',
 
-'2011/1/1','0','akdjf45345');
+'2011/1/1','0','2');
+
+INSERT INTO `studyin`.`user`
+(`identity`,
+
+`syncdate`,`completed`,`licensetype`,`photofile`
+)
+VALUES
+('RDN7P+4C2VxxP+e8qWCixxCGI8Fybfd1jrzvy2iK9Hs=',
+
+'2011/1/1','0','2','8c44a398e813497391b71e92c1e6fe7c');
 
 UPDATE `studyin`.`user` SET
 `completed` = '1'
 WHERE `identity` = '370686199102070710';
 
-SELECT * FROM studyin.user;
 UPDATE `studyin`.`user` SET
-`studylog` = ''
-WHERE `identity` =  '370686199011302512';
+`studylog` = '',`completed` = '0',`firstsigned` = '0',`token` = ''
+WHERE `identity` =  'RjvYSXUXE0K+WSETt5OY0LoSzcofuqUumGj0IlfiZcM=';
 
 UPDATE `studyin`.`user` SET
 `firstsigned` = '0'
