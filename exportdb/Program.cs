@@ -29,7 +29,7 @@ namespace exportdb
                 var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", tempday.Year, tempday.Month, tempday.Day));
 
                 var theuser = db.History.Where(async => async.Finishdate.CompareTo(date) <= 0 
-              //  && async.Finishdate.CompareTo(yesterday) > 0
+                && async.Finishdate.CompareTo(yesterday) > 0
                 );
                 Console.WriteLine("yesterday is {0},today is {1}, {2} records need to  be archived", yesterday, date, theuser.Count());
                 foreach (var re in theuser)

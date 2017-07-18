@@ -1,0 +1,40 @@
+== Info: timeout on name lookup is not supported
+== Info:   Trying 192.168.0.100...
+== Info: TCP_NODELAY set
+== Info: Connected to 192.168.0.100 (192.168.0.100) port 6448 (#0)
+=> Send header, 87 bytes (0x57)
+0000: GET /dist/ HTTP/1.1
+0015: Host: 192.168.0.100:6448
+002f: User-Agent: curl/7.53.0
+0048: Accept: */*
+0055: 
+<= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+<= Recv header, 25 bytes (0x19)
+0000: Content-Type: text/html
+<= Recv header, 46 bytes (0x2e)
+0000: Last-Modified: Mon, 17 Jul 2017 01:46:44 GMT
+<= Recv header, 22 bytes (0x16)
+0000: Accept-Ranges: bytes
+<= Recv header, 27 bytes (0x1b)
+0000: ETag: "bb16948b9efed21:0"
+<= Recv header, 28 bytes (0x1c)
+0000: Server: Microsoft-IIS/10.0
+<= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: ASP.NET
+<= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 17 Jul 2017 08:30:15 GMT
+<= Recv header, 21 bytes (0x15)
+0000: Content-Length: 469
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 469 bytes (0x1d5)
+0000: <!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Comp
+0040: atible" content="IE=edge"><meta charset="utf-8"/><meta name="vie
+0080: wport" content="width=device-width,height=device-height,minimum-
+00c0: scale=1,initial-scale=1,user-scalable=0"><title>React Material T
+0100: emplate</title><link href="./main.f6628021f38fe946d31c74970e7e4d
+0140: 5d.css" rel="stylesheet"></head><body><div id="app"></div><scrip
+0180: t type="text/javascript" src="./main.41a74fb3191b8783bc18.js"></
+01c0: script></body></html>
+== Info: Connection #0 to host 192.168.0.100 left intact

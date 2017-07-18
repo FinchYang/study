@@ -1,0 +1,24 @@
+2017-07-17 14:51:57.243 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-17 14:52:02.107 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-17 14:52:02.866 +08:00 [Information] Request finished in 676.2763ms 404 
+2017-07-17 14:52:02.867 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-17 14:52:02.881 +08:00 [Information] Request finished in 12.0179ms 404 
+2017-07-17 14:52:02.899 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-17 14:52:02.908 +08:00 [Information] Request finished in 9.6067ms 404 
+2017-07-17 14:52:09.549 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-17 14:52:09.552 +08:00 [Information] Request finished in 3.3534ms 404 
+2017-07-17 14:52:25.073 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/salt?token=370628198205233713  
+2017-07-17 14:52:25.448 +08:00 [Information] Executing action method "study.Controllers.InspectController.salt (study)" with arguments (["370628198205233713"]) - ModelState is Valid
+2017-07-17 14:52:25.615 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-17 14:52:25.896 +08:00 [Information] Executed action "study.Controllers.InspectController.salt (study)" in 735.928ms
+2017-07-17 14:52:25.908 +08:00 [Information] Request finished in 835.5985ms 200 application/json; charset=utf-8
+2017-07-17 14:54:09.917 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-17 14:54:13.787 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-17 14:54:14.097 +08:00 [Information] Request finished in 329.9331ms 404 
+2017-07-17 14:54:14.134 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-17 14:54:14.152 +08:00 [Information] Request finished in 16.9417ms 404 
+2017-07-17 14:56:29.146 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/salt?token=370628198205233713  
+2017-07-17 14:56:29.458 +08:00 [Information] Executing action method "study.Controllers.InspectController.salt (study)" with arguments (["370628198205233713"]) - ModelState is Valid
+2017-07-17 14:56:29.521 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-17 14:56:29.810 +08:00 [Information] Executed action "study.Controllers.InspectController.salt (study)" in 578.897ms
+2017-07-17 14:56:29.822 +08:00 [Information] Request finished in 692.5762ms 200 application/json; charset=utf-8
