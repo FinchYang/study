@@ -132,7 +132,7 @@ namespace importdata
                         }
                         if (drugrelated == "1")
                             theuser.Drugrelated = drugrelated;
-
+                        theuser.Syncdate=DateTime.Now;
                             db.SaveChanges();
                         Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
                     }

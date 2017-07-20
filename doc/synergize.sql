@@ -4,10 +4,14 @@ INSERT INTO `studyin`.`user`
 `syncdate`,`completed`,`licensetype`
 )
 VALUES
-('370686199102070710',
+('370481198909105331',
 
 '2011/1/1','0','2');
 
+select count(*) from `studyin`.`user`;
+select * from `studyin`.`user` where token like 'ae1c476889a045d6b2d6b75d34d9769d';
+select * from  `studyin`.`user` where length(identity)<44;
+select * from  `studyin`.`user` where name like  '王德朋';
 INSERT INTO `studyin`.`user`
 (`identity`,
 
