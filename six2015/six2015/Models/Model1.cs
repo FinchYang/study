@@ -8,7 +8,7 @@ namespace six2015.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model16")
+            : base("name=Model1")
         {
         }
 

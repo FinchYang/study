@@ -110,24 +110,9 @@ namespace six2015.request
         public string name { get; set; }
         public string phone { get; set; }
         public string identity { get; set; }
+        public DateTime syyxqz { get; set; }
         public DateTime studyTime { get; set; }
         public string illegal { get; set; }
         public List< message> message { get; set; }
-    }
-    //"records": [
-    //    {
-    //        "id": "",                   // 该条记录的唯一标识
-    //        "name": "张三",               // 学员姓名
-    //        "phone": "",                // 电话号码
-    //        "identity": "",             // 身份证号
-    //        "studyTime": "",            // 完成学习的时间
-    //        "illegal": "",              // 违法状态，从违法库中获取
-    //        "message": [                // 向该用户发送过的短信
-    //            {
-    //                "dateTime": "2017-07-01 09:10:30",     // 发送短信时间
-    //                "content": ""                          // 短信内容
-    //            }
-    //        ]
-    //    },
-
+    }    
 }

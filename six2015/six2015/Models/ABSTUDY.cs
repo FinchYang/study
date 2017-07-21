@@ -52,5 +52,7 @@ namespace six2015.Models
 
         [StringLength(10)]
         public string STATUS { get; set; }
+
+        public DateTime? SYYXQZ { get; set; }
     }
 }

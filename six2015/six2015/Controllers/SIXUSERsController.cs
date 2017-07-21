@@ -1345,19 +1345,28 @@ namespace six2015.Controllers
                         theusers = theusers.Where(c => c.FAILURE != "1");
                 }
                 theusers = theusers.Take(100);
-
+                Log.InfoFormat("StudyRecords,{0}", 11111);
                 var records = new List<record>();
                 foreach(var a in theusers)
                 {
+                    Log.InfoFormat("StudyRecords,{0}", 22222);
+                    var sfz = string.Empty;
+                    if (!string.IsNullOrEmpty(a.IDCARD)&& sfz.Length < 44) sfz = cypher.StudyDecrypt(a.IDCARD);
+                    Log.InfoFormat("StudyRecords,{0}", 33333);
+                    var yxqz = DateTime.Now;
+                    if (a.SYYXQZ != null) yxqz = (DateTime)a.SYYXQZ;
+                    Log.InfoFormat("StudyRecords,{0}", 44444);
                     var recodr = new record
                     {
                         id = a.ID.ToString(),
                         name = a.NAME,
                         phone = a.PHONENUMBER,
-                        identity = cypher.StudyDecrypt(a.IDCARD),
+                        identity = sfz,
                         studyTime = a.TIME,
+                        syyxqz = yxqz,
                         illegal = a.STATUS
                     };
+                    Log.InfoFormat("StudyRecords,{0}", 55555);
                     if (a.MESSAGED=="1")
                     {
                         var mess = _db1.MESSAGE.Where(aa => aa.HISTORYID == a.ID);
@@ -1371,6 +1380,7 @@ namespace six2015.Controllers
                         }
                         recodr.message = messages;
                     }
+                    Log.InfoFormat("StudyRecords,{0}", 66666);
                     records.Add(recodr);
                 }
                 return new StudyRecordsresponse
@@ -1430,6 +1440,7 @@ namespace six2015.Controllers
                         phone = a.PHONENUMBER,
                         identity = cypher.StudyDecrypt(a.IDCARD),
                         studyTime = a.TIME,
+                        syyxqz=(DateTime)a.SYYXQZ,
                         illegal = a.STATUS
                     };
                     if (a.MESSAGED == "1")
@@ -1471,7 +1482,7 @@ namespace six2015.Controllers
             {
                 var found = false;
                 var token = Request.Headers.GetValues("Token").First();
-                Log.InfoFormat("UnprocessedRecords,token is {0},",                    token);
+                Log.InfoFormat("UnprocessedRecords,token is {0},", token);
 
                 foreach (var a in tokens)
                 {
@@ -1489,33 +1500,45 @@ namespace six2015.Controllers
                         status = (int)sixerrors.invalidtoken
                     };
                 }
-
-
+                
                 var cypher = new CryptographyHelpers();
+                Log.InfoFormat("UnprocessedRecords, {0},", 1111);
                 var theusers = _db1.HISTORY.Where(c => c.PROCESSED!="1").Take(100);
-
+                Log.InfoFormat("UnprocessedRecords, {0},", 2222);
                 var records = new List<record>();
                 foreach (var a in theusers)
                 {
-                    if (a.FAILURE == "1")
+                    if (!string.IsNullOrEmpty(a.FAILURE)&& a.FAILURE == "1")
                     {
                         var study= _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
                         if (study == null) continue;
                         if (study.STATUS.Contains('H')) continue;
                     }
+                    Log.InfoFormat("UnprocessedRecords, {0},", 3333);
+
+                    Log.InfoFormat("StudyRecords,{0}", 22222);
+                    var sfz = string.Empty;
+                    if (!string.IsNullOrEmpty(a.IDCARD) && sfz.Length < 44) sfz = cypher.StudyDecrypt(a.IDCARD);
+                    Log.InfoFormat("StudyRecords,{0}", 33333);
+                    var yxqz = DateTime.Now;
+                    if (a.SYYXQZ != null) yxqz = (DateTime)a.SYYXQZ;
+
                     var recodr = new record
                     {
                         id = a.ID.ToString(),
                         name = a.NAME,
                         phone = a.PHONENUMBER,
-                        identity = cypher.StudyDecrypt(a.IDCARD),
+                        identity = sfz,
                         studyTime = a.TIME,
+                        syyxqz=yxqz,
                         illegal = a.STATUS
                     };
+                    Log.InfoFormat("UnprocessedRecords, {0},", 44444);
                     if (a.MESSAGED == "1")
                     {
                         var mess = _db1.MESSAGE.Where(aa => aa.HISTORYID == a.ID);
                         var messages = new List<message>();
+                        Log.InfoFormat("UnprocessedRecords, {0},", 55555);
                         foreach (var b in mess)
                         {
                             messages.Add(new message
@@ -1526,6 +1549,7 @@ namespace six2015.Controllers
                         }
                         recodr.message = messages;
                     }
+                    Log.InfoFormat("UnprocessedRecords, {0},", 6666);
                     records.Add(recodr);
                 }
                 return new StudyRecordsresponse
