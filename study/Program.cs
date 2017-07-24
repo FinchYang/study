@@ -26,8 +26,8 @@ namespace study
                 .UseIISIntegration()
             
                 .UseStartup<Startup>()
-              //  .UseUrls("http://192.168.10.94:5000")
-                  .UseUrls("http://localhost:5000")
+                .UseUrls("http://192.168.10.94:5000")
+              //    .UseUrls("http://localhost:5000")
                 .Build();
              
                

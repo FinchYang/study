@@ -1,0 +1,17 @@
+2017-07-24 09:02:10.518 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-24 09:02:13.509 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:02:14.115 +08:00 [Information] Request finished in 659.0593ms 404 
+2017-07-24 09:02:14.148 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-07-24 09:02:14.155 +08:00 [Information] Request finished in 5.675ms 404 
+2017-07-24 09:02:14.164 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:02:14.167 +08:00 [Information] Request finished in 3.004ms 404 
+2017-07-24 09:03:58.279 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-24 09:04:00.247 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:04:00.642 +08:00 [Information] Request finished in 419.5279ms 404 
+2017-07-24 09:04:00.678 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:04:00.681 +08:00 [Information] Request finished in 3.3021ms 404 
+2017-07-24 09:18:53.345 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-24 09:18:55.503 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:18:56.112 +08:00 [Information] Request finished in 646.6217ms 404 
+2017-07-24 09:18:56.138 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-24 09:18:56.142 +08:00 [Information] Request finished in 3.76ms 404 

@@ -81,8 +81,10 @@ namespace study.Controllers
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
-                    var his = _db1.History.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
-                    if (his == null)
+                    var his = _db1.History.Where(async => async.Identity == identity || async.Identity == cryptographicid )
+                    .OrderBy(q => q.Finishdate ).LastOrDefault();
+                    //;
+                                        if (his == null)
                     {
                         Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
                         return new SignatureQueryResponse
