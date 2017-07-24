@@ -171,7 +171,7 @@ namespace study.Controllers
                 {
                     if (a.Identity == identity)
                     {
-                        lasttoken = a.Token;
+                      //  lasttoken = a.Token;
                         a.Token = toke1n;
                         found = true;
                         break;

@@ -1,26 +1,26 @@
 INSERT INTO `studyin`.`user`
-(`identity`,
+(`identity`,`photofile`,
 
 `syncdate`,`completed`,`licensetype`
 )
 VALUES
-('370481198909105331',
+('','',
 
 '2011/1/1','0','2');
 
 select count(*) from `studyin`.`user`;
 select * from `studyin`.`user` where token like 'ae1c476889a045d6b2d6b75d34d9769d';
 select * from  `studyin`.`user` where length(identity)<44;
-select * from  `studyin`.`user` where name like  '王德朋';
+select * from  `studyin`.`user` where name like  '李柏均';
 INSERT INTO `studyin`.`user`
 (`identity`,
 
 `syncdate`,`completed`,`licensetype`,`photofile`
 )
 VALUES
-('RDN7P+4C2VxxP+e8qWCixxCGI8Fybfd1jrzvy2iK9Hs=',
+('',
 
-'2011/1/1','0','2','8c44a398e813497391b71e92c1e6fe7c');
+'2011/1/1','0','2','');
 
 UPDATE `studyin`.`user` SET
 `completed` = '1'
