@@ -1510,9 +1510,11 @@ namespace six2015.Controllers
                 {
                     if (!string.IsNullOrEmpty(a.FAILURE)&& a.FAILURE == "1")
                     {
-                        var study= _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
-                        if (study == null) continue;
-                        if (study.STATUS.Contains('H')) continue;
+                        if(a.STATUS.Contains('H')) continue;
+                        
+                        //var study= _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
+                        //if (study == null) continue;
+                        //if (study.STATUS.Contains('H')) continue;
                     }
                     Log.InfoFormat("UnprocessedRecords, {0},", 3333);
 

@@ -22,45 +22,6 @@ VALUES
 
 '2011/1/1','0','2','');
 
-UPDATE `studyin`.`user` SET
-`completed` = '1'
-WHERE `identity` = '370686199102070710';
-
-UPDATE `studyin`.`user` SET
-`studylog` = '',`completed` = '0',`firstsigned` = '0',`token` = ''
-WHERE `identity` =  'RjvYSXUXE0K+WSETt5OY0LoSzcofuqUumGj0IlfiZcM=';
-
-UPDATE `studyin`.`user` SET
-`firstsigned` = '0'
-WHERE `identity` = '370686199011302512';
-
-UPDATE `studyin`.`user` SET
-`studylog` = 'abc,234234,234234-def,243234234,3423442'
-WHERE `identity` = '370686199102070710';
-
-UPDATE `studyin`.`user` SET
-`firstsigned` = '0'
-WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
-
-UPDATE `studyin`.`user` SET
-`completed` = '1'
-WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
-
-UPDATE `studyin`.`user` SET
-`drugrelated` = ''
-WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
-
-UPDATE `studyin`.`user` SET
-`studylog` = ''
-WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
-
-UPDATE `studyin`.`user` SET
-`studylog` = 'abc,234234,234234-def,243234234,3423442'
-WHERE `identity` = 'F5zbBKTCHE92KQLCiTLxhCf4V5Zs7FaqGxAQBBYH4/Y=';
-
-UPDATE `studyin`.`user` SET
-`drivinglicense` = '驾驶证号'
-WHERE `identity` = '370681199211250014';
 
 update `studyin`.`history` set finishdate = '2017/07/07' where  ordinal<33;
 CREATE TABLE `history` (
