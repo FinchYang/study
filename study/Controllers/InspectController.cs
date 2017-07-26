@@ -182,7 +182,9 @@ namespace study.Controllers
                     tokens.Add(new Ptoken { Identity = identity, Token = toke1n });
                 }
 
-                var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
+                var theuser = _db1.User.FirstOrDefault(async => (async.Identity == identity || async.Identity == cryptographicid)
+                &&async.Inspect=="1"
+                );
                 if (theuser == null)
                 {
                     var his = _db1.History.Where(async => async.Identity == identity || async.Identity == cryptographicid)

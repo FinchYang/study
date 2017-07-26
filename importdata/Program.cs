@@ -133,7 +133,25 @@ namespace importdata
                         if (drugrelated == "1")
                             theuser.Drugrelated = drugrelated;
                         theuser.Syncdate=DateTime.Now;
-                            db.SaveChanges();
+
+                        if(fields.Length>9){
+                            switch(fields[9]){
+                                case "1":
+                                theuser.Inspect=fields[9];
+                                break;                                
+                                case "0":
+                                theuser.Inspect=fields[9];
+                                break;
+                                default:
+                                Console.WriteLine("user {0} ,error permission field, -{1}-", identity, fields[9]);
+                                break;
+                            }
+                        }
+                        else{
+                             Console.WriteLine("user {0} ,no permission field, -{1}-", identity, fields.Length);
+                        }
+                         
+                        db.SaveChanges();
                         Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
                     }
                 }
