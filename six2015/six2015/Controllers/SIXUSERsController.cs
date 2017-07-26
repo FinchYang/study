@@ -102,6 +102,15 @@ namespace six2015.Controllers
                     HISTORYID = inputRequest.id,
                     SENT = "0"
                 });
+
+                if (inputRequest.failure != 1) {
+                    var theab = _db1.ABSTUDY.FirstOrDefault(b => b.IDCARD == theusers.IDCARD);
+                    if (theusers != null)
+                    {
+                        _db1.ABSTUDY.Remove(theab);
+                    }
+                }
+                
                 _db1.SaveChangesAsync();
 
                 return new userresponse
