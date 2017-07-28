@@ -136,19 +136,20 @@ namespace importdata
 
                         if(fields.Length>9){
                             switch(fields[9]){
-                                case "1":
-                                theuser.Inspect=fields[9];
-                                break;                                
+                                // case "1":
+                                // theuser.Inspect=fields[9];
+                                // break;                                
                                 case "0":
                                 theuser.Inspect=fields[9];
                                 break;
-                                default:
-                                Console.WriteLine("user {0} ,error permission field, -{1}-", identity, fields[9]);
+                                default:theuser.Inspect="1";
+                               // Console.WriteLine("user {0} ,error permission field, -{1}-", identity, fields[9]);
                                 break;
                             }
                         }
                         else{
-                             Console.WriteLine("user {0} ,no permission field, -{1}-", identity, fields.Length);
+                          //   Console.WriteLine("user {0} ,no permission field, -{1}-", identity, fields.Length);
+                             theuser.Inspect="1";
                         }
                          
                         db.SaveChanges();
