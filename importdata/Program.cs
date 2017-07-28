@@ -68,12 +68,18 @@ namespace importdata
                             identity, ((int)enumtype).ToString(),drugrelated,phone,
                             pictureok,licensenumber,ideducted
                             ,photofile,status,today);
+
+                            var inspect="1";
+                            if(fields.Length>9){
+                        if(fields[9]=="0") inspect="0";
+                    }
                             db.User.AddAsync(new User
                             {
                                 Identity = identity,
                                 Licensetype = ((int)enumtype).ToString(),
                                 Drugrelated = drugrelated,
                                 Syncphone = phone,
+                                Inspect=inspect,
                                 Photostatus = pictureok,
                                 Drivinglicense = licensenumber,
                                 Deductedmarks = ideducted,
