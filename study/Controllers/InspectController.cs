@@ -505,7 +505,7 @@ namespace study.Controllers
                 var clog = inputRequest.AllStatus.Length < 80 ? inputRequest.AllStatus : inputRequest.AllStatus.Substring(0, 78);
                 theuser.Completelog = clog;
                 theuser.Completed = "1";
-
+             //   theuser.Syncdate=DateTime.Now;
                 _db1.SaveChanges();
 
                 if (inputRequest.AllRecords != null)
@@ -602,7 +602,10 @@ namespace study.Controllers
                 }
                 else
                     theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
-                if (theuser.Studylog.Length < 500) _db1.SaveChanges();
+                if (theuser.Studylog.Length < 500){
+                    theuser.Syncdate=DateTime.Now;
+                    _db1.SaveChanges();
+                } 
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
                     if (inputRequest.Pictures != null)
@@ -718,6 +721,7 @@ namespace study.Controllers
                     Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);
                 }
                 theuser.Token=token;
+                theuser.Syncdate=DateTime.Now;
                 _db1.SaveChanges();
                 return new GetLearnerInfoResponse
                 {

@@ -9,6 +9,6 @@ namespace exportdb
         public string Content { get; set; }
         public string Ip { get; set; }
         public string Method { get; set; }
-        public DateTime? Time { get; set; }
+        public DateTime Time { get; set; }
     }
 }
