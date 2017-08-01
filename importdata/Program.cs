@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace importdata
 {
@@ -9,13 +10,66 @@ namespace importdata
     {
         static string importPath = "/home/inspect/ftp/get";
      //   static string importPath = @"e:\11";
-        static string exportPath = "/home/inspect/ftp/put";
-        static string dbtofilePath = "/home/inspect/dbtofile";
+      
         static void Main(string[] args)
         {
             Console.WriteLine("import stated {0}!", DateTime.Now);
+             FileToDbIhistory();
             FileToDb();
             Console.WriteLine("import completed {0}!", DateTime.Now);
+        }
+         static void FileToDbIhistory()
+        {
+            using (var db = new studyinContext())
+            {
+                var filebase = "DateSync/history.txt";
+                var fname = Path.Combine(importPath, filebase);
+                if (!File.Exists(fname))
+                {
+                    Console.WriteLine("file {0} does  not exist, exit.{1}", fname, DateTime.Now);
+                    return;
+                }
+                var content = File.ReadAllLines(fname);
+                foreach (var line in content)
+                {
+                    try{
+                    var aaa=JsonConvert.DeserializeObject<IHistory>(line);
+                    db.IHistory.Add(new IHistory{
+                        Id=aaa.Id,
+                         Idcard=aaa.Idcard,
+                          Licence=aaa.Licence,
+                           Sremark=aaa.Sremark,
+                            Phonenumber=aaa.Phonenumber,
+                             Deductpoints=aaa.Deductpoints,
+                              Zhiduinumber=aaa.Zhiduinumber,
+                               Address=aaa.Address,
+                                Name=aaa.Name,
+                                 Filename=aaa.Filename,
+                                  Licencenumber=aaa.Licencenumber,
+                                   Status=aaa.Status,
+                                    Time=aaa.Time,
+                                     Photo=aaa.Photo,
+                                      Printed=aaa.Printed,
+                                       Processed=aaa.Processed,
+                                        Messaged=aaa.Messaged,
+                                         Studylog=aaa.Studylog,
+                                          Failure=aaa.Failure,
+                                           Syyxqz=aaa.Syyxqz,
+                                            Ordinal=aaa.Ordinal,
+                                             Dabh=aaa.Dabh,
+                                              County=aaa.County,
+                    });
+
+                  
+                        db.SaveChanges();
+                        Console.WriteLine("ihistory {0} has already updated.{1}", aaa.Id, DateTime.Now);
+                    }
+                    catch(Exception ex){
+                         Console.WriteLine("ihistory {0} error.{1}", ex.Message, DateTime.Now);
+                    }
+                }
+            
+            }
         }
         static void FileToDb()
         {

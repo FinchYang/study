@@ -199,7 +199,7 @@ namespace study.Controllers
                         };
                     }
                     allow = his.Drugrelated != "1" ? true : false;
-                     if(!string.IsNullOrEmpty(his.Status) && his.Status.Contains("H")){
+                     if(!string.IsNullOrEmpty(his.Status) &&(his.Status.Contains("H")||his.Status.Contains("M")) ){
                         allow=false;
                     }
                     completed = his.Completed == "1" ? true : false;
@@ -240,7 +240,7 @@ namespace study.Controllers
                 {
                     //drugrelated judge
                     allow = theuser.Drugrelated != "1" ? true : false;
-                    if(!string.IsNullOrEmpty(theuser.Status) && theuser.Status.Contains("H")){
+                    if(!string.IsNullOrEmpty(theuser.Status) && (theuser.Status.Contains("H")||theuser.Status.Contains("M"))){
                         allow=false;
                     }
                     completed = theuser.Completed == "1" ? true : false;
