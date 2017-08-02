@@ -169,6 +169,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ABSTUDY.cs" />
+    <Compile Include="Models\COUNT.cs" />
     <Compile Include="Models\HISTORY.cs" />
     <Compile Include="Models\MESSAGE.cs" />
     <Compile Include="Models\Model1.cs" />

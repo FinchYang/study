@@ -16,6 +16,7 @@ namespace six2015.Models
         public virtual DbSet<MESSAGE> MESSAGE { get; set; }
         public virtual DbSet<SIXUSER> SIXUSER { get; set; }
         public virtual DbSet<ABSTUDY> ABSTUDY { get; set; }
+        public virtual DbSet<COUNT> COUNT { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -72,11 +73,11 @@ namespace six2015.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<HISTORY>()
-                .Property(e => e.PROCESSED)
+                .Property(e => e.PRINTED)
                 .IsUnicode(false);
 
             modelBuilder.Entity<HISTORY>()
-                .Property(e => e.PRINTED)
+                .Property(e => e.PROCESSED)
                 .IsUnicode(false);
 
             modelBuilder.Entity<HISTORY>()
@@ -89,6 +90,10 @@ namespace six2015.Models
 
             modelBuilder.Entity<HISTORY>()
                 .Property(e => e.FAILURE)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<HISTORY>()
+                .Property(e => e.COUNTY)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MESSAGE>()
@@ -158,6 +163,82 @@ namespace six2015.Models
             modelBuilder.Entity<ABSTUDY>()
                 .Property(e => e.STATUS)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.PAGEVIEW)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.PAGEVIEWDAY)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.APPLICATION)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.APPLICATIONDAY)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.KAIFAQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.ZHIFUQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.FUSHANQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.MUPINGQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.LAISHANQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.LONGKOU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.ZHAOYUAN)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.QIXIA)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.LAIZHOU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.CHANGDAO)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.HAIYANG)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.LAIYANG)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.PENGLAI)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.GAOXINQU)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.OTHER)
+                .HasPrecision(38, 0);
         }
     }
 }

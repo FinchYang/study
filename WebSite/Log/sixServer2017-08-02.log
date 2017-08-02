@@ -1,0 +1,673 @@
+11:09:42 INFO 9 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+11:09:46 INFO 11 six2015.Controllers.SIXUSERsController - login,input={"username":"c","password":"c"},
+11:09:49 INFO 11 six2015.Controllers.SIXUSERsController - login,nouser
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,token is 5557e70c46fa4a2ea4c8d2825fd04bea,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:54 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:09:55 INFO 9 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:09:58 INFO 11 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is 74231cc95f0e4314b11f666766dcf577,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:26 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is 74231cc95f0e4314b11f666766dcf577,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:10:36 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:20 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,token is 5557e70c46fa4a2ea4c8d2825fd04bea,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:21 INFO 13 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,token is 5557e70c46fa4a2ea4c8d2825fd04bea,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:23 INFO 6 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 74231cc95f0e4314b11f666766dcf577,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:25 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 6 six2015.Controllers.SIXUSERsController - signaturepics,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469,id
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469
+11:12:29 INFO 11 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469,picID
+11:12:29 INFO 13 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469,picID
+11:12:29 INFO 7 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469,picID
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469
+11:12:29 INFO 7 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord2.png
+11:12:29 INFO 11 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+11:12:29 INFO 6 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636372691493703983
+11:12:29 INFO 13 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord1.png
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+11:12:29 INFO 6 six2015.Controllers.SIXUSERsController - signaturepics,PhysicalCondition=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,token is 74231cc95f0e4314b11f666766dcf577,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636372691495737432
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+11:12:29 INFO 14 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636372691496327735
+11:12:29 INFO 11 six2015.Controllers.SIXUSERsController - courses,token is 5557e70c46fa4a2ea4c8d2825fd04bea,469
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636372691497294809
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636372691497640316
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636372691497966420
+11:12:29 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636372691498495887
+12:38:18 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 74231cc95f0e4314b11f666766dcf577,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+12:38:18 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,invalidtoken
+12:38:23 INFO 7 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,token is 0664d4bbb93e4012863c73a4198e3ecc,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+12:38:32 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+14:02:37 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 5557e70c46fa4a2ea4c8d2825fd04bea,
+14:02:37 INFO 8 six2015.Controllers.SIXUSERsController - UnprocessedRecords,invalidtoken
+14:02:45 INFO 9 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:02:50 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:03:56 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:00 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:10 INFO 14 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:04:25 INFO 5 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 1c5aad91ee0544a8847537a24df84b39,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:14:58 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:38 INFO 11 six2015.Controllers.SIXUSERsController - login,input={"username":"admin","password":"admin"},
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 2b8e548a68e046c68f66a170a755baea,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:42 INFO 7 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:44 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is 2b8e548a68e046c68f66a170a755baea,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+14:17:45 INFO 21 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+15:36:29 ERROR 7 six2015.Controllers.SIXUSERsController - Statistics,
+System.ArgumentException: DbComparisonExpression 需要具有可比较类型的参数。
+   在 System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder.CreateComparison(DbExpressionKind kind, DbExpression left, DbExpression right)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.FirstPredicateTranslatorBase.Translate(ExpressionConverter parent, MethodCallExpression call)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   在 System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:36:55 ERROR 8 six2015.Controllers.SIXUSERsController - Statistics,
+System.ArgumentException: DbComparisonExpression 需要具有可比较类型的参数。
+   在 System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder.CreateComparison(DbExpressionKind kind, DbExpression left, DbExpression right)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.FirstPredicateTranslatorBase.Translate(ExpressionConverter parent, MethodCallExpression call)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   在 System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:39:49 ERROR 7 six2015.Controllers.SIXUSERsController - Statistics,
+System.ArgumentException: DbComparisonExpression 需要具有可比较类型的参数。
+   在 System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder.CreateComparison(DbExpressionKind kind, DbExpression left, DbExpression right)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.FirstPredicateTranslatorBase.Translate(ExpressionConverter parent, MethodCallExpression call)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   在 System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   在 System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:42:31 ERROR 7 six2015.Controllers.SIXUSERsController - Statistics,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:42:36 ERROR 7 six2015.Controllers.SIXUSERsController - Statistics,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:42:38 ERROR 9 six2015.Controllers.SIXUSERsController - Statistics,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:44:06 INFO 9 six2015.Controllers.SIXUSERsController - today=08/02/2017 15:44:06，yesteday=08/01/2017 15:44:06
+15:44:10 INFO 9 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+15:44:10 ERROR 9 six2015.Controllers.SIXUSERsController - Statistics,
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:48:59 INFO 7 six2015.Controllers.SIXUSERsController - today=08/02/2017 15:48:59，yesteday=08/01/2017 15:48:59
+15:49:02 INFO 7 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+15:49:03 ERROR 7 six2015.Controllers.SIXUSERsController - Statistics,
+System.InvalidOperationException: 到值类型“System.Decimal”的强制转换失败，因为具体化值为 null。结果类型的泛型参数或查询必须使用可以为 null 的类型。
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+15:51:11 INFO 27 six2015.Controllers.SIXUSERsController - today=08/02/2017 15:51:11，yesteday=08/01/2017 15:51:11
+15:51:11 INFO 27 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+15:51:37 INFO 20 six2015.Controllers.SIXUSERsController - today=08/02/2017 15:51:37，yesteday=08/01/2017 15:51:37
+15:51:37 INFO 20 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+15:52:25 INFO 19 six2015.Controllers.SIXUSERsController - today=08/02/2017 15:52:25，yesteday=08/01/2017 15:52:25
+15:52:25 INFO 19 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+16:01:47 INFO 36 six2015.Controllers.SIXUSERsController - today=08/02/2017 16:01:47，yesteday=08/01/2017 16:01:47
+16:01:50 INFO 36 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+16:01:52 INFO 38 six2015.Controllers.SIXUSERsController - today=08/02/2017 16:01:52，yesteday=08/01/2017 16:01:52
+16:01:52 INFO 38 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+16:09:04 INFO 31 six2015.Controllers.SIXUSERsController - today=08/02/2017 16:09:04，yesteday=08/01/2017 16:09:04
+16:09:04 INFO 31 six2015.Controllers.SIXUSERsController - today=11，yesteday=22

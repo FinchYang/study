@@ -50,10 +50,10 @@ namespace six2015.Models
         public string PHOTO { get; set; }
 
         [StringLength(1)]
-        public string PROCESSED { get; set; }
+        public string PRINTED { get; set; }
 
         [StringLength(1)]
-        public string PRINTED { get; set; }
+        public string PROCESSED { get; set; }
 
         [StringLength(1)]
         public string MESSAGED { get; set; }
@@ -65,5 +65,8 @@ namespace six2015.Models
         public string FAILURE { get; set; }
 
         public DateTime? SYYXQZ { get; set; }
+
+        [StringLength(5)]
+        public string COUNTY { get; set; }
     }
 }

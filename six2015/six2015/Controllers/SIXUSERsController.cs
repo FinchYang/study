@@ -1259,7 +1259,7 @@ namespace six2015.Controllers
         [Route("StudyRecords")]
         [HttpGet]
         public async Task<StudyRecordsresponse> StudyRecords(string startTime, string endTime , string name ,
-            string identity ,int? illegal ,int? message, int? print, int? processed, int? failure)
+            string identity ,int? illegal ,int? message, int? print, int? processed, int? failure,string region, int startNum, int endNum)
         {
             try
             {
@@ -1318,6 +1318,10 @@ namespace six2015.Controllers
                 {                   
                     theusers = theusers.Where(c => c.IDCARD == cryptographicid);
                 }
+                if (!string.IsNullOrEmpty(region))
+                {
+                    theusers = theusers.Where(c => c.COUNTY.Contains(  region));
+                }
                 if (illegal!=null)
                 {
                     if( illegal == 1)
@@ -1353,12 +1357,14 @@ namespace six2015.Controllers
                     else
                         theusers = theusers.Where(c => c.FAILURE != "1");
                 }
-                theusers = theusers.Take(100);
+                var total = theusers.Count();
+                theusers = theusers.Take(endNum);
                 Log.InfoFormat("StudyRecords,{0}", 11111);
                 var records = new List<record>();
+                var index = 0;
                 foreach(var a in theusers)
                 {
-                    Log.InfoFormat("StudyRecords,{0}", 22222);
+                    if(index++<startNum) continue;
                     var sfz = string.Empty;
                     if (!string.IsNullOrEmpty(a.IDCARD)&& sfz.Length < 44) sfz = cypher.StudyDecrypt(a.IDCARD);
                     Log.InfoFormat("StudyRecords,{0}", 33333);
@@ -1394,7 +1400,7 @@ namespace six2015.Controllers
                 }
                 return new StudyRecordsresponse
                 {
-                    status = 0,records=records
+                    status = 0,records=records,total=total
                 };
             }
             catch (Exception ex)
@@ -1485,7 +1491,7 @@ namespace six2015.Controllers
         }
         [Route("UnprocessedRecords")]
         [HttpGet]
-        public async Task<StudyRecordsresponse> UnprocessedRecords()
+        public async Task<StudyRecordsresponse> UnprocessedRecords(int startNum, int endNum)
         {
             try
             {
@@ -1511,12 +1517,16 @@ namespace six2015.Controllers
                 }
                 
                 var cypher = new CryptographyHelpers();
-                Log.InfoFormat("UnprocessedRecords, {0},", 1111);
-                var theusers = _db1.HISTORY.Where(c => c.PROCESSED!="1").Take(100);
-                Log.InfoFormat("UnprocessedRecords, {0},", 2222);
+             //   Log.InfoFormat("UnprocessedRecords, {0},", 1111);
+                var total = _db1.HISTORY.Where(c => c.PROCESSED!="1").Count();
+              //  if(startNum!=null&&startNum>-1)
+                var theusers = _db1.HISTORY.Where(c => c.PROCESSED != "1").Take(endNum);
+                //   Log.InfoFormat("UnprocessedRecords, {0},", 2222);
                 var records = new List<record>();
+                var index = 0;
                 foreach (var a in theusers)
                 {
+                    if (index++ < startNum) continue;
                     if (!string.IsNullOrEmpty(a.FAILURE)&& a.FAILURE == "1")
                     {
                         if(a.STATUS.Contains('H')) continue;
@@ -1526,11 +1536,10 @@ namespace six2015.Controllers
                         //if (study.STATUS.Contains('H')) continue;
                     }
                     Log.InfoFormat("UnprocessedRecords, {0},", 3333);
-
-                    Log.InfoFormat("StudyRecords,{0}", 22222);
+                  
                     var sfz = string.Empty;
                     if (!string.IsNullOrEmpty(a.IDCARD) && sfz.Length < 44) sfz = cypher.StudyDecrypt(a.IDCARD);
-                    Log.InfoFormat("StudyRecords,{0}", 33333);
+
                     var yxqz = DateTime.Now;
                     if (a.SYYXQZ != null) yxqz = (DateTime)a.SYYXQZ;
 
@@ -1565,7 +1574,7 @@ namespace six2015.Controllers
                 }
                 return new StudyRecordsresponse
                 {
-                    status = 0,
+                    status = 0,total=total,
                     records = records
                 };
             }
@@ -1573,6 +1582,110 @@ namespace six2015.Controllers
             {
                 Log.Error("UnprocessedRecords,", ex);
                 return new StudyRecordsresponse
+                {
+                    status = (int)sixerrors.processerror
+                };
+            }
+        }
+        [Route("Statistics")]
+        [HttpGet]
+        public async Task<StatisticsResponse> Statistics(string sdate=null)
+        {
+            try
+            {
+                var today = DateTime.Now;
+                if (sdate != null)
+                {
+                    today = DateTime.Parse(sdate);
+                }
+                var yesterday = today.AddDays(-1);
+                Log.InfoFormat("today={0}，yesteday={1}", today, yesterday);
+                var todaydb = _db1.COUNT.FirstOrDefault(c => c.TIME.CompareTo(today) <=0 &&c.TIME.CompareTo(yesterday)>0);
+                Log.InfoFormat("today={0}，yesteday={1}", 11, 22);
+                if (todaydb == null)
+                {
+                    todaydb= new COUNT
+                    {
+                        PAGEVIEW = 0,
+                        APPLICATION = 0,
+                        PAGEVIEWDAY = 0,
+                        APPLICATIONDAY = 0,
+                        KAIFAQU = 0,
+                        ZHIFUQU = 0,
+                        FUSHANQU = 0,
+
+                        MUPINGQU = 0,
+                        LAISHANQU = 0,
+                        LONGKOU = 0,
+                        ZHAOYUAN = 0,
+                        QIXIA = 0,
+
+                        LAIZHOU = 0,
+                        CHANGDAO = 0,
+                        HAIYANG = 0,
+                        LAIYANG = 0,
+                        PENGLAI = 0,
+
+                        OTHER = 0,
+                        GAOXINQU = 0,
+                    };
+                }
+                var todaynum = new statistics
+                {
+                    PAGEVIEW=todaydb.PAGEVIEWDAY,
+                    APPLICATION = todaydb.APPLICATIONDAY,
+                    KAIFAQU = todaydb.KAIFAQU,
+                    ZHIFUQU = todaydb.ZHIFUQU,
+                    FUSHANQU = todaydb.FUSHANQU,
+
+                    MUPINGQU = todaydb.MUPINGQU,
+                    LAISHANQU = todaydb.LAISHANQU,
+                    LONGKOU = todaydb.LONGKOU,
+                    ZHAOYUAN = todaydb.ZHAOYUAN,
+                    QIXIA = todaydb.QIXIA,
+
+                    LAIZHOU = todaydb.LAIZHOU,
+                    CHANGDAO = todaydb.CHANGDAO,
+                    HAIYANG = todaydb.HAIYANG,
+                    LAIYANG = todaydb.LAIYANG,
+                    PENGLAI = todaydb.PENGLAI,
+
+                    OTHER = todaydb.OTHER,
+                    GAOXINQU = todaydb.GAOXINQU,
+                };
+            //    var totaldb = _db1.COUNT.Sum(c => c.KAIFAQU);
+                var totalnum = new statistics
+                {
+                    PAGEVIEW = todaydb.PAGEVIEW,
+                    APPLICATION = todaydb.APPLICATION,
+                    KAIFAQU = _db1.COUNT.Sum(c => c.KAIFAQU),
+                    ZHIFUQU = _db1.COUNT.Sum(c => c.ZHIFUQU),
+                    FUSHANQU = _db1.COUNT.Sum(c => c.FUSHANQU),
+
+                    MUPINGQU = _db1.COUNT.Sum(c => c.MUPINGQU),
+                    LAISHANQU = _db1.COUNT.Sum(c => c.LAISHANQU),
+                    LONGKOU = _db1.COUNT.Sum(c => c.LONGKOU),
+                    ZHAOYUAN = _db1.COUNT.Sum(c => c.ZHAOYUAN),
+                    QIXIA = _db1.COUNT.Sum(c => c.QIXIA),
+
+                    LAIZHOU = _db1.COUNT.Sum(c => c.LAIZHOU),
+                    CHANGDAO = _db1.COUNT.Sum(c => c.CHANGDAO),
+                    HAIYANG = _db1.COUNT.Sum(c => c.HAIYANG),
+                    LAIYANG = _db1.COUNT.Sum(c => c.LAIYANG),
+                    PENGLAI = _db1.COUNT.Sum(c => c.PENGLAI),
+
+                    OTHER = _db1.COUNT.Sum(c => c.OTHER),
+                    GAOXINQU = _db1.COUNT.Sum(c => c.GAOXINQU),
+                };
+                return new StatisticsResponse
+                {
+                    status = 0,today=todaynum,total=totalnum
+                };
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Statistics,", ex);
+                return new StatisticsResponse
                 {
                     status = (int)sixerrors.processerror
                 };

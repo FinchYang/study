@@ -38,6 +38,13 @@ namespace six2015.request
     {
         public int id { get; set; }
     }
+    public enum CountyCode
+    {
+        HaiYang, FuShan, QiXia, LaiShan, ZhiFu,
+        MuPing, LongKou, LaiYang, LaiZhou, PengLai,
+        ZhaoYuan, ChangDao,
+        DaCheng, ShiSuo
+    }
     public class messagerequest2
     {
         public int id { get; set; }
@@ -99,9 +106,36 @@ namespace six2015.request
         public DateTime dateTime { get; set; }
         public string content { get; set; }
     }
+    public  class statistics
+    {       
+        public decimal PAGEVIEW { get; set; }
+        public decimal APPLICATION { get; set; }
+        public decimal KAIFAQU { get; set; }
+        public decimal ZHIFUQU { get; set; }
+        public decimal FUSHANQU { get; set; }
+        public decimal MUPINGQU { get; set; }
+        public decimal LAISHANQU { get; set; }
+        public decimal LONGKOU { get; set; }
+        public decimal ZHAOYUAN { get; set; }
+        public decimal QIXIA { get; set; }
+        public decimal LAIZHOU { get; set; }
+        public decimal CHANGDAO { get; set; }
+        public decimal HAIYANG { get; set; }
+        public decimal LAIYANG { get; set; }
+        public decimal PENGLAI { get; set; }
+        public decimal GAOXINQU { get; set; }
+        public decimal OTHER { get; set; }
+    }
+    public class StatisticsResponse
+    {
+        public int status { get; set; }
+        public statistics today { get; set; }
+        public statistics total { get; set; }
+    }
     public class StudyRecordsresponse
     {
         public int status { get; set; }
+        public int total { get; set; }
         public List<record> records { get; set; }
     }
     public class record
