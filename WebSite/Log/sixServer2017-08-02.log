@@ -671,3 +671,5 @@ System.InvalidOperationException: 到值类型“System.Decimal”的强制转换失败，因为
 16:01:52 INFO 38 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
 16:09:04 INFO 31 six2015.Controllers.SIXUSERsController - today=08/02/2017 16:09:04，yesteday=08/01/2017 16:09:04
 16:09:04 INFO 31 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+16:16:11 INFO 39 six2015.Controllers.SIXUSERsController - today=08/02/2017 16:16:11，yesteday=08/01/2017 16:16:11
+16:16:11 INFO 39 six2015.Controllers.SIXUSERsController - today=11，yesteday=22

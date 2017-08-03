@@ -1,1 +1,32 @@
-insert into "WYXX"."HISTORY" (time) values ('13-7ÔÂ -17');
+
+  CREATE TABLE "WYXX"."COUNT" 
+   (	"TIME" DATE, 
+	"PAGEVIEW" NUMBER, 
+	"PAGEVIEWDAY" NUMBER, 
+	"APPLICATION" NUMBER, 
+	"APPLICATIONDAY" NUMBER, 
+	"KAIFAQU" NUMBER, 
+	"ZHIFUQU" NUMBER, 
+	"FUSHANQU" NUMBER, 
+	"MUPINGQU" NUMBER, 
+	"LAISHANQU" NUMBER, 
+	"LONGKOU" NUMBER, 
+	"ZHAOYUAN" NUMBER, 
+	"QIXIA" NUMBER, 
+	"LAIZHOU" NUMBER, 
+	"CHANGDAO" NUMBER, 
+	"HAIYANG" NUMBER, 
+	"LAIYANG" NUMBER, 
+	"PENGLAI" NUMBER
+   )
+   ;
+--------------------------------------------------------
+--  DDL for Index COUNT_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "WYXX"."COUNT_PK" ON "WYXX"."COUNT" ("TIME") 
+
+
+  ALTER TABLE "WYXX"."COUNT" ADD CONSTRAINT "COUNT_PK" PRIMARY KEY ("TIME")
+ 
+  ALTER TABLE "WYXX"."COUNT" MODIFY ("TIME" NOT NULL ENABLE);
