@@ -20,8 +20,11 @@ using System.Data.Entity.Validation;
 using System.Web.UI.WebControls;
 using ICSharpCode.SharpZipLib.Zip;
 using System.IO;
+using System.Web.Http.Cors;
+
 namespace six2015.Controllers
 {
+ //   [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SIXUSERsController : ApiController
     {
         private Model1 _db1 = new Model1();
@@ -1529,11 +1532,11 @@ namespace six2015.Controllers
                     if (index++ < startNum) continue;
                     if (!string.IsNullOrEmpty(a.FAILURE)&& a.FAILURE == "1")
                     {
-                        if(a.STATUS.Contains('H')) continue;
-                        
-                        //var study= _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
-                        //if (study == null) continue;
-                        //if (study.STATUS.Contains('H')) continue;
+                     //   if(a.STATUS.Contains('H')) continue;
+
+                        var study = _db1.ABSTUDY.FirstOrDefault(c => c.IDCARD == a.IDCARD);
+                        if (study == null) continue;
+                        if (study.STATUS.Contains('H')) continue;
                     }
                     Log.InfoFormat("UnprocessedRecords, {0},", 3333);
                   
@@ -1587,6 +1590,8 @@ namespace six2015.Controllers
                 };
             }
         }
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("Statistics")]
         [HttpGet]
         public async Task<StatisticsResponse> Statistics(string sdate=null)
@@ -1649,11 +1654,12 @@ namespace six2015.Controllers
                     HAIYANG = todaydb.HAIYANG,
                     LAIYANG = todaydb.LAIYANG,
                     PENGLAI = todaydb.PENGLAI,
-
+                    InspectedVolume = _db1.HISTORY.Where(c => c.PROCESSED == "1" && c.TIME.CompareTo(DateTime.Now)==0).Count(),
+                    LearningVolume = todaydb.STARTLEARNINGVOLUMETODAY,
                     OTHER = todaydb.OTHER,
                     GAOXINQU = todaydb.GAOXINQU,
                 };
-            //    var totaldb = _db1.COUNT.Sum(c => c.KAIFAQU);
+                //    var totaldb = _db1.COUNT.Sum(c => c.KAIFAQU);
                 var totalnum = new statistics
                 {
                     PAGEVIEW = todaydb.PAGEVIEW,
@@ -1673,7 +1679,8 @@ namespace six2015.Controllers
                     HAIYANG = _db1.COUNT.Sum(c => c.HAIYANG),
                     LAIYANG = _db1.COUNT.Sum(c => c.LAIYANG),
                     PENGLAI = _db1.COUNT.Sum(c => c.PENGLAI),
-
+                    InspectedVolume = _db1.HISTORY.Where(c => c.PROCESSED == "1").Count(),
+                    LearningVolume= todaydb.STARTLEARNINGVOLUME,
                     OTHER = _db1.COUNT.Sum(c => c.OTHER),
                     GAOXINQU = _db1.COUNT.Sum(c => c.GAOXINQU),
                 };

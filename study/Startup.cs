@@ -27,7 +27,7 @@ namespace study
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
-            var logpath=System.IO.Path.Combine("logs","{Date}.txt");
+            var logpath = System.IO.Path.Combine("logs", "{Date}.txt");
             Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.RollingFile(logpath)//写到文本
               .ReadFrom.Configuration(Configuration)
               .CreateLogger();
@@ -44,7 +44,7 @@ namespace study
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
             services.AddCors(options =>
                 {
                     options.AddPolicy("AnyOrigin", builder =>
@@ -52,15 +52,15 @@ namespace study
                         builder
                             .AllowAnyOrigin()
                             .AllowAnyHeader()
-                            .AllowAnyMethod().WithExposedHeaders("x-custom-header");;
+                            .AllowAnyMethod().WithExposedHeaders("x-custom-header"); ;
                     });
                 });
-            
+
             services.AddMvc();
-           services.Configure<MvcOptions>(options =>
-    {
-        options.Filters.Add(new CorsAuthorizationFilterFactory("AnyOrigin"));
-    });
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AnyOrigin"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,10 +69,8 @@ namespace study
             loggerFactory.AddSerilog();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-app.UseCors("AnyOrigin");
+            app.UseCors("AnyOrigin");
             app.UseMvc();
-            // Configure
-            
         }
     }
 }

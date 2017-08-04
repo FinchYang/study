@@ -8,15 +8,16 @@ namespace exportdb
     class Program
     {
         static string dbtofilePath = "/home/inspect/dbtofile";
+       // static string dbtofilePath = @"e:\11\22";
         static string exportPath = "/home/inspect/ftp/put";
         static void Main(string[] args)
         {
             Console.WriteLine("{0}, export archived data to file, and zip it, started...", DateTime.Now);
             DbToFileForStatistics();
-            DbUserToFile();
-            DbHistoryToFile();
-            DbRequestToFile();
-            DbToFileForExtranetToIntranet();
+           DbUserToFile();
+           DbHistoryToFile();
+           DbRequestToFile();
+           DbToFileForExtranetToIntranet();
             Console.WriteLine("{0}, export archived data to file, and zip it, completed.");
         }
         static void DbUserToFile()
@@ -138,8 +139,12 @@ namespace exportdb
 
                 var visitorVolumeToday = db.Request.Where(us => us.Time.CompareTo(tempday) >= 0).Count();
                 var usageAmountToday = db.Request.Where(us => us.Time.CompareTo(tempday) >= 0 && !us.Method.Contains("LoginAndQuery")).Count();
+
+                var startLearningVolume=db.User.Where(bb=>  !string.IsNullOrEmpty(bb.Studylog)).Count();
+                var startLearningVolumetoday=db.User.Where(bb=>  !string.IsNullOrEmpty(bb.Studylog) && bb.Startdate>date.AddDays(-1)).Count();
+
                 File.AppendAllText(fname, string.Format("{0},{1},{2},{3},{4},{5},{6}",
-                temp, visitorVolumeAll, usageAmountAll, visitorVolumeToday, usageAmountToday, tempday.AddMinutes(1), tempday.AddHours(1)));
+                temp, visitorVolumeAll, usageAmountAll, visitorVolumeToday, usageAmountToday, startLearningVolume, startLearningVolumetoday));
             }
         }
 

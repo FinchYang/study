@@ -1,0 +1,25 @@
+2017-08-04 08:24:25.140 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-04 08:24:30.442 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-08-04 08:24:31.334 +08:00 [Information] Request finished in 929.7779ms 404 
+2017-08-04 08:24:31.619 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-08-04 08:24:31.682 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-08-04 08:24:31.759 +08:00 [Information] Request finished in 139.9794ms 404 
+2017-08-04 08:24:31.830 +08:00 [Information] Request finished in 148.0225ms 404 
+2017-08-04 08:24:32.197 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-08-04 08:24:32.202 +08:00 [Information] Request finished in 5.0003ms 404 
+2017-08-04 08:24:42.646 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-08-04 08:24:42.648 +08:00 [Information] Request finished in 2.5749ms 404 
+2017-08-04 08:24:53.102 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-08-04 08:24:53.303 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Get (study)" with arguments (null) - ModelState is Valid
+2017-08-04 08:24:53.316 +08:00 [Information] internal logging "hello  invoked","localhost:5000"
+2017-08-04 08:24:53.356 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-04 08:24:53.564 +08:00 [Information] Executed action "study.Controllers.ValuesController.Get (study)" in 386.108ms
+2017-08-04 08:24:53.571 +08:00 [Information] Request finished in 469.2117ms 200 application/json; charset=utf-8
+2017-08-04 08:24:53.608 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-08-04 08:24:53.614 +08:00 [Information] Request finished in 6.123ms 404 
+2017-08-04 08:26:17.773 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/hello  
+2017-08-04 08:26:17.778 +08:00 [Information] Executing action method "study.Controllers.ValuesController.Get (study)" with arguments (null) - ModelState is Valid
+2017-08-04 08:26:17.780 +08:00 [Information] internal logging "hello  invoked","localhost:5000"
+2017-08-04 08:26:17.783 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-04 08:26:17.786 +08:00 [Information] Executed action "study.Controllers.ValuesController.Get (study)" in 8.7395ms
+2017-08-04 08:26:17.789 +08:00 [Information] Request finished in 16.0934ms 200 application/json; charset=utf-8

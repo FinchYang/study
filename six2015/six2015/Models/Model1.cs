@@ -239,6 +239,14 @@ namespace six2015.Models
             modelBuilder.Entity<COUNT>()
                 .Property(e => e.OTHER)
                 .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.STARTLEARNINGVOLUME)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<COUNT>()
+                .Property(e => e.STARTLEARNINGVOLUMETODAY)
+                .HasPrecision(38, 0);
         }
     }
 }

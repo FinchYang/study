@@ -88,5 +88,13 @@ namespace six2015.Models
         [Key]
         [Column(Order = 19)]
         public decimal OTHER { get; set; }
+
+        [Key]
+        [Column(Order = 20)]
+        public decimal STARTLEARNINGVOLUME { get; set; }
+
+        [Key]
+        [Column(Order = 21)]
+        public decimal STARTLEARNINGVOLUMETODAY { get; set; }
     }
 }

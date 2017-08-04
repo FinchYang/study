@@ -13,7 +13,7 @@ namespace six2015
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-
+            config.EnableCors();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

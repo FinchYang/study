@@ -108,6 +108,8 @@ namespace six2015.request
     }
     public  class statistics
     {       
+        public decimal LearningVolume { get; set; }
+        public decimal InspectedVolume { get; set; }
         public decimal PAGEVIEW { get; set; }
         public decimal APPLICATION { get; set; }
         public decimal KAIFAQU { get; set; }
