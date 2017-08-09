@@ -1,0 +1,327 @@
+09:55:05 INFO 9 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+09:55:18 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is af57f66b7ca14229888db7f844dbc9d7,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+09:55:19 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+09:55:33 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,token is af57f66b7ca14229888db7f844dbc9d7,345,id
+09:55:33 INFO 9 six2015.Controllers.SIXUSERsController - pictures,token is af57f66b7ca14229888db7f844dbc9d7,345
+09:55:33 INFO 7 six2015.Controllers.SIXUSERsController - DeclarationForm,token is af57f66b7ca14229888db7f844dbc9d7,345,picID
+09:55:33 INFO 6 six2015.Controllers.SIXUSERsController - EduRecordForm,token is af57f66b7ca14229888db7f844dbc9d7,345,picID
+09:55:34 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499479545,1499479637,2017/7/8 10:05:45,2017/7/8 10:07:17,超速警示片,636376965340126195
+09:55:34 INFO 7 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png
+09:55:34 INFO 15 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is af57f66b7ca14229888db7f844dbc9d7,345,picID
+09:55:34 ERROR 7 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+09:55:34 INFO 15 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png
+09:55:34 ERROR 8 six2015.Controllers.SIXUSERsController - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+09:55:34 ERROR 15 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+09:55:34 INFO 15 six2015.Controllers.SIXUSERsController - ExamResult,token is af57f66b7ca14229888db7f844dbc9d7,345
+09:55:34 INFO 15 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\5a3e436a06324f628bea351f62f1f5a0\exam_result.txt
+09:55:34 INFO 6 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png
+09:55:34 ERROR 6 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+09:55:34 INFO 7 six2015.Controllers.SIXUSERsController - courses,token is af57f66b7ca14229888db7f844dbc9d7,345
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499819384,1499819535,2017/7/12 8:29:44,2017/7/12 8:32:15,酒驾上警示片,636376965343398730
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499823702,1499823735,2017/7/12 9:41:42,2017/7/12 9:42:15,疲劳驾驶警示片,636376965343819066
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499825600,1499825891,2017/7/12 10:13:20,2017/7/12 10:18:11,酒驾下警示片,636376965344159295
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499825968,1499826051,2017/7/12 10:19:28,2017/7/12 10:20:51,分心驾驶警示片,636376965344609759
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499826184,1499826269,2017/7/12 10:23:04,2017/7/12 10:24:29,盲区和远光灯警示片,636376965344939989
+09:55:34 INFO 9 six2015.Controllers.SIXUSERsController - pictures,1499826272,1499826350,2017/7/12 10:24:32,2017/7/12 10:25:50,超员及货车典型违法行为,636376965345140122
+09:55:40 INFO 6 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":345,"message":"范会波（身份证明号码：370686199102070710，发证机关鲁F）于2017年07月13日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+09:55:40 INFO 6 six2015.Controllers.SIXUSERsController - pushmessage2,token is af57f66b7ca14229888db7f844dbc9d7,345,id
+09:55:40 ERROR 6 six2015.Controllers.SIXUSERsController - pushmessage
+System.ArgumentNullException: 值不能为 null。
+参数名: entity
+   在 System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.pushmessage2(messagerequest2 inputRequest)
+10:03:09 INFO 16 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":345,"message":"范会波（身份证明号码：370686199102070710，发证机关鲁F）于2017年07月13日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+10:03:09 INFO 16 six2015.Controllers.SIXUSERsController - pushmessage2,token is af57f66b7ca14229888db7f844dbc9d7,345,id
+10:03:09 INFO 16 six2015.Controllers.SIXUSERsController - pushmessage2,111,,
+10:03:09 INFO 16 six2015.Controllers.SIXUSERsController - pushmessage2,invalidtoken
+10:03:35 INFO 21 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+10:06:31 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is d59a18a14b6047c8a0963a57482b6948,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:06:32 INFO 6 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:06:33 INFO 15 six2015.Controllers.SIXUSERsController - signaturepics,token is d59a18a14b6047c8a0963a57482b6948,345,id
+10:06:33 INFO 17 six2015.Controllers.SIXUSERsController - pictures,token is d59a18a14b6047c8a0963a57482b6948,345
+10:06:33 INFO 16 six2015.Controllers.SIXUSERsController - ExamResult,token is d59a18a14b6047c8a0963a57482b6948,345
+10:06:33 INFO 21 six2015.Controllers.SIXUSERsController - DeclarationForm,token is d59a18a14b6047c8a0963a57482b6948,345,picID
+10:06:33 INFO 8 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is d59a18a14b6047c8a0963a57482b6948,345,picID
+10:06:33 INFO 19 six2015.Controllers.SIXUSERsController - EduRecordForm,token is d59a18a14b6047c8a0963a57482b6948,345,picID
+10:06:33 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499479545,1499479637,2017/7/8 10:05:45,2017/7/8 10:07:17,超速警示片,636376971939038637
+10:06:33 INFO 15 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord
+10:06:33 ERROR 15 six2015.Controllers.SIXUSERsController - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+10:06:33 INFO 15 six2015.Controllers.SIXUSERsController - courses,token is d59a18a14b6047c8a0963a57482b6948,345
+10:06:33 INFO 16 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\5a3e436a06324f628bea351f62f1f5a0\exam_result.txt
+10:06:34 INFO 21 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png
+10:06:34 ERROR 21 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499819384,1499819535,2017/7/12 8:29:44,2017/7/12 8:32:15,酒驾上警示片,636376971940549982
+10:06:34 INFO 19 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png
+10:06:34 ERROR 19 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+10:06:34 INFO 8 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png
+10:06:34 ERROR 8 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499823702,1499823735,2017/7/12 9:41:42,2017/7/12 9:42:15,疲劳驾驶警示片,636376971940880215
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499825600,1499825891,2017/7/12 10:13:20,2017/7/12 10:18:11,酒驾下警示片,636376971941270562
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499825968,1499826051,2017/7/12 10:19:28,2017/7/12 10:20:51,分心驾驶警示片,636376971941450713
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499826184,1499826269,2017/7/12 10:23:04,2017/7/12 10:24:29,盲区和远光灯警示片,636376971941620838
+10:06:34 INFO 17 six2015.Controllers.SIXUSERsController - pictures,1499826272,1499826350,2017/7/12 10:24:32,2017/7/12 10:25:50,超员及货车典型违法行为,636376971941810968
+10:07:12 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":345,"message":"范会波（身份证明号码：370686199102070710，发证机关鲁F）于2017年07月13日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+10:07:12 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,token is d59a18a14b6047c8a0963a57482b6948,345,id
+10:07:12 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,111,,
+10:07:12 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,222,,
+10:07:13 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,333,,
+10:07:13 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,444,,
+10:07:13 INFO 26 six2015.Controllers.SIXUSERsController - pushmessage2,555,,
+10:07:13 ERROR 26 six2015.Controllers.SIXUSERsController - pushmessage
+System.ArgumentNullException: 值不能为 null。
+参数名: entity
+   在 System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.pushmessage2(messagerequest2 inputRequest)
+10:10:29 INFO 21 six2015.Controllers.SIXUSERsController - login,input={"username":"t","password":"t"},
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords,token is e354be885be342169747e34b174b3d55,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 3333,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 44444,
+10:10:35 INFO 23 six2015.Controllers.SIXUSERsController - UnprocessedRecords, 6666,
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,token is e354be885be342169747e34b174b3d55,345
+10:10:37 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,token is e354be885be342169747e34b174b3d55,345,id
+10:10:37 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,token is e354be885be342169747e34b174b3d55,345,picID
+10:10:37 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordForm,token is e354be885be342169747e34b174b3d55,345,picID
+10:10:37 INFO 21 six2015.Controllers.SIXUSERsController - ExamResult,token is e354be885be342169747e34b174b3d55,345
+10:10:37 INFO 24 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is e354be885be342169747e34b174b3d55,345,picID
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499479545,1499479637,2017/7/8 10:05:45,2017/7/8 10:07:17,超速警示片,636376974373698721
+10:10:37 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord
+10:10:37 ERROR 8 six2015.Controllers.SIXUSERsController - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+10:10:37 INFO 8 six2015.Controllers.SIXUSERsController - courses,token is e354be885be342169747e34b174b3d55,345
+10:10:37 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png
+10:10:37 ERROR 28 six2015.Controllers.SIXUSERsController - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+10:10:37 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png
+10:10:37 ERROR 27 six2015.Controllers.SIXUSERsController - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499819384,1499819535,2017/7/12 8:29:44,2017/7/12 8:32:15,酒驾上警示片,636376974375084758
+10:10:37 INFO 21 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\5a3e436a06324f628bea351f62f1f5a0\exam_result.txt
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499823702,1499823735,2017/7/12 9:41:42,2017/7/12 9:42:15,疲劳驾驶警示片,636376974375450006
+10:10:37 INFO 24 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png
+10:10:37 ERROR 24 six2015.Controllers.SIXUSERsController - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499825600,1499825891,2017/7/12 10:13:20,2017/7/12 10:18:11,酒驾下警示片,636376974375960371
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499825968,1499826051,2017/7/12 10:19:28,2017/7/12 10:20:51,分心驾驶警示片,636376974376190533
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499826184,1499826269,2017/7/12 10:23:04,2017/7/12 10:24:29,盲区和远光灯警示片,636376974376370661
+10:10:37 INFO 26 six2015.Controllers.SIXUSERsController - pictures,1499826272,1499826350,2017/7/12 10:24:32,2017/7/12 10:25:50,超员及货车典型违法行为,636376974376545775
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":345,"message":"范会波（身份证明号码：370686199102070710，发证机关鲁F）于2017年07月13日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,token is e354be885be342169747e34b174b3d55,345,id
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,111,,
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,222,,
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,333,,
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,444,,
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,555,,
+10:10:41 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,666,,
+10:10:42 INFO 22 six2015.Controllers.SIXUSERsController - pushmessage2,777,,
+10:11:31 INFO 24 six2015.Controllers.SIXUSERsController - today=08/07/2017 10:11:31，yesteday=08/06/2017 10:11:31
+10:11:31 INFO 24 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+10:12:55 INFO 8 six2015.Controllers.SIXUSERsController - today=08/07/2017 10:12:55，yesteday=08/06/2017 10:12:55
+10:12:55 INFO 8 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,token is e354be885be342169747e34b174b3d55,354
+10:13:28 INFO 28 six2015.Controllers.SIXUSERsController - signaturepics,token is e354be885be342169747e34b174b3d55,354,id
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499431592,1499431764,2017/7/7 20:46:32,2017/7/7 20:49:24,超速警示片,636376976081289783
+10:13:28 INFO 28 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\1983e7606780428f9d20bc5813499923EducationalRecord
+10:13:28 ERROR 28 six2015.Controllers.SIXUSERsController - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\1983e7606780428f9d20bc5813499923EducationalRecord”。
+文件名:“e:\signature\1983e7606780428f9d20bc5813499923EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+10:13:28 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,token is e354be885be342169747e34b174b3d55,354,picID
+10:13:28 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordForm,token is e354be885be342169747e34b174b3d55,354,picID
+10:13:28 INFO 28 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\1983e7606780428f9d20bc5813499923PhysicalCondition.png
+10:13:28 INFO 27 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\1983e7606780428f9d20bc5813499923EducationalRecord1.png
+10:13:28 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is e354be885be342169747e34b174b3d55,354,picID
+10:13:28 INFO 30 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\1983e7606780428f9d20bc5813499923EducationalRecord2.png
+10:13:28 INFO 22 six2015.Controllers.SIXUSERsController - ExamResult,token is e354be885be342169747e34b174b3d55,354
+10:13:28 INFO 22 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\1983e7606780428f9d20bc5813499923\exam_result.txt
+10:13:28 INFO 24 six2015.Controllers.SIXUSERsController - courses,token is e354be885be342169747e34b174b3d55,354
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499431774,1499431901,2017/7/7 20:49:34,2017/7/7 20:51:41,酒驾上警示片,636376976083300486
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499432047,1499432167,2017/7/7 20:54:07,2017/7/7 20:56:07,酒驾下警示片,636376976085272058
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499432174,1499432291,2017/7/7 20:56:14,2017/7/7 20:58:11,疲劳驾驶警示片,636376976085782403
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499432295,1499432399,2017/7/7 20:58:15,2017/7/7 20:59:59,分心驾驶警示片,636376976086898351
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499432404,1499432843,2017/7/7 21:00:04,2017/7/7 21:07:23,盲区和远光灯警示片,636376976087230278
+10:13:28 INFO 23 six2015.Controllers.SIXUSERsController - pictures,1499432849,1499432955,2017/7/7 21:07:29,2017/7/7 21:09:15,超员及货车典型违法行为,636376976087720625
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":354,"message":"岳建霞（身份证明号码：140103197407315723，发证机关鲁F）于2017年07月14日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,token is e354be885be342169747e34b174b3d55,354,id
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,111,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,222,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,333,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,444,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,555,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,666,,
+10:13:32 INFO 30 six2015.Controllers.SIXUSERsController - pushmessage2,777,,
+10:13:36 INFO 24 six2015.Controllers.SIXUSERsController - today=08/07/2017 10:13:36，yesteday=08/06/2017 10:13:36
+10:13:36 INFO 24 six2015.Controllers.SIXUSERsController - today=11，yesteday=22
+12:29:07 INFO 7 six2015.Controllers.SIXUSERsController - today=08/07/2017 12:29:07，yesteday=08/06/2017 12:29:07
+12:29:15 INFO 7 six2015.Controllers.SIXUSERsController - today=11，yesteday=22

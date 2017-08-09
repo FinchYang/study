@@ -77,6 +77,7 @@ namespace six2015.Controllers
                         break;
                     }
                 }
+                Log.InfoFormat("pushmessage2,{0},,", 111);
                 if (!found)
                 {
                     Log.InfoFormat("pushmessage2,{0}", sixerrors.invalidtoken);
@@ -85,7 +86,7 @@ namespace six2015.Controllers
                         status = (int)sixerrors.invalidtoken
                     };
                 }
-
+                Log.InfoFormat("pushmessage2,{0},,", 222);
                 var theusers = _db1.HISTORY.FirstOrDefault(b => b.ID == inputRequest.id);
                 if (theusers == null)
                 {
@@ -95,9 +96,12 @@ namespace six2015.Controllers
                         status = (int)sixerrors.invalididentity
                     };
                 }
+                Log.InfoFormat("pushmessage2,{0},,", 333);
                 theusers.MESSAGED = "1";
                 theusers.PROCESSED = inputRequest.processed.ToString();
+                theusers.OVERTIME = DateTime.Now;
                 theusers.FAILURE = inputRequest.failure.ToString();
+                Log.InfoFormat("pushmessage2,{0},,", 444);
                 _db1.MESSAGE.Add(new MESSAGE
                 {
                     TIME = DateTime.Now,
@@ -105,17 +109,17 @@ namespace six2015.Controllers
                     HISTORYID = inputRequest.id,
                     SENT = "0"
                 });
-
+                Log.InfoFormat("pushmessage2,{0},,", 555);
                 if (inputRequest.failure != 1) {
                     var theab = _db1.ABSTUDY.FirstOrDefault(b => b.IDCARD == theusers.IDCARD);
-                    if (theusers != null)
+                    if (theab != null)
                     {
                         _db1.ABSTUDY.Remove(theab);
                     }
                 }
-                
+                Log.InfoFormat("pushmessage2,{0},,", 666);
                 _db1.SaveChangesAsync();
-
+                Log.InfoFormat("pushmessage2,{0},,", 777);
                 return new userresponse
                 {
                     status = 0,
@@ -1615,6 +1619,8 @@ namespace six2015.Controllers
                         APPLICATION = 0,
                         PAGEVIEWDAY = 0,
                         APPLICATIONDAY = 0,
+                        STARTLEARNINGVOLUME=0,
+                        STARTLEARNINGVOLUMETODAY=0,
                         KAIFAQU = 0,
                         ZHIFUQU = 0,
                         FUSHANQU = 0,
@@ -1635,6 +1641,7 @@ namespace six2015.Controllers
                         GAOXINQU = 0,
                     };
                 }
+                var startoftoday = DateTime.Parse(string.Format("{0}-{1}-{2}", today.Year, today.Month, today.Day));
                 var todaynum = new statistics
                 {
                     PAGEVIEW=todaydb.PAGEVIEWDAY,
@@ -1654,7 +1661,7 @@ namespace six2015.Controllers
                     HAIYANG = todaydb.HAIYANG,
                     LAIYANG = todaydb.LAIYANG,
                     PENGLAI = todaydb.PENGLAI,
-                    InspectedVolume = _db1.HISTORY.Where(c => c.PROCESSED == "1" && c.TIME.CompareTo(DateTime.Now)==0).Count(),
+                    InspectedVolume = _db1.HISTORY.Where(c => c.PROCESSED == "1" && c.OVERTIME.CompareTo(startoftoday) >=0).Count(),
                     LearningVolume = todaydb.STARTLEARNINGVOLUMETODAY,
                     OTHER = todaydb.OTHER,
                     GAOXINQU = todaydb.GAOXINQU,

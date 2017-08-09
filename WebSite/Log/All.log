@@ -8359,3 +8359,119 @@ System.InvalidOperationException: 到值类型“System.Decimal”的强制转换失败，因为
    在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
    在 System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
    在 six2015.Controllers.SIXUSERsController.<Statistics>d__30.MoveNext()
+2017-08-07 09:55:34,045 [7] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+2017-08-07 09:55:34,049 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+2017-08-07 09:55:34,198 [15] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+2017-08-07 09:55:34,246 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+2017-08-07 09:55:40,146 [6] ERROR six2015.Controllers.SIXUSERsController [(null)] - pushmessage
+System.ArgumentNullException: 值不能为 null。
+参数名: entity
+   在 System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.pushmessage2(messagerequest2 inputRequest)
+2017-08-07 10:06:33,940 [15] ERROR six2015.Controllers.SIXUSERsController [(null)] - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+2017-08-07 10:06:34,032 [21] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+2017-08-07 10:06:34,058 [19] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+2017-08-07 10:06:34,088 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+2017-08-07 10:07:13,118 [26] ERROR six2015.Controllers.SIXUSERsController [(null)] - pushmessage
+System.ArgumentNullException: 值不能为 null。
+参数名: entity
+   在 System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   在 System.Data.Entity.DbSet`1.Remove(TEntity entity)
+   在 six2015.Controllers.SIXUSERsController.pushmessage2(messagerequest2 inputRequest)
+2017-08-07 10:10:37,396 [8] ERROR six2015.Controllers.SIXUSERsController [(null)] - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()
+2017-08-07 10:10:37,468 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - DeclarationForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0PhysicalCondition.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<DeclarationForm>d__22.MoveNext()
+2017-08-07 10:10:37,498 [27] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordForm,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord1.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordForm>d__20.MoveNext()
+2017-08-07 10:10:37,575 [24] ERROR six2015.Controllers.SIXUSERsController [(null)] - EduRecordFormB,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”。
+文件名:“e:\signature\5a3e436a06324f628bea351f62f1f5a0EducationalRecord2.png”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<EduRecordFormB>d__21.MoveNext()
+2017-08-07 10:13:28,129 [28] ERROR six2015.Controllers.SIXUSERsController [(null)] - signaturepics,{0}
+System.IO.FileNotFoundException: 未能找到文件“e:\signature\1983e7606780428f9d20bc5813499923EducationalRecord”。
+文件名:“e:\signature\1983e7606780428f9d20bc5813499923EducationalRecord”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 six2015.Controllers.SIXUSERsController.<signaturepics>d__19.MoveNext()

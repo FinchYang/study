@@ -26,7 +26,10 @@ namespace iis.Controllers
 
             return View();
         }
-
+  public IActionResult haha()
+        {
+            return View();
+        }
         public IActionResult Error()
         {
             return View();

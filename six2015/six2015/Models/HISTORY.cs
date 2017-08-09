@@ -68,5 +68,7 @@ namespace six2015.Models
 
         [StringLength(5)]
         public string COUNTY { get; set; }
+
+        public DateTime OVERTIME { get; set; }
     }
 }

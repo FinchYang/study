@@ -35,6 +35,24 @@
                     $("#today_PENGLAI").text(message.today.PENGLAI);
                     $("#today_GAOXINQU").text(message.today.GAOXINQU);
                     $("#today_OTHER").text(message.today.OTHER);
+                    $("#today_LearningVolume").text(message.today.LearningVolume);
+                    $("#today_InspectedVolume").text(message.today.InspectedVolume);
+                    $("#today_SUM").text(
+                        message.today.KAIFAQU +
+                        message.today.ZHIFUQU +
+                        message.today.FUSHANQU +
+                        message.today.MUPINGQU +
+                        message.today.LAISHANQU +
+                        message.today.LONGKOU +
+                        message.today.ZHAOYUAN +
+                        message.today.QIXIA +
+                        message.today.LAIZHOU +
+                        message.today.CHANGDAO +
+                        message.today.HAIYANG +
+                        message.today.LAIYANG +
+                        message.today.PENGLAI +
+                        message.today.GAOXINQU +
+                        message.today.OTHER);
 
                     $("#total_PAGEVIEW").text(message.total.PAGEVIEW);
                     $("#total_APPLICATION").text(message.total.APPLICATION);
@@ -53,7 +71,24 @@
                     $("#total_PENGLAI").text(message.total.PENGLAI);
                     $("#total_GAOXINQU").text(message.total.GAOXINQU);
                     $("#total_OTHER").text(message.total.OTHER);
-
+                    $("#total_LearningVolume").text(message.total.LearningVolume);
+                    $("#total_InspectedVolume").text(message.total.InspectedVolume);
+                    $("#total_SUM").text(
+                        message.total.KAIFAQU +
+                        message.total.ZHIFUQU +
+                        message.total.FUSHANQU +
+                        message.total.MUPINGQU +
+                        message.total.LAISHANQU +
+                        message.total.LONGKOU +
+                        message.total.ZHAOYUAN +
+                        message.total.QIXIA +
+                        message.total.LAIZHOU +
+                        message.total.CHANGDAO +
+                        message.total.HAIYANG +
+                        message.total.LAIYANG +
+                        message.total.PENGLAI +
+                        message.total.GAOXINQU +
+                        message.total.OTHER);
                 },
                 error: function (e1, e2, e3) {
                     console.log(e1);
@@ -69,112 +104,51 @@
 <table style="text-align: center; width: 100%; height: 100%;">
     <tbody>
     <tr>
-        <td>本日统计：</td><td></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td>访问量：</td><td id="today_PAGEVIEW"></td>
-    </tr>
-    <tr>
-        <td></td><td>使用量：</td><td id="today_APPLICATION"></td>
-    </tr>
-    <tr>
-        <td></td><td>开发区学习完成量：</td><td id="today_KAIFAQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>芝罘区学习完成量：</td><td id="today_ZHIFUQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>福山区学习完成量：</td><td id="today_FUSHANQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>牟平区学习完成量：</td><td id="today_MUPINGQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱山区学习完成量：</td><td id="today_LAISHANQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>龙口学习完成量：</td><td id="today_LONGKOU"></td>
-    </tr>
-    <tr>
-        <td></td><td>招远学习完成量：</td><td id="today_ZHAOYUAN"></td>
-    </tr>
-    <tr>
-        <td></td><td>栖霞学习完成量：</td><td id="today_QIXIA"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱州学习完成量：</td><td id="today_LAIZHOU"></td>
-    </tr>
-    <tr>
-        <td></td><td>长岛学习完成量：</td><td id="today_CHANGDAO"></td>
-    </tr>
-    <tr>
-        <td></td><td>海阳学习完成量：</td><td id="today_HAIYANG"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱阳学习完成量：</td><td id="today_LAIYANG"></td>
-    </tr>
-    <tr>
-        <td></td><td>蓬莱学习完成量：</td><td id="today_PENGLAI"></td>
-    </tr>
-    <tr>
-        <td></td><td>高新区学习完成量：</td><td id="today_GAOXINQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>其他地区学习完成量：</td><td id="today_OTHER"></td>
-    </tr>
-    <tr>
-        <td>总计：</td><td></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td>访问量：</td><td id="total_PAGEVIEW"></td>
-    </tr>
-    <tr>
-        <td></td><td>使用量：</td><td id="total_APPLICATION"></td>
-    </tr>
-    <tr>
-        <td></td><td>开发区学习完成量：</td><td id="total_KAIFAQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>芝罘区学习完成量：</td><td id="total_ZHIFUQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>福山区学习完成量：</td><td id="total_FUSHANQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>牟平区学习完成量：</td><td id="total_MUPINGQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱山区学习完成量：</td><td id="total_LAISHANQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>龙口学习完成量：</td><td id="total_LONGKOU"></td>
-    </tr>
-    <tr>
-        <td></td><td>招远学习完成量：</td><td id="total_ZHAOYUAN"></td>
-    </tr>
-    <tr>
-        <td></td><td>栖霞学习完成量：</td><td id="total_QIXIA"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱州学习完成量：</td><td id="total_LAIZHOU"></td>
-    </tr>
-    <tr>
-        <td></td><td>长岛学习完成量：</td><td id="total_CHANGDAO"></td>
-    </tr>
-    <tr>
-        <td></td><td>海阳学习完成量：</td><td id="total_HAIYANG"></td>
-    </tr>
-    <tr>
-        <td></td><td>莱阳学习完成量：</td><td id="total_LAIYANG"></td>
-    </tr>
-    <tr>
-        <td></td><td>蓬莱学习完成量：</td><td id="total_PENGLAI"></td>
-    </tr>
-    <tr>
-        <td></td><td>高新区学习完成量：</td><td id="total_GAOXINQU"></td>
-    </tr>
-    <tr>
-        <td></td><td>其他地区学习完成量：</td><td id="total_OTHER"></td>
+        <td>
+            <tr><td>本日统计：</td><td>合计：</td><td id="today_SUM"></td></tr>
+            <tr><td></td><td>访问量：</td><td id="today_PAGEVIEW"></td></tr>
+            <tr><td></td><td>使用量：</td><td id="today_APPLICATION"></td></tr>
+            <tr><td></td><td>开发区学习完成量：</td><td id="today_KAIFAQU"></td></tr>
+            <tr><td></td><td>芝罘区学习完成量：</td><td id="today_ZHIFUQU"></td></tr>
+            <tr><td></td><td>福山区学习完成量：</td><td id="today_FUSHANQU"></td></tr>
+            <tr><td></td><td>牟平区学习完成量：</td><td id="today_MUPINGQU"></td></tr>
+            <tr><td></td><td>莱山区学习完成量：</td><td id="today_LAISHANQU"></td></tr>
+            <tr><td></td><td>龙口学习完成量：</td><td id="today_LONGKOU"></td></tr>
+            <tr><td></td><td>招远学习完成量：</td><td id="today_ZHAOYUAN"></td></tr>
+            <tr><td></td><td>栖霞学习完成量：</td><td id="today_QIXIA"></td></tr>
+            <tr><td></td><td>莱州学习完成量：</td><td id="today_LAIZHOU"></td></tr>
+            <tr><td></td><td>长岛学习完成量：</td><td id="today_CHANGDAO"></td></tr>
+            <tr><td></td><td>海阳学习完成量：</td><td id="today_HAIYANG"></td></tr>
+            <tr><td></td><td>莱阳学习完成量：</td><td id="today_LAIYANG"></td></tr>
+            <tr><td></td><td>蓬莱学习完成量：</td><td id="today_PENGLAI"></td></tr>
+            <tr><td></td><td>高新区学习完成量：</td><td id="today_GAOXINQU"></td></tr>
+            <tr><td></td><td>其它地区学习完成量：</td><td id="today_OTHER"></td></tr>
+            <tr><td></td><td>正在学习数量：</td><td id="today_LearningVolume"></td></tr>
+            <tr><td></td><td>审验完成数量：</td><td id="today_InspectedVolume"></td></tr>
+        </td>
+
+        <td>
+            <tr><td>总计：</td><td>合计：</td><td id="total_SUM"></td></tr>
+            <tr><td></td><td>访问量：</td><td id="total_PAGEVIEW"></td></tr>
+            <tr><td></td><td>使用量：</td><td id="total_APPLICATION"></td></tr>
+            <tr><td></td><td>开发区学习完成量：</td><td id="total_KAIFAQU"></td></tr>
+            <tr><td></td><td>芝罘区学习完成量：</td><td id="total_ZHIFUQU"></td></tr>
+            <tr><td></td><td>福山区学习完成量：</td><td id="total_FUSHANQU"></td></tr>
+            <tr><td></td><td>牟平区学习完成量：</td><td id="total_MUPINGQU"></td></tr>
+            <tr><td></td><td>莱山区学习完成量：</td><td id="total_LAISHANQU"></td></tr>
+            <tr><td></td><td>龙口学习完成量：</td><td id="total_LONGKOU"></td></tr>
+            <tr><td></td><td>招远学习完成量：</td><td id="total_ZHAOYUAN"></td></tr>
+            <tr><td></td><td>栖霞学习完成量：</td><td id="total_QIXIA"></td></tr>
+            <tr><td></td><td>莱州学习完成量：</td><td id="total_LAIZHOU"></td></tr>
+            <tr><td></td><td>长岛学习完成量：</td><td id="total_CHANGDAO"></td></tr>
+            <tr><td></td><td>海阳学习完成量：</td><td id="total_HAIYANG"></td></tr>
+            <tr><td></td><td>莱阳学习完成量：</td><td id="total_LAIYANG"></td></tr>
+            <tr><td></td><td>蓬莱学习完成量：</td><td id="total_PENGLAI"></td></tr>
+            <tr><td></td><td>高新区学习完成量：</td><td id="total_GAOXINQU"></td></tr>
+            <tr><td></td><td>其它地区学习完成量：</td><td id="total_OTHER"></td></tr>
+            <tr><td></td><td>正在学习数量：</td><td id="total_LearningVolume"></td></tr>
+            <tr><td></td><td>审验完成数量：</td><td id="total_InspectedVolume"></td></tr>
+        </td>
     </tr>
     </tbody>
 </table>
