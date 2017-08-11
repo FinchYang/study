@@ -1,1 +1,104 @@
 09:58:53 INFO 8 six2015.Controllers.SIXUSERsController - login,input={"username":"a","password":"a"},
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,token is 8d58cdc1ce8e42bea8377bc17547a535,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:04 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:05 INFO 10 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:18 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,token is 8d58cdc1ce8e42bea8377bc17547a535,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+09:59:19 INFO 8 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+10:00:11 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,token is 8d58cdc1ce8e42bea8377bc17547a535,353,id
+10:00:11 INFO 14 six2015.Controllers.SIXUSERsController - DeclarationForm,token is 8d58cdc1ce8e42bea8377bc17547a535,353,picID
+10:00:11 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord
+10:00:11 INFO 9 six2015.Controllers.SIXUSERsController - EduRecordForm,token is 8d58cdc1ce8e42bea8377bc17547a535,353,picID
+10:00:11 INFO 9 six2015.Controllers.SIXUSERsController - EduRecordForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord1.png
+10:00:11 INFO 8 six2015.Controllers.SIXUSERsController - signaturepics,PhysicalCondition=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition
+10:00:11 INFO 7 six2015.Controllers.SIXUSERsController - pictures,token is 8d58cdc1ce8e42bea8377bc17547a535,353
+10:00:11 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427126,1499427203,2017/7/7 19:32:06,2017/7/7 19:33:23,超速警示片,636378696118916288
+10:00:11 INFO 8 six2015.Controllers.SIXUSERsController - ExamResult,token is 8d58cdc1ce8e42bea8377bc17547a535,353
+10:00:11 INFO 8 six2015.Controllers.SIXUSERsController - ExamResult,picfile=e:\\examresultpath\97e70d9265754c0ab07ed70807408742\exam_result.txt
+10:00:11 INFO 14 six2015.Controllers.SIXUSERsController - DeclarationForm,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742PhysicalCondition.png
+10:00:11 INFO 9 six2015.Controllers.SIXUSERsController - EduRecordFormB,token is 8d58cdc1ce8e42bea8377bc17547a535,353,picID
+10:00:11 INFO 9 six2015.Controllers.SIXUSERsController - EduRecordFormB,picfile=e:\\signature\97e70d9265754c0ab07ed70807408742EducationalRecord2.png
+10:00:12 INFO 14 six2015.Controllers.SIXUSERsController - courses,token is 8d58cdc1ce8e42bea8377bc17547a535,353
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427207,1499427258,2017/7/7 19:33:27,2017/7/7 19:34:18,酒驾上警示片,636378696121578181
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427261,1499427311,2017/7/7 19:34:21,2017/7/7 19:35:11,酒驾下警示片,636378696121928421
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427317,1499427389,2017/7/7 19:35:17,2017/7/7 19:36:29,疲劳驾驶警示片,636378696122288691
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427408,1499427501,2017/7/7 19:36:48,2017/7/7 19:38:21,分心驾驶警示片,636378696122618921
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427514,1499427577,2017/7/7 19:38:34,2017/7/7 19:39:37,盲区和远光灯警示片,636378696122929116
+10:00:12 INFO 7 six2015.Controllers.SIXUSERsController - pictures,1499427607,1499427680,2017/7/7 19:40:07,2017/7/7 19:41:20,超员及货车典型违法行为,636378696123169278
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,input={"id":353,"message":"曹恒畅（身份证明号码：370602199302131613，发证机关鲁F）于2017年07月14日，已参加了道路交通安全法律法规、交通安全文明驾驶、应急处置等知识学习，接受交通事故案例警示教育，并通过审验。请于每个记分周期结束后三十日内到公安机关交通管理部门接受审验。但在一个记分周期内没有记分记录的，免于本记分周期审验。下一审验时间为2018年07月15日至2018年08月14日","processed":1,"failure":0},
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,token is 8d58cdc1ce8e42bea8377bc17547a535,353,id
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,111,,
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,222,,
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,333,,
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,444,,
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,555,,
+10:00:15 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,666,,
+10:00:16 INFO 14 six2015.Controllers.SIXUSERsController - pushmessage2,777,,
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,token is 8d58cdc1ce8e42bea8377bc17547a535,,startTime,  endTime,  name,  identity, illegal ,  message, print,,processed
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,11111
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,33333
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,44444
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,55555
+10:00:24 INFO 7 six2015.Controllers.SIXUSERsController - StudyRecords,66666

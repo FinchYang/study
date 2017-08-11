@@ -1,3 +1,4 @@
+/home/inspect/bin/export.sh
 mv /home/inspect/ftp/put/* /home/jjxx_in/
 chown jjxx_in /home/jjxx_in/*
 chgrp jjxx_in /home/jjxx_in/*

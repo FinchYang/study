@@ -28,7 +28,9 @@ namespace iis.Controllers
         }
   public IActionResult haha()
         {
-            return View();
+            NoContent();BadRequest();
+            return NotFound();
+          //  return View();
         }
         public IActionResult Error()
         {

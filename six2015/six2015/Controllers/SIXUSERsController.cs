@@ -1162,7 +1162,7 @@ namespace six2015.Controllers
             {
                 var found = false;
                 var token = Request.Headers.GetValues("Token").First();
-                Log.InfoFormat("pictures,token is {0},{1}", token, id);
+                Log.InfoFormat("pictures,aaa,token is {0},{1}", token, id);
                 var username = string.Empty;
                 var power = 0;
                 foreach (var a in tokens)
@@ -1204,12 +1204,13 @@ namespace six2015.Controllers
                     var title = sss[0];
                     var start = getdate(sss[1]);
                     var end = getdate(sss[2]);
-                    Log.InfoFormat("pictures,{0},{1},{2},{3},{4},{5}", sss[1],sss[2], start,end,title,DateTime.Now.Ticks);
+                    Log.InfoFormat("pictures,bbb,{0},{1},{2},{3},{4},{5}", sss[1],sss[2], start,end,title,DateTime.Now.Ticks);
                     var fname = sss[1] + sss[2] + ".zip";
                     var zipfile = System.IO.Path.Combine(examresultpath, theusers.FILENAME, fname);
-                    var temp=Path.Combine(examresultpath, theusers.FILENAME, sss[1] + sss[2]);
+                    var temp=Path.Combine(System.Web.HttpContext.Current.Request.MapPath("/"),"logphoto", theusers.FILENAME, sss[1] + sss[2]);
                     if (!Directory.Exists(temp)) Directory.CreateDirectory(temp);
                     var a = new FastZip();
+                    Log.InfoFormat("temp extract path={0}", temp);
                     a.ExtractZip(zipfile, temp, "");
                     var picp = new DirectoryInfo(temp);
                     var pics=picp.GetFiles();
@@ -1222,6 +1223,7 @@ namespace six2015.Controllers
                     foreach (var onepic in pics)
                     {
                         var ts =getdate( onepic.Name.Substring(0,10));//onepic.LastWriteTime
+                        Log.InfoFormat("logphoto name={0}", onepic.FullName);
                         var bbbytes = System.IO.File.ReadAllBytes(onepic.FullName);
                         var basestr = Convert.ToBase64String(bbbytes);
                         coursepics.Add(new coursepics {
@@ -1550,14 +1552,16 @@ namespace six2015.Controllers
                     var yxqz = DateTime.Now;
                     if (a.SYYXQZ != null) yxqz = (DateTime)a.SYYXQZ;
 
+                    DateTime finishdate = a.FINISHDATE == null ? a.TIME : (DateTime)a.FINISHDATE;
                     var recodr = new record
                     {
                         id = a.ID.ToString(),
                         name = a.NAME,
                         phone = a.PHONENUMBER,
                         identity = sfz,
-                        studyTime = a.TIME,
-                        syyxqz=yxqz,
+                        //studyTime = a.TIME,
+                        studyTime = finishdate,
+                        syyxqz =yxqz,
                         illegal = a.STATUS
                     };
                     Log.InfoFormat("UnprocessedRecords, {0},", 44444);
