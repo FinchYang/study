@@ -595,13 +595,19 @@ namespace study.Controllers
                     };
                 }
 
+                 var studylog=string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 if (theuser.Startdate == null)
                 {
                     theuser.Startdate = DateTime.Now;
-                    theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
+                    theuser.Studylog=studylog;
+                  //  theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 }
-                else
-                    theuser.Studylog += string.Format("-{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
+                else{ 
+                  //  var slog=string.Format("-{0}", studylog);
+                    if(!theuser.Studylog.Contains(studylog))
+                    theuser.Studylog +=string.Format("-{0}", studylog);
+                }
+                   
                 if (theuser.Studylog.Length < 500){
                     theuser.Syncdate=DateTime.Now;
                     _db1.SaveChanges();
@@ -618,7 +624,7 @@ namespace study.Controllers
                         if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                         var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".zip");
-                        Log.Information("filename is: {0}", fname);
+                   //     Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }
                 }
