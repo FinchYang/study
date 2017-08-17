@@ -596,18 +596,31 @@ namespace study.Controllers
                 }
 
                  var studylog=string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
-                if (theuser.Startdate == null)
+                                  
+                 if (theuser.Startdate == null)
                 {
                     theuser.Startdate = DateTime.Now;
-                    theuser.Studylog=studylog;
-                  //  theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
+                    theuser.Studylog = studylog;
+                     Log.Information("InspectPostStudyStatus,Startdate ={0},from ip={1}",
+                      "uninitiated", Request.HttpContext.Connection.RemoteIpAddress);
+                    //  theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 }
-                else{ 
-                  //  var slog=string.Format("-{0}", studylog);
-                    if(!theuser.Studylog.Contains(studylog))
-                    theuser.Studylog +=string.Format("-{0}", studylog);
+                else
+                {
+                    //  var slog=string.Format("-{0}", studylog);
+                    if (!string.IsNullOrEmpty(theuser.Studylog))
+                    {
+                        if (!theuser.Studylog.Contains(studylog))
+                            theuser.Studylog += string.Format("-{0}", studylog);
+                        else  Log.Information("InspectPostStudyStatus,duplicate submit, discarded ={0},from ip={1}",
+                      "", Request.HttpContext.Connection.RemoteIpAddress);
+                    }
+                    else
+                    {
+                         theuser.Studylog = studylog;
+                    }
                 }
-                   
+
                 if (theuser.Studylog.Length < 500){
                     theuser.Syncdate=DateTime.Now;
                     _db1.SaveChanges();
