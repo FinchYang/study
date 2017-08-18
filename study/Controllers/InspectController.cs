@@ -32,14 +32,15 @@ namespace study.Controllers
         }
         [Route("SignatureQuery")]
         [HttpPost]
-        public SignatureQueryResponse SignatureQuery([FromBody] SignatureQueryRequest inputRequest)
+        public async Task<SignatureQueryResponse> SignatureQuery([FromBody] SignatureQueryRequest inputRequest)
         {
             try
             {
-                
-                  var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(input,"SignatureQuery",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-                
+
+                var input = JsonConvert.SerializeObject(inputRequest);
+                await Task.Run(() =>
+                LogRequest(input, "SignatureQuery", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (inputRequest == null)
                 {
                     Log.Error("SignatureQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -81,10 +82,10 @@ namespace study.Controllers
                 var theuser = _db1.User.FirstOrDefault(async => async.Identity == identity || async.Identity == cryptographicid);
                 if (theuser == null)
                 {
-                    var his = _db1.History.Where(async => async.Identity == identity || async.Identity == cryptographicid )
-                    .OrderBy(q => q.Finishdate ).LastOrDefault();
+                    var his = _db1.History.Where(async => async.Identity == identity || async.Identity == cryptographicid)
+                    .OrderBy(q => q.Finishdate).LastOrDefault();
                     //;
-                                        if (his == null)
+                    if (his == null)
                     {
                         Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
                         return new SignatureQueryResponse
@@ -133,13 +134,14 @@ namespace study.Controllers
         }
         [Route("LoginAndQuery")]
         [HttpPost]
-        public LoginAndQueryResponse LoginAndQuery([FromBody] LoginAndQueryRequest inputRequest)
+        public async Task<LoginAndQueryResponse> LoginAndQuery([FromBody] LoginAndQueryRequest inputRequest)
         {
             try
             {
-                var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(input,"LoginAndQuery",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-               
+                var input = JsonConvert.SerializeObject(inputRequest);
+                await Task.Run(() =>
+                LogRequest(input, "LoginAndQuery", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (inputRequest == null)
                 {
                     Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -149,7 +151,7 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.studyRequestError].Description
                     };
                 }
-                 Log.Information("LoginAndQuery,input={0},from {1}",input, Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("LoginAndQuery,input={0},from {1}", input, Request.HttpContext.Connection.RemoteIpAddress);
                 var allstatus = string.Empty;
                 var allow = true;
                 var completed = true;
@@ -162,7 +164,7 @@ namespace study.Controllers
                 var cryptographicid = CryptographyHelpers.StudyEncrypt(identity);
                 var pic = new byte[8];
 
-                
+
                 //token process
                 var toke1n = GetToken();
                 var found = false;
@@ -171,7 +173,7 @@ namespace study.Controllers
                 {
                     if (a.Identity == identity)
                     {
-                      //  lasttoken = a.Token;
+                        //  lasttoken = a.Token;
                         a.Token = toke1n;
                         found = true;
                         break;
@@ -183,12 +185,12 @@ namespace study.Controllers
                 }
 
                 var theuser = _db1.User.FirstOrDefault(async => (async.Identity == identity || async.Identity == cryptographicid)
-                &&async.Inspect=="1"
+                && async.Inspect == "1"
                 );
                 if (theuser == null)
                 {
                     var his = _db1.History.Where(async => async.Identity == identity || async.Identity == cryptographicid)
-                    .OrderBy(al=>al.Finishdate).LastOrDefault();
+                    .OrderBy(al => al.Finishdate).LastOrDefault();
                     if (his == null)
                     {
                         Log.Error("LoginAndQuery,{0}", Global.Status[responseCode.studyNotNecessary].Description + identity);
@@ -199,8 +201,9 @@ namespace study.Controllers
                         };
                     }
                     allow = his.Drugrelated != "1" ? true : false;
-                     if(!string.IsNullOrEmpty(his.Status) &&(his.Status.Contains("H")||his.Status.Contains("M")) ){
-                        allow=false;
+                    if (!string.IsNullOrEmpty(his.Status) && (his.Status.Contains("H") || his.Status.Contains("M")))
+                    {
+                        allow = false;
                     }
                     completed = his.Completed == "1" ? true : false;
                     signed = his.Signed == "1" ? true : false;
@@ -240,8 +243,9 @@ namespace study.Controllers
                 {
                     //drugrelated judge
                     allow = theuser.Drugrelated != "1" ? true : false;
-                    if(!string.IsNullOrEmpty(theuser.Status) && (theuser.Status.Contains("H")||theuser.Status.Contains("M"))){
-                        allow=false;
+                    if (!string.IsNullOrEmpty(theuser.Status) && (theuser.Status.Contains("H") || theuser.Status.Contains("M")))
+                    {
+                        allow = false;
                     }
                     completed = theuser.Completed == "1" ? true : false;
                     signed = theuser.Signed == "1" ? true : false;
@@ -263,7 +267,7 @@ namespace study.Controllers
                         {
                             theuser.Startdate = DateTime.Now;
                         }
-                      if(!string.IsNullOrEmpty(theuser.Token)) lasttoken=theuser.Token;
+                        if (!string.IsNullOrEmpty(theuser.Token)) lasttoken = theuser.Token;
                         _db1.SaveChanges();
                     }
                     else allstatus = "您不能参加网络学习，可以参加现场学习";
@@ -316,13 +320,14 @@ namespace study.Controllers
         }
         [Route("LogSignature")]
         [HttpPost]
-        public CommonResponse LogSignature([FromBody] LogSignatureRequest inputRequest)
+        public async Task<CommonResponse> LogSignature([FromBody] LogSignatureRequest inputRequest)
         {
             try
             {
-                  var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(input,"LogSignature",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-                
+                var input = JsonConvert.SerializeObject(inputRequest);
+                await Task.Run(() =>
+                LogRequest(input, "LogSignature", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (inputRequest == null)
                 {
                     Log.Error("LogSignature,{0}", Global.Status[responseCode.studyRequestError].Description);
@@ -361,7 +366,7 @@ namespace study.Controllers
                     return new CommonResponse { StatusCode = "100004", Description = "error identity" };
                 }
                 var date = DateTime.Today;
-            //    var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                //    var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                 var fpath = Global.SignaturePath;//Path.Combine(Global.SignaturePath, dir);
                 if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
                 var subfpath = identity;
@@ -412,10 +417,10 @@ namespace study.Controllers
                         Signed = theuser.Signed,
                         Photostatus = theuser.Photostatus,
                         Firstsigned = theuser.Firstsigned,
-                        Photofile=theuser.Photofile,
-                        Status=theuser.Status,
-                        Token=theuser.Token,
-                        Lasttoken=theuser.Lasttoken,
+                        Photofile = theuser.Photofile,
+                        Status = theuser.Status,
+                        Token = theuser.Token,
+                        Lasttoken = theuser.Lasttoken,
                         Licensetype = theuser.Licensetype
                     });
                     _db1.User.Remove(theuser);
@@ -441,13 +446,14 @@ namespace study.Controllers
         [Route("InspectCompleteCourses")]
         [HttpPost]
 
-        public CommonResponse InspectCompleteCourses([FromBody] CompleteCoursesRequest inputRequest)
+        public async Task<CommonResponse> InspectCompleteCourses([FromBody] CompleteCoursesRequest inputRequest)
         {
             try
             {
-                  var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(input,"InspectCompleteCourses",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-                
+                var input = JsonConvert.SerializeObject(inputRequest);
+                await Task.Run(() =>
+                LogRequest(input, "InspectCompleteCourses", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (inputRequest == null)
                 {
                     Log.Error("InspectCompleteCourses,{0}", Global.Status[responseCode.RequestError].Description);
@@ -505,16 +511,16 @@ namespace study.Controllers
                 var clog = inputRequest.AllStatus.Length < 80 ? inputRequest.AllStatus : inputRequest.AllStatus.Substring(0, 78);
                 theuser.Completelog = clog;
                 theuser.Completed = "1";
-             //   theuser.Syncdate=DateTime.Now;
+                //   theuser.Syncdate=DateTime.Now;
                 _db1.SaveChanges();
 
                 if (inputRequest.AllRecords != null)
                 {
                     var date = DateTime.Today;
-                   // var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                    // var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                     var subfpath = identity;
                     if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
-                    var fpath = Path.Combine(Global.LogPhotoPath,  subfpath);
+                    var fpath = Path.Combine(Global.LogPhotoPath, subfpath);
                     if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                     var fname = Path.Combine(fpath, "exam_result.txt");
@@ -542,13 +548,13 @@ namespace study.Controllers
         [Route("InspectPostStudyStatus")]
         [HttpPost]
 
-        public CommonResponse InspectPostStudyStatus([FromBody] StudyStatusRequest inputRequest)
+        public async Task<CommonResponse> InspectPostStudyStatus([FromBody] StudyStatusRequest inputRequest)
         {
             try
             {
-                var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(input,"InspectPostStudyStatus",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-               
+                var input = JsonConvert.SerializeObject(inputRequest);
+                await Task.Run(() => LogRequest(input, "InspectPostStudyStatus", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (inputRequest == null)
                 {
                     Log.Error("InspectPostStudyStatus,{0}", Global.Status[responseCode.RequestError].Description);
@@ -558,8 +564,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.RequestError].Description
                     };
                 }
-                 Log.Information("InspectPostStudyStatus,input ={0},from ip={1}",
-                       input, Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("InspectPostStudyStatus,input ={0},from ip={1}",
+                      input, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -595,14 +601,14 @@ namespace study.Controllers
                     };
                 }
 
-                 var studylog=string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
-                                  
-                 if (theuser.Startdate == null)
+                var studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
+
+                if (theuser.Startdate == null)
                 {
                     theuser.Startdate = DateTime.Now;
                     theuser.Studylog = studylog;
-                     Log.Information("InspectPostStudyStatus,Startdate ={0},from ip={1}",
-                      "uninitiated", Request.HttpContext.Connection.RemoteIpAddress);
+                    Log.Information("InspectPostStudyStatus,Startdate ={0},from ip={1}",
+                     "uninitiated", Request.HttpContext.Connection.RemoteIpAddress);
                     //  theuser.Studylog = string.Format("{0},{1},{2}", inputRequest.CourseTitle, inputRequest.StartTime, inputRequest.EndTime);
                 }
                 else
@@ -612,32 +618,33 @@ namespace study.Controllers
                     {
                         if (!theuser.Studylog.Contains(studylog))
                             theuser.Studylog += string.Format("-{0}", studylog);
-                        else  Log.Information("InspectPostStudyStatus,duplicate submit, discarded ={0},from ip={1}",
-                      "", Request.HttpContext.Connection.RemoteIpAddress);
+                        else Log.Information("InspectPostStudyStatus,duplicate submit, discarded ={0},from ip={1}",
+                     "", Request.HttpContext.Connection.RemoteIpAddress);
                     }
                     else
                     {
-                         theuser.Studylog = studylog;
+                        theuser.Studylog = studylog;
                     }
                 }
 
-                if (theuser.Studylog.Length < 500){
-                    theuser.Syncdate=DateTime.Now;
+                if (theuser.Studylog.Length < 500)
+                {
+                    theuser.Syncdate = DateTime.Now;
                     _db1.SaveChanges();
-                } 
+                }
                 if (!string.IsNullOrEmpty(inputRequest.CourseTitle))
                 {
                     if (inputRequest.Pictures != null)
                     {
                         var date = DateTime.Today;
-                     //   var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
+                        //   var dir = string.Format("{0}{1}{2}", date.Year, date.Month, date.Day);
                         var subfpath = identity;
                         if (!string.IsNullOrEmpty(theuser.Photofile)) subfpath = theuser.Photofile;
-                        var fpath = Path.Combine(Global.LogPhotoPath,  subfpath);
+                        var fpath = Path.Combine(Global.LogPhotoPath, subfpath);
                         if (!Directory.Exists(fpath)) Directory.CreateDirectory(fpath);
 
                         var fname = Path.Combine(fpath, inputRequest.StartTime.ToString() + inputRequest.EndTime.ToString() + ".zip");
-                   //     Log.Information("filename is: {0}", fname);
+                        //     Log.Information("filename is: {0}", fname);
                         System.IO.File.WriteAllBytes(fname, inputRequest.Pictures);
                     }
                 }
@@ -662,12 +669,13 @@ namespace study.Controllers
         [Route("InspectGetLearnerInfo")]
         [HttpGet]
 
-        public GetLearnerInfoResponse InspectGetLearnerInfo(string token)
+        public async Task<GetLearnerInfoResponse> InspectGetLearnerInfo(string token)
         {
             try
-            { //var input=JsonConvert.SerializeObject(inputRequest);
-                LogRequest(token,"InspectGetLearnerInfo",Request.HttpContext.Connection.RemoteIpAddress.ToString());
-               
+            {
+                await Task.Run(() =>
+                LogRequest(token, "InspectGetLearnerInfo", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+
                 if (string.IsNullOrEmpty(token))
                 {
                     Log.Error("InspectGetLearnerInfo,{0},token={1}, from {2}",
@@ -678,8 +686,8 @@ namespace study.Controllers
                         Description = Global.Status[responseCode.TokenError].Description
                     };
                 }
-                 Log.Information("InspectGetLearnerInfo,input={0},from {1}",
-                  token, Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("InspectGetLearnerInfo,input={0},from {1}",
+                 token, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -739,8 +747,8 @@ namespace study.Controllers
                     photook = false;
                     Log.Error("InspectGetLearnerInfo,{0},={1}", identity, ex.Message);
                 }
-                theuser.Token=token;
-                theuser.Syncdate=DateTime.Now;
+                theuser.Token = token;
+                theuser.Syncdate = DateTime.Now;
                 _db1.SaveChanges();
                 return new GetLearnerInfoResponse
                 {
@@ -765,70 +773,82 @@ namespace study.Controllers
                 };
             }
         }
-        [Route("salt")]
-        [HttpGet]
+        // [Route("salt")]
+        // [HttpGet]
 
-        public GetLearnerInfoResponse salt(string token)
+        // public GetLearnerInfoResponse salt(string token)
+        // {
+        //     try
+        //     {
+        //         //  var aa= Request.Headers["Content-Type"];
+
+        //         if (string.IsNullOrEmpty(token))
+        //         {
+
+        //             return new GetLearnerInfoResponse
+        //             {
+        //                 StatusCode = Global.Status[responseCode.TokenError].StatusCode,
+        //                 Description = Global.Status[responseCode.TokenError].Description
+        //             };
+        //         }
+        //         var key = "2cff5601e52f4747bfb9e271fe45042a";
+        //         var salt = "d31beaac47b44b45b1c6066712d49ff6";
+        //         var original_value = token;
+        //         var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
+        //         var target = CryptographyHelpers.Decrypt(key, salt, encrypted_value);
+
+
+        //         return new GetLearnerInfoResponse
+        //         {
+        //             Name = encrypted_value,
+        //             //   Identity = encrypted_value.Length.ToString(),
+        //             StatusCode = encrypted_value.Length.ToString(),
+        //             Description = target,
+
+        //         };
+        //     }
+        //     catch (Exception ex)
+        //     {
+
+        //         return new GetLearnerInfoResponse
+        //         {
+        //             StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
+        //             Description = Global.Status[responseCode.ProgramError].Description + ex.Message
+        //         };
+        //     }
+        // }
+        private async void LogRequest(string content, string method = null, string ip = null)
         {
-            try
+            var dbtext = string.Empty;
+            var dbmethod = string.Empty;
+            var dbip = string.Empty;
+            var contentlenth = 150;
+            var shortlength = 44;
+            if (!string.IsNullOrEmpty(content))
             {
-             //  var aa= Request.Headers["Content-Type"];
-
-                if (string.IsNullOrEmpty(token))
-                {
-
-                    return new GetLearnerInfoResponse
-                    {
-                        StatusCode = Global.Status[responseCode.TokenError].StatusCode,
-                        Description = Global.Status[responseCode.TokenError].Description
-                    };
-                }
-                var key = "2cff5601e52f4747bfb9e271fe45042a";
-                var salt = "d31beaac47b44b45b1c6066712d49ff6";
-                var original_value = token;
-                var encrypted_value = CryptographyHelpers.Encrypt(key, salt, original_value);
-                var target = CryptographyHelpers.Decrypt(key, salt, encrypted_value);
-
-
-                return new GetLearnerInfoResponse
-                {
-                    Name = encrypted_value,
-                    //   Identity = encrypted_value.Length.ToString(),
-                    StatusCode = encrypted_value.Length.ToString(),
-                    Description = target,
-
-                };
+                var lenth = content.Length;
+                dbtext = lenth > contentlenth ? content.Substring(0, contentlenth) : content;
             }
-            catch (Exception ex)
+            if (!string.IsNullOrEmpty(method))
             {
-
-                return new GetLearnerInfoResponse
+                dbmethod = method.Length > shortlength ? method.Substring(0, shortlength) : method;
+            }
+            if (!string.IsNullOrEmpty(ip))
+            {
+                dbip = ip.Length > shortlength ? ip.Substring(0, shortlength) : ip;
+            }
+            await Task.Run(() =>
+            {
+                _db1.Request.Add(new Request
                 {
-                    StatusCode = Global.Status[responseCode.ProgramError].StatusCode,
-                    Description = Global.Status[responseCode.ProgramError].Description + ex.Message
-                };
-            }
-        }
-        private void LogRequest(string content,string method=null,string ip=null){
-            var dbtext=string.Empty;
-            var dbmethod=string.Empty;
-            var dbip=string.Empty;
-            var contentlenth=150;
-            var shortlength=44;
-            if(!string.IsNullOrEmpty(content)) {
-                 var lenth=content.Length;
-             dbtext=lenth>contentlenth?content.Substring(0,contentlenth):content;
-            }
-            if(!string.IsNullOrEmpty(method)) {
-             dbmethod=method.Length>shortlength?method.Substring(0,shortlength):method;
-            }
-              if(!string.IsNullOrEmpty(ip)) {
-             dbip=ip.Length>shortlength?ip.Substring(0,shortlength):ip;
-            }
-            _db1.Request.Add(new Request{
-                Content=dbtext,Ip=dbip,Method=dbmethod,Time=DateTime.Now
+                    Content = dbtext,
+                    Ip = dbip,
+                    Method = dbmethod,
+                    Time = DateTime.Now
+                });
+                _db1.SaveChanges();
             });
-            _db1.SaveChanges();
+
         }
         private string GetToken()
         {
