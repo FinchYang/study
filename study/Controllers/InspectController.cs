@@ -819,37 +819,44 @@ namespace study.Controllers
         // }
         private async void LogRequest(string content, string method = null, string ip = null)
         {
-            Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
-            var dbtext = string.Empty;
-            var dbmethod = string.Empty;
-            var dbip = string.Empty;
-            var contentlenth = 150;
-            var shortlength = 44;
-            if (!string.IsNullOrEmpty(content))
+            try
             {
-                var lenth = content.Length;
-                dbtext = lenth > contentlenth ? content.Substring(0, contentlenth) : content;
-            }
-            if (!string.IsNullOrEmpty(method))
-            {
-                dbmethod = method.Length > shortlength ? method.Substring(0, shortlength) : method;
-            }
-            if (!string.IsNullOrEmpty(ip))
-            {
-                dbip = ip.Length > shortlength ? ip.Substring(0, shortlength) : ip;
-            }
-            await Task.Run(() =>
-            {
-                _db1.Request.Add(new Request
+                Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
+                var dbtext = string.Empty;
+                var dbmethod = string.Empty;
+                var dbip = string.Empty;
+                var contentlenth = 150;
+                var shortlength = 44;
+                if (!string.IsNullOrEmpty(content))
                 {
-                    Content = dbtext,
-                    Ip = dbip,
-                    Method = dbmethod,
-                    Time = DateTime.Now
+                    var lenth = content.Length;
+                    dbtext = lenth > contentlenth ? content.Substring(0, contentlenth) : content;
+                }
+                if (!string.IsNullOrEmpty(method))
+                {
+                    dbmethod = method.Length > shortlength ? method.Substring(0, shortlength) : method;
+                }
+                if (!string.IsNullOrEmpty(ip))
+                {
+                    dbip = ip.Length > shortlength ? ip.Substring(0, shortlength) : ip;
+                }
+                await Task.Run(() =>
+                {
+                    _db1.Request.Add(new Request
+                    {
+                        Content = dbtext,
+                        Ip = dbip,
+                        Method = dbmethod,
+                        Time = DateTime.Now
+                    });
+                    _db1.SaveChanges();
                 });
-                _db1.SaveChanges();
-            });
-            Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
+            }
+            catch (Exception ex)
+            {
+                Log.Information("LogRequest error,{0},from ip={1}", ex.Message, Request.HttpContext.Connection.RemoteIpAddress);
+            }
         }
         private string GetToken()
         {
