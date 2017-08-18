@@ -819,6 +819,7 @@ namespace study.Controllers
         // }
         private async void LogRequest(string content, string method = null, string ip = null)
         {
+            Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
             var dbtext = string.Empty;
             var dbmethod = string.Empty;
             var dbip = string.Empty;
@@ -848,7 +849,7 @@ namespace study.Controllers
                 });
                 _db1.SaveChanges();
             });
-
+            Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
         }
         private string GetToken()
         {
