@@ -1,0 +1,11 @@
+{
+    "Host": {
+        "IpV4": "192.168.10.94",
+        "Port": "20022"
+    },
+    "photo": {
+        "path": "e:\\pic",
+        "signaturepath": "e:\\picsig",
+        "logpath": "e:\\piclog"
+    }
+}

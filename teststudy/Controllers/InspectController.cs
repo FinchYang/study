@@ -13,7 +13,7 @@ namespace study.Controllers
     public class InspectController : Controller
     {
 
-        private readonly studyinContext _db1 = new studyinContext();
+        private readonly blahContext _db1 = new blahContext();
         static List<Ptoken> tokens = new List<Ptoken>();
         class Ptoken
         {
@@ -822,6 +822,7 @@ namespace study.Controllers
             try
             {
                 Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
+                await Task.Delay(9000);
                 var dbtext = string.Empty;
                 var dbmethod = string.Empty;
                 var dbip = string.Empty;
@@ -842,17 +843,16 @@ namespace study.Controllers
                 }
                 await Task.Run(() =>
                 {
-                    using (var logdb = new studyinContext())
+                    using(var logdb=new blahContext()){ 
+                         logdb.Request.Add(new Request
                     {
-                        logdb.Request.Add(new Request
-                        {
-                            Content = dbtext,
-                            Ip = dbip,
-                            Method = dbmethod,
-                            Time = DateTime.Now
-                        });
-                        logdb.SaveChanges();
-                    }
+                        Content = dbtext,
+                        Ip = dbip,
+                        Method = dbmethod,
+                        Time = DateTime.Now
+                    });
+                    logdb.SaveChanges();}
+                  
                 });
                 Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
             }

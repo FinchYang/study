@@ -1,0 +1,11 @@
+2017-07-05 15:11:09.678 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-07-05 15:11:11.192 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 15:11:11.604 +08:00 [Information] Request finished in 429.2712ms 404 
+2017-07-05 15:11:11.640 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-05 15:11:11.643 +08:00 [Information] Request finished in 3.4837ms 404 
+2017-07-05 15:11:14.725 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 165
+2017-07-05 15:11:15.297 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-07-05 15:11:16.569 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"370686199102070710\",\"Name\":\"rec\",\"Phone\":\"re33c\"}",from "::1"
+2017-07-05 15:11:17.103 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-05 15:11:17.179 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2364.2382ms
+2017-07-05 15:11:17.184 +08:00 [Information] Request finished in 2458.5294ms 200 application/json; charset=utf-8
