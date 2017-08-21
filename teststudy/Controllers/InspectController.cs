@@ -821,8 +821,10 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
-                await Task.Delay(9000);
+                var to=GetToken();
+                // Log.Information("LogRequest,{0},from ip={1}",to+ ", begin", Request.HttpContext.Connection.RemoteIpAddress);
+                // await Task.Delay(5000);
+                   Log.Information("LogRequest,{0},from ip={1}",to+ ", 000", Request.HttpContext.Connection.RemoteIpAddress);
                 var dbtext = string.Empty;
                 var dbmethod = string.Empty;
                 var dbip = string.Empty;
@@ -843,18 +845,27 @@ namespace study.Controllers
                 }
                 await Task.Run(() =>
                 {
+                    Log.Information("LogRequest,{0},from ip={1}",to+ ", 111", Request.HttpContext.Connection.RemoteIpAddress);
                     using(var logdb=new blahContext()){ 
-                         logdb.Request.Add(new Request
-                    {
-                        Content = dbtext,
-                        Ip = dbip,
-                        Method = dbmethod,
-                        Time = DateTime.Now
-                    });
-                    logdb.SaveChanges();}
-                  
+                        for(int i=0;i<1000;i++){ 
+                            logdb.Request.Add(
+                                new Request
+                                {
+                                    Content = i.ToString(),
+                                    Ip = dbip,
+                                    Method = dbmethod,
+                                    Time = DateTime.Now
+                                }
+                            );
+                        }
+                        
+                        logdb.SaveChanges();
+                    }
+                       Log.Information("LogRequest,{0},from ip={1}",to+ ", 222", Request.HttpContext.Connection.RemoteIpAddress);
+                //  await Task.Delay(2000);
+                //      Log.Information("LogRequest,{0},from ip={1}", to+", 333", Request.HttpContext.Connection.RemoteIpAddress);
                 });
-                Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("LogRequest,{0},from ip={1}",to+ ", end", Request.HttpContext.Connection.RemoteIpAddress);
             }
             catch (Exception ex)
             {

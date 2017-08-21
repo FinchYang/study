@@ -326,7 +326,7 @@ namespace study.Controllers
             {
                 var input = JsonConvert.SerializeObject(inputRequest);
                 await Task.Run(() =>
-                LogRequest(input, "LogSignature", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+                LogRequest("LogSignature-input", "LogSignature", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
                 if (inputRequest == null)
                 {
@@ -452,7 +452,7 @@ namespace study.Controllers
             {
                 var input = JsonConvert.SerializeObject(inputRequest);
                 await Task.Run(() =>
-                LogRequest(input, "InspectCompleteCourses", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+                LogRequest("InspectCompleteCourses-input", "InspectCompleteCourses", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
                 if (inputRequest == null)
                 {
@@ -553,7 +553,7 @@ namespace study.Controllers
             try
             {
                 var input = JsonConvert.SerializeObject(inputRequest);
-                await Task.Run(() => LogRequest(input, "InspectPostStudyStatus", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
+                await Task.Run(() => LogRequest("InspectPostStudyStatus-input", "InspectPostStudyStatus", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
                 if (inputRequest == null)
                 {
@@ -821,7 +821,6 @@ namespace study.Controllers
         {
             try
             {
-                Log.Information("LogRequest,{0},from ip={1}", "begin", Request.HttpContext.Connection.RemoteIpAddress);
                 var dbtext = string.Empty;
                 var dbmethod = string.Empty;
                 var dbip = string.Empty;
@@ -840,6 +839,8 @@ namespace study.Controllers
                 {
                     dbip = ip.Length > shortlength ? ip.Substring(0, shortlength) : ip;
                 }
+                var id=string.Format(", {0}-{1}-{2}",dbip,dbmethod,dbtext);                
+                Log.Information("LogRequest,{0},from ip={1}", "begin"+id, Request.HttpContext.Connection.RemoteIpAddress);
                 await Task.Run(() =>
                 {
                     using (var logdb = new studyinContext())
@@ -854,7 +855,7 @@ namespace study.Controllers
                         logdb.SaveChanges();
                     }
                 });
-                Log.Information("LogRequest,{0},from ip={1}", "end", Request.HttpContext.Connection.RemoteIpAddress);
+                Log.Information("LogRequest,{0},from ip={1}", "end"+id, Request.HttpContext.Connection.RemoteIpAddress);
             }
             catch (Exception ex)
             {

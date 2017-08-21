@@ -67,6 +67,7 @@ namespace exportdb
             var dbtofilefname = "request.txt";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
+              Console.WriteLine("{0}, export Request data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
                 var tempday = date.AddDays(-1);
@@ -79,6 +80,7 @@ namespace exportdb
                     File.AppendAllText(fname, JsonConvert.SerializeObject(re) + "\r\n");
                 }
             }
+              Console.WriteLine("{0}, export Request data to file, end...", DateTime.Now);
         }
         static void DbToFileForExtranetToIntranet()
         {

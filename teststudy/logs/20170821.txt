@@ -1,0 +1,740 @@
+2017-08-21 08:48:18.607 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 08:48:25.115 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-08-21 08:48:26.872 +08:00 [Information] Request finished in 1935.1442ms 404 
+2017-08-21 08:48:27.050 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-08-21 08:48:27.056 +08:00 [Information] Request finished in 5.9ms 404 
+2017-08-21 08:48:27.584 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-08-21 08:48:27.589 +08:00 [Information] Request finished in 4.3695ms 404 
+2017-08-21 08:48:36.448 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:37.172 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:37.295 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:37.297 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:41.790 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:41.817 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:41.924 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 5398.3344ms
+2017-08-21 08:48:41.931 +08:00 [Information] Request finished in 5482.7744ms 200 application/json; charset=utf-8
+2017-08-21 08:48:42.458 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:42.467 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:42.470 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:42.471 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:42.705 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:42.705 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:42.708 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 243.3033ms
+2017-08-21 08:48:42.711 +08:00 [Information] Request finished in 253.3072ms 200 application/json; charset=utf-8
+2017-08-21 08:48:46.519 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:46.523 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:46.526 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:46.526 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:46.639 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:46.909 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:46.909 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:46.912 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 389.6091ms
+2017-08-21 08:48:46.914 +08:00 [Information] Request finished in 395.3654ms 200 application/json; charset=utf-8
+2017-08-21 08:48:47.303 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:47.306 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:47.309 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:47.309 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:47.509 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:47.510 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:47.513 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 206.6277ms
+2017-08-21 08:48:47.516 +08:00 [Information] Request finished in 212.2135ms 200 application/json; charset=utf-8
+2017-08-21 08:48:47.860 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:47.865 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:47.869 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:47.869 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:48.071 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:48.071 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:48.073 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 210.2531ms
+2017-08-21 08:48:48.077 +08:00 [Information] Request finished in 217.2336ms 200 application/json; charset=utf-8
+2017-08-21 08:48:48.398 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:48.402 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:48.405 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:48.405 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:48.635 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:48.635 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:48.638 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 235.0253ms
+2017-08-21 08:48:48.642 +08:00 [Information] Request finished in 243.0578ms 200 application/json; charset=utf-8
+2017-08-21 08:48:49.265 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:49.268 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:49.273 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:49.273 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:49.526 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:49.526 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:49.529 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 261.3137ms
+2017-08-21 08:48:49.532 +08:00 [Information] Request finished in 267.6274ms 200 application/json; charset=utf-8
+2017-08-21 08:48:49.882 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:49.885 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:49.889 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:49.890 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:50.100 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:50.100 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:50.102 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 217.5794ms
+2017-08-21 08:48:50.105 +08:00 [Information] Request finished in 223.2351ms 200 application/json; charset=utf-8
+2017-08-21 08:48:50.478 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:50.481 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:50.484 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:50.484 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:50.723 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:50.723 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:50.725 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 245.2459ms
+2017-08-21 08:48:50.728 +08:00 [Information] Request finished in 250.4275ms 200 application/json; charset=utf-8
+2017-08-21 08:48:51.050 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:51.053 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:51.056 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:51.056 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:51.258 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:51.259 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:51.261 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 208.1364ms
+2017-08-21 08:48:51.264 +08:00 [Information] Request finished in 214.5757ms 200 application/json; charset=utf-8
+2017-08-21 08:48:51.573 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:51.580 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:51.592 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:51.594 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:51.693 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:51.827 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:51.832 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:51.835 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 255.0469ms
+2017-08-21 08:48:51.838 +08:00 [Information] Request finished in 264.9186ms 200 application/json; charset=utf-8
+2017-08-21 08:48:52.158 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:52.168 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:52.174 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:52.174 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:52.470 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:52.470 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:52.473 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 305.7238ms
+2017-08-21 08:48:52.476 +08:00 [Information] Request finished in 318.5968ms 200 application/json; charset=utf-8
+2017-08-21 08:48:52.847 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:52.850 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:52.854 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:52.855 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:53.059 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:53.059 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:53.062 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 211.8799ms
+2017-08-21 08:48:53.065 +08:00 [Information] Request finished in 217.4539ms 200 application/json; charset=utf-8
+2017-08-21 08:48:53.417 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:53.427 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:53.440 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:53.442 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:53.769 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:53.769 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:53.773 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 346.4575ms
+2017-08-21 08:48:53.776 +08:00 [Information] Request finished in 358.9334ms 200 application/json; charset=utf-8
+2017-08-21 08:48:54.156 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:54.160 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:54.164 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:54.164 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:54.457 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:54.457 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:54.461 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 301.3724ms
+2017-08-21 08:48:54.464 +08:00 [Information] Request finished in 307.9972ms 200 application/json; charset=utf-8
+2017-08-21 08:48:54.761 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/LoginAndQuery application/json 130
+2017-08-21 08:48:54.765 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:48:54.770 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:48:54.770 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:48:55.000 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:48:55.001 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:48:55.003 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 238.5362ms
+2017-08-21 08:48:55.006 +08:00 [Information] Request finished in 245.3375ms 200 application/json; charset=utf-8
+2017-08-21 08:48:55.662 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:56.453 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:57.038 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:57.543 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:58.438 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:59.027 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:48:59.623 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:00.208 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:00.790 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:01.318 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:02.024 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:02.601 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:03.309 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:49:03.913 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:53:50.976 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 08:53:53.160 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 08:53:53.624 +08:00 [Information] Request finished in 409.9647ms 404 
+2017-08-21 08:53:53.660 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 08:53:53.667 +08:00 [Information] Request finished in 7.1608ms 404 
+2017-08-21 08:53:53.691 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/favicon.ico  
+2017-08-21 08:53:53.698 +08:00 [Information] Request finished in 7.3973ms 404 
+2017-08-21 08:54:22.454 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 08:54:23.002 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:54:23.096 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:54:23.097 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:54:25.623 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:54:25.652 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:54:25.736 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 3199.1747ms
+2017-08-21 08:54:25.741 +08:00 [Information] Request finished in 3289.1239ms 200 application/json; charset=utf-8
+2017-08-21 08:54:27.288 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 08:54:27.297 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:54:27.300 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:54:27.300 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:54:27.520 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:54:27.520 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:54:27.523 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 228.0562ms
+2017-08-21 08:54:27.527 +08:00 [Information] Request finished in 239.3613ms 200 application/json; charset=utf-8
+2017-08-21 08:54:27.906 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 08:54:27.911 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:54:27.917 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:54:27.917 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:54:28.133 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:54:28.133 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:54:28.135 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 224.599ms
+2017-08-21 08:54:28.140 +08:00 [Information] Request finished in 233.3282ms 200 application/json; charset=utf-8
+2017-08-21 08:54:28.511 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 08:54:28.516 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 08:54:28.519 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 08:54:28.521 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 08:54:28.741 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 08:54:28.741 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 08:54:28.744 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 227.2722ms
+2017-08-21 08:54:28.746 +08:00 [Information] Request finished in 233.9819ms 200 application/json; charset=utf-8
+2017-08-21 08:54:32.452 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:54:36.477 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:54:37.064 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 08:54:37.664 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:07:59.460 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:08:01.177 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:08:01.564 +08:00 [Information] Request finished in 414.5301ms 404 
+2017-08-21 09:08:01.591 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:08:01.595 +08:00 [Information] Request finished in 3.2259ms 404 
+2017-08-21 09:08:38.377 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:38.859 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:38.943 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:38.944 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:40.566 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:40.968 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:40.994 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:41.064 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2611.7543ms
+2017-08-21 09:08:41.069 +08:00 [Information] Request finished in 2698.1534ms 200 application/json; charset=utf-8
+2017-08-21 09:08:42.372 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:42.379 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:42.382 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:42.382 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:42.606 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:42.652 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:42.652 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:42.658 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 281.8398ms
+2017-08-21 09:08:42.664 +08:00 [Information] Request finished in 291.7194ms 200 application/json; charset=utf-8
+2017-08-21 09:08:42.990 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:42.993 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:42.997 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:42.998 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:43.136 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:43.243 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:43.243 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:43.246 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 253.6787ms
+2017-08-21 09:08:43.249 +08:00 [Information] Request finished in 259.2116ms 200 application/json; charset=utf-8
+2017-08-21 09:08:43.528 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:43.532 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:43.536 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:43.536 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:43.738 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:43.805 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:43.805 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:43.808 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 276.346ms
+2017-08-21 09:08:43.811 +08:00 [Information] Request finished in 282.968ms 200 application/json; charset=utf-8
+2017-08-21 09:08:44.112 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:44.118 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:44.121 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:44.122 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:44.427 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:44.585 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:44.586 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:44.588 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 471.5029ms
+2017-08-21 09:08:44.591 +08:00 [Information] Request finished in 479.518ms 200 application/json; charset=utf-8
+2017-08-21 09:08:44.938 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:44.941 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:44.944 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:44.944 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:45.093 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:45.163 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:45.163 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:45.166 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 225.8736ms
+2017-08-21 09:08:45.174 +08:00 [Information] Request finished in 234.2938ms 200 application/json; charset=utf-8
+2017-08-21 09:08:45.509 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:45.512 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:45.516 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:45.517 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:45.654 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:45.744 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:45.745 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:45.747 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 235.4137ms
+2017-08-21 09:08:45.767 +08:00 [Information] Request finished in 258.2101ms 200 application/json; charset=utf-8
+2017-08-21 09:08:46.077 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:46.080 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:46.083 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:46.083 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:46.227 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:46.264 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:46.265 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:46.267 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 187.3833ms
+2017-08-21 09:08:46.270 +08:00 [Information] Request finished in 193.0346ms 200 application/json; charset=utf-8
+2017-08-21 09:08:46.545 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:08:46.549 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:08:46.554 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:08:46.555 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:08:46.715 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:08:46.808 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:08:46.808 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:08:46.811 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 262.2998ms
+2017-08-21 09:08:46.813 +08:00 [Information] Request finished in 269.0217ms 200 application/json; charset=utf-8
+2017-08-21 09:09:41.440 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:09:41.445 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:09:41.448 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:09:41.448 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:09:41.615 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:09:41.687 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:09:41.687 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:09:41.692 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 248.3226ms
+2017-08-21 09:09:41.697 +08:00 [Information] Request finished in 257.6306ms 200 application/json; charset=utf-8
+2017-08-21 09:09:42.491 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:09:42.494 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:09:42.500 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:09:42.500 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:09:42.625 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:09:42.729 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:09:42.730 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:09:42.733 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 239.6127ms
+2017-08-21 09:09:42.737 +08:00 [Information] Request finished in 246.8048ms 200 application/json; charset=utf-8
+2017-08-21 09:09:43.119 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:09:43.122 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:09:43.125 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:09:43.126 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:09:43.277 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:09:43.320 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:09:43.320 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:09:43.323 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 200.1616ms
+2017-08-21 09:09:43.325 +08:00 [Information] Request finished in 205.8358ms 200 application/json; charset=utf-8
+2017-08-21 09:09:43.618 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:09:43.621 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:09:43.624 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:09:43.625 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:09:43.757 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:09:43.847 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:09:43.847 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:09:43.849 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 228.3282ms
+2017-08-21 09:09:43.852 +08:00 [Information] Request finished in 233.6108ms 200 application/json; charset=utf-8
+2017-08-21 09:09:44.171 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:09:44.176 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:09:44.179 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:09:44.180 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:09:44.365 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:09:44.441 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:09:44.441 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:09:44.443 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 267.5283ms
+2017-08-21 09:09:44.446 +08:00 [Information] Request finished in 274.9537ms 200 application/json; charset=utf-8
+2017-08-21 09:16:48.079 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:16:49.788 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:16:50.140 +08:00 [Information] Request finished in 364.4896ms 404 
+2017-08-21 09:16:50.179 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:16:50.182 +08:00 [Information] Request finished in 3.2373ms 404 
+2017-08-21 09:17:21.151 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:17:21.672 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:17:21.756 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:17:21.757 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:17:24.120 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:17:24.145 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:17:24.224 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2980.2823ms
+2017-08-21 09:17:24.229 +08:00 [Information] Request finished in 3079.267ms 200 application/json; charset=utf-8
+2017-08-21 09:17:24.758 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:17:24.759 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:17:25.124 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:17:25.124 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:17:25.124 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:17:26.069 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:17:26.076 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:17:26.078 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:17:26.079 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:17:26.395 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:17:26.396 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:17:26.398 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 325.3732ms
+2017-08-21 09:17:26.401 +08:00 [Information] Request finished in 332.6963ms 200 application/json; charset=utf-8
+2017-08-21 09:17:26.684 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:17:26.687 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:17:26.690 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:17:26.690 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:17:26.915 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:17:26.915 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:17:26.918 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 231.3205ms
+2017-08-21 09:17:26.922 +08:00 [Information] Request finished in 237.6978ms 200 application/json; charset=utf-8
+2017-08-21 09:17:27.270 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:17:27.273 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:17:27.276 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:17:27.277 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:17:27.464 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:17:27.464 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:17:27.467 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 193.8269ms
+2017-08-21 09:17:27.470 +08:00 [Information] Request finished in 200.0802ms 200 application/json; charset=utf-8
+2017-08-21 09:17:27.808 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:17:27.817 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:17:27.821 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:17:27.822 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:17:28.010 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:17:28.010 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:17:28.012 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 195.3834ms
+2017-08-21 09:17:28.015 +08:00 [Information] Request finished in 207.5376ms 200 application/json; charset=utf-8
+2017-08-21 09:17:29.089 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:17:29.089 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:17:29.246 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:17:29.246 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:17:29.246 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:17:29.701 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:17:29.701 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:17:29.830 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:17:29.830 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:17:29.830 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:17:30.278 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:17:30.278 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:17:30.458 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:17:30.459 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:17:30.459 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:17:30.835 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:17:30.835 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:17:30.981 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:17:30.981 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:17:30.981 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:19:46.947 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:19:48.695 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:19:49.094 +08:00 [Information] Request finished in 429.8198ms 404 
+2017-08-21 09:19:49.126 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:19:49.129 +08:00 [Information] Request finished in 3.1359ms 404 
+2017-08-21 09:19:52.632 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:19:53.144 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:19:53.246 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:19:53.248 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:19:56.100 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:19:56.127 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:19:56.206 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 3501.954ms
+2017-08-21 09:19:56.212 +08:00 [Information] Request finished in 3579.9661ms 200 application/json; charset=utf-8
+2017-08-21 09:19:56.248 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:19:56.249 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:19:56.575 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:19:56.575 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:19:58.994 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:19:59.000 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:19:59.003 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:19:59.003 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:19:59.248 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:19:59.249 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:19:59.255 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 256.6666ms
+2017-08-21 09:19:59.259 +08:00 [Information] Request finished in 265.5786ms 200 application/json; charset=utf-8
+2017-08-21 09:20:00.229 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:20:00.232 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:20:00.235 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:20:00.236 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:20:00.509 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:20:00.509 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:20:00.513 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 281.4387ms
+2017-08-21 09:20:00.518 +08:00 [Information] Request finished in 289.0279ms 200 application/json; charset=utf-8
+2017-08-21 09:20:02.019 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:20:02.027 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:20:02.215 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:20:02.215 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:20:03.245 +08:00 [Information] LogRequest,"000",from ip="::1"
+2017-08-21 09:20:03.245 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:20:03.408 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:20:03.408 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:22:35.430 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:22:37.372 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:22:37.701 +08:00 [Information] Request finished in 344.1671ms 404 
+2017-08-21 09:22:37.746 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:22:37.750 +08:00 [Information] Request finished in 3.6195ms 404 
+2017-08-21 09:22:40.698 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:22:41.189 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:22:41.273 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:22:41.277 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:22:41.278 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:22:42.909 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:22:42.909 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:22:42.909 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:22:43.319 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:22:43.350 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:22:43.434 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2660.6042ms
+2017-08-21 09:22:43.439 +08:00 [Information] Request finished in 2741.5972ms 200 application/json; charset=utf-8
+2017-08-21 09:22:53.100 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:22:53.107 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:22:53.110 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:22:53.111 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:22:53.111 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:22:53.269 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:22:53.269 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:22:53.269 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:22:53.364 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:22:53.365 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:22:53.369 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 263.0814ms
+2017-08-21 09:22:53.374 +08:00 [Information] Request finished in 273.3466ms 200 application/json; charset=utf-8
+2017-08-21 09:23:09.366 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:23:09.369 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:23:09.372 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:23:09.372 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:23:09.372 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:23:09.538 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:23:09.538 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:23:09.538 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:23:09.614 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:23:09.615 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:23:09.620 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 251.3788ms
+2017-08-21 09:23:09.626 +08:00 [Information] Request finished in 259.829ms 200 application/json; charset=utf-8
+2017-08-21 09:23:10.491 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:23:10.496 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:23:10.499 +08:00 [Information] LogRequest,"begin",from ip="::1"
+2017-08-21 09:23:10.499 +08:00 [Information] LogRequest,"111",from ip="::1"
+2017-08-21 09:23:10.499 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:23:10.663 +08:00 [Information] LogRequest,"222",from ip="::1"
+2017-08-21 09:23:10.663 +08:00 [Information] LogRequest,"333",from ip="::1"
+2017-08-21 09:23:10.663 +08:00 [Information] LogRequest,"end",from ip="::1"
+2017-08-21 09:23:10.867 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:23:10.867 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:23:10.874 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 377.8023ms
+2017-08-21 09:23:10.880 +08:00 [Information] Request finished in 388.4643ms 200 application/json; charset=utf-8
+2017-08-21 09:26:40.043 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:26:42.027 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:26:42.386 +08:00 [Information] Request finished in 356.2889ms 404 
+2017-08-21 09:26:42.405 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:26:42.412 +08:00 [Information] Request finished in 6.8253ms 404 
+2017-08-21 09:26:48.737 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:26:49.223 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:26:49.306 +08:00 [Information] LogRequest,"619c5f320e8b453a8a2f770c8c21200dbegin",from ip="::1"
+2017-08-21 09:26:49.309 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:26:49.310 +08:00 [Information] LogRequest,"619c5f320e8b453a8a2f770c8c21200d111",from ip="::1"
+2017-08-21 09:26:51.187 +08:00 [Information] LogRequest,"619c5f320e8b453a8a2f770c8c21200d222",from ip="::1"
+2017-08-21 09:26:51.187 +08:00 [Information] LogRequest,"619c5f320e8b453a8a2f770c8c21200d333",from ip="::1"
+2017-08-21 09:26:51.187 +08:00 [Information] LogRequest,"619c5f320e8b453a8a2f770c8c21200dend",from ip="::1"
+2017-08-21 09:26:51.346 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:26:51.372 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:26:51.444 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2635.9071ms
+2017-08-21 09:26:51.449 +08:00 [Information] Request finished in 2712.5818ms 200 application/json; charset=utf-8
+2017-08-21 09:28:25.113 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:28:25.144 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:28:25.146 +08:00 [Information] LogRequest,"5fae649aa19045fd9c19327501735771begin",from ip="::1"
+2017-08-21 09:28:25.147 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:28:25.149 +08:00 [Information] LogRequest,"5fae649aa19045fd9c19327501735771111",from ip="::1"
+2017-08-21 09:28:25.295 +08:00 [Information] LogRequest,"5fae649aa19045fd9c19327501735771222",from ip="::1"
+2017-08-21 09:28:25.295 +08:00 [Information] LogRequest,"5fae649aa19045fd9c19327501735771333",from ip="::1"
+2017-08-21 09:28:25.295 +08:00 [Information] LogRequest,"5fae649aa19045fd9c19327501735771end",from ip="::1"
+2017-08-21 09:28:25.346 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:28:25.346 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:28:25.349 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 206.8657ms
+2017-08-21 09:28:25.351 +08:00 [Information] Request finished in 238.0748ms 200 application/json; charset=utf-8
+2017-08-21 09:29:41.785 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:29:44.465 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:29:45.097 +08:00 [Information] Request finished in 669.3406ms 404 
+2017-08-21 09:29:45.228 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:29:45.365 +08:00 [Information] Request finished in 137.3535ms 404 
+2017-08-21 09:29:45.450 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/favicon.ico  
+2017-08-21 09:29:45.482 +08:00 [Information] Request finished in 30.9702ms 404 
+2017-08-21 09:29:47.724 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:29:48.220 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:29:48.310 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873abegin",from ip="::1"
+2017-08-21 09:29:48.311 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:29:50.717 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:29:50.755 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:29:50.833 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 3036.2437ms
+2017-08-21 09:29:50.839 +08:00 [Information] Request finished in 3115.135ms 200 application/json; charset=utf-8
+2017-08-21 09:29:51.310 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873a000",from ip="::1"
+2017-08-21 09:29:51.312 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873a111",from ip="::1"
+2017-08-21 09:29:51.654 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873a222",from ip="::1"
+2017-08-21 09:29:51.654 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873a333",from ip="::1"
+2017-08-21 09:29:51.654 +08:00 [Information] LogRequest,"f482280ef18d4308bc56f9c28e9c873aend",from ip="::1"
+2017-08-21 09:30:00.420 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:30:00.426 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:30:00.429 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8fbegin",from ip="::1"
+2017-08-21 09:30:00.429 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:30:00.629 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:30:00.629 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:30:00.632 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 208.4732ms
+2017-08-21 09:30:00.636 +08:00 [Information] Request finished in 216.4184ms 200 application/json; charset=utf-8
+2017-08-21 09:30:03.430 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8f000",from ip="::1"
+2017-08-21 09:30:03.430 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8f111",from ip="::1"
+2017-08-21 09:30:03.563 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8f222",from ip="::1"
+2017-08-21 09:30:03.563 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8f333",from ip="::1"
+2017-08-21 09:30:03.563 +08:00 [Information] LogRequest,"0048a3914bd84eeca99d18c83ae00e8fend",from ip="::1"
+2017-08-21 09:32:34.069 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:32:35.959 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:32:36.394 +08:00 [Information] Request finished in 464.4861ms 404 
+2017-08-21 09:32:36.433 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:32:36.439 +08:00 [Information] Request finished in 5.6438ms 404 
+2017-08-21 09:32:39.307 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:32:39.785 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:32:39.869 +08:00 [Information] LogRequest,"7a7b201f8c5c4a7eaf3d1c0298ba73cbbegin",from ip="::1"
+2017-08-21 09:32:39.870 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:32:41.988 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:32:42.013 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:32:42.083 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2705.1667ms
+2017-08-21 09:32:42.089 +08:00 [Information] Request finished in 2783.1319ms 200 application/json; charset=utf-8
+2017-08-21 09:32:42.870 +08:00 [Information] LogRequest,"7a7b201f8c5c4a7eaf3d1c0298ba73cb000",from ip="::1"
+2017-08-21 09:32:42.873 +08:00 [Information] LogRequest,"7a7b201f8c5c4a7eaf3d1c0298ba73cb111",from ip="::1"
+2017-08-21 09:32:43.386 +08:00 [Information] LogRequest,"7a7b201f8c5c4a7eaf3d1c0298ba73cb222",from ip="::1"
+2017-08-21 09:32:43.386 +08:00 [Information] LogRequest,"7a7b201f8c5c4a7eaf3d1c0298ba73cbend",from ip="::1"
+2017-08-21 09:32:43.543 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:32:43.551 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:32:43.554 +08:00 [Information] LogRequest,"04ca8ec353164f4f906307c1dcca49d8begin",from ip="::1"
+2017-08-21 09:32:43.554 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:32:43.745 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:32:43.746 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:32:43.749 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 199.629ms
+2017-08-21 09:32:43.751 +08:00 [Information] Request finished in 208.5391ms 200 application/json; charset=utf-8
+2017-08-21 09:32:46.564 +08:00 [Information] LogRequest,"04ca8ec353164f4f906307c1dcca49d8000",from ip="::1"
+2017-08-21 09:32:46.564 +08:00 [Information] LogRequest,"04ca8ec353164f4f906307c1dcca49d8111",from ip="::1"
+2017-08-21 09:32:46.698 +08:00 [Information] LogRequest,"04ca8ec353164f4f906307c1dcca49d8222",from ip="::1"
+2017-08-21 09:32:46.698 +08:00 [Information] LogRequest,"04ca8ec353164f4f906307c1dcca49d8end",from ip="::1"
+2017-08-21 09:33:45.943 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:33:47.691 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:33:48.041 +08:00 [Information] Request finished in 355.9451ms 404 
+2017-08-21 09:33:48.064 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:33:48.069 +08:00 [Information] Request finished in 4.923ms 404 
+2017-08-21 09:33:50.898 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:33:51.382 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:33:51.465 +08:00 [Information] LogRequest,"07e0f0b9a54c46f99894b3ca0e861821begin",from ip="::1"
+2017-08-21 09:33:51.467 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:33:52.465 +08:00 [Information] LogRequest,"07e0f0b9a54c46f99894b3ca0e861821000",from ip="::1"
+2017-08-21 09:33:52.466 +08:00 [Information] LogRequest,"07e0f0b9a54c46f99894b3ca0e861821111",from ip="::1"
+2017-08-21 09:33:53.217 +08:00 [Information] LogRequest,"07e0f0b9a54c46f99894b3ca0e861821222",from ip="::1"
+2017-08-21 09:33:53.217 +08:00 [Information] LogRequest,"07e0f0b9a54c46f99894b3ca0e861821end",from ip="::1"
+2017-08-21 09:33:53.546 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:33:53.572 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:33:53.647 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2677.8251ms
+2017-08-21 09:33:53.652 +08:00 [Information] Request finished in 2754.842ms 200 application/json; charset=utf-8
+2017-08-21 09:33:55.459 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:33:55.464 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:33:55.467 +08:00 [Information] LogRequest,"63c239e515ec4711825f36617b9fba5dbegin",from ip="::1"
+2017-08-21 09:33:55.467 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:33:55.708 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:33:55.709 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:33:55.713 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 251.0133ms
+2017-08-21 09:33:55.717 +08:00 [Information] Request finished in 258.5788ms 200 application/json; charset=utf-8
+2017-08-21 09:33:56.482 +08:00 [Information] LogRequest,"63c239e515ec4711825f36617b9fba5d000",from ip="::1"
+2017-08-21 09:33:56.482 +08:00 [Information] LogRequest,"63c239e515ec4711825f36617b9fba5d111",from ip="::1"
+2017-08-21 09:33:56.820 +08:00 [Information] LogRequest,"63c239e515ec4711825f36617b9fba5d222",from ip="::1"
+2017-08-21 09:33:56.820 +08:00 [Information] LogRequest,"63c239e515ec4711825f36617b9fba5dend",from ip="::1"
+2017-08-21 09:35:11.780 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:35:13.597 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:35:13.939 +08:00 [Information] Request finished in 337.2419ms 404 
+2017-08-21 09:35:13.956 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:35:13.959 +08:00 [Information] Request finished in 3.2212ms 404 
+2017-08-21 09:35:22.374 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:35:22.853 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:35:22.942 +08:00 [Information] LogRequest,"adac001a413a44d7a36746de241b0b79begin",from ip="::1"
+2017-08-21 09:35:22.944 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:35:22.957 +08:00 [Information] LogRequest,"adac001a413a44d7a36746de241b0b79000",from ip="::1"
+2017-08-21 09:35:22.962 +08:00 [Information] LogRequest,"adac001a413a44d7a36746de241b0b79111",from ip="::1"
+2017-08-21 09:35:24.527 +08:00 [Information] LogRequest,"adac001a413a44d7a36746de241b0b79222",from ip="::1"
+2017-08-21 09:35:24.527 +08:00 [Information] LogRequest,"adac001a413a44d7a36746de241b0b79end",from ip="::1"
+2017-08-21 09:35:24.875 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:35:24.903 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:35:24.977 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2527.3842ms
+2017-08-21 09:35:24.983 +08:00 [Information] Request finished in 2609.0013ms 200 application/json; charset=utf-8
+2017-08-21 09:35:46.479 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:35:46.486 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:35:46.490 +08:00 [Information] LogRequest,"d1078714a3e24b17a2fb08847ef8bed6begin",from ip="::1"
+2017-08-21 09:35:46.491 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:35:46.510 +08:00 [Information] LogRequest,"d1078714a3e24b17a2fb08847ef8bed6000",from ip="::1"
+2017-08-21 09:35:46.511 +08:00 [Information] LogRequest,"d1078714a3e24b17a2fb08847ef8bed6111",from ip="::1"
+2017-08-21 09:35:46.640 +08:00 [Information] LogRequest,"d1078714a3e24b17a2fb08847ef8bed6222",from ip="::1"
+2017-08-21 09:35:46.640 +08:00 [Information] LogRequest,"d1078714a3e24b17a2fb08847ef8bed6end",from ip="::1"
+2017-08-21 09:35:46.790 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:35:46.790 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:35:46.795 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 310.7459ms
+2017-08-21 09:35:46.800 +08:00 [Information] Request finished in 320.2855ms 200 application/json; charset=utf-8
+2017-08-21 09:36:17.697 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:36:17.703 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:36:17.706 +08:00 [Information] LogRequest,"911b7fc78a8b4389942ae723b5ee441abegin",from ip="::1"
+2017-08-21 09:36:17.706 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:36:17.717 +08:00 [Information] LogRequest,"911b7fc78a8b4389942ae723b5ee441a000",from ip="::1"
+2017-08-21 09:36:17.717 +08:00 [Information] LogRequest,"911b7fc78a8b4389942ae723b5ee441a111",from ip="::1"
+2017-08-21 09:36:17.842 +08:00 [Information] LogRequest,"911b7fc78a8b4389942ae723b5ee441a222",from ip="::1"
+2017-08-21 09:36:17.842 +08:00 [Information] LogRequest,"911b7fc78a8b4389942ae723b5ee441aend",from ip="::1"
+2017-08-21 09:36:17.906 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:36:17.907 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:36:17.909 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 206.9443ms
+2017-08-21 09:36:17.912 +08:00 [Information] Request finished in 215.5693ms 200 application/json; charset=utf-8
+2017-08-21 09:39:56.471 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:39:58.236 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:39:58.588 +08:00 [Information] Request finished in 374.647ms 404 
+2017-08-21 09:39:58.627 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:39:58.630 +08:00 [Information] Request finished in 3.492ms 404 
+2017-08-21 09:40:06.854 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:40:08.581 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:40:09.146 +08:00 [Information] Request finished in 598.7581ms 404 
+2017-08-21 09:40:09.191 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:40:09.194 +08:00 [Information] Request finished in 3.865ms 404 
+2017-08-21 09:40:14.523 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:40:15.000 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:40:15.088 +08:00 [Information] LogRequest,"450e73f003a642f5b610a75275b75cedbegin",from ip="::1"
+2017-08-21 09:40:15.089 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:40:17.297 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:40:17.322 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:40:17.396 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2800.8221ms
+2017-08-21 09:40:17.401 +08:00 [Information] Request finished in 2878.6104ms 200 application/json; charset=utf-8
+2017-08-21 09:40:19.786 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:40:19.792 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:40:19.795 +08:00 [Information] LogRequest,"ab0603e9e8a042a8a03bcc3eb3068569begin",from ip="::1"
+2017-08-21 09:40:19.795 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:40:20.072 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:40:20.073 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:40:20.078 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 288.5345ms
+2017-08-21 09:40:20.081 +08:00 [Information] Request finished in 296.2591ms 200 application/json; charset=utf-8
+2017-08-21 09:40:20.091 +08:00 [Information] LogRequest,"450e73f003a642f5b610a75275b75ced000",from ip="::1"
+2017-08-21 09:40:20.092 +08:00 [Information] LogRequest,"450e73f003a642f5b610a75275b75ced111",from ip="::1"
+2017-08-21 09:40:20.498 +08:00 [Information] LogRequest,"450e73f003a642f5b610a75275b75ced222",from ip="::1"
+2017-08-21 09:40:20.498 +08:00 [Information] LogRequest,"450e73f003a642f5b610a75275b75cedend",from ip="::1"
+2017-08-21 09:40:24.796 +08:00 [Information] LogRequest,"ab0603e9e8a042a8a03bcc3eb3068569000",from ip="::1"
+2017-08-21 09:40:24.796 +08:00 [Information] LogRequest,"ab0603e9e8a042a8a03bcc3eb3068569111",from ip="::1"
+2017-08-21 09:40:25.252 +08:00 [Information] LogRequest,"ab0603e9e8a042a8a03bcc3eb3068569222",from ip="::1"
+2017-08-21 09:40:25.252 +08:00 [Information] LogRequest,"ab0603e9e8a042a8a03bcc3eb3068569end",from ip="::1"
+2017-08-21 09:46:27.494 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:46:29.420 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:46:29.862 +08:00 [Information] Request finished in 467.581ms 404 
+2017-08-21 09:46:29.893 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:46:29.899 +08:00 [Information] Request finished in 5.5577ms 404 
+2017-08-21 09:46:40.329 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:46:40.832 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:46:40.917 +08:00 [Information] LogRequest,"99b3524c93194b8bbdb6f5df09132081, begin",from ip="::1"
+2017-08-21 09:46:40.918 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:46:42.923 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:46:42.948 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:46:43.018 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2605.1026ms
+2017-08-21 09:46:43.024 +08:00 [Information] Request finished in 2694.8568ms 200 application/json; charset=utf-8
+2017-08-21 09:46:45.917 +08:00 [Information] LogRequest,"99b3524c93194b8bbdb6f5df09132081, 000",from ip="::1"
+2017-08-21 09:46:45.920 +08:00 [Information] LogRequest,"99b3524c93194b8bbdb6f5df09132081, 111",from ip="::1"
+2017-08-21 09:47:56.871 +08:00 [Information] LogRequest,"99b3524c93194b8bbdb6f5df09132081, 222",from ip="::1"
+2017-08-21 09:47:56.871 +08:00 [Information] LogRequest,"99b3524c93194b8bbdb6f5df09132081, end",from ip="::1"
+2017-08-21 09:49:24.132 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:49:24.143 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:49:24.146 +08:00 [Information] LogRequest,"c4a561033f5d4a69bd91534f31561019, begin",from ip="::1"
+2017-08-21 09:49:24.148 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:49:24.598 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:49:24.634 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:49:24.639 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 499.5645ms
+2017-08-21 09:49:24.647 +08:00 [Information] Request finished in 515.294ms 200 application/json; charset=utf-8
+2017-08-21 09:49:29.157 +08:00 [Information] LogRequest,"c4a561033f5d4a69bd91534f31561019, 000",from ip="::1"
+2017-08-21 09:49:29.158 +08:00 [Information] LogRequest,"c4a561033f5d4a69bd91534f31561019, 111",from ip="::1"
+2017-08-21 09:50:01.393 +08:00 [Information] LogRequest,"c4a561033f5d4a69bd91534f31561019, 222",from ip="::1"
+2017-08-21 09:50:01.393 +08:00 [Information] LogRequest,"c4a561033f5d4a69bd91534f31561019, end",from ip="::1"
+2017-08-21 09:51:34.400 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-21 09:51:36.242 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:51:36.636 +08:00 [Information] Request finished in 412.1761ms 404 
+2017-08-21 09:51:36.663 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-21 09:51:36.671 +08:00 [Information] Request finished in 7.5414ms 404 
+2017-08-21 09:51:46.508 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:51:46.995 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:51:47.085 +08:00 [Information] LogRequest,"b9f78190f7d24e7b990c15b23d5b4901, 000",from ip="::1"
+2017-08-21 09:51:47.090 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:51:47.090 +08:00 [Information] LogRequest,"b9f78190f7d24e7b990c15b23d5b4901, 111",from ip="::1"
+2017-08-21 09:51:49.149 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:51:49.179 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:51:49.252 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 2672.5831ms
+2017-08-21 09:51:49.258 +08:00 [Information] Request finished in 2750.2542ms 200 application/json; charset=utf-8
+2017-08-21 09:52:21.821 +08:00 [Information] LogRequest,"b9f78190f7d24e7b990c15b23d5b4901, 222",from ip="::1"
+2017-08-21 09:52:21.822 +08:00 [Information] LogRequest,"b9f78190f7d24e7b990c15b23d5b4901, end",from ip="::1"
+2017-08-21 09:53:43.276 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-21 09:53:43.284 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-21 09:53:43.287 +08:00 [Information] LogRequest,"9489a0b9b4364b1c95a98c4d9f88ac67, 000",from ip="::1"
+2017-08-21 09:53:43.287 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-21 09:53:43.288 +08:00 [Information] LogRequest,"9489a0b9b4364b1c95a98c4d9f88ac67, 111",from ip="::1"
+2017-08-21 09:53:43.530 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-21 09:53:43.531 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-21 09:53:43.534 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 252.4245ms
+2017-08-21 09:53:43.536 +08:00 [Information] Request finished in 260.2786ms 200 application/json; charset=utf-8
+2017-08-21 09:55:01.895 +08:00 [Information] LogRequest,"9489a0b9b4364b1c95a98c4d9f88ac67, 222",from ip="::1"
+2017-08-21 09:55:01.895 +08:00 [Information] LogRequest,"9489a0b9b4364b1c95a98c4d9f88ac67, end",from ip="::1"
