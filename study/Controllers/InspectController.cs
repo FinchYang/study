@@ -324,7 +324,7 @@ namespace study.Controllers
         {
             try
             {
-                var input = JsonConvert.SerializeObject(inputRequest);
+             //   var input = JsonConvert.SerializeObject(inputRequest);
                 await Task.Run(() =>
                 LogRequest("LogSignature-input", "LogSignature", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
@@ -338,7 +338,7 @@ namespace study.Controllers
                     };
                 }
                 Log.Information("LogSignature,input={0},from {1}",
-                     input, Request.HttpContext.Connection.RemoteIpAddress);
+                     inputRequest.Token+inputRequest.PostalAddress+inputRequest.SignatureType, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -450,7 +450,7 @@ namespace study.Controllers
         {
             try
             {
-                var input = JsonConvert.SerializeObject(inputRequest);
+              //  var input = JsonConvert.SerializeObject(inputRequest);
                 await Task.Run(() =>
                 LogRequest("InspectCompleteCourses-input", "InspectCompleteCourses", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
@@ -464,7 +464,7 @@ namespace study.Controllers
                     };
                 }
                 Log.Information("InspectCompleteCourses,input={0},from {1}",
-                       input, Request.HttpContext.Connection.RemoteIpAddress);
+                       inputRequest.Token+inputRequest.AllStatus, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
@@ -552,7 +552,7 @@ namespace study.Controllers
         {
             try
             {
-                var input = JsonConvert.SerializeObject(inputRequest);
+              //  var input = JsonConvert.SerializeObject(inputRequest);
                 await Task.Run(() => LogRequest("InspectPostStudyStatus-input", "InspectPostStudyStatus", Request.HttpContext.Connection.RemoteIpAddress.ToString()));
 
                 if (inputRequest == null)
@@ -565,7 +565,7 @@ namespace study.Controllers
                     };
                 }
                 Log.Information("InspectPostStudyStatus,input ={0},from ip={1}",
-                      input, Request.HttpContext.Connection.RemoteIpAddress);
+                      inputRequest.Token+inputRequest.StartTime+inputRequest.CourseTitle+inputRequest.EndTime, Request.HttpContext.Connection.RemoteIpAddress);
                 var found = false;
                 var identity = string.Empty;
                 foreach (var a in tokens)
