@@ -1,0 +1,40 @@
+2017-08-22 08:58:22.836 +08:00 [Information] "Host","20022","e:\picsig","e:\piclog","e:\pic"------------------------------------
+2017-08-22 08:58:30.524 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-22 08:58:32.217 +08:00 [Information] Request finished in 1871.9378ms 404 
+2017-08-22 08:58:32.558 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/  
+2017-08-22 08:58:32.578 +08:00 [Information] Request finished in 19.7859ms 404 
+2017-08-22 08:58:32.940 +08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8001/favicon.ico  
+2017-08-22 08:58:32.944 +08:00 [Information] Request finished in 4.0995ms 404 
+2017-08-22 08:59:10.232 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/LoginAndQuery application/json 130
+2017-08-22 08:59:10.967 +08:00 [Information] Executing action method "study.Controllers.InspectController.LoginAndQuery (study)" with arguments (["study.LoginAndQueryRequest"]) - ModelState is Valid
+2017-08-22 08:59:11.079 +08:00 [Information] LogRequest,"b07b4f6211d44cf2a763fd40a153d1fa, 000",from ip="::1"
+2017-08-22 08:59:11.081 +08:00 [Information] LoginAndQuery,input="{\"Identity\":\"37900919750819723X\",\"Name\":\"rec\",\"Phone\":null}",from "::1"
+2017-08-22 08:59:11.081 +08:00 [Information] LogRequest,"b07b4f6211d44cf2a763fd40a153d1fa, 111",from ip="::1"
+2017-08-22 08:59:14.047 +08:00 [Error] loginandquery,"37900919750819723X",="Could not find file 'e:\pic\37900919750819723X.jpg'."
+2017-08-22 08:59:14.089 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-22 08:59:14.196 +08:00 [Information] Executed action "study.Controllers.InspectController.LoginAndQuery (study)" in 3887.8528ms
+2017-08-22 08:59:14.204 +08:00 [Information] Request finished in 3975.2546ms 200 application/json; charset=utf-8
+2017-08-22 08:59:39.507 +08:00 [Information] LogRequest,"b07b4f6211d44cf2a763fd40a153d1fa, 222",from ip="::1"
+2017-08-22 08:59:39.508 +08:00 [Information] LogRequest,"b07b4f6211d44cf2a763fd40a153d1fa, end",from ip="::1"
+2017-08-22 09:00:31.557 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/InspectPostStudyStatus application/json 197
+2017-08-22 09:00:31.631 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectPostStudyStatus (study)" with arguments (["study.StudyStatusRequest"]) - ModelState is Valid
+2017-08-22 09:00:31.645 +08:00 [Information] LogRequest,"e8cdd2701436424093831dbd5789d421, 000",from ip="::1"
+2017-08-22 09:00:31.645 +08:00 [Information] LogRequest,"e8cdd2701436424093831dbd5789d421, 111",from ip="::1"
+2017-08-22 09:00:31.645 +08:00 [Information] InspectPostStudyStatus,input ="{\"Token\":\"88967c3eeba44cff8a20363da915349e\",\"CourseTitle\":\"rec\",\"StartTime\":748723478,\"EndTime\":2323232,\"Pictures\":\"aGVsbG8KaSBjb21lIGZyb20gZXh0cmFuZXQK\"}",from ip="::1"
+2017-08-22 09:00:31.749 +08:00 [Error] InspectPostStudyStatus,"无效的身份证！",identity="37900919750819723X"
+2017-08-22 09:00:31.749 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-22 09:00:31.753 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectPostStudyStatus (study)" in 187.6324ms
+2017-08-22 09:00:31.756 +08:00 [Information] Request finished in 198.1878ms 200 application/json; charset=utf-8
+2017-08-22 09:01:00.564 +08:00 [Information] LogRequest,"e8cdd2701436424093831dbd5789d421, 222",from ip="::1"
+2017-08-22 09:01:00.564 +08:00 [Information] LogRequest,"e8cdd2701436424093831dbd5789d421, end",from ip="::1"
+2017-08-22 09:02:37.268 +08:00 [Information] Request starting HTTP/1.1 POST http://localhost:8001/InspectPostStudyStatus application/json 197
+2017-08-22 09:02:37.273 +08:00 [Information] Executing action method "study.Controllers.InspectController.InspectPostStudyStatus (study)" with arguments (["study.StudyStatusRequest"]) - ModelState is Valid
+2017-08-22 09:02:37.276 +08:00 [Information] LogRequest,"5c6c1a92e0b9499781d921ab5aba2de5, 000",from ip="::1"
+2017-08-22 09:02:37.276 +08:00 [Information] InspectPostStudyStatus,input ="{\"Token\":\"88967c3eeba44cff8a20363da915349e\",\"CourseTitle\":\"rec\",\"StartTime\":748723478,\"EndTime\":2323232,\"Pictures\":\"aGVsbG8KaSBjb21lIGZyb20gZXh0cmFuZXQK\"}",from ip="::1"
+2017-08-22 09:02:37.276 +08:00 [Information] LogRequest,"5c6c1a92e0b9499781d921ab5aba2de5, 111",from ip="::1"
+2017-08-22 09:02:37.476 +08:00 [Information] InspectPostStudyStatus,Startdate ="uninitiated",from ip="::1"
+2017-08-22 09:02:37.684 +08:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-08-22 09:02:37.694 +08:00 [Information] Executed action "study.Controllers.InspectController.InspectPostStudyStatus (study)" in 422.1966ms
+2017-08-22 09:02:37.705 +08:00 [Information] Request finished in 437.3801ms 200 application/json; charset=utf-8
+2017-08-22 09:03:01.326 +08:00 [Information] LogRequest,"5c6c1a92e0b9499781d921ab5aba2de5, 222",from ip="::1"
+2017-08-22 09:03:01.326 +08:00 [Information] LogRequest,"5c6c1a92e0b9499781d921ab5aba2de5, end",from ip="::1"

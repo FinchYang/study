@@ -28,6 +28,7 @@ namespace exportdb
             var dbtofilefname = "user.txt";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
+             Console.WriteLine("{0}, export user data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
                 var tempday = date.AddDays(-1);
@@ -41,6 +42,7 @@ namespace exportdb
                       NewMethod(re.Photofile);
                 }
             }
+             Console.WriteLine("{0}, export usesr data to file,  end...", DateTime.Now);
         }
         static void DbHistoryToFile()
         {
@@ -48,6 +50,7 @@ namespace exportdb
             var dbtofilefname = "history.txt";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
+              Console.WriteLine("{0}, export history data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
                 var tempday = date.AddDays(-1);
@@ -60,6 +63,7 @@ namespace exportdb
                     File.AppendAllText(fname, JsonConvert.SerializeObject(re) + "\r\n");
                 }
             }
+             Console.WriteLine("{0}, export history data to file,  end...", DateTime.Now);
         }
         static void DbRequestToFile()
         {
@@ -91,6 +95,7 @@ namespace exportdb
             + "extranetToIntranet.dat";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
+              Console.WriteLine("{0}, export out-in data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
                 var tempday = date.AddDays(-1);
@@ -116,6 +121,7 @@ namespace exportdb
             a.StartInfo.FileName = "zip";
             a.Start();
             a.WaitForExit();
+              Console.WriteLine("{0}, export out-in data to file,  end...", DateTime.Now);
         }
 
         static void DbToFileForStatistics()
@@ -127,6 +133,7 @@ namespace exportdb
             + "statistics.txt";
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
+               Console.WriteLine("{0}, export Statistics data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
                 var temp = string.Format("{0}/{1}/{2}", date.Year, date.Month, date.Day);
@@ -148,6 +155,7 @@ namespace exportdb
                 File.AppendAllText(fname, string.Format("{0},{1},{2},{3},{4},{5},{6}",
                 temp, visitorVolumeAll, usageAmountAll, visitorVolumeToday, usageAmountToday, startLearningVolume, startLearningVolumetoday));
             }
+              Console.WriteLine("{0}, export Statistics data to file,  end...", DateTime.Now);
         }
 
         private static void NewMethod(string filebase)
