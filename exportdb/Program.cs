@@ -34,7 +34,8 @@ namespace exportdb
                 var tempday = date.AddDays(-1);
               //  var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", 2000, tempday.Month, tempday.Day));
                 var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", tempday.Year, tempday.Month, tempday.Day));
-                var theuser = db.User.Where(async => async.Syncdate.CompareTo(yesterday) > 0);
+                var theuser = db.User.Where(async => async.Syncdate.CompareTo(yesterday) > 0 &&
+                 ( async.Firstsigned=="1"||async.Signed=="1"||!string.IsNullOrEmpty(async.Studylog))  );
                 Console.WriteLine("yesterday is {0},today is {1}, {2} users need to  be archived", yesterday, date, theuser.Count());
                 foreach (var re in theuser)
                 {
