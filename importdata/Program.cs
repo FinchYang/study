@@ -233,7 +233,15 @@ namespace importdata
                             //   Console.WriteLine("user {0} ,no permission field, -{1}-", identity, fields.Length);
                             theuser.Inspect = "1";
                         }
-
+                        if(theuser.Inspect=="1"
+                        &&theuser.Firstsigned=="1"&& !string.IsNullOrEmpty( theuser.Token)
+                        &&! string.IsNullOrEmpty( theuser.Studylog)
+                        &&theuser.Startdate<DateTime.Now.AddMonths(-2)
+                        ){
+                            theuser.Firstsigned="0";
+                            theuser.Studylog=string.Empty;
+                            theuser.Token=string.Empty;
+                        }
                         db.SaveChanges();
                         Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
                     }
