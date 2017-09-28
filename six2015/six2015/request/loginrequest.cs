@@ -5,8 +5,12 @@ using System.Web;
 
 namespace six2015.request
 {
-    enum sixerrors { ok,nouser,invalidrequest,processerror,errorpassword,invalidtoken,unauthorized,passwordisnull,
-        invalidpower,invalididentity,invalidstarttime ,invalidendtime,illegalunprocessed}
+    enum sixerrors {
+        ok,
+        nouser,invalidrequest,processerror,errorpassword,invalidtoken,
+        unauthorized,passwordisnull,        invalidpower,invalididentity,invalidstarttime ,
+        invalidendtime,illegalunprocessed,businesstypeerror
+    }
     public enum SignatureType { Unknown, PhysicalCondition, EducationalRecord }
     public class oneuser
     {
