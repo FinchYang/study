@@ -135,10 +135,10 @@ namespace importdata
                                 }
                             }
                            
-                            Console.WriteLine("import user {0} , {1},{2},{3},{4},{5},{6},{7},{8},{9}",
-                            identity, ((int)enumtype).ToString(), drugrelated, phone,
-                            pictureok, licensenumber, ideducted
-                            , photofile, status, today);
+                            // Console.WriteLine("import user {0} , {1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                            // identity, ((int)enumtype).ToString(), drugrelated, phone,
+                            // pictureok, licensenumber, ideducted
+                            // , photofile, status, today);
 
                             var inspect = "1";
                             if (fields.Length > 9)
@@ -180,35 +180,32 @@ namespace importdata
                         if (fields.Length > 9)
                         {
                             switch (fields[9])
-                            {
-                                // case "1":
-                                // theuser.Inspect=fields[9];
-                                // break;                                
+                            {                    
                                 case "0":
                                     theuser.Inspect = fields[9];
                                     break;
                                 default:
                                     theuser.Inspect = "1";
-                                    // Console.WriteLine("user {0} ,error permission field, -{1}-", identity, fields[9]);
                                     break;
                             }
                         }
                         else
                         {
-                            //   Console.WriteLine("user {0} ,no permission field, -{1}-", identity, fields.Length);
                             theuser.Inspect = "1";
                         }
                         if(theuser.Inspect=="1"
                         &&theuser.Firstsigned=="1"&& !string.IsNullOrEmpty( theuser.Token)
-                        &&! string.IsNullOrEmpty( theuser.Studylog)
+                    //    &&! string.IsNullOrEmpty( theuser.Studylog)
                         &&theuser.Startdate<DateTime.Now.AddMonths(-2)
                         ){
+                             Console.WriteLine("user {0} has already updated.{1}, have right to learn.{2}", identity, DateTime.Now,theuser.Startdate);
                             theuser.Firstsigned="0";
                             theuser.Studylog=string.Empty;
                             theuser.Token=string.Empty;
+                            theuser.Startdate=DateTime.Now;                           
                         }
                         db.SaveChanges();
-                        Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
+                      //  Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
                     }
                 }
             }
