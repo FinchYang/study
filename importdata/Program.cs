@@ -145,7 +145,7 @@ namespace importdata
                             {
                                 if (fields[9] == "0") inspect = "0";
                             }
-                            db.User.AddAsync(new User
+                            db.User.Add(new User
                             {
                                 Identity = identity,
                                 Licensetype = ((int)enumtype).ToString(),
@@ -159,44 +159,9 @@ namespace importdata
                                 Status = status,
                                 Syncdate = today
                             });
-                            //   Console.WriteLine("import user {0} before {1}", identity, "db.SaveChanges();");
                             db.SaveChanges();
-                            //  db.SaveChangesAsync();
                             Console.WriteLine("import user {0} ok {1}", identity, DateTime.Now);
-                        }
-                        //              catch (DbUpdateConcurrencyException ex)
-                        // {
-                        //     foreach (var entry in ex.Entries)
-                        //     {
-                        //         if (entry.Entity is User)
-                        //         {
-                        //             // Using a NoTracking query means we get the entity but it is not tracked by the context
-                        //             // and will not be merged with existing entities in the context.
-                        //             var databaseEntity = db.User.AsNoTracking().Single(p => p.Identity == ((User)entry.Entity).Identity);
-                        //             var databaseEntry = db.Entry(databaseEntity);
-
-                        //             foreach (var property in entry.Metadata.GetProperties())
-                        //             {
-                        //                 var proposedValue = entry.Property(property.Name).CurrentValue;
-                        //                 var originalValue = entry.Property(property.Name).OriginalValue;
-                        //                 var databaseValue = databaseEntry.Property(property.Name).CurrentValue;
-
-                        //                 // TODO: Logic to decide which value should be written to database
-                        //                  entry.Property(property.Name).CurrentValue = proposedValue;
-
-                        //                 // Update original values to
-                        //                 entry.Property(property.Name).OriginalValue = databaseEntry.Property(property.Name).CurrentValue;
-                        //             }
-                        //         }
-                        //         else
-                        //         {
-                        //             throw new NotSupportedException("Don't know how to handle concurrency conflicts for " + entry.Metadata.Name);
-                        //         }
-                        //     }
-
-                        //     // Retry the save operation
-                        //     db.SaveChanges();
-                        // }
+                        }                     
                         catch (Exception ex)
                         {
                             Console.WriteLine("user {0} sync error{1}.", identity, ex.Message);
@@ -246,8 +211,6 @@ namespace importdata
                         Console.WriteLine("user {0} has already updated.{1}", identity, DateTime.Now);
                     }
                 }
-                //  db.SaveChangesAsync();
-                //  db.Attach
             }
         }
     }
