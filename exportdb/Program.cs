@@ -18,10 +18,10 @@ namespace exportdb
            DbHistoryToFile();
            DbRequestToFile();}
           catch(Exception ex){
-                Console.WriteLine("{0}, export archived data to file,something happened {1}.",ex.Message);
+                Console.WriteLine("{0}, export archived data to file,something happened {1}.", DateTime.Now,ex.Message);
           }
            DbToFileForExtranetToIntranet();
-            Console.WriteLine("{0}, export archived data to file, and zip it, completed.");
+            Console.WriteLine("{0}, export archived data to file, and zip it, completed.", DateTime.Now);
         }
         static void DbUserToFile()
         {
@@ -32,6 +32,7 @@ namespace exportdb
             if (!Directory.Exists(dbtofilePath)) Directory.CreateDirectory(dbtofilePath);
             var fname = Path.Combine(dbtofilePath, dbtofilefname);
              Console.WriteLine("{0}, export user data to file,  started...", DateTime.Now);
+              var actualcount=0;
             using (var db = new studyinContext())
             {
                 try{
@@ -41,16 +42,19 @@ namespace exportdb
                 var theuser = db.User.Where(async => async.Syncdate.CompareTo(yesterday) > 0 &&
                  ( async.Firstsigned=="1"||async.Signed=="1"||!string.IsNullOrEmpty(async.Studylog))  );
                 Console.WriteLine("yesterday is {0},today is {1}, {2} users need to  be archived", yesterday, date, theuser.Count());
+               
                 foreach (var re in theuser)
                 {
+                    if(re.Startdate?.CompareTo(date.AddMonths(-2))<0) continue;
                     File.AppendAllText(fname, JsonConvert.SerializeObject(re) + "\r\n");
                       NewMethod(re.Photofile);
+                      actualcount++;
                 }
                 }catch(Exception ex){
                      Console.WriteLine("{0}, export usesr data to file,  error={1}", DateTime.Now,ex.Message);
                 }
             }
-             Console.WriteLine("{0}, export usesr data to file,  end...", DateTime.Now);
+             Console.WriteLine("{0}, export {1} users data to file,  end...", DateTime.Now,actualcount);
         }
         static void DbHistoryToFile()
         {
