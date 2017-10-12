@@ -13,10 +13,13 @@ namespace exportdb
         static void Main(string[] args)
         {
             Console.WriteLine("{0}, export archived data to file, and zip it, started...", DateTime.Now);
-            DbToFileForStatistics();
+            try{  DbToFileForStatistics();
            DbUserToFile();
            DbHistoryToFile();
-           DbRequestToFile();
+           DbRequestToFile();}
+          catch(Exception ex){
+                Console.WriteLine("{0}, export archived data to file,something happened {1}.",ex.Message);
+          }
            DbToFileForExtranetToIntranet();
             Console.WriteLine("{0}, export archived data to file, and zip it, completed.");
         }
@@ -31,6 +34,7 @@ namespace exportdb
              Console.WriteLine("{0}, export user data to file,  started...", DateTime.Now);
             using (var db = new studyinContext())
             {
+                try{
                 var tempday = date.AddDays(-1);
               //  var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", 2000, tempday.Month, tempday.Day));
                 var yesterday = DateTime.Parse(string.Format("{0}/{1}/{2}", tempday.Year, tempday.Month, tempday.Day));
@@ -41,6 +45,9 @@ namespace exportdb
                 {
                     File.AppendAllText(fname, JsonConvert.SerializeObject(re) + "\r\n");
                       NewMethod(re.Photofile);
+                }
+                }catch(Exception ex){
+                     Console.WriteLine("{0}, export usesr data to file,  error={1}", DateTime.Now,ex.Message);
                 }
             }
              Console.WriteLine("{0}, export usesr data to file,  end...", DateTime.Now);
