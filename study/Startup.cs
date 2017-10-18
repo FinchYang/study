@@ -70,6 +70,7 @@ namespace study
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             app.UseCors("AnyOrigin");
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
