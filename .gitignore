@@ -36,6 +36,7 @@ AppPackages/
 *.dll
 *.suo
 *.zip
+*.7z
 *.user
 *.userprefs
 _ReSharper.*
